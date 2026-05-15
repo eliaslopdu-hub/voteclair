@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Comment fonctionne la démocratie française – VoteClair</title>
+  <meta name="description" content="Comprendre les institutions françaises : le scrutin à deux tours, le Parlement, le Président, comment voter et s'inscrire sur les listes électorales." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/institutions.css" />
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Vote<span>Clair</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="quiz.html" class="nav-cta">🗳️ Faire le quiz</a></li>
+      <li><a href="partis.html">Partis</a></li>
+      <li><a href="institutions.html">Institutions</a></li>
+      <li><a href="histoire.html">Histoire</a></li>
+    </ul>
+    <button class="nav-burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<nav class="nav-mobile">
+  <a href="index.html">Accueil</a>
+  <a href="quiz.html">🗳️ Quiz</a>
+  <a href="partis.html">Partis</a>
+  <a href="institutions.html">Institutions</a>
+  <a href="histoire.html">Histoire</a>
+</nav>
+
+<!-- ═══ PAGE HERO ═══ -->
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="index.html">Accueil</a> <span>›</span> <span>Institutions</span>
+    </div>
+    <h1 class="fade-in">Comprendre la démocratie française</h1>
+    <p class="section-subtitle fade-in">De l'inscription sur les listes électorales au scrutin à deux tours : tout ce qu'il faut savoir pour voter en citoyen éclairé.</p>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- ── 1. Pourquoi voter ? ── -->
+  <div class="inst-section fade-in">
+    <p class="inst-section-label">Section 1</p>
+    <h2>Pourquoi voter ?</h2>
+    <p style="color:var(--text);font-size:1rem;margin-top:16px;max-width:800px;line-height:1.8">
+      Le droit de vote est l'un des droits fondamentaux conquis au fil des luttes démocratiques. En France, le suffrage universel masculin date de 1848, et les femmes ont obtenu le droit de vote en 1944. Aujourd'hui, l'abstention est un enjeu majeur : lors des législatives 2022, plus de la moitié des électeurs ne s'est pas déplacée. Chaque voix compte, en particulier dans les scrutins serrés.
+    </p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-top:32px">
+      <div class="card" style="padding:20px;border-left:4px solid var(--accent)">
+        <div style="font-size:1.5rem;margin-bottom:8px">📜</div>
+        <h4 style="font-family:'DM Sans',sans-serif;font-size:0.9rem;margin-bottom:6px">1848</h4>
+        <p style="font-size:0.82rem">Instauration du suffrage universel masculin en France</p>
+      </div>
+      <div class="card" style="padding:20px;border-left:4px solid var(--accent)">
+        <div style="font-size:1.5rem;margin-bottom:8px">⚧️</div>
+        <h4 style="font-family:'DM Sans',sans-serif;font-size:0.9rem;margin-bottom:6px">1944</h4>
+        <p style="font-size:0.82rem">Les femmes obtiennent le droit de vote</p>
+      </div>
+      <div class="card" style="padding:20px;border-left:4px solid var(--accent)">
+        <div style="font-size:1.5rem;margin-bottom:8px">🗳️</div>
+        <h4 style="font-family:'DM Sans',sans-serif;font-size:0.9rem;margin-bottom:6px">1974</h4>
+        <p style="font-size:0.82rem">Abaissement de la majorité électorale de 21 à 18 ans</p>
+      </div>
+      <div class="card" style="padding:20px;border-left:4px solid #CC0000">
+        <div style="font-size:1.5rem;margin-bottom:8px">📉</div>
+        <h4 style="font-family:'DM Sans',sans-serif;font-size:0.9rem;margin-bottom:6px">53,7%</h4>
+        <p style="font-size:0.82rem">Taux d'abstention au 1er tour des législatives 2022 (source : Ministère de l'Intérieur)</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 2. Le scrutin à deux tours ── -->
+  <div class="inst-section fade-in">
+    <p class="inst-section-label">Section 2</p>
+    <h2>Le scrutin à deux tours</h2>
+    <p style="margin-top:12px;max-width:750px;font-size:0.95rem">La France utilise un scrutin uninominal majoritaire à deux tours pour les élections présidentielles et législatives.</p>
+
+    <div class="scrutin-schema">
+      <div class="scrutin-tour">
+        <h3>1er Tour</h3>
+        <p>Un candidat est élu directement s'il obtient <strong style="color:var(--text)">plus de 50% des suffrages exprimés</strong> et au moins 25% des inscrits. Sinon, les deux premiers accèdent au 2nd tour.</p>
+        <p style="margin-top:10px;font-size:0.8rem;color:var(--accent)">Pour les législatives : seuil à 12,5% des inscrits pour se maintenir</p>
+      </div>
+      <div class="scrutin-arrow">→</div>
+      <div class="scrutin-tour">
+        <h3>2nd Tour</h3>
+        <p>Duel entre les deux candidats qualifiés. La <strong style="color:var(--text)">majorité relative suffit</strong> : celui qui obtient le plus de voix l'emporte, même sans dépasser 50%.</p>
+        <p style="margin-top:10px;font-size:0.8rem;color:var(--accent)">Pas de seuil minimum requis</p>
+      </div>
+    </div>
+
+    <div class="scrutin-alert">
+      <p>⚠️ <strong style="color:var(--text)">Pourquoi le 1er tour est crucial</strong></p>
+      <p style="margin-top:8px;font-size:0.9rem">Le 1er tour dessine le paysage politique et détermine qui peut se maintenir. Voter au 1er tour pour le parti de son choix envoie un signal sur les forces en présence, même si ce parti n'accède pas au second tour. Ne pas voter au 1er tour, c'est laisser les autres décider de l'offre au 2nd tour.</p>
+    </div>
+  </div>
+
+  <!-- ── 3. Les institutions ── -->
+  <div class="inst-section fade-in">
+    <p class="inst-section-label">Section 3</p>
+    <h2>Les institutions de la Ve République</h2>
+
+    <div class="institutions-grid">
+      <div class="institution-card">
+        <div class="institution-icon">🏛️</div>
+        <h3>Le Président de la République</h3>
+        <p style="font-size:0.875rem;margin-bottom:8px">Élu au suffrage universel direct pour 5 ans (depuis 2002). Chef de l'État, garant des institutions.</p>
+        <ul>
+          <li>Nomme le Premier ministre</li>
+          <li>Préside le Conseil des ministres</li>
+          <li>Chef des armées</li>
+          <li>Peut dissoudre l'Assemblée nationale</li>
+          <li>Représente la France à l'international</li>
+        </ul>
+      </div>
+      <div class="institution-card">
+        <div class="institution-icon">📜</div>
+        <h3>L'Assemblée nationale</h3>
+        <p style="font-size:0.875rem;margin-bottom:8px">577 députés élus pour 5 ans au scrutin uninominal à deux tours. Vote les lois et le budget.</p>
+        <ul>
+          <li>Peut renverser le gouvernement (motion de censure)</li>
+          <li>Contrôle l'action du gouvernement</li>
+          <li>Vote définitivement les lois</li>
+          <li>Commission des finances, affaires étrangères…</li>
+          <li>Siège au Palais Bourbon, Paris</li>
+        </ul>
+      </div>
+      <div class="institution-card">
+        <div class="institution-icon">🏛️</div>
+        <h3>Le Sénat</h3>
+        <p style="font-size:0.875rem;margin-bottom:8px">348 sénateurs élus pour 6 ans au suffrage indirect par les élus locaux. Chambre haute du Parlement.</p>
+        <ul>
+          <li>Examine et amende les projets de loi</li>
+          <li>Représente les collectivités territoriales</li>
+          <li>Peut bloquer une loi (navette parlementaire)</li>
+          <li>Siège au Palais du Luxembourg, Paris</li>
+          <li>Renouvelé par moitié tous les 3 ans</li>
+        </ul>
+      </div>
+      <div class="institution-card">
+        <div class="institution-icon">👤</div>
+        <h3>Le Premier ministre</h3>
+        <p style="font-size:0.875rem;margin-bottom:8px">Nommé par le Président, il dirige le gouvernement et coordonne l'action des ministres.</p>
+        <ul>
+          <li>Définit la politique gouvernementale</li>
+          <li>Responsable devant l'Assemblée nationale</li>
+          <li>Peut engager la responsabilité du gouvernement</li>
+          <li>Contresigne les actes du Président</li>
+          <li>Siège à Matignon, Paris</li>
+        </ul>
+      </div>
+      <div class="institution-card">
+        <div class="institution-icon">⚖️</div>
+        <h3>Le Conseil constitutionnel</h3>
+        <p style="font-size:0.875rem;margin-bottom:8px">9 membres nommés pour 9 ans. Gardien de la Constitution, il vérifie la conformité des lois.</p>
+        <ul>
+          <li>Contrôle la constitutionnalité des lois</li>
+          <li>Valide les résultats électoraux</li>
+          <li>Question prioritaire de constitutionnalité (QPC)</li>
+          <li>Veille au respect des droits fondamentaux</li>
+          <li>Siège au Palais-Royal, Paris</li>
+        </ul>
+      </div>
+      <div class="institution-card">
+        <div class="institution-icon">🌍</div>
+        <h3>Le Conseil d'État</h3>
+        <p style="font-size:0.875rem;margin-bottom:8px">Plus haute juridiction administrative. Conseille le gouvernement sur les projets de loi.</p>
+        <ul>
+          <li>Juge les litiges entre citoyens et État</li>
+          <li>Donne un avis sur les projets de loi</li>
+          <li>Garantit l'État de droit</li>
+          <li>Contrôle la légalité des actes administratifs</li>
+          <li>Siège au Palais-Royal, Paris</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 4. Types d'élections ── -->
+  <div class="inst-section fade-in">
+    <p class="inst-section-label">Section 4</p>
+    <h2>Les élections en France</h2>
+    <table class="elections-table">
+      <thead>
+        <tr>
+          <th>Élection</th>
+          <th>Fréquence</th>
+          <th>Qui vote</th>
+          <th>Ce qu'on élit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Présidentielle</td>
+          <td>Tous les 5 ans</td>
+          <td>Tous les citoyens français</td>
+          <td>Le Président de la République</td>
+        </tr>
+        <tr>
+          <td>Législatives</td>
+          <td>Tous les 5 ans</td>
+          <td>Tous les citoyens français</td>
+          <td>577 députés à l'Assemblée nationale</td>
+        </tr>
+        <tr>
+          <td>Sénatoriales</td>
+          <td>Tous les 6 ans (par moitié)</td>
+          <td>Grands électeurs (élus locaux)</td>
+          <td>348 sénateurs</td>
+        </tr>
+        <tr>
+          <td>Européennes</td>
+          <td>Tous les 5 ans</td>
+          <td>Citoyens UE résidant en France</td>
+          <td>81 eurodéputés français</td>
+        </tr>
+        <tr>
+          <td>Municipales</td>
+          <td>Tous les 6 ans</td>
+          <td>Citoyens français et UE</td>
+          <td>Conseillers municipaux et maires</td>
+        </tr>
+        <tr>
+          <td>Régionales</td>
+          <td>Tous les 6 ans</td>
+          <td>Tous les citoyens français</td>
+          <td>Conseillers régionaux et présidents de région</td>
+        </tr>
+        <tr>
+          <td>Départementales</td>
+          <td>Tous les 6 ans</td>
+          <td>Tous les citoyens français</td>
+          <td>Conseillers départementaux (binôme homme-femme)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ── 5. S'inscrire ── -->
+  <div class="inst-section fade-in">
+    <p class="inst-section-label">Section 5</p>
+    <h2>Comment s'inscrire sur les listes électorales</h2>
+    <div class="inscription-box">
+      <div style="font-size:2rem;margin-bottom:12px">📋</div>
+      <h3>Inscrivez-vous avant le 31 décembre</h3>
+      <p>Pour voter à une élection, vous devez être inscrit sur les listes électorales de votre commune. La démarche est gratuite et s'effectue en ligne.</p>
+      <a href="https://www.service-public.fr/particuliers/vosdroits/R12675" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:8px">S'inscrire sur service-public.fr →</a>
+      <p style="margin-top:20px;font-size:0.8rem">Vous avez moins de 18 ans ? L'inscription est automatique si vous avez fait votre recensement citoyen à 16 ans.</p>
+    </div>
+  </div>
+
+  <!-- ── 6. Médias et information ── -->
+  <div class="inst-section fade-in">
+    <p class="inst-section-label">Section 6</p>
+    <h2>S'informer sans se faire manipuler</h2>
+    <p style="margin-top:12px;max-width:750px;font-size:0.95rem">À l'ère des réseaux sociaux et des fake news, savoir reconnaître une information fiable est une compétence civique essentielle.</p>
+
+    <div class="media-tips">
+      <div class="media-tip">
+        <div class="media-tip-icon">🔍</div>
+        <h4>Cherchez la source primaire</h4>
+        <p>Avant de partager une information, vérifiez qu'elle provient d'une source officielle, d'un article de presse signé ou d'un document original.</p>
+      </div>
+      <div class="media-tip">
+        <div class="media-tip-icon">⚖️</div>
+        <h4>Distinguez fait et opinion</h4>
+        <p>Un fait est vérifiable. Une opinion est un jugement. Les deux ont leur place dans le débat, mais ils ne se valent pas comme arguments.</p>
+      </div>
+      <div class="media-tip">
+        <div class="media-tip-icon">🔄</div>
+        <h4>Croisez les médias</h4>
+        <p>Lisez plusieurs sources avec des lignes éditoriales différentes. L'accord entre elles est un signal de fiabilité ; les divergences méritent investigation.</p>
+      </div>
+      <div class="media-tip">
+        <div class="media-tip-icon">🧠</div>
+        <h4>Méfiez-vous du biais de confirmation</h4>
+        <p>Nous avons tendance à lire ce qui confirme nos croyances. Exposez-vous volontairement à des points de vue différents du vôtre.</p>
+      </div>
+      <div class="media-tip">
+        <div class="media-tip-icon">📅</div>
+        <h4>Vérifiez la date</h4>
+        <p>Une vieille information peut re-circuler hors contexte. Vérifiez toujours la date de publication avant de partager.</p>
+      </div>
+      <div class="media-tip">
+        <div class="media-tip-icon">🕵️</div>
+        <h4>Utilisez les outils de fact-checking</h4>
+        <p>Des sites comme Les Décodeurs (Le Monde), Libé Désintox ou CheckNews (Libération) vérifient les déclarations politiques en temps réel.</p>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /container -->
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="nav-logo">Vote<span>Clair</span></div>
+        <p>Outil civique indépendant. Aucune donnée personnelle collectée.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <a href="index.html">Accueil</a>
+        <a href="quiz.html">Quiz</a>
+        <a href="partis.html">Les partis</a>
+        <a href="histoire.html">Histoire</a>
+      </div>
+      <div class="footer-col">
+        <h4>Ressources</h4>
+        <a href="https://www.service-public.fr/particuliers/vosdroits/R12675" target="_blank" rel="noopener">S'inscrire sur les listes</a>
+        <a href="https://www.conseil-constitutionnel.fr" target="_blank" rel="noopener">Conseil constitutionnel</a>
+        <a href="https://www.assemblee-nationale.fr" target="_blank" rel="noopener">Assemblée nationale</a>
+      </div>
+      <div class="footer-col">
+        <h4>Légal</h4>
+        <a href="#">Mentions légales</a>
+        <a href="#">Confidentialité</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 VoteClair — Indépendant · Sans publicité · Sans tracking</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/nav.js"></script>
+</body>
+</html>

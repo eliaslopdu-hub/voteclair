@@ -1,0 +1,335 @@
+/* ============================================================
+   VoteClair — partis.css
+   ============================================================ */
+
+/* ── Grille des partis ── */
+.partis-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--gap);
+}
+
+/* ── Carte parti ── */
+.parti-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.parti-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-hover);
+}
+
+.parti-card-accent {
+  height: 4px;
+  width: 100%;
+}
+
+.parti-card-body {
+  padding: 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.parti-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.parti-card-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  font-family: 'Playfair Display', serif;
+}
+
+.parti-card-badge {
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: #fff;
+}
+
+.parti-card-ideologie {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.parti-card-chef {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.parti-card-chef strong { color: var(--text); }
+
+.parti-programme {
+  flex: 1;
+  margin-bottom: 20px;
+}
+
+.parti-programme-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.parti-programme li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 5px 0;
+  font-size: 0.855rem;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border);
+}
+
+.parti-programme li:last-child { border-bottom: none; }
+
+.parti-programme li::before {
+  content: '›';
+  color: currentColor;
+  flex-shrink: 0;
+  margin-top: 1px;
+  opacity: 0.6;
+}
+
+.parti-card-source {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  opacity: 0.6;
+  margin-bottom: 16px;
+  font-style: italic;
+}
+
+.parti-card-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.parti-card-actions a {
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 0.82rem;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.btn-parti-primary {
+  background: var(--surface-2);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.btn-parti-primary:hover {
+  border-color: var(--border-hover);
+}
+
+.btn-parti-ext {
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.btn-parti-ext:hover { color: var(--text); }
+
+/* ── Page dédiée parti ── */
+.parti-hero {
+  padding: calc(var(--nav-height) + 48px) 0 48px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 60px;
+}
+
+.parti-hero-inner {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.parti-color-block {
+  width: 6px;
+  min-height: 80px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.parti-hero-text h1 { margin-bottom: 8px; }
+
+.parti-hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.parti-hero-meta span {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.parti-hero-meta span strong { color: var(--text); }
+
+/* Points clés numérotés */
+.points-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+  margin-bottom: 60px;
+}
+
+.point-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  display: flex;
+  gap: 14px;
+}
+
+.point-num {
+  font-size: 1.5rem;
+  font-weight: 900;
+  font-family: 'Playfair Display', serif;
+  opacity: 0.25;
+  line-height: 1;
+  flex-shrink: 0;
+  min-width: 32px;
+}
+
+.point-content p {
+  font-size: 0.875rem;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+.point-source {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* Tableau positions */
+.positions-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 60px;
+}
+
+.positions-table th,
+.positions-table td {
+  padding: 14px 18px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.9rem;
+}
+
+.positions-table th {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  background: var(--surface);
+}
+
+.positions-table td:first-child {
+  font-weight: 500;
+  color: var(--text);
+  width: 180px;
+}
+
+.positions-table td:last-child { color: var(--text-muted); }
+
+.positions-table tr:hover td { background: var(--surface); }
+
+/* Figures */
+.figures-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 60px;
+}
+
+.figure-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 16px;
+  text-align: center;
+}
+
+.figure-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--surface-2);
+  margin: 0 auto 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+}
+
+.figure-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.figure-role {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.figure-bio {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* Histoire section */
+.histoire-section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px;
+  margin-bottom: 60px;
+}
+
+.histoire-section p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+  .partis-grid { grid-template-columns: 1fr; }
+  .points-grid { grid-template-columns: 1fr; }
+  .figures-grid { grid-template-columns: repeat(2, 1fr); }
+  .parti-hero-inner { flex-direction: column; align-items: flex-start; }
+  .positions-table th, .positions-table td { padding: 10px 12px; }
+}

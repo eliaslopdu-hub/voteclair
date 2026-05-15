@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz d'orientation politique – VoteClair</title>
+  <meta name="description" content="Répondez à 25 questions pour découvrir quels partis politiques défendent le mieux vos valeurs. Résultats anonymes et non stockés." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/quiz.css" />
+</head>
+<body>
+
+<!-- ═══ NAVBAR ═══ -->
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Vote<span>Clair</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="quiz.html" class="nav-cta">🗳️ Faire le quiz</a></li>
+      <li><a href="partis.html">Partis</a></li>
+      <li><a href="institutions.html">Institutions</a></li>
+      <li><a href="histoire.html">Histoire</a></li>
+    </ul>
+    <button class="nav-burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<nav class="nav-mobile">
+  <a href="index.html">Accueil</a>
+  <a href="quiz.html">🗳️ Quiz</a>
+  <a href="partis.html">Partis</a>
+  <a href="institutions.html">Institutions</a>
+  <a href="histoire.html">Histoire</a>
+</nav>
+
+<div class="quiz-wrapper">
+
+  <!-- ═══ INTRO ═══ -->
+  <div class="quiz-intro" id="quiz-intro">
+    <div class="quiz-disclaimer">
+      <strong>ℹ️ Information importante</strong><br />
+      Ce quiz est un outil d'orientation indicatif basé sur vos réponses à 25 questions.
+      Il ne vote pas à votre place et ne représente pas une analyse exhaustive de vos convictions.
+      <strong>Aucune de vos réponses n'est enregistrée.</strong> Tout est traité localement dans votre navigateur.
+    </div>
+
+    <h1>Quiz d'orientation politique</h1>
+    <p>31 questions en 3 étapes : profil, positions sur curseur, dilemmes d'arbitrage — puis vous pondérez vos thèmes prioritaires pour des résultats vraiment personnalisés.</p>
+
+    <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-bottom:32px">
+      <div class="card" style="padding:14px 20px;text-align:center;min-width:130px">
+        <div style="font-size:1.5rem;margin-bottom:4px">⏱️</div>
+        <div style="font-size:0.8rem;color:var(--text-muted)">~7 minutes</div>
+      </div>
+      <div class="card" style="padding:14px 20px;text-align:center;min-width:130px">
+        <div style="font-size:1.5rem;margin-bottom:4px">🔐</div>
+        <div style="font-size:0.8rem;color:var(--text-muted)">Anonyme</div>
+      </div>
+      <div class="card" style="padding:14px 20px;text-align:center;min-width:130px">
+        <div style="font-size:1.5rem;margin-bottom:4px">⚖️</div>
+        <div style="font-size:0.8rem;color:var(--text-muted)">100% neutre</div>
+      </div>
+    </div>
+
+    <button class="btn btn-primary" style="font-size:1rem;padding:14px 32px" onclick="startQuiz()">
+      Commencer le quiz →
+    </button>
+  </div>
+
+  <!-- ═══ QUIZ MAIN ═══ -->
+  <div class="quiz-main" id="quiz-main">
+    <div class="quiz-disclaimer" style="margin-bottom:24px">
+      Vos réponses ne sont <strong>jamais enregistrées</strong>. Ce quiz est purement indicatif.
+    </div>
+
+    <!-- Progress -->
+    <div class="quiz-progress">
+      <div class="progress-bar-track">
+        <div class="progress-bar-fill" id="progress-fill" style="width:0%"></div>
+      </div>
+      <span class="progress-label" id="progress-label">Question 1 / 25</span>
+    </div>
+
+    <!-- Question card -->
+    <div class="question-card">
+      <div class="question-number" id="question-number">Question 1</div>
+      <div class="question-text" id="question-text"></div>
+      <div class="question-options" id="question-options"></div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="quiz-nav">
+      <button class="btn btn-outline" id="btn-prev" onclick="prevQuestion()" disabled>← Précédent</button>
+      <button class="btn btn-primary" id="btn-next" onclick="nextQuestion()">Suivant →</button>
+    </div>
+  </div>
+
+  <!-- ═══ PONDÉRATION THÉMATIQUE ═══ -->
+  <div class="quiz-thematic" id="quiz-thematic">
+    <div class="thematic-intro">
+      <h2>Dernière étape : vos priorités</h2>
+      <p>Indiquez l'importance que vous accordez à chaque grand thème politique. Cela affine vos résultats en donnant plus de poids aux sujets qui comptent vraiment pour vous.</p>
+    </div>
+
+    <div class="quiz-disclaimer" style="margin-bottom:24px">
+      <strong>💡 Astuce</strong> — Mettez « Priorité absolue » sur les 2 ou 3 thèmes qui guideront vraiment votre vote.
+    </div>
+
+    <div class="theme-sliders" id="theme-sliders"></div>
+
+    <div class="thematic-actions">
+      <button class="btn btn-primary" style="font-size:1rem;padding:14px 32px" onclick="calculerDepuisThematique()">
+        Voir mes résultats →
+      </button>
+      <p style="margin-top:12px;font-size:0.8rem;color:var(--text-muted)">Vos réponses ne sont jamais enregistrées.</p>
+    </div>
+  </div>
+
+  <!-- ═══ RÉSULTATS ═══ -->
+  <div class="quiz-results" id="quiz-results">
+    <h2 class="results-title">Voici les partis qui représentent le mieux vos valeurs</h2>
+    <p class="results-subtitle">Résultats pondérés selon vos positions et vos priorités thématiques. Ordre décroissant.</p>
+
+    <div class="results-bars" id="results-bars"></div>
+
+    <div class="results-disclaimer">
+      <strong>⚠️ Rappel important</strong> — Ces résultats sont une orientation indicative basée sur vos réponses.
+      VoteClair ne vote pas à votre place. Nous vous encourageons à approfondir votre lecture des
+      programmes officiels de chaque parti avant de vous forger une opinion définitive.
+    </div>
+
+    <div class="results-actions">
+      <a href="partis.html" class="btn btn-primary">Explorer tous les partis →</a>
+      <button class="btn btn-outline" onclick="resetQuiz()">↺ Recommencer le quiz</button>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="nav-logo">Vote<span>Clair</span></div>
+        <p>Outil civique indépendant. Aucune donnée personnelle collectée.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <a href="index.html">Accueil</a>
+        <a href="partis.html">Les partis</a>
+        <a href="institutions.html">Institutions</a>
+        <a href="histoire.html">Histoire</a>
+      </div>
+      <div class="footer-col">
+        <h4>Légal</h4>
+        <a href="#">Mentions légales</a>
+        <a href="#">Confidentialité</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 VoteClair — Indépendant · Sans publicité · Sans tracking</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/quiz.js"></script>
+<script src="js/nav.js"></script>
+</body>
+</html>

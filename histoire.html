@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Histoire des partis politiques français – VoteClair</title>
+  <meta name="description" content="Timeline interactive de l'histoire politique française de 1945 à aujourd'hui. Filiations des partis, grandes figures et moments clés." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/main.css" />
+  <style>
+    /* ── Timeline ── */
+    .timeline-nav {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
+
+    .era-btn {
+      padding: 8px 18px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text-muted);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .era-btn:hover, .era-btn.active {
+      border-color: var(--accent);
+      color: var(--text);
+      background: rgba(108,99,255,0.1);
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 32px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 8px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--border);
+    }
+
+    .timeline-group { margin-bottom: 48px; display: none; }
+    .timeline-group.visible { display: block; }
+
+    .timeline-era-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: var(--accent);
+      margin-bottom: 24px;
+      position: relative;
+    }
+
+    .timeline-era-title::before {
+      content: '';
+      position: absolute;
+      left: -28px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 2px solid var(--bg);
+    }
+
+    .timeline-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      margin-bottom: 16px;
+      cursor: pointer;
+      transition: all 0.2s;
+      position: relative;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -28px;
+      top: 24px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--border-hover);
+      border: 2px solid var(--bg);
+    }
+
+    .timeline-item:hover {
+      border-color: var(--border-hover);
+      transform: translateX(4px);
+    }
+
+    .timeline-item.open {
+      border-color: var(--accent);
+    }
+
+    .timeline-item-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      justify-content: space-between;
+    }
+
+    .timeline-date {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      white-space: nowrap;
+      padding-top: 2px;
+    }
+
+    .timeline-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      flex: 1;
+    }
+
+    .timeline-chevron {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      transition: transform 0.2s;
+      flex-shrink: 0;
+    }
+
+    .timeline-item.open .timeline-chevron {
+      transform: rotate(180deg);
+    }
+
+    .timeline-detail {
+      display: none;
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+    }
+
+    .timeline-item.open .timeline-detail { display: block; }
+
+    .timeline-detail p {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 8px;
+    }
+
+    .timeline-parti-tag {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 4px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      margin-top: 4px;
+      color: #fff;
+    }
+
+    /* ── Arbre généalogique ── */
+    .genealogie {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 16px;
+      margin-top: 32px;
+    }
+
+    .genealogie-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      border-left: 4px solid;
+    }
+
+    .genealogie-card h4 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .genealogie-chain {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 6px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .genealogie-chain span {
+      background: var(--surface-2);
+      padding: 3px 8px;
+      border-radius: 4px;
+    }
+
+    .genealogie-chain .arrow { color: var(--accent); font-size: 0.7rem; }
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Vote<span>Clair</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="quiz.html" class="nav-cta">🗳️ Faire le quiz</a></li>
+      <li><a href="partis.html">Partis</a></li>
+      <li><a href="institutions.html">Institutions</a></li>
+      <li><a href="histoire.html">Histoire</a></li>
+    </ul>
+    <button class="nav-burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<nav class="nav-mobile">
+  <a href="index.html">Accueil</a>
+  <a href="quiz.html">🗳️ Quiz</a>
+  <a href="partis.html">Partis</a>
+  <a href="institutions.html">Institutions</a>
+  <a href="histoire.html">Histoire</a>
+</nav>
+
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="index.html">Accueil</a> <span>›</span> <span>Histoire</span>
+    </div>
+    <h1 class="fade-in">Histoire politique française</h1>
+    <p class="section-subtitle fade-in">De la Libération à nos jours : les grandes étapes qui ont façonné le paysage politique actuel. Cliquez sur chaque événement pour en savoir plus.</p>
+  </div>
+</div>
+
+<section class="section" style="padding-top:0">
+<div class="container">
+
+  <!-- Filtres par ère -->
+  <div class="timeline-nav">
+    <button class="era-btn active" onclick="filterEra('all')">Toutes les périodes</button>
+    <button class="era-btn" onclick="filterEra('iv')">IVe République (1946–1958)</button>
+    <button class="era-btn" onclick="filterEra('v-debut')">Ve République – Débuts (1958–1981)</button>
+    <button class="era-btn" onclick="filterEra('v-cohabitations')">Cohabitations (1981–2002)</button>
+    <button class="era-btn" onclick="filterEra('v-moderne')">Ère moderne (2002–aujourd'hui)</button>
+  </div>
+
+  <!-- ── Timeline ── -->
+  <div class="timeline">
+
+    <!-- IVe République -->
+    <div class="timeline-group visible" data-era="iv">
+      <h2 class="timeline-era-title">IVe République (1946–1958)</h2>
+
+      <div class="timeline-item" onclick="toggleItem(this)">
+        <div class="timeline-item-header">
+          <span class="timeline-date">1946</span>
+          <span class="timeline-title">Fondation de la IVe République et naissance du RPF</span>
+          <span class="timeline-chevron">▼</span>
+        </div>
+        <div class="timeline-detail">
+          <p>La IVe République est proclamée. Le général de Gaulle, opposé au régime des partis, démissionne et fonde le Rassemblement du Peuple Français (RPF) en 1947. La SFIO (ancêtre du PS) et le MRP dominent la coalition gouvernementale.</p>
+          <span class="timeline-parti-tag" style="background:#003189">Gaullisme naissant</span>
+          <span class="timeline-parti-tag" style="background:#E75480">SFIO → PS</span>
+        </div>
+      </div>
+
+      <div class="timeline-item" onclick="toggleItem(this)">
+        <div class="timeline-item-header">
+          <span class="timeline-date">1951</span>
+          <span class="timeline-title">Le PCF et le RPF dominent les élections mais restent isolés</span>
+          <span class="timeline-chevron">▼</span>
+        </div>
+        <div class="timeline-detail">
+          <p>Le Parti Communiste Français et le RPF de Gaulle arrivent en tête mais leurs opposants forment des coalitions pour les exclure du pouvoir. La IVe République est marquée par une instabilité gouvernementale chronique : 21 gouvernements en 12 ans.</p>
+          <span class="timeline-parti-tag" style="background:#CC0000">PCF</span>
+        </div>
+      </div>
+
+      <div class="timeline-item" onclick="toggleItem(this)">
+        <div class="timeline-item-header">
+          <span class="timeline-date">1956</span>
+          <span class="timeline-title">Front républicain de Guy Mollet (SFIO) — Début de la guerre d'Algérie</span>
+          <span class="timeline-chevron">▼</span>
+        </div>
+        <div class="timeline-detail">
+          <p>Guy Mollet (SFIO) devient Président du Conseil. Son gouvernement s'enlise dans la guerre d'Algérie malgré ses promesses électorales pacifistes. Cette trahison marquera durablement la gauche française et alimentera la méfiance envers les promesses électorales.</p>
+          <span class="timeline-parti-tag" style="background:#E75480">SFIO</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ve République débuts -->
+    <div class="timeline-group visible" data-era="v-debut">
+      <h2 class="timeline-era-title">Ve République — Les fondations (1958–1981)</h2>
+
+      <div class="timeline-item" onclick="toggleItem(this)">
+        <div class="timeline-item-header">
+          <span class="timeline-date">1958</span>
+          <span class="timeline-title">Naissance de la Ve République — De Gaulle au pouvoir</span>
+          <span class="timeline-chevron">▼</span>
+        </div>
+        <div class="timeline-detail">
+          <p>La crise algérienne provoque le retour de De Gaulle. La nouvelle Constitution instaure un régime semi-présidentiel fort. L'UNR (Union pour la Nouvelle République, ancêtre des Républicains et de Renaissance) écrase les élections. De Gaulle est élu Président au suffrage universel indirect, puis direct à partir de 1965.</p>
+          <span class="timeline-parti-tag" style="background:#0066CC">UNR → LR</span>
+        </div>
+      </div>
+
+      <div class="timeline-item" onclick="toggleItem(this)">
+        <div class="timeline-item-header">
+          <span class="timeline-date">1965</span>
+          <span class="timeline-title">Mitterrand défie De Gaulle — 1ère élection présidentielle au suffrage universel direct</span>
+          <span class="timeline-chevron">▼</span>
+        </div>
+        <div class="timeline-detail">
+          <p>François Mitterrand, candidat de la gauche unie, pousse De Gaulle au second tour pour la première fois. De Gaulle l'emporte avec 55%. Cet épisode révèle la force potentielle d'une gauche unie et lance la carrière présidentielle de Mitterrand.</p>
+          <span class="timeline-parti-tag" style="background:#E75480">Gauche unie</span>
+        </div>
+      </div>
+
+      <div class="timeline-item" onclick="toggleItem(this)">
+        <div class="timeline-item-header">
+          <span class="timeline-date">Mai 1968</span>
+          <span class="timeline-title">Mai 68 — Révolution culturelle et crise du gaullisme</span>
+          <span class="timeline-chevron">▼</span>
+        </div>
+        <div class="timeline-detail">
+          <p>Les événements de mai 68 bouleversent la société française. De Gaulle dissout l'Assemblée et remporte les élections. Mais la crise révèle les fractures du gaullisme. De Gaulle démissionnera un an plus tard après l'échec d'un référendum. Pompidou lui succède.</p>
+          <span class="timeline-parti-tag" style="background:#0066CC">Gaullisme</span>
+          <span class="timeline-parti-tag" style="background:#CC0000">Gauche radicale</span>
+        </div>
+      </div>
+
+      <div class="timeline-item" onclick="toggleItem(this)">
+        <div class="timeline-item-header">
+          <span class="timeline-date">1972</span>
+          <span class="timeline-title">Programme commun de la gauche — PS, PCF et Radicaux de gauche</span>
+          <span class="timeline-chevron">▼</span>
+        </div>
+        <div class="timeline-detail">
+          <p>Mitterrand, après avoir refondé le Parti Socialiste à Épinay en 1971, signe avec le PCF un Programme commun de gouvernement. Cette union de la gauche sera décisive pour l'avenir. Le PS supplante progressivement le PCF comme premier parti de gauche.</p>
+          <span class="timeline-parti-tag" style="background:#E75480">PS</span>
+          <span class="timeline-parti-tag" style="background:#CC0000">PCF</span>
+        </div>
+      </div>
+
+      <div class="timeline-item" onclick="toggleItem(this)">
+        <div class="timeline-item-header">
+          <span class="timeline-date">1974</span>
+          <span class="timeline-title">Giscard d'Estaing élu — Naissance du centre libéral moderne</span>
+          <span class="timeline-chevron">▼</span>
+        </div>
+        <div class="timeline-detail">
+          <p>Valéry Giscard d'Estaing (UDF, ancêtre du MoDem) bat Mitterrand de justesse. Il abaisse la majorité électorale à 18 ans, légalise l'IVG (loi Veil) et modernise la France. L'UDF incarne un centre libéral et européen qui inspirera le MoDem de Bayrou.</p>
+          <span class="timeline-parti-tag" style="background:#FF6600">UDF → MoDem</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cohabitations -->
+    <div class="timeline-group visible" data-era="v-cohabitations">
+      <h2 class="timeline-era-title">L'alternance et les cohabitations (1981–2002)</h2>
+
+      <div class="timeline-item" onclick="toggleItem(this)">
+        <div class="timeline-item-header">
+          <span class="timeline-date">1981</span>
+          <span class="timeline-title">Victoire de Mitterrand — Première alternance de la Ve République</span>
+          <span class="timeline-chevron">▼</span>
+        </div>
+        <div class="timeline-detail">
+          <p>"La force tranquille" : François Mitterrand remporte la présidentielle contre Giscard d'Estaing. C'est la première alternance politique de la Ve République. Le PS obtient la majorité absolue à l'Assemblée. Nationalisations, 5e semaine de congés payés, retraite à 60 ans, abolition de la peine de mort.</p>
+          <span class="timeline-parti-tag" style="background:#E75480">PS au pouvoir</span>
+        </div>
+      </div>
+
+      <div class="timeline-item" onclick="toggleItem(this)">
+        <div class="timeline-item-header">
+          <span class="timeline-date">1986</span>
+          <span class="timeline-title">Première cohabitation — Chirac Premier ministre</span>
+          <span class="timeline-chevron">▼</span>
+        </div>
+        <div class="timeline-detail">
+          <p>Le RPR de Jacques Chirac remporte les législatives. Mitterrand nomme Chirac Premier ministre : c'est la première cohabitation. Privatisations, libéralisation économique. Cette période teste la Ve République et montre sa capacité à gérer le partage du pouvoir.</p>
+          <span class="timeline-parti-tag" style="background:#0066CC">RPR → LR</span>
+          <span class="timeline-parti-tag" style="background:#E75480">PS à l'Élysée</span>
+        </div>
+      </div>
+
+      <div class="timeline-item" onclick="toggleItem(this)">
+        <div class="timeline-item-header">
+          <span class="timeline-date">1992</span>
+          <span class="timeline-title">Naissance des Verts — L'écologie entre en politique</span>
+          <span class="timeline-chevron">▼</span>
+        </div>
+        <div class="timeline-detail">
+          <p>Les Verts, fondés en 1984, percent aux élections régionales. L'écologie politique s'installe dans le paysage français. En 1999, la liste Verts-PS aux européennes obtient 9,7%. La fusion avec Europe Écologie en 2010 donnera naissance à EELV.</p>
+          <span class="timeline-parti-tag" style="background:#4CAF50">Verts → EELV</span>
+        </div>
+      </div>
+
+      <div class="timeline-item" onclick="toggleItem(this)">
+        <div class="timeline-item-header">
+          <span class="timeline-date">1995</span>
+          <span class="timeline-title">Chirac président — Le RPR au sommet</span>
+          <span class="timeline-chevron">▼</span>
+        </div>
+        <div class="timeline-detail">
+          <p>Jacques Chirac (RPR) bat Lionel Jospin (PS) au second tour. Il dissout l'Assemblée en 1997 et provoque une troisième cohabitation avec Jospin comme Premier ministre. Cette période de "gauche plurielle" (PS, PCF, Verts, MDC) gouverne jusqu'en 2002.</p>
+          <span class="timeline-parti-tag" style="background:#0066CC">RPR</span>
+        </div>
+      </div>
+
+      <div class="timeline-item" onclick="toggleItem(this)">
+        <div class="timeline-item-header">
+          <span class="timeline-date">Avril 2002</span>
+          <span class="timeline-title">Le choc du 21 avril — Le Pen au second tour</span>
+          <span class="timeline-chevron">▼</span>
+        </div>
+        <div class="timeline-detail">
+          <p>Jean-Marie Le Pen (FN) devance Lionel Jospin et accède au second tour de la présidentielle. La gauche dispersée en de nombreux candidats (Trotskystes, Verts, PCF, PS…) éclate le vote et permet au FN de se qualifier. Chirac est réélu avec 82%. Cet événement traumatise la gauche et repose la question de l'unité électorale.</p>
+          <span class="timeline-parti-tag" style="background:#003189">FN → RN</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ère moderne -->
+    <div class="timeline-group visible" data-era="v-moderne">
+      <h2 class="timeline-era-title">L'ère moderne (2002–aujourd'hui)</h2>
+
+      <div class="timeline-item" onclick="toggleItem(this)">
+        <div class="timeline-item-header">
+          <span class="timeline-date">2002</span>
+          <span class="timeline-title">Création de l'UMP — Fusion des droites</span>
+          <span class="timeline-chevron">▼</span>
+        </div>
+        <div class="timeline-detail">
+          <p>Après le choc du 21 avril, Chirac fusionne le RPR, une partie de l'UDF et des petits partis de droite dans l'Union pour un Mouvement Populaire (UMP). Cette formation deviendra Les Républicains en 2015 sous Nicolas Sarkozy puis Laurent Wauquiez.</p>
+          <span class="timeline-parti-tag" style="background:#0066CC">UMP → LR</span>
+        </div>
+      </div>
+
+      <div class="timeline-item" onclick="toggleItem(this)">
+        <div class="timeline-item-header">
+          <span class="timeline-date">2005</span>
+          <span class="timeline-title">Non au référendum sur la Constitution européenne</span>
+          <span class="timeline-chevron">▼</span>
+        </div>
+        <div class="timeline-detail">
+          <p>Le peuple français rejette le traité constitutionnel européen (54,7% de Non). Ce vote révèle une fracture profonde entre élites pro-européennes et une partie de la population souverainiste. Ce terreau fertile nourrira plus tard les programmes du RN et de LFI contre l'UE.</p>
+          <span class="timeline-parti-tag" style="background:#003189">Souverainisme</span>
+          <span class="timeline-parti-tag" style="background:#CC0000">LFI</span>
+        </div>
+      </div>
+
+      <div class="timeline-item" onclick="toggleItem(this)">
+        <div class="timeline-item-header">
+          <span class="timeline-date">2008</span>
+          <span class="timeline-title">Fondation du Parti de Gauche — Mélenchon quitte le PS</span>
+          <span class="timeline-chevron">▼</span>
+        </div>
+        <div class="timeline-detail">
+          <p>Jean-Luc Mélenchon, sénateur PS, fonde le Parti de Gauche (PG) avec Marc Dolez. Allié au PCF dans le Front de Gauche, il obtient 11,1% à la présidentielle 2012. En 2016, il fonde La France Insoumise qui deviendra la principale force de gauche radicale.</p>
+          <span class="timeline-parti-tag" style="background:#CC0000">LFI (origine)</span>
+        </div>
+      </div>
+
+      <div class="timeline-item" onclick="toggleItem(this)">
+        <div class="timeline-item-header">
+          <span class="timeline-date">2017</span>
+          <span class="timeline-title">Macron élu — Tsunami politique, effondrement du bipartisme</span>
+          <span class="timeline-chevron">▼</span>
+        </div>
+        <div class="timeline-detail">
+          <p>Emmanuel Macron, ancien ministre socialiste, crée En Marche ! en 2016. Il remporte la présidentielle face à Marine Le Pen (66% vs 34%). Son mouvement balaie les législatives avec La République En Marche (LREM), aujourd'hui Renaissance. Le PS et LR s'effondrent. Le bipartisme gauche-droite prend fin.</p>
+          <span class="timeline-parti-tag" style="background:#FFBE00;color:#1a1a1a">LREM → Renaissance</span>
+        </div>
+      </div>
+
+      <div class="timeline-item" onclick="toggleItem(this)">
+        <div class="timeline-item-header">
+          <span class="timeline-date">2018–2019</span>
+          <span class="timeline-title">Crise des Gilets Jaunes</span>
+          <span class="timeline-chevron">▼</span>
+        </div>
+        <div class="timeline-detail">
+          <p>Le mouvement des Gilets Jaunes, né contre la hausse du carburant, révèle une fracture profonde entre la France des métropoles et la France périphérique. Sans leader ni parti, il exprime une colère sociale qui alimentera les scores du RN et de LFI aux élections suivantes.</p>
+          <span class="timeline-parti-tag" style="background:#003189">RN bénéficiaire</span>
+          <span class="timeline-parti-tag" style="background:#CC0000">LFI bénéficiaire</span>
+        </div>
+      </div>
+
+      <div class="timeline-item" onclick="toggleItem(this)">
+        <div class="timeline-item-header">
+          <span class="timeline-date">2022</span>
+          <span class="timeline-title">Macron réélu — NUPES et percée historique du RN</span>
+          <span class="timeline-chevron">▼</span>
+        </div>
+        <div class="timeline-detail">
+          <p>Macron bat Le Pen (58% vs 42%). Aux législatives, la NUPES (union LFI-PS-EELV-PCF) et le RN forment les deux principales oppositions. Renaissance perd sa majorité absolue. Le RN passe de 8 à 89 députés. La tripartition du paysage politique (gauche radicale / centre / droite nationaliste) s'installe.</p>
+          <span class="timeline-parti-tag" style="background:#FFBE00;color:#1a1a1a">Renaissance</span>
+          <span class="timeline-parti-tag" style="background:#CC0000">NUPES</span>
+          <span class="timeline-parti-tag" style="background:#003189">RN</span>
+        </div>
+      </div>
+
+      <div class="timeline-item" onclick="toggleItem(this)">
+        <div class="timeline-item-header">
+          <span class="timeline-date">2024</span>
+          <span class="timeline-title">Dissolution surprise — Le RN en tête, puis victoire du Nouveau Front Populaire</span>
+          <span class="timeline-chevron">▼</span>
+        </div>
+        <div class="timeline-detail">
+          <p>Après la défaite de Renaissance aux européennes face au RN (31,4%), Macron dissout l'Assemblée nationale. Le Nouveau Front Populaire (LFI, PS, EELV, PCF) arrive en tête avec 193 sièges devant Renaissance (166) et le RN (143). France Insoumise, PS, EELV et MoDem s'affrontent sur la formation du gouvernement.</p>
+          <span class="timeline-parti-tag" style="background:#E75480">Nouveau Front Populaire</span>
+          <span class="timeline-parti-tag" style="background:#003189">RN</span>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /timeline -->
+
+  <!-- ── Arbre généalogique ── -->
+  <hr class="divider" />
+  <h2 class="fade-in" style="margin-bottom:16px">Arbre généalogique des partis</h2>
+  <p style="color:var(--text-muted);margin-bottom:32px;font-size:0.9rem">Les filiations et héritages qui expliquent les partis d'aujourd'hui.</p>
+
+  <div class="genealogie fade-in">
+    <div class="genealogie-card" style="border-color:#003189">
+      <h4 style="color:#003189">Rassemblement National</h4>
+      <div class="genealogie-chain">
+        <span>Action Française (1899)</span>
+        <span class="arrow">→</span>
+        <span>Poujadisme (1953)</span>
+        <span class="arrow">→</span>
+        <span>Front National (1972)</span>
+        <span class="arrow">→</span>
+        <span>RN (2018)</span>
+      </div>
+    </div>
+    <div class="genealogie-card" style="border-color:#0066CC">
+      <h4 style="color:#0066CC">Les Républicains</h4>
+      <div class="genealogie-chain">
+        <span>RPF de Gaulle (1947)</span>
+        <span class="arrow">→</span>
+        <span>UNR (1958)</span>
+        <span class="arrow">→</span>
+        <span>RPR (1976)</span>
+        <span class="arrow">→</span>
+        <span>UMP (2002)</span>
+        <span class="arrow">→</span>
+        <span>LR (2015)</span>
+      </div>
+    </div>
+    <div class="genealogie-card" style="border-color:#FFBE00">
+      <h4 style="color:#b8940a">Renaissance</h4>
+      <div class="genealogie-chain">
+        <span>PS (Macron ministre)</span>
+        <span class="arrow">→</span>
+        <span>En Marche ! (2016)</span>
+        <span class="arrow">→</span>
+        <span>LREM (2017)</span>
+        <span class="arrow">→</span>
+        <span>Renaissance (2022)</span>
+      </div>
+    </div>
+    <div class="genealogie-card" style="border-color:#FF6600">
+      <h4 style="color:#FF6600">MoDem</h4>
+      <div class="genealogie-chain">
+        <span>MRP (1944)</span>
+        <span class="arrow">→</span>
+        <span>Centre démocrate</span>
+        <span class="arrow">→</span>
+        <span>UDF (1978)</span>
+        <span class="arrow">→</span>
+        <span>MoDem (2007)</span>
+      </div>
+    </div>
+    <div class="genealogie-card" style="border-color:#E75480">
+      <h4 style="color:#E75480">Parti Socialiste</h4>
+      <div class="genealogie-chain">
+        <span>SFIO (1905)</span>
+        <span class="arrow">→</span>
+        <span>PS d'Épinay (1971)</span>
+        <span class="arrow">→</span>
+        <span>Mitterrand (1981)</span>
+        <span class="arrow">→</span>
+        <span>PS actuel</span>
+      </div>
+    </div>
+    <div class="genealogie-card" style="border-color:#CC0000">
+      <h4 style="color:#CC0000">La France Insoumise</h4>
+      <div class="genealogie-chain">
+        <span>PCF (1920)</span>
+        <span class="arrow">→</span>
+        <span>PS (aile gauche)</span>
+        <span class="arrow">→</span>
+        <span>Parti de Gauche (2008)</span>
+        <span class="arrow">→</span>
+        <span>LFI (2016)</span>
+      </div>
+    </div>
+    <div class="genealogie-card" style="border-color:#4CAF50">
+      <h4 style="color:#4CAF50">Europe Écologie Les Verts</h4>
+      <div class="genealogie-chain">
+        <span>Mouvements écologistes (1970s)</span>
+        <span class="arrow">→</span>
+        <span>Les Verts (1984)</span>
+        <span class="arrow">→</span>
+        <span>Europe Écologie (2009)</span>
+        <span class="arrow">→</span>
+        <span>EELV (2010)</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="nav-logo">Vote<span>Clair</span></div>
+        <p>Outil civique indépendant. Aucune donnée personnelle collectée.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <a href="index.html">Accueil</a>
+        <a href="quiz.html">Quiz</a>
+        <a href="partis.html">Les partis</a>
+        <a href="institutions.html">Institutions</a>
+      </div>
+      <div class="footer-col">
+        <h4>Légal</h4>
+        <a href="#">Mentions légales</a>
+        <a href="#">Confidentialité</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 VoteClair — Indépendant · Sans publicité · Sans tracking</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/nav.js"></script>
+<script>
+  function toggleItem(el) {
+    el.classList.toggle('open');
+  }
+
+  function filterEra(era) {
+    document.querySelectorAll('.era-btn').forEach(b => b.classList.remove('active'));
+    event.target.classList.add('active');
+
+    document.querySelectorAll('.timeline-group').forEach(g => {
+      if (era === 'all' || g.dataset.era === era) {
+        g.classList.add('visible');
+      } else {
+        g.classList.remove('visible');
+      }
+    });
+  }
+</script>
+</body>
+</html>
