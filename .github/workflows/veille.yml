@@ -1,0 +1,146 @@
+name: Veille politique
+
+# Propose une mise a jour des donnees. Ne publie jamais : ouvre une Pull Request.
+#
+# Cadence : le 1er de chaque mois. La vie politique francaise ne produit pas
+# d'evenement structurant toutes les 48 h ; une cadence trop courte ne capte
+# pas plus de faits, elle fabrique du bruit editorial.
+#
+# Cout : GitHub Actions est gratuit sur depot public. L'etape de recherche
+# appelle l'API Anthropic, qui est payante — quelques centimes par execution,
+# et seulement si des faits sont reellement perimes (voir l'etape 1).
+
+on:
+  schedule:
+    - cron: '0 6 1 * *'        # 1er du mois, 06:00 UTC
+  workflow_dispatch:            # declenchement manuel sur evenement
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  veille:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # ─── 1. Y a-t-il seulement quelque chose a faire ? ───────────────
+      # Sans cette porte, l'automatisation cherche une raison de modifier
+      # le site tous les mois. C'est elle qui rend la cadence inoffensive.
+      - name: Faits à revérifier
+        id: perimes
+        run: |
+          python3 tools/perimes.py | tee rapport.txt
+          python3 tools/perimes.py --json > perimes.json
+          n=$(python3 -c "import json;print(json.load(open('perimes.json'))['total_a_traiter'])")
+          echo "total=$n" >> "$GITHUB_OUTPUT"
+          echo "$n fait(s) à traiter."
+
+      - name: Rien à faire — on s'arrête là
+        if: steps.perimes.outputs.total == '0'
+        run: |
+          echo "Aucun fait périmé. Aucune recherche lancée, aucun coût engagé." \
+            >> "$GITHUB_STEP_SUMMARY"
+
+      # ─── 2. Recherche, uniquement sur les faits listes ───────────────
+      - name: Recherche et proposition
+        if: steps.perimes.outputs.total != '0'
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          claude_args: '{"model":"claude-opus-5","allowedTools":["WebSearch","WebFetch","Read","Edit","Bash(python3 tools/*)"]}'
+          prompt: |
+            Tu mets à jour les données d'un site d'information politique
+            française. Un lecteur s'en sert pour décider de son vote : une
+            information inventée est plus nuisible qu'une information absente.
+
+            PÉRIMÈTRE STRICT — ne traite QUE les chemins listés dans
+            perimes.json. Tout le reste est hors sujet, y compris si tu
+            remarques autre chose d'inexact : signale-le dans ton résumé,
+            ne le modifie pas.
+
+            INTERDICTIONS ABSOLUES
+            - Ne modifie aucun fichier hors de data/. Le quiz, la
+              méthodologie, les poids, les distances et le design sont figés.
+            - Ne modifie jamais un champ dont la politique dit auto=false
+              (data/politique-veille.json fait foi).
+            - N'invente jamais une valeur. Si tu ne trouves pas de source
+              suffisante, laisse le fait tel quel et explique pourquoi.
+
+            MÉTHODE, pour chaque chemin de perimes.json
+            1. Cherche la valeur actuelle sur une source du rang exigé
+               (rang_min). Rang 1 = Légifrance/JO, 2 = site officiel du
+               parti, 3 = Assemblée/Sénat/Intérieur. La presse est rang 4 :
+               elle peut dater un événement, jamais le prouver seule.
+            2. Si double_source est vrai, il faut deux sources indépendantes.
+            3. Enregistre chaque source dans data/sources.json avec son url,
+               son éditeur, son rang et consulte_le (date du jour).
+            4. Mets à jour l'enveloppe du fait : valeur, sources,
+               verifie_le (date du jour), confiance.
+               - confiance "confirme" seulement si le rang exigé est atteint.
+               - sinon "a_verifier", en laissant la valeur d'origine si tu
+                 n'as rien de mieux, et en expliquant dans note.
+            5. Si la valeur n'a pas changé, mets seulement verifie_le à jour :
+               c'est un résultat utile, pas un échec.
+
+            CONTRÔLE avant de terminer, obligatoire :
+              python3 tools/verifier.py
+            Il doit passer. S'il échoue, corrige ou reviens en arrière.
+
+            RÉSUMÉ — écris data/veille/rapport-du-jour.md avec, par fait :
+            le chemin, l'ancienne et la nouvelle valeur, la source et sa
+            date, et ce dont tu n'es pas sûr. Cette dernière colonne est la
+            plus importante : c'est elle que le relecteur humain lira.
+
+      # ─── 3. Les garde-fous, apres l'IA et avant l'humain ─────────────
+      - name: Invariants
+        if: steps.perimes.outputs.total != '0'
+        run: python3 tools/verifier.py
+
+      - name: Aller-retour quiz et comparateur
+        if: steps.perimes.outputs.total != '0'
+        run: |
+          python3 tools/verif_roundtrip_quiz.py
+          python3 tools/verif_roundtrip_comparateur.py
+
+      - name: Périmètre — rien hors de data/, rien de gelé
+        if: steps.perimes.outputs.total != '0'
+        run: |
+          git add -A
+          git -c user.email=veille@voteclair -c user.name=veille \
+              commit -m "veille: proposition" --allow-empty -q
+          python3 tools/garde_fou.py "origin/${{ github.ref_name }}"
+          git reset --soft HEAD~1
+
+      # ─── 4. Proposition, jamais publication ──────────────────────────
+      - name: Ouvrir la Pull Request
+        if: steps.perimes.outputs.total != '0'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: veille/proposition
+          delete-branch: true
+          title: "Veille du ${{ github.run_id }} — proposition de mise à jour"
+          commit-message: "veille: mise a jour des donnees, sources datees"
+          add-paths: data/**
+          body: |
+            Proposition automatique. **Rien n'est publié tant que cette PR
+            n'est pas fusionnée.**
+
+            À relire en priorité :
+            - la colonne « ce dont je ne suis pas sûr » du rapport
+              (`data/veille/rapport-du-jour.md`) ;
+            - tout fait passé en `confiance: "confirme"` ;
+            - toute valeur qui a changé, par opposition à un simple
+              `verifie_le` rafraîchi.
+
+            Les contrôles automatiques ont déjà vérifié qu'aucun fichier hors
+            `data/` n'est touché, qu'aucun champ gelé n'a bougé, et que le
+            quiz reste identique au bit près. Ils ne savent pas si un fait
+            est *vrai* — c'est ce que vous apportez.

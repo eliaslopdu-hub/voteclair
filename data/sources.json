@@ -86,5 +86,82 @@
     "consulte_le": null,
     "archive": null,
     "note": "URL non renseignée : le site cite un libellé, pas un lien. À compléter avec le programme officiel publié par le parti."
+  },
+  "src:lr-site-officiel": {
+    "libelle_cite": "Les Républicains — site officiel",
+    "editeur": "Les Républicains",
+    "rang": 2,
+    "url": "https://republicains.fr/",
+    "date_publication": null,
+    "annee_citee": null,
+    "consulte_le": "2026-09-22",
+    "archive": null,
+    "note": "Bruno Retailleau y est désigné « Président des Républicains » dans les publications de juin à septembre 2026. La page ne date pas son élection."
+  },
+  "src:renaissance-site-officiel": {
+    "libelle_cite": "Renaissance — Qui sommes-nous ?",
+    "editeur": "Renaissance",
+    "rang": 2,
+    "url": "https://parti-renaissance.fr/le-parti",
+    "date_publication": null,
+    "annee_citee": null,
+    "consulte_le": "2026-09-22",
+    "archive": null,
+    "note": "Gabriel Attal y est « Secrétaire général » ; Emmanuel Macron « Président d'honneur »."
+  },
+  "src:senat-senatoriales-2026": {
+    "libelle_cite": "Élections sénatoriales 2026 — site officiel du Sénat",
+    "editeur": "Sénat",
+    "rang": 3,
+    "url": "https://senatoriales2026.senat.fr/",
+    "date_publication": null,
+    "annee_citee": null,
+    "consulte_le": "2026-09-22",
+    "archive": null,
+    "note": "Scrutin du 27 septembre 2026, série 2, 178 sièges sur 348."
+  },
+  "src:legifrance-gouvernement-2026-02-26": {
+    "libelle_cite": "Décret du 26 février 2026 relatif à la composition du Gouvernement",
+    "editeur": "Légifrance / JORF",
+    "rang": 1,
+    "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000053586369",
+    "date_publication": "2026-02-26",
+    "annee_citee": null,
+    "consulte_le": "2026-09-22",
+    "archive": null,
+    "note": "Gouvernement Lecornu II."
+  },
+  "src:lcp-congres-lr-2025": {
+    "libelle_cite": "Présidence des Républicains : Bruno Retailleau s'impose largement face à Laurent Wauquiez",
+    "editeur": "LCP — Assemblée nationale",
+    "rang": 4,
+    "url": "https://lcp.fr/actualites/presidence-des-republicains-bruno-retailleau-s-impose-largement-face-a-laurent-wauquiez",
+    "date_publication": "2025-05-18",
+    "annee_citee": null,
+    "consulte_le": "2026-09-22",
+    "archive": null,
+    "note": "Rang 4 : sert de date à l'élection, pas de preuve suffisante à elle seule."
+  },
+  "src:wikipedia-presidentielle-2027": {
+    "libelle_cite": "Élection présidentielle française de 2027",
+    "editeur": "Wikipédia",
+    "rang": 4,
+    "url": "https://fr.wikipedia.org/wiki/%C3%89lection_pr%C3%A9sidentielle_fran%C3%A7aise_de_2027",
+    "date_publication": null,
+    "annee_citee": null,
+    "consulte_le": "2026-09-22",
+    "archive": null,
+    "note": "Rang 4 — JAMAIS suffisant pour publier. À remplacer par le décret de convocation dès sa parution."
+  },
+  "src:wikipedia-municipales-2026": {
+    "libelle_cite": "Élections municipales françaises de 2026",
+    "editeur": "Wikipédia",
+    "rang": 4,
+    "url": "https://fr.wikipedia.org/wiki/%C3%89lections_municipales_fran%C3%A7aises_de_2026",
+    "date_publication": null,
+    "annee_citee": null,
+    "consulte_le": "2026-09-22",
+    "archive": null,
+    "note": "Rang 4. À remplacer par les résultats du ministère de l'Intérieur."
   }
 }

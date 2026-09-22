@@ -185,16 +185,18 @@
     "axe": "Centre",
     "ideologie": "Centre · Libéral-progressiste",
     "dirigeant": {
-      "valeur": "Emmanuel Macron / Gabriel Attal",
-      "sources": [],
-      "verifie_le": null,
-      "confiance": "a_verifier",
+      "valeur": "Gabriel Attal",
+      "sources": [
+        "src:renaissance-site-officiel"
+      ],
+      "verifie_le": "2026-09-22",
+      "confiance": "confirme",
       "auteur": "humain",
       "variantes": {
         "comparateur": "Gabriel Attal",
-        "fiche": "Emmanuel Macron / Gabriel Attal"
+        "fiche": "Gabriel Attal"
       },
-      "note": "Les surfaces du site ne s'accordent pas sur ce nom."
+      "note": "Secrétaire général depuis décembre 2024. Emmanuel Macron est président d'honneur : le site le présentait en co-dirigeant, ce qui confondait fonction partisane et magistrature."
     },
     "fonde_en": {
       "valeur": "2016 (En Marche !) · Renommé Renaissance en 2022",
@@ -278,11 +280,15 @@
     "axe": "Droite",
     "ideologie": "Droite conservatrice · Gaullisme social",
     "dirigeant": {
-      "valeur": "Laurent Wauquiez",
-      "sources": [],
-      "verifie_le": null,
-      "confiance": "a_verifier",
-      "auteur": "humain"
+      "valeur": "Bruno Retailleau",
+      "sources": [
+        "src:lr-site-officiel",
+        "src:lcp-congres-lr-2025"
+      ],
+      "verifie_le": "2026-09-22",
+      "confiance": "confirme",
+      "auteur": "humain",
+      "note": "Élu président des Républicains le 18 mai 2025 (74,3 % contre 25,7 % à Laurent Wauquiez). Le site affichait encore Laurent Wauquiez, qui préside désormais le groupe Droite républicaine à l'Assemblée."
     },
     "fonde_en": {
       "valeur": "2015 (ex-UMP, ex-RPR)",

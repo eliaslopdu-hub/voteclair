@@ -1,0 +1,40 @@
+name: Vérification des données
+
+# Tourne sur toute proposition de modification, humaine ou automatique.
+# C'est le filet qui rattrape une branche de veille mal formée.
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  verifier:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0          # garde_fou compare a la base
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'      # jsdata.py evalue les litteraux via node
+
+      - name: Invariants et dette de sourçage
+        run: python3 tools/verifier.py
+
+      - name: Aller-retour quiz — aucun poids perdu
+        run: python3 tools/verif_roundtrip_quiz.py
+
+      - name: Aller-retour comparateur — aucune position perdue
+        run: python3 tools/verif_roundtrip_comparateur.py
+
+      - name: Périmètre de la modification
+        if: github.event_name == 'pull_request'
+        run: |
+          python3 tools/garde_fou.py "origin/${{ github.base_ref }}"
