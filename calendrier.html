@@ -909,6 +909,15 @@ function isPast(dateStr) {
   return parseDate(dateStr) < new Date();
 }
 
+/* Un scrutin est passé soit parce qu'il est marqué comme tel dans les
+   données, soit — et c'est le cas qui compte — parce que sa date est
+   derrière nous. Dériver l'état temporel de la date plutôt que de le
+   recopier dans `type` évite d'annoncer comme « à venir » un scrutin
+   déjà tenu, faute d'avoir pensé à mettre le champ à jour. */
+function estPassee(el) {
+  return el.type === 'passe' || isPast(el.date);
+}
+
 function daysUntil(dateStr) {
   const diff = parseDate(dateStr) - new Date();
   return Math.ceil(diff / 86400000);
@@ -925,7 +934,7 @@ function formatDateLong(dateStr) {
 function initCountdown() {
   const now = new Date();
   const upcoming = ELECTIONS
-    .filter(e => e.type !== 'passe' && !isPast(e.date))
+    .filter(e => !estPassee(e))
     .sort((a, b) => parseDate(a.date) - parseDate(b.date));
 
   if (!upcoming.length) return;
@@ -958,9 +967,9 @@ function initCountdown() {
    FILTRAGE
    ================================================================ */
 function getFiltered() {
-  if (currentFilter === 'toutes') return ELECTIONS.filter(e => e.type !== 'passe');
-  if (currentFilter === 'passe')  return ELECTIONS.filter(e => e.type === 'passe');
-  return ELECTIONS.filter(e => e.type === currentFilter);
+  if (currentFilter === 'toutes') return ELECTIONS.filter(e => !estPassee(e));
+  if (currentFilter === 'passe')  return ELECTIONS.filter(e => estPassee(e));
+  return ELECTIONS.filter(e => e.type === currentFilter && !estPassee(e));
 }
 
 document.getElementById('filter-group').addEventListener('click', e => {
@@ -987,9 +996,9 @@ function typeBadge(type) {
   return `<span class="badge-type" style="background:${t.bg};color:${t.color}">${t.label}</span>`;
 }
 
-function statutBadge(statut, type) {
-  if (type === 'passe') return `<span class="badge-passe">Terminée</span>`;
-  if (statut === 'estime')  return `<span class="badge-estime">Estimée</span>`;
+function statutBadge(el) {
+  if (estPassee(el)) return `<span class="badge-passe">Terminée</span>`;
+  if (el.statut === 'estime')  return `<span class="badge-estime">Estimée</span>`;
   return `<span class="badge-confirme">Confirmée</span>`;
 }
 
@@ -1014,23 +1023,23 @@ function renderWall() {
     const d = parseDate(el.date);
     const daysLeft = daysUntil(el.date);
     let daysHtml = '';
-    if (el.type !== 'passe' && daysLeft > 0) {
+    if (!estPassee(el) && daysLeft > 0) {
       daysHtml = `<div class="wall-card-days">dans <strong>${daysLeft}</strong> jours</div>`;
-    } else if (el.type === 'passe') {
+    } else if (estPassee(el)) {
       daysHtml = `<div class="wall-card-days" style="color:var(--text-muted)">Terminée</div>`;
     }
 
     return `
-      <div class="wall-card ${el.type === 'passe' ? 'passe' : ''}"
+      <div class="wall-card ${estPassee(el) ? 'passe' : ''}"
            style="--card-color:${el.couleur}"
            data-id="${el.id}"
-           onclick="${el.type !== 'passe' ? `openDrawer('${el.id}')` : ''}">
+           onclick="${!estPassee(el) ? `openDrawer('${el.id}')` : ''}">
         <div class="wall-card-date">${d.getDate()} ${MOIS[d.getMonth()]} ${d.getFullYear()}</div>
         <div class="wall-card-title">${el.titre}</div>
         <div class="wall-card-sub">${el.sous_titre}</div>
         <div class="wall-card-badges">
           ${typeBadge(el.type)}
-          ${statutBadge(el.statut, el.type)}
+          ${statutBadge(el)}
         </div>
         ${daysHtml}
       </div>`;
@@ -1072,9 +1081,9 @@ function renderList() {
         <div class="list-items">
           ${items.map(el => {
             const d = parseDate(el.date);
-            const clickable = el.type !== 'passe';
+            const clickable = !estPassee(el);
             return `
-              <div class="list-card ${el.type === 'passe' ? 'passe' : ''} fade-in"
+              <div class="list-card ${estPassee(el) ? 'passe' : ''} fade-in"
                    style="--card-color:${el.couleur}"
                    ${clickable ? `onclick="openDrawer('${el.id}')"` : ''}>
                 <div class="list-date-block">
@@ -1087,7 +1096,7 @@ function renderList() {
                   <div class="list-sub">${el.sous_titre}</div>
                   <div class="list-badges">
                     ${typeBadge(el.type)}
-                    ${statutBadge(el.statut, el.type)}
+                    ${statutBadge(el)}
                   </div>
                 </div>
                 ${clickable ? '<div class="list-arrow">→</div>' : ''}
@@ -1112,7 +1121,7 @@ function openDrawer(id) {
 
   const d = parseDate(el.date);
   const daysLeft = daysUntil(el.date);
-  const pastEl = el.type === 'passe' || daysLeft <= 0;
+  const pastEl = estPassee(el) || daysLeft <= 0;
 
   let inscriptionAlert = '';
   if (el.date_inscription && !pastEl) {
@@ -1136,7 +1145,7 @@ function openDrawer(id) {
     <div class="drawer-sub">${el.sous_titre}</div>
     <div class="drawer-badges">
       ${typeBadge(el.type)}
-      ${statutBadge(el.statut, el.type)}
+      ${statutBadge(el)}
     </div>
 
     <div class="drawer-date-box">
