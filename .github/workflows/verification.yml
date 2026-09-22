@@ -34,6 +34,18 @@ jobs:
       - name: Aller-retour comparateur — aucune position perdue
         run: python3 tools/verif_roundtrip_comparateur.py
 
+      - name: Tout champ automatisable atteint bien le site
+        run: python3 tools/projeter.py --couverture
+
+      - name: Le site est conforme à data/
+        # Si ce contrôle échoue, HTML et données ont divergé : quelqu'un a
+        # modifié une page sans passer par data/, et la prochaine veille
+        # écraserait sa correction.
+        run: python3 tools/projeter.py --verifier
+
+      - name: Le garde-fou refuse bien ce qu'il doit refuser
+        run: python3 tools/tests_pipeline.py
+
       - name: Périmètre de la modification
         if: github.event_name == 'pull_request'
         run: |

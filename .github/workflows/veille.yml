@@ -69,6 +69,9 @@ jobs:
             INTERDICTIONS ABSOLUES
             - Ne modifie aucun fichier hors de data/. Le quiz, la
               méthodologie, les poids, les distances et le design sont figés.
+            - Ne touche à aucun fichier HTML, même pour y répercuter une
+              donnée : tools/projeter.py s'en charge après toi, et une
+              retouche manuelle ferait échouer le garde-fou.
             - Ne modifie jamais un champ dont la politique dit auto=false
               (data/politique-veille.json fait foi).
             - N'invente jamais une valeur. Si tu ne trouves pas de source
@@ -99,7 +102,15 @@ jobs:
             date, et ce dont tu n'es pas sûr. Cette dernière colonne est la
             plus importante : c'est elle que le relecteur humain lira.
 
-      # ─── 3. Les garde-fous, apres l'IA et avant l'humain ─────────────
+      # ─── 3. Projection : data/ atteint les pages ─────────────────────
+      # Sans cette etape, la PR ne modifierait que data/ et le visiteur
+      # continuerait de lire l'ancien HTML. C'est elle qui rend la veille
+      # utile ; elle est deterministe et ne fait appel a aucune IA.
+      - name: Projeter data/ sur le site
+        if: steps.perimes.outputs.total != '0'
+        run: python3 tools/projeter.py
+
+      # ─── 4. Les garde-fous, apres l'IA et avant l'humain ─────────────
       - name: Invariants
         if: steps.perimes.outputs.total != '0'
         run: python3 tools/verifier.py
@@ -109,6 +120,7 @@ jobs:
         run: |
           python3 tools/verif_roundtrip_quiz.py
           python3 tools/verif_roundtrip_comparateur.py
+          python3 tools/tests_pipeline.py
 
       - name: Périmètre — rien hors de data/, rien de gelé
         if: steps.perimes.outputs.total != '0'
@@ -119,7 +131,7 @@ jobs:
           python3 tools/garde_fou.py "origin/${{ github.ref_name }}"
           git reset --soft HEAD~1
 
-      # ─── 4. Proposition, jamais publication ──────────────────────────
+      # ─── 5. Proposition, jamais publication ──────────────────────────
       - name: Ouvrir la Pull Request
         if: steps.perimes.outputs.total != '0'
         uses: peter-evans/create-pull-request@v6
@@ -128,7 +140,12 @@ jobs:
           delete-branch: true
           title: "Veille du ${{ github.run_id }} — proposition de mise à jour"
           commit-message: "veille: mise a jour des donnees, sources datees"
-          add-paths: data/**
+          add-paths: |
+            data/**
+            partis.html
+            face-a-face.html
+            calendrier.html
+            parti-*.html
           body: |
             Proposition automatique. **Rien n'est publié tant que cette PR
             n'est pas fusionnée.**
@@ -140,7 +157,8 @@ jobs:
             - toute valeur qui a changé, par opposition à un simple
               `verifie_le` rafraîchi.
 
-            Les contrôles automatiques ont déjà vérifié qu'aucun fichier hors
-            `data/` n'est touché, qu'aucun champ gelé n'a bougé, et que le
-            quiz reste identique au bit près. Ils ne savent pas si un fait
-            est *vrai* — c'est ce que vous apportez.
+            Les contrôles automatiques ont déjà vérifié qu'aucun champ gelé
+            n'a bougé, que les pages HTML ne contiennent rien d'autre que la
+            projection de `data/`, et que le quiz reste identique au bit
+            près. Ils ne savent pas si un fait est *vrai* — c'est ce que
+            vous apportez.
