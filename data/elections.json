@@ -1,0 +1,341 @@
+{
+  "note": "L'état « passé » se dérive de la date, il n'est pas stocké. `nature` ne décrit que la nature du scrutin.",
+  "elections": [
+    {
+      "id": "euro-2024",
+      "nature": "nationale",
+      "date": {
+        "valeur": "2024-06-09",
+        "sources": [],
+        "verifie_le": null,
+        "confiance": "a_verifier",
+        "auteur": "humain"
+      },
+      "statut": "confirme",
+      "titre": "Élections européennes",
+      "sous_titre": "Tour unique",
+      "emoji": "",
+      "couleur": "#718096",
+      "description": "Election des 81 représentants français au Parlement européen. Le RN est arrivé en tête avec 31,4 %, suivi de Renaissance (14,6 %) et du PS-Place Publique (13,8 %). Le scrutin a entraîné la dissolution de l'Assemblée nationale par le Président Macron.",
+      "qui_vote": "Tous les citoyens français et européens résidant en France, inscrits sur les listes électorales",
+      "ce_qui_est_elu": "81 eurodéputés français sur 720 au Parlement européen",
+      "date_inscription": null,
+      "lien_infos": "https://www.interieur.gouv.fr/Elections/Les-resultats/Europeennes"
+    },
+    {
+      "id": "legis-2024-1",
+      "nature": "nationale",
+      "date": {
+        "valeur": "2024-06-30",
+        "sources": [],
+        "verifie_le": null,
+        "confiance": "a_verifier",
+        "auteur": "humain"
+      },
+      "statut": "confirme",
+      "titre": "Législatives anticipées",
+      "sous_titre": "1er tour",
+      "emoji": "",
+      "couleur": "#718096",
+      "description": "Elections législatives anticipées convoquées après la dissolution de l'Assemblée nationale le 9 juin 2024. Premier tour marqué par une forte participation (66,7 %). Le RN et ses alliés arrivent en tête.",
+      "qui_vote": "Tous les citoyens français inscrits sur les listes électorales",
+      "ce_qui_est_elu": "577 députés à l'Assemblée nationale",
+      "date_inscription": null,
+      "lien_infos": "https://www.interieur.gouv.fr/Elections/Les-resultats/Legislatives"
+    },
+    {
+      "id": "legis-2024-2",
+      "nature": "nationale",
+      "date": {
+        "valeur": "2024-07-07",
+        "sources": [],
+        "verifie_le": null,
+        "confiance": "a_verifier",
+        "auteur": "humain"
+      },
+      "statut": "confirme",
+      "titre": "Législatives anticipées",
+      "sous_titre": "2e tour",
+      "emoji": "",
+      "couleur": "#718096",
+      "description": "2e tour des législatives 2024. Le Nouveau Front Populaire arrive en tête (193 sièges), devant la coalition présidentielle (166 sièges) et le RN (143 sièges). Aucune majorité absolue n'est obtenue — Assemblée fragmentée en trois blocs.",
+      "qui_vote": "Tous les citoyens français inscrits sur les listes électorales",
+      "ce_qui_est_elu": "577 députés à l'Assemblée nationale",
+      "date_inscription": null,
+      "lien_infos": "https://www.interieur.gouv.fr/Elections/Les-resultats/Legislatives"
+    },
+    {
+      "id": "muni-2026-inscription",
+      "nature": "butoir",
+      "date": {
+        "valeur": "2026-02-07",
+        "sources": [],
+        "verifie_le": null,
+        "confiance": "a_verifier",
+        "auteur": "humain"
+      },
+      "statut": "estime",
+      "titre": "Date limite d'inscription",
+      "sous_titre": "Municipales mars 2026",
+      "emoji": "",
+      "couleur": "#FC8181",
+      "description": "Dernier délai estimé pour s'inscrire sur les listes électorales et pouvoir voter aux élections municipales de mars 2026. L'inscription est gratuite et peut se faire en ligne via service-public.fr.",
+      "qui_vote": null,
+      "ce_qui_est_elu": null,
+      "date_inscription": null,
+      "lien_infos": "https://www.service-public.fr/particuliers/vosdroits/R12675"
+    },
+    {
+      "id": "muni-2026-1",
+      "nature": "locale",
+      "date": {
+        "valeur": "2026-03-22",
+        "sources": [],
+        "verifie_le": null,
+        "confiance": "a_verifier",
+        "auteur": "humain"
+      },
+      "statut": "estime",
+      "titre": "Élections municipales",
+      "sous_titre": "1er tour",
+      "emoji": "",
+      "couleur": "#48BB78",
+      "description": "Election des maires et conseillers municipaux dans les 35 000 communes de France. Dans les communes de plus de 1 000 habitants, le scrutin est de liste à deux tours avec prime majoritaire.",
+      "qui_vote": "Tous les citoyens français ET européens résidant en France inscrits sur les listes",
+      "ce_qui_est_elu": "Maires et conseillers municipaux",
+      "date_inscription": "2026-02-07",
+      "lien_infos": "https://www.vie-publique.fr/fiches/19440-quelles-sont-les-regles-du-scrutin-municipal"
+    },
+    {
+      "id": "muni-2026-2",
+      "nature": "locale",
+      "date": {
+        "valeur": "2026-03-29",
+        "sources": [],
+        "verifie_le": null,
+        "confiance": "a_verifier",
+        "auteur": "humain"
+      },
+      "statut": "estime",
+      "titre": "Élections municipales",
+      "sous_titre": "2e tour",
+      "emoji": "",
+      "couleur": "#48BB78",
+      "description": "2e tour des élections municipales si aucune liste n'a obtenu la majorité absolue et 25 % des inscrits au 1er tour (communes de + 1 000 hab.). Dans les petites communes, l'élection peut être acquise au 1er tour.",
+      "qui_vote": "Tous les citoyens français ET européens résidant en France inscrits sur les listes",
+      "ce_qui_est_elu": "Maires et conseillers municipaux",
+      "date_inscription": null,
+      "lien_infos": "https://www.vie-publique.fr/fiches/19440-quelles-sont-les-regles-du-scrutin-municipal"
+    },
+    {
+      "id": "sena-2026",
+      "nature": "nationale",
+      "date": {
+        "valeur": "2026-09-27",
+        "sources": [],
+        "verifie_le": null,
+        "confiance": "a_verifier",
+        "auteur": "humain"
+      },
+      "statut": "estime",
+      "titre": "Élections sénatoriales",
+      "sous_titre": "Renouvellement partiel",
+      "emoji": "",
+      "couleur": "#9F7AEA",
+      "description": "Renouvellement partiel du Sénat par les grands électeurs (maires, conseillers régionaux, départementaux et leurs délégués). Les citoyens ordinaires n'élisent pas directement les sénateurs — c'est une élection indirecte.",
+      "qui_vote": "Grands électeurs uniquement (~162 000 élus locaux). Les citoyens ordinaires ne votent pas directement.",
+      "ce_qui_est_elu": "Environ 170 sénateurs (sur 348 au total)",
+      "date_inscription": null,
+      "lien_infos": "https://www.senat.fr/role/senat/election_senateurs.html"
+    },
+    {
+      "id": "regionales-2027-inscription",
+      "nature": "butoir",
+      "date": {
+        "valeur": "2027-01-29",
+        "sources": [],
+        "verifie_le": null,
+        "confiance": "a_verifier",
+        "auteur": "humain"
+      },
+      "statut": "estime",
+      "titre": "Date limite d'inscription",
+      "sous_titre": "Régionales mars 2027",
+      "emoji": "",
+      "couleur": "#FC8181",
+      "description": "Dernier délai estimé pour s'inscrire sur les listes électorales pour voter aux élections régionales de mars 2027.",
+      "qui_vote": null,
+      "ce_qui_est_elu": null,
+      "date_inscription": null,
+      "lien_infos": "https://www.service-public.fr/particuliers/vosdroits/R12675"
+    },
+    {
+      "id": "regionales-2027-1",
+      "nature": "locale",
+      "date": {
+        "valeur": "2027-03-14",
+        "sources": [],
+        "verifie_le": null,
+        "confiance": "a_verifier",
+        "auteur": "humain"
+      },
+      "statut": "estime",
+      "titre": "Élections régionales",
+      "sous_titre": "1er tour",
+      "emoji": "",
+      "couleur": "#38B2AC",
+      "description": "Election des présidents et conseillers régionaux dans les 13 régions métropolitaines, les 4 collectivités d'outre-mer à statut particulier, et la Collectivité de Corse.",
+      "qui_vote": "Tous les citoyens français inscrits sur les listes électorales",
+      "ce_qui_est_elu": "Présidents et conseillers régionaux (environ 1 800 élus)",
+      "date_inscription": "2027-01-29",
+      "lien_infos": "https://www.vie-publique.fr/fiches/23877-scrutin-regional-comment-sont-elus-les-conseillers-regionaux"
+    },
+    {
+      "id": "regionales-2027-2",
+      "nature": "locale",
+      "date": {
+        "valeur": "2027-03-21",
+        "sources": [],
+        "verifie_le": null,
+        "confiance": "a_verifier",
+        "auteur": "humain"
+      },
+      "statut": "estime",
+      "titre": "Élections régionales",
+      "sous_titre": "2e tour",
+      "emoji": "",
+      "couleur": "#38B2AC",
+      "description": "2e tour des élections régionales si aucune liste n'a obtenu la majorité absolue des suffrages exprimés et le quart des électeurs inscrits au 1er tour.",
+      "qui_vote": "Tous les citoyens français inscrits sur les listes électorales",
+      "ce_qui_est_elu": "Présidents et conseillers régionaux",
+      "date_inscription": null,
+      "lien_infos": "https://www.vie-publique.fr/fiches/23877-scrutin-regional-comment-sont-elus-les-conseillers-regionaux"
+    },
+    {
+      "id": "presidentielle-2027-inscription",
+      "nature": "butoir",
+      "date": {
+        "valeur": "2027-02-26",
+        "sources": [],
+        "verifie_le": null,
+        "confiance": "a_verifier",
+        "auteur": "humain"
+      },
+      "statut": "estime",
+      "titre": "Date limite d'inscription",
+      "sous_titre": "Présidentielle 2027",
+      "emoji": "",
+      "couleur": "#FC8181",
+      "description": "Dernier délai estimé pour s'inscrire sur les listes électorales pour pouvoir voter à l'élection présidentielle 2027. À ne surtout pas manquer — c'est le scrutin le plus important.",
+      "qui_vote": null,
+      "ce_qui_est_elu": null,
+      "date_inscription": null,
+      "lien_infos": "https://www.service-public.fr/particuliers/vosdroits/R12675"
+    },
+    {
+      "id": "presidentielle-2027-1",
+      "nature": "nationale",
+      "date": {
+        "valeur": "2027-04-11",
+        "sources": [],
+        "verifie_le": null,
+        "confiance": "a_verifier",
+        "auteur": "humain"
+      },
+      "statut": "estime",
+      "titre": "Élection présidentielle",
+      "sous_titre": "1er tour",
+      "emoji": "",
+      "couleur": "#6C63FF",
+      "description": "Election du Président de la République française au suffrage universel direct à deux tours. Le mandat en cours d'Emmanuel Macron expire en mai 2027. Chaque candidat doit réunir 500 parrainages d'élus pour se présenter.",
+      "qui_vote": "Tous les citoyens français inscrits sur les listes électorales",
+      "ce_qui_est_elu": "Le Président de la République (mandat de 5 ans non renouvelable immédiatement)",
+      "date_inscription": "2027-02-26",
+      "lien_infos": "https://www.vie-publique.fr/fiches/19460-comment-se-deroule-l-election-presidentielle"
+    },
+    {
+      "id": "presidentielle-2027-2",
+      "nature": "nationale",
+      "date": {
+        "valeur": "2027-04-25",
+        "sources": [],
+        "verifie_le": null,
+        "confiance": "a_verifier",
+        "auteur": "humain"
+      },
+      "statut": "estime",
+      "titre": "Élection présidentielle",
+      "sous_titre": "2e tour",
+      "emoji": "",
+      "couleur": "#6C63FF",
+      "description": "2e tour de l'élection présidentielle entre les deux candidats arrivés en tête au premier tour. Le candidat le plus voté est élu Président de la République.",
+      "qui_vote": "Tous les citoyens français inscrits sur les listes électorales",
+      "ce_qui_est_elu": "Le Président de la République",
+      "date_inscription": null,
+      "lien_infos": "https://www.vie-publique.fr/fiches/19460-comment-se-deroule-l-election-presidentielle"
+    },
+    {
+      "id": "legislatives-2027-inscription",
+      "nature": "butoir",
+      "date": {
+        "valeur": "2027-04-30",
+        "sources": [],
+        "verifie_le": null,
+        "confiance": "a_verifier",
+        "auteur": "humain"
+      },
+      "statut": "estime",
+      "titre": "Date limite d'inscription",
+      "sous_titre": "Législatives 2027",
+      "emoji": "",
+      "couleur": "#FC8181",
+      "description": "Dernier délai estimé pour s'inscrire sur les listes électorales pour voter aux élections législatives de juin 2027.",
+      "qui_vote": null,
+      "ce_qui_est_elu": null,
+      "date_inscription": null,
+      "lien_infos": "https://www.service-public.fr/particuliers/vosdroits/R12675"
+    },
+    {
+      "id": "legislatives-2027-1",
+      "nature": "nationale",
+      "date": {
+        "valeur": "2027-06-13",
+        "sources": [],
+        "verifie_le": null,
+        "confiance": "a_verifier",
+        "auteur": "humain"
+      },
+      "statut": "estime",
+      "titre": "Élections législatives",
+      "sous_titre": "1er tour",
+      "emoji": "",
+      "couleur": "#ED8936",
+      "description": "Election des 577 députés de l'Assemblée nationale au scrutin uninominal majoritaire à deux tours dans 577 circonscriptions. Les élections législatives suivent généralement la présidentielle de 5 à 7 semaines.",
+      "qui_vote": "Tous les citoyens français inscrits sur les listes électorales",
+      "ce_qui_est_elu": "577 députés à l'Assemblée nationale (mandat de 5 ans)",
+      "date_inscription": "2027-04-30",
+      "lien_infos": "https://www.vie-publique.fr/fiches/19462-comment-se-deroulent-les-elections-legislatives"
+    },
+    {
+      "id": "legislatives-2027-2",
+      "nature": "nationale",
+      "date": {
+        "valeur": "2027-06-20",
+        "sources": [],
+        "verifie_le": null,
+        "confiance": "a_verifier",
+        "auteur": "humain"
+      },
+      "statut": "estime",
+      "titre": "Élections législatives",
+      "sous_titre": "2e tour",
+      "emoji": "",
+      "couleur": "#ED8936",
+      "description": "2e tour des élections législatives dans les circonscriptions où aucun candidat n'a obtenu la majorité absolue et 25 % des inscrits au 1er tour. Possibilité de triangulaires voire quadrangulaires.",
+      "qui_vote": "Tous les citoyens français inscrits sur les listes électorales",
+      "ce_qui_est_elu": "577 députés à l'Assemblée nationale",
+      "date_inscription": null,
+      "lien_infos": "https://www.vie-publique.fr/fiches/19462-comment-se-deroulent-les-elections-legislatives"
+    }
+  ]
+}

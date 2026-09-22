@@ -1,0 +1,90 @@
+{
+  "src:lfi-programme-2022": {
+    "libelle_cite": "L'Avenir en commun — Programme LFI 2022",
+    "editeur": "La France Insoumise",
+    "rang": 2,
+    "url": null,
+    "date_publication": null,
+    "annee_citee": 2022,
+    "consulte_le": null,
+    "archive": null,
+    "note": "URL non renseignée : le site cite un libellé, pas un lien. À compléter avec le programme officiel publié par le parti."
+  },
+  "src:pcf-programme-2022": {
+    "libelle_cite": "Programme PCF — Jours heureux, 2022",
+    "editeur": "Parti Communiste Français",
+    "rang": 2,
+    "url": null,
+    "date_publication": null,
+    "annee_citee": 2022,
+    "consulte_le": null,
+    "archive": null,
+    "note": "URL non renseignée : le site cite un libellé, pas un lien. À compléter avec le programme officiel publié par le parti."
+  },
+  "src:ps-programme-2022": {
+    "libelle_cite": "Projet socialiste — PS, 2022",
+    "editeur": "Parti Socialiste",
+    "rang": 2,
+    "url": null,
+    "date_publication": null,
+    "annee_citee": 2022,
+    "consulte_le": null,
+    "archive": null,
+    "note": "URL non renseignée : le site cite un libellé, pas un lien. À compléter avec le programme officiel publié par le parti."
+  },
+  "src:eelv-programme-2022": {
+    "libelle_cite": "Programme EELV — 2022, lesecologistes.fr",
+    "editeur": "Europe Écologie Les Verts",
+    "rang": 2,
+    "url": null,
+    "date_publication": null,
+    "annee_citee": 2022,
+    "consulte_le": null,
+    "archive": null,
+    "note": "URL non renseignée : le site cite un libellé, pas un lien. À compléter avec le programme officiel publié par le parti."
+  },
+  "src:renaissance-programme-2022": {
+    "libelle_cite": "Programme Renaissance — Ensemble !, 2022",
+    "editeur": "Renaissance",
+    "rang": 2,
+    "url": null,
+    "date_publication": null,
+    "annee_citee": 2022,
+    "consulte_le": null,
+    "archive": null,
+    "note": "URL non renseignée : le site cite un libellé, pas un lien. À compléter avec le programme officiel publié par le parti."
+  },
+  "src:modem-programme-2022": {
+    "libelle_cite": "Programme MoDem, 2022 — mouvementdemocrate.fr",
+    "editeur": "Mouvement Démocrate",
+    "rang": 2,
+    "url": null,
+    "date_publication": null,
+    "annee_citee": 2022,
+    "consulte_le": null,
+    "archive": null,
+    "note": "URL non renseignée : le site cite un libellé, pas un lien. À compléter avec le programme officiel publié par le parti."
+  },
+  "src:lr-programme-2022": {
+    "libelle_cite": "Programme LR — La France au sens propre, 2022",
+    "editeur": "Les Républicains",
+    "rang": 2,
+    "url": null,
+    "date_publication": null,
+    "annee_citee": 2022,
+    "consulte_le": null,
+    "archive": null,
+    "note": "URL non renseignée : le site cite un libellé, pas un lien. À compléter avec le programme officiel publié par le parti."
+  },
+  "src:rn-programme-2022": {
+    "libelle_cite": "Programme RN — 2022, rassemblementnational.fr",
+    "editeur": "Rassemblement National",
+    "rang": 2,
+    "url": null,
+    "date_publication": null,
+    "annee_citee": 2022,
+    "consulte_le": null,
+    "archive": null,
+    "note": "URL non renseignée : le site cite un libellé, pas un lien. À compléter avec le programme officiel publié par le parti."
+  }
+}

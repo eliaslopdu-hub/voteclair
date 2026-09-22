@@ -1,0 +1,77 @@
+{
+  "parti": "modem",
+  "comparateur": {
+    "logement": {
+      "valeur": "Régulation équilibrée du marché locatif avec plafonnement des loyers dans les zones les plus tendues. Soutien à la construction mixte public-privé. Aides ciblées pour les ménages aux revenus modestes. Partenariats avec les collectivités pour les logements intermédiaires.",
+      "sources": [
+        "src:modem-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "fiscalite": {
+      "valeur": "Compétitivité fiscale maintenue pour attirer les investissements. Conservation des dispositifs favorables à l'épargne productive. Lutte résolue contre la fraude et l'évasion fiscale. Équilibre budgétaire à moyen terme par maîtrise des dépenses plutôt que hausses d'impôts.",
+      "sources": [
+        "src:modem-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "education": {
+      "valeur": "Liberté de l'enseignement affirmée, soutien aux écoles privées sous contrat. Autonomie pédagogique des établissements. Partenariats public-privé pour la formation professionnelle et l'apprentissage. Investissement dans le numérique et les compétences de demain.",
+      "sources": [
+        "src:modem-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "environnement": {
+      "valeur": "Pragmatisme énergétique : maintien du nucléaire associé au développement des renouvelables. Fiscalité environnementale modérée et socialement acceptable. Rénovation thermique incitative. Approche technologique et économique de la transition plutôt que contraignante.",
+      "sources": [
+        "src:modem-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "securite": {
+      "valeur": "Immigration régulée par les besoins économiques et les capacités d'intégration. Coopération européenne renforcée sur le contrôle des frontières. Humanisme modéré : respect de la dignité des personnes tout en maintenant une politique ferme sur les reconduites.",
+      "sources": [
+        "src:modem-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "sante": {
+      "valeur": "Liberté du patient et du médecin libéral préservée. Soutien aux complémentaires santé responsables. Télémédecine et numérique en santé pour lutter contre les déserts. Prévention renforcée. Financement équilibré entre secteur public et libéral.",
+      "sources": [
+        "src:modem-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "emploi": {
+      "valeur": "Dialogue social constant. Formation tout au long de la vie et reconversion professionnelle soutenues. Flexisécurité à la nordique. Soutien fort aux PME et TPE. Participation des salariés aux décisions et aux résultats. Apprentissage valorisé dès le collège.",
+      "sources": [
+        "src:modem-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "europe": {
+      "valeur": "Fédéralisme européen modéré et progressif. Défenseur historique de l'intégration européenne. Subsidiarité bien comprise entre niveaux européen, national et local. Europe de la défense et des valeurs communes. Souveraineté partagée sur les grandes décisions mondiales.",
+      "sources": [
+        "src:modem-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    }
+  }
+}

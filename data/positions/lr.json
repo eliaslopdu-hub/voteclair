@@ -1,0 +1,77 @@
+{
+  "parti": "lr",
+  "comparateur": {
+    "logement": {
+      "valeur": "Libéralisation du marché locatif : fin de l'encadrement des loyers jugé contreproductif. Soutien à la propriété privée comme priorité. Simplification des normes de construction pour relancer le bâtiment. Lutte contre les squats et facilitation des expulsions.",
+      "sources": [
+        "src:lr-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "fiscalite": {
+      "valeur": "Baisse des prélèvements obligatoires parmi les plus élevés d'Europe. Suppression de l'ISF confirmée et rejet de tout retour. Réduction des dépenses publiques de 60 milliards sur 5 ans. Flat tax maintenue. Règle d'or budgétaire inscrite dans la Constitution.",
+      "sources": [
+        "src:lr-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "education": {
+      "valeur": "Retour à l'autorité et à la discipline dans les établissements scolaires. Uniforme ou tenue vestimentaire encouragés. Valorisation du mérite et des résultats. Soutien à l'enseignement privé sous contrat. Réforme des concours pour revaloriser les enseignants.",
+      "sources": [
+        "src:lr-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "environnement": {
+      "valeur": "Nucléaire comme atout stratégique et climatique à développer (nouveaux EPR). Refus des interdictions trop rapides (voiture thermique 2035 contestée). Technologies propres et innovation comme solution, pas les contraintes réglementaires. Pragmatisme économique.",
+      "sources": [
+        "src:lr-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "securite": {
+      "valeur": "Durcissement significatif de la politique migratoire : quotas annuels votés par le Parlement. Fin du droit du sol automatique, expulsions facilitées. Renforcement majeur des effectifs et des moyens des forces de l'ordre. Tolérance zéro pour la délinquance.",
+      "sources": [
+        "src:lr-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "sante": {
+      "valeur": "Préservation de la médecine libérale face aux velléités d'étatisation. Responsabilisation des patients via le ticket modérateur. Lutte contre les déserts médicaux par incitations financières à l'installation. Efficacité managériale dans les hôpitaux publics.",
+      "sources": [
+        "src:lr-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "emploi": {
+      "valeur": "Flexibilisation du marché du travail pour libérer les embauches. Baisse des charges patronales sur tous les niveaux de salaire. Travail le dimanche libéralisé par accord de branche. Valorisation forte de l'apprentissage et de la formation professionnelle. Retraite à 65 ans.",
+      "sources": [
+        "src:lr-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "europe": {
+      "valeur": "Souverainisme modéré au sein de l'UE : réforme du droit communautaire pour restituer des compétences aux États. Europe des nations, subsidiarité renforcée. Primauté du droit national sur certains points. Frontières extérieures de Schengen protégées.",
+      "sources": [
+        "src:lr-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    }
+  }
+}

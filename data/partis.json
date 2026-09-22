@@ -1,0 +1,310 @@
+{
+  "lfi": {
+    "nom": "La France Insoumise",
+    "sigle": "LFI",
+    "slug": "la-france-insoumise",
+    "fichier": "parti-la-france-insoumise.html",
+    "couleur": "#CC0000",
+    "couleurBg": "#fff0f0",
+    "axe": "Gauche radicale",
+    "ideologie": "Gauche radicale · Souverainisme populaire",
+    "dirigeant": {
+      "valeur": "Jean-Luc Mélenchon / Manuel Bompard",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain",
+      "variantes": {
+        "comparateur": "Jean-Luc Mélenchon / M. Bompard",
+        "fiche": "Jean-Luc Mélenchon / Manuel Bompard"
+      },
+      "note": "Les surfaces du site ne s'accordent pas sur ce nom."
+    },
+    "fonde_en": {
+      "valeur": "2016",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    "fonde_annee": 2016,
+    "site": {
+      "valeur": "https://lafranceinsoumise.fr",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    "perimetre": {
+      "quiz": true,
+      "comparateur": true,
+      "fiche": true,
+      "footer": true
+    }
+  },
+  "pcf": {
+    "nom": "Parti Communiste Français",
+    "sigle": "PCF",
+    "slug": "pcf",
+    "fichier": null,
+    "couleur": "#B30000",
+    "couleurBg": "#fff0f0",
+    "axe": "Extrême gauche",
+    "ideologie": null,
+    "dirigeant": {
+      "valeur": "Fabien Roussel",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    "fonde_en": null,
+    "fonde_annee": null,
+    "site": null,
+    "perimetre": {
+      "quiz": false,
+      "comparateur": true,
+      "fiche": false,
+      "footer": false
+    },
+    "raison_hors_quiz": "Poids non documentés au même niveau que les sept autres partis."
+  },
+  "ps": {
+    "nom": "Parti Socialiste",
+    "sigle": "PS",
+    "slug": "parti-socialiste",
+    "fichier": "parti-parti-socialiste.html",
+    "couleur": "#E75480",
+    "couleurBg": "#fff0f5",
+    "axe": "Gauche",
+    "ideologie": "Gauche social-démocrate · Progressisme",
+    "dirigeant": {
+      "valeur": "Olivier Faure",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    "fonde_en": {
+      "valeur": "1969 (Congrès d'Épinay 1971)",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    "fonde_annee": 1969,
+    "site": {
+      "valeur": "https://www.parti-socialiste.fr",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    "perimetre": {
+      "quiz": true,
+      "comparateur": true,
+      "fiche": true,
+      "footer": true
+    }
+  },
+  "eelv": {
+    "nom": "Europe Écologie Les Verts",
+    "sigle": "EELV",
+    "slug": "europe-ecologie",
+    "fichier": "parti-europe-ecologie.html",
+    "couleur": "#2E7D32",
+    "couleurBg": "#f0faf0",
+    "axe": "Gauche écologiste",
+    "ideologie": "Écologie politique · Centre-gauche · Féminisme",
+    "dirigeant": {
+      "valeur": "Marine Tondelier",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    "fonde_en": {
+      "valeur": "2010 (fusion Les Verts + Europe Écologie)",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    "fonde_annee": 2010,
+    "site": {
+      "valeur": "https://www.lesecologistes.fr",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    "perimetre": {
+      "quiz": true,
+      "comparateur": true,
+      "fiche": true,
+      "footer": true
+    }
+  },
+  "renaissance": {
+    "nom": "Renaissance",
+    "sigle": "REN",
+    "slug": "renaissance",
+    "fichier": "parti-renaissance.html",
+    "couleur": "#C8A200",
+    "couleurBg": "#fffef0",
+    "axe": "Centre",
+    "ideologie": "Centre · Libéral-progressiste",
+    "dirigeant": {
+      "valeur": "Emmanuel Macron / Gabriel Attal",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain",
+      "variantes": {
+        "comparateur": "Gabriel Attal",
+        "fiche": "Emmanuel Macron / Gabriel Attal"
+      },
+      "note": "Les surfaces du site ne s'accordent pas sur ce nom."
+    },
+    "fonde_en": {
+      "valeur": "2016 (En Marche !) · Renommé Renaissance en 2022",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    "fonde_annee": 2016,
+    "site": {
+      "valeur": "https://parti-renaissance.fr",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    "perimetre": {
+      "quiz": true,
+      "comparateur": true,
+      "fiche": true,
+      "footer": true
+    }
+  },
+  "modem": {
+    "nom": "Mouvement Démocrate",
+    "sigle": "MoDem",
+    "slug": "modem",
+    "fichier": "parti-modem.html",
+    "couleur": "#E05000",
+    "couleurBg": "#fff5f0",
+    "axe": "Centre",
+    "ideologie": "Centre · Humanisme démocratique · Pro-européen",
+    "dirigeant": {
+      "valeur": "François Bayrou",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    "fonde_en": {
+      "valeur": "2007",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    "fonde_annee": 2007,
+    "site": {
+      "valeur": "https://www.mouvementdemocrate.fr",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    "perimetre": {
+      "quiz": true,
+      "comparateur": true,
+      "fiche": true,
+      "footer": true
+    }
+  },
+  "lr": {
+    "nom": "Les Républicains",
+    "sigle": "LR",
+    "slug": "les-republicains",
+    "fichier": "parti-les-republicains.html",
+    "couleur": "#003F8F",
+    "couleurBg": "#f0f4ff",
+    "axe": "Droite",
+    "ideologie": "Droite conservatrice · Gaullisme social",
+    "dirigeant": {
+      "valeur": "Laurent Wauquiez",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    "fonde_en": {
+      "valeur": "2015 (ex-UMP, ex-RPR)",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    "fonde_annee": 2015,
+    "site": {
+      "valeur": "https://www.republicains.fr",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    "perimetre": {
+      "quiz": true,
+      "comparateur": true,
+      "fiche": true,
+      "footer": true
+    }
+  },
+  "rn": {
+    "nom": "Rassemblement National",
+    "sigle": "RN",
+    "slug": "rassemblement-national",
+    "fichier": "parti-rassemblement-national.html",
+    "couleur": "#002395",
+    "couleurBg": "#f0f2ff",
+    "axe": "Extrême droite",
+    "ideologie": "Droite nationaliste · Souverainisme",
+    "dirigeant": {
+      "valeur": "Marine Le Pen / Jordan Bardella",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain",
+      "variantes": {
+        "comparateur": "Jordan Bardella",
+        "fiche": "Marine Le Pen / Jordan Bardella"
+      },
+      "note": "Les surfaces du site ne s'accordent pas sur ce nom."
+    },
+    "fonde_en": {
+      "valeur": "1972 (Front National) · Renommé RN en 2018",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    "fonde_annee": 1972,
+    "site": {
+      "valeur": "https://www.rassemblementnational.fr",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    "perimetre": {
+      "quiz": true,
+      "comparateur": true,
+      "fiche": true,
+      "footer": true
+    }
+  }
+}

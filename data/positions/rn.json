@@ -1,0 +1,77 @@
+{
+  "parti": "rn",
+  "comparateur": {
+    "logement": {
+      "valeur": "Priorité nationale dans l'attribution des logements sociaux : les ressortissants français seraient servis en premier. Expulsion facilitée des locataires en situation irrégulière. Soutien à l'accession à la propriété des Français par des prêts bonifiés.",
+      "sources": [
+        "src:rn-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "fiscalite": {
+      "valeur": "Baisse de la TVA à 5,5 % sur les produits de première nécessité (carburant, énergie, alimentaire). Suppression de l'impôt sur le revenu pour les moins de 30 ans. Protectionnisme fiscal national et refus de la taxation internationale minimale de l'OCDE.",
+      "sources": [
+        "src:rn-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "education": {
+      "valeur": "Retour aux fondamentaux : lecture, calcul, grammaire. Uniforme scolaire rendu obligatoire. Interdiction de toute revendication communautaire ou religieuse dans l'école. Valorisation de la culture et de l'histoire nationales. Autorité de l'enseignant réaffirmée.",
+      "sources": [
+        "src:rn-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "environnement": {
+      "valeur": "Rejet de l'« écologie punitive » et des interdictions coercitives. Maintien des voitures thermiques au-delà de 2035. Nucléaire comme priorité absolue pour l'indépendance énergétique. Refus des objectifs climatiques européens jugés inapplicables économiquement.",
+      "sources": [
+        "src:rn-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "securite": {
+      "valeur": "Immigration zéro et suppression du droit du sol. Priorité nationale dans l'accès aux droits sociaux. Expulsion de tous les étrangers en situation irrégulière et des délinquants étrangers. Fermeture des frontières et sortie de l'espace Schengen.",
+      "sources": [
+        "src:rn-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "sante": {
+      "valeur": "Accès prioritaire aux soins pour les ressortissants français et européens. Valorisation des médecins formés en France. Sécurité sociale maintenue pour les nationaux. Lutte contre la fraude à l'aide médicale d'État (AME), réservée aux cas urgents.",
+      "sources": [
+        "src:rn-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "emploi": {
+      "valeur": "Priorité d'embauche pour les travailleurs français par une réforme du droit du travail. Protectionnisme économique et réindustrialisation nationale. Sortie des accords de libre-échange européens jugés défavorables. SMIC ajusté sur les prix alimentaires et énergétiques.",
+      "sources": [
+        "src:rn-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "europe": {
+      "valeur": "Réforme radicale ou sortie de l'euro monétaire au profit d'une monnaie commune. Réduction drastique des pouvoirs de la Commission européenne. Retour de la souveraineté nationale dans tous les domaines régaliens. Fin de l'espace Schengen et contrôles aux frontières rétablis.",
+      "sources": [
+        "src:rn-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    }
+  }
+}

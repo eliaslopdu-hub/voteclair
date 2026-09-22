@@ -1,0 +1,77 @@
+{
+  "parti": "renaissance",
+  "comparateur": {
+    "logement": {
+      "valeur": "Libéralisation partielle de la construction par l'assouplissement des règles de zonage. Aides à l'accession à la propriété (prêt à taux zéro renforcé). Incitations fiscales aux investisseurs pour construire dans les zones tendues. MaPrimeRénov' pour la rénovation énergétique.",
+      "sources": [
+        "src:renaissance-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "fiscalite": {
+      "valeur": "Maintien de la flat tax à 30 % sur les revenus du capital. Confirmation de la suppression de l'ISF. Baisse progressive de l'impôt sur les sociétés pour renforcer la compétitivité. Réduction ciblée de la dépense publique. Lutte contre la fraude fiscale internationale.",
+      "sources": [
+        "src:renaissance-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "education": {
+      "valeur": "Autonomie renforcée des établissements. Valorisation du mérite et de l'excellence. Investissement fort dans le numérique éducatif et la formation professionnelle. Partenariats public-privé pour l'apprentissage. Réforme du lycée professionnel avec les entreprises.",
+      "sources": [
+        "src:renaissance-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "environnement": {
+      "valeur": "Mix énergétique nucléaire + renouvelables pour la sécurité énergétique et le climat. Objectif neutralité carbone 2050. Soutien fort aux technologies propres et à l'innovation verte. Financement européen de la transition (REpowerEU). Rénovation thermique via incitations.",
+      "sources": [
+        "src:renaissance-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "securite": {
+      "valeur": "Maîtrise de l'immigration légale et lutte ferme contre l'immigration irrégulière. Accords avec les pays d'origine pour les retours. Intégration par les valeurs républicaines et la langue française. Renforcement des capacités de l'agence Frontex.",
+      "sources": [
+        "src:renaissance-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "sante": {
+      "valeur": "Investissement fort dans la e-santé et la télémédecine. Soutien à la médecine libérale et aux médecins de ville. Incitations financières pour l'installation dans les déserts médicaux. Renforcement de la prévention. Réforme du financement hospitalier.",
+      "sources": [
+        "src:renaissance-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "emploi": {
+      "valeur": "Plein emploi par la compétitivité et la flexibilité du marché du travail. Baisse des cotisations patronales pour l'embauche. Maintien de la réforme des retraites à 64 ans comme gage de soutenabilité budgétaire. Valorisation de l'apprentissage. Formation tout au long de la vie.",
+      "sources": [
+        "src:renaissance-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "europe": {
+      "valeur": "Pro-européen convaincu : approfondissement de l'intégration européenne. Europe de la défense et souveraineté stratégique. Harmonisation fiscale minimale à l'échelle de l'UE. Budget européen renforcé pour la transition et la compétitivité. Élargissement maîtrisé.",
+      "sources": [
+        "src:renaissance-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    }
+  }
+}

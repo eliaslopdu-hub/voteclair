@@ -1,0 +1,77 @@
+{
+  "parti": "lfi",
+  "comparateur": {
+    "logement": {
+      "valeur": "Encadrement strict des loyers dans toutes les agglomérations. Réquisition des logements vacants appartenant aux grands propriétaires. Gel des expulsions locatives. Construction de 200 000 logements sociaux par an financée par l'État.",
+      "sources": [
+        "src:lfi-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "fiscalite": {
+      "valeur": "Rétablissement de l'ISF renforcé sur le capital financier et immobilier. Suppression de la flat tax sur les dividendes. Hausse des tranches supérieures de l'impôt sur le revenu. Taxation des superprofits et des héritages importants.",
+      "sources": [
+        "src:lfi-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "education": {
+      "valeur": "Service public unifié de l'éducation nationale, laïc et gratuit de la maternelle à l'université. Suppression du financement public des écoles privées. Recrutement massif d'enseignants titulaires. Réforme des programmes vers l'esprit critique.",
+      "sources": [
+        "src:lfi-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "environnement": {
+      "valeur": "Planification écologique sous contrôle public avec un pôle public de l'énergie. Sortie progressive du nucléaire à horizon 2045. Développement massif des énergies renouvelables. Interdiction des pesticides les plus dangereux. Réforme de la PAC.",
+      "sources": [
+        "src:lfi-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "securite": {
+      "valeur": "Réforme en profondeur des forces de l'ordre et interdiction légale des violences policières. Régularisation des travailleurs sans-papiers. Accueil digne des demandeurs d'asile conforme au droit international. Droit de vote aux étrangers résidant en France.",
+      "sources": [
+        "src:lfi-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "sante": {
+      "valeur": "Hôpital public renforcé : fin des suppressions de lits et de postes, revalorisation massive des soignants. Remboursement à 100 % des soins de base par la Sécurité sociale. Fin des dépassements d'honoraires. Médecine préventive prioritaire.",
+      "sources": [
+        "src:lfi-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "emploi": {
+      "valeur": "SMIC à 1 600 € net immédiat. Semaine de 32 heures sans perte de salaire. Retraite à 60 ans. Abrogation de la réforme des retraites à 64 ans. CDI comme norme par défaut. Encadrement strict de l'intérim et des contrats précaires.",
+      "sources": [
+        "src:lfi-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "europe": {
+      "valeur": "Désobéissance aux traités européens si contraires à l'intérêt général. Renégociation du Traité de stabilité budgétaire (TSCG). Sortie du commandement intégré de l'OTAN. Opposition aux traités de libre-échange (CETA, Mercosur). Multilatéralisme.",
+      "sources": [
+        "src:lfi-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    }
+  }
+}

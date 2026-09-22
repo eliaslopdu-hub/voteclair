@@ -1,0 +1,2315 @@
+{
+  "echelle": {
+    "0": "positions quasi identiques",
+    "100": "opposition frontale"
+  },
+  "themes": [
+    "logement",
+    "fiscalite",
+    "education",
+    "environnement",
+    "securite",
+    "sante",
+    "emploi",
+    "europe"
+  ],
+  "note": "Triangle supérieur uniquement : la clé est la paire d'identifiants triée alphabétiquement. La symétrie est garantie par construction.",
+  "paires": {
+    "lfi|pcf": {
+      "logement": {
+        "valeur": 10,
+        "sources": [
+          "src:lfi-programme-2022",
+          "src:pcf-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "fiscalite": {
+        "valeur": 12,
+        "sources": [
+          "src:lfi-programme-2022",
+          "src:pcf-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "education": {
+        "valeur": 6,
+        "sources": [
+          "src:lfi-programme-2022",
+          "src:pcf-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "environnement": {
+        "valeur": 22,
+        "sources": [
+          "src:lfi-programme-2022",
+          "src:pcf-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "securite": {
+        "valeur": 14,
+        "sources": [
+          "src:lfi-programme-2022",
+          "src:pcf-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "sante": {
+        "valeur": 6,
+        "sources": [
+          "src:lfi-programme-2022",
+          "src:pcf-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "emploi": {
+        "valeur": 8,
+        "sources": [
+          "src:lfi-programme-2022",
+          "src:pcf-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "europe": {
+        "valeur": 20,
+        "sources": [
+          "src:lfi-programme-2022",
+          "src:pcf-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      }
+    },
+    "lfi|ps": {
+      "logement": {
+        "valeur": 30,
+        "sources": [
+          "src:lfi-programme-2022",
+          "src:ps-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "fiscalite": {
+        "valeur": 34,
+        "sources": [
+          "src:lfi-programme-2022",
+          "src:ps-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "education": {
+        "valeur": 22,
+        "sources": [
+          "src:lfi-programme-2022",
+          "src:ps-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "environnement": {
+        "valeur": 26,
+        "sources": [
+          "src:lfi-programme-2022",
+          "src:ps-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "securite": {
+        "valeur": 36,
+        "sources": [
+          "src:lfi-programme-2022",
+          "src:ps-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "sante": {
+        "valeur": 18,
+        "sources": [
+          "src:lfi-programme-2022",
+          "src:ps-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "emploi": {
+        "valeur": 34,
+        "sources": [
+          "src:lfi-programme-2022",
+          "src:ps-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "europe": {
+        "valeur": 48,
+        "sources": [
+          "src:lfi-programme-2022",
+          "src:ps-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      }
+    },
+    "eelv|lfi": {
+      "logement": {
+        "valeur": 24,
+        "sources": [
+          "src:eelv-programme-2022",
+          "src:lfi-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "fiscalite": {
+        "valeur": 30,
+        "sources": [
+          "src:eelv-programme-2022",
+          "src:lfi-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "education": {
+        "valeur": 18,
+        "sources": [
+          "src:eelv-programme-2022",
+          "src:lfi-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "environnement": {
+        "valeur": 16,
+        "sources": [
+          "src:eelv-programme-2022",
+          "src:lfi-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "securite": {
+        "valeur": 20,
+        "sources": [
+          "src:eelv-programme-2022",
+          "src:lfi-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "sante": {
+        "valeur": 20,
+        "sources": [
+          "src:eelv-programme-2022",
+          "src:lfi-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "emploi": {
+        "valeur": 30,
+        "sources": [
+          "src:eelv-programme-2022",
+          "src:lfi-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "europe": {
+        "valeur": 42,
+        "sources": [
+          "src:eelv-programme-2022",
+          "src:lfi-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      }
+    },
+    "lfi|renaissance": {
+      "logement": {
+        "valeur": 78,
+        "sources": [
+          "src:lfi-programme-2022",
+          "src:renaissance-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "fiscalite": {
+        "valeur": 86,
+        "sources": [
+          "src:lfi-programme-2022",
+          "src:renaissance-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "education": {
+        "valeur": 68,
+        "sources": [
+          "src:lfi-programme-2022",
+          "src:renaissance-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "environnement": {
+        "valeur": 70,
+        "sources": [
+          "src:lfi-programme-2022",
+          "src:renaissance-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "securite": {
+        "valeur": 74,
+        "sources": [
+          "src:lfi-programme-2022",
+          "src:renaissance-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "sante": {
+        "valeur": 64,
+        "sources": [
+          "src:lfi-programme-2022",
+          "src:renaissance-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "emploi": {
+        "valeur": 88,
+        "sources": [
+          "src:lfi-programme-2022",
+          "src:renaissance-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "europe": {
+        "valeur": 95,
+        "sources": [
+          "src:lfi-programme-2022",
+          "src:renaissance-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      }
+    },
+    "lfi|modem": {
+      "logement": {
+        "valeur": 72,
+        "sources": [
+          "src:lfi-programme-2022",
+          "src:modem-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "fiscalite": {
+        "valeur": 80,
+        "sources": [
+          "src:lfi-programme-2022",
+          "src:modem-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "education": {
+        "valeur": 65,
+        "sources": [
+          "src:lfi-programme-2022",
+          "src:modem-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "environnement": {
+        "valeur": 68,
+        "sources": [
+          "src:lfi-programme-2022",
+          "src:modem-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "securite": {
+        "valeur": 70,
+        "sources": [
+          "src:lfi-programme-2022",
+          "src:modem-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "sante": {
+        "valeur": 60,
+        "sources": [
+          "src:lfi-programme-2022",
+          "src:modem-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "emploi": {
+        "valeur": 82,
+        "sources": [
+          "src:lfi-programme-2022",
+          "src:modem-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "europe": {
+        "valeur": 90,
+        "sources": [
+          "src:lfi-programme-2022",
+          "src:modem-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      }
+    },
+    "lfi|lr": {
+      "logement": {
+        "valeur": 88,
+        "sources": [
+          "src:lfi-programme-2022",
+          "src:lr-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "fiscalite": {
+        "valeur": 88,
+        "sources": [
+          "src:lfi-programme-2022",
+          "src:lr-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "education": {
+        "valeur": 78,
+        "sources": [
+          "src:lfi-programme-2022",
+          "src:lr-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "environnement": {
+        "valeur": 82,
+        "sources": [
+          "src:lfi-programme-2022",
+          "src:lr-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "securite": {
+        "valeur": 88,
+        "sources": [
+          "src:lfi-programme-2022",
+          "src:lr-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "sante": {
+        "valeur": 74,
+        "sources": [
+          "src:lfi-programme-2022",
+          "src:lr-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "emploi": {
+        "valeur": 90,
+        "sources": [
+          "src:lfi-programme-2022",
+          "src:lr-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "europe": {
+        "valeur": 72,
+        "sources": [
+          "src:lfi-programme-2022",
+          "src:lr-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      }
+    },
+    "lfi|rn": {
+      "logement": {
+        "valeur": 62,
+        "sources": [
+          "src:lfi-programme-2022",
+          "src:rn-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "fiscalite": {
+        "valeur": 54,
+        "sources": [
+          "src:lfi-programme-2022",
+          "src:rn-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "education": {
+        "valeur": 70,
+        "sources": [
+          "src:lfi-programme-2022",
+          "src:rn-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "environnement": {
+        "valeur": 88,
+        "sources": [
+          "src:lfi-programme-2022",
+          "src:rn-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "securite": {
+        "valeur": 98,
+        "sources": [
+          "src:lfi-programme-2022",
+          "src:rn-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "sante": {
+        "valeur": 50,
+        "sources": [
+          "src:lfi-programme-2022",
+          "src:rn-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "emploi": {
+        "valeur": 58,
+        "sources": [
+          "src:lfi-programme-2022",
+          "src:rn-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "europe": {
+        "valeur": 55,
+        "sources": [
+          "src:lfi-programme-2022",
+          "src:rn-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      }
+    },
+    "pcf|ps": {
+      "logement": {
+        "valeur": 26,
+        "sources": [
+          "src:pcf-programme-2022",
+          "src:ps-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "fiscalite": {
+        "valeur": 36,
+        "sources": [
+          "src:pcf-programme-2022",
+          "src:ps-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "education": {
+        "valeur": 24,
+        "sources": [
+          "src:pcf-programme-2022",
+          "src:ps-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "environnement": {
+        "valeur": 28,
+        "sources": [
+          "src:pcf-programme-2022",
+          "src:ps-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "securite": {
+        "valeur": 38,
+        "sources": [
+          "src:pcf-programme-2022",
+          "src:ps-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "sante": {
+        "valeur": 16,
+        "sources": [
+          "src:pcf-programme-2022",
+          "src:ps-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "emploi": {
+        "valeur": 36,
+        "sources": [
+          "src:pcf-programme-2022",
+          "src:ps-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "europe": {
+        "valeur": 50,
+        "sources": [
+          "src:pcf-programme-2022",
+          "src:ps-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      }
+    },
+    "eelv|pcf": {
+      "logement": {
+        "valeur": 22,
+        "sources": [
+          "src:eelv-programme-2022",
+          "src:pcf-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "fiscalite": {
+        "valeur": 32,
+        "sources": [
+          "src:eelv-programme-2022",
+          "src:pcf-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "education": {
+        "valeur": 20,
+        "sources": [
+          "src:eelv-programme-2022",
+          "src:pcf-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "environnement": {
+        "valeur": 38,
+        "sources": [
+          "src:eelv-programme-2022",
+          "src:pcf-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "securite": {
+        "valeur": 24,
+        "sources": [
+          "src:eelv-programme-2022",
+          "src:pcf-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "sante": {
+        "valeur": 18,
+        "sources": [
+          "src:eelv-programme-2022",
+          "src:pcf-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "emploi": {
+        "valeur": 32,
+        "sources": [
+          "src:eelv-programme-2022",
+          "src:pcf-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "europe": {
+        "valeur": 44,
+        "sources": [
+          "src:eelv-programme-2022",
+          "src:pcf-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      }
+    },
+    "pcf|renaissance": {
+      "logement": {
+        "valeur": 80,
+        "sources": [
+          "src:pcf-programme-2022",
+          "src:renaissance-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "fiscalite": {
+        "valeur": 88,
+        "sources": [
+          "src:pcf-programme-2022",
+          "src:renaissance-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "education": {
+        "valeur": 70,
+        "sources": [
+          "src:pcf-programme-2022",
+          "src:renaissance-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "environnement": {
+        "valeur": 66,
+        "sources": [
+          "src:pcf-programme-2022",
+          "src:renaissance-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "securite": {
+        "valeur": 76,
+        "sources": [
+          "src:pcf-programme-2022",
+          "src:renaissance-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "sante": {
+        "valeur": 67,
+        "sources": [
+          "src:pcf-programme-2022",
+          "src:renaissance-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "emploi": {
+        "valeur": 90,
+        "sources": [
+          "src:pcf-programme-2022",
+          "src:renaissance-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "europe": {
+        "valeur": 95,
+        "sources": [
+          "src:pcf-programme-2022",
+          "src:renaissance-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      }
+    },
+    "modem|pcf": {
+      "logement": {
+        "valeur": 74,
+        "sources": [
+          "src:modem-programme-2022",
+          "src:pcf-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "fiscalite": {
+        "valeur": 82,
+        "sources": [
+          "src:modem-programme-2022",
+          "src:pcf-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "education": {
+        "valeur": 67,
+        "sources": [
+          "src:modem-programme-2022",
+          "src:pcf-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "environnement": {
+        "valeur": 63,
+        "sources": [
+          "src:modem-programme-2022",
+          "src:pcf-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "securite": {
+        "valeur": 72,
+        "sources": [
+          "src:modem-programme-2022",
+          "src:pcf-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "sante": {
+        "valeur": 62,
+        "sources": [
+          "src:modem-programme-2022",
+          "src:pcf-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "emploi": {
+        "valeur": 84,
+        "sources": [
+          "src:modem-programme-2022",
+          "src:pcf-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "europe": {
+        "valeur": 90,
+        "sources": [
+          "src:modem-programme-2022",
+          "src:pcf-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      }
+    },
+    "lr|pcf": {
+      "logement": {
+        "valeur": 90,
+        "sources": [
+          "src:lr-programme-2022",
+          "src:pcf-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "fiscalite": {
+        "valeur": 90,
+        "sources": [
+          "src:lr-programme-2022",
+          "src:pcf-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "education": {
+        "valeur": 80,
+        "sources": [
+          "src:lr-programme-2022",
+          "src:pcf-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "environnement": {
+        "valeur": 78,
+        "sources": [
+          "src:lr-programme-2022",
+          "src:pcf-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "securite": {
+        "valeur": 90,
+        "sources": [
+          "src:lr-programme-2022",
+          "src:pcf-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "sante": {
+        "valeur": 77,
+        "sources": [
+          "src:lr-programme-2022",
+          "src:pcf-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "emploi": {
+        "valeur": 92,
+        "sources": [
+          "src:lr-programme-2022",
+          "src:pcf-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "europe": {
+        "valeur": 74,
+        "sources": [
+          "src:lr-programme-2022",
+          "src:pcf-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      }
+    },
+    "pcf|rn": {
+      "logement": {
+        "valeur": 64,
+        "sources": [
+          "src:pcf-programme-2022",
+          "src:rn-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "fiscalite": {
+        "valeur": 56,
+        "sources": [
+          "src:pcf-programme-2022",
+          "src:rn-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "education": {
+        "valeur": 73,
+        "sources": [
+          "src:pcf-programme-2022",
+          "src:rn-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "environnement": {
+        "valeur": 85,
+        "sources": [
+          "src:pcf-programme-2022",
+          "src:rn-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "securite": {
+        "valeur": 98,
+        "sources": [
+          "src:pcf-programme-2022",
+          "src:rn-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "sante": {
+        "valeur": 53,
+        "sources": [
+          "src:pcf-programme-2022",
+          "src:rn-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "emploi": {
+        "valeur": 60,
+        "sources": [
+          "src:pcf-programme-2022",
+          "src:rn-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "europe": {
+        "valeur": 57,
+        "sources": [
+          "src:pcf-programme-2022",
+          "src:rn-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      }
+    },
+    "eelv|ps": {
+      "logement": {
+        "valeur": 20,
+        "sources": [
+          "src:eelv-programme-2022",
+          "src:ps-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "fiscalite": {
+        "valeur": 28,
+        "sources": [
+          "src:eelv-programme-2022",
+          "src:ps-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "education": {
+        "valeur": 14,
+        "sources": [
+          "src:eelv-programme-2022",
+          "src:ps-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "environnement": {
+        "valeur": 32,
+        "sources": [
+          "src:eelv-programme-2022",
+          "src:ps-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "securite": {
+        "valeur": 22,
+        "sources": [
+          "src:eelv-programme-2022",
+          "src:ps-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "sante": {
+        "valeur": 14,
+        "sources": [
+          "src:eelv-programme-2022",
+          "src:ps-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "emploi": {
+        "valeur": 28,
+        "sources": [
+          "src:eelv-programme-2022",
+          "src:ps-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "europe": {
+        "valeur": 32,
+        "sources": [
+          "src:eelv-programme-2022",
+          "src:ps-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      }
+    },
+    "ps|renaissance": {
+      "logement": {
+        "valeur": 58,
+        "sources": [
+          "src:ps-programme-2022",
+          "src:renaissance-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "fiscalite": {
+        "valeur": 72,
+        "sources": [
+          "src:ps-programme-2022",
+          "src:renaissance-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "education": {
+        "valeur": 52,
+        "sources": [
+          "src:ps-programme-2022",
+          "src:renaissance-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "environnement": {
+        "valeur": 56,
+        "sources": [
+          "src:ps-programme-2022",
+          "src:renaissance-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "securite": {
+        "valeur": 48,
+        "sources": [
+          "src:ps-programme-2022",
+          "src:renaissance-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "sante": {
+        "valeur": 45,
+        "sources": [
+          "src:ps-programme-2022",
+          "src:renaissance-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "emploi": {
+        "valeur": 70,
+        "sources": [
+          "src:ps-programme-2022",
+          "src:renaissance-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "europe": {
+        "valeur": 34,
+        "sources": [
+          "src:ps-programme-2022",
+          "src:renaissance-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      }
+    },
+    "modem|ps": {
+      "logement": {
+        "valeur": 52,
+        "sources": [
+          "src:modem-programme-2022",
+          "src:ps-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "fiscalite": {
+        "valeur": 66,
+        "sources": [
+          "src:modem-programme-2022",
+          "src:ps-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "education": {
+        "valeur": 48,
+        "sources": [
+          "src:modem-programme-2022",
+          "src:ps-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "environnement": {
+        "valeur": 53,
+        "sources": [
+          "src:modem-programme-2022",
+          "src:ps-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "securite": {
+        "valeur": 44,
+        "sources": [
+          "src:modem-programme-2022",
+          "src:ps-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "sante": {
+        "valeur": 40,
+        "sources": [
+          "src:modem-programme-2022",
+          "src:ps-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "emploi": {
+        "valeur": 64,
+        "sources": [
+          "src:modem-programme-2022",
+          "src:ps-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "europe": {
+        "valeur": 37,
+        "sources": [
+          "src:modem-programme-2022",
+          "src:ps-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      }
+    },
+    "lr|ps": {
+      "logement": {
+        "valeur": 72,
+        "sources": [
+          "src:lr-programme-2022",
+          "src:ps-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "fiscalite": {
+        "valeur": 78,
+        "sources": [
+          "src:lr-programme-2022",
+          "src:ps-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "education": {
+        "valeur": 62,
+        "sources": [
+          "src:lr-programme-2022",
+          "src:ps-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "environnement": {
+        "valeur": 70,
+        "sources": [
+          "src:lr-programme-2022",
+          "src:ps-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "securite": {
+        "valeur": 72,
+        "sources": [
+          "src:lr-programme-2022",
+          "src:ps-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "sante": {
+        "valeur": 55,
+        "sources": [
+          "src:lr-programme-2022",
+          "src:ps-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "emploi": {
+        "valeur": 78,
+        "sources": [
+          "src:lr-programme-2022",
+          "src:ps-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "europe": {
+        "valeur": 44,
+        "sources": [
+          "src:lr-programme-2022",
+          "src:ps-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      }
+    },
+    "ps|rn": {
+      "logement": {
+        "valeur": 50,
+        "sources": [
+          "src:ps-programme-2022",
+          "src:rn-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "fiscalite": {
+        "valeur": 48,
+        "sources": [
+          "src:ps-programme-2022",
+          "src:rn-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "education": {
+        "valeur": 65,
+        "sources": [
+          "src:ps-programme-2022",
+          "src:rn-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "environnement": {
+        "valeur": 80,
+        "sources": [
+          "src:ps-programme-2022",
+          "src:rn-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "securite": {
+        "valeur": 92,
+        "sources": [
+          "src:ps-programme-2022",
+          "src:rn-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "sante": {
+        "valeur": 44,
+        "sources": [
+          "src:ps-programme-2022",
+          "src:rn-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "emploi": {
+        "valeur": 50,
+        "sources": [
+          "src:ps-programme-2022",
+          "src:rn-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "europe": {
+        "valeur": 80,
+        "sources": [
+          "src:ps-programme-2022",
+          "src:rn-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      }
+    },
+    "eelv|renaissance": {
+      "logement": {
+        "valeur": 66,
+        "sources": [
+          "src:eelv-programme-2022",
+          "src:renaissance-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "fiscalite": {
+        "valeur": 76,
+        "sources": [
+          "src:eelv-programme-2022",
+          "src:renaissance-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "education": {
+        "valeur": 48,
+        "sources": [
+          "src:eelv-programme-2022",
+          "src:renaissance-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "environnement": {
+        "valeur": 72,
+        "sources": [
+          "src:eelv-programme-2022",
+          "src:renaissance-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "securite": {
+        "valeur": 56,
+        "sources": [
+          "src:eelv-programme-2022",
+          "src:renaissance-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "sante": {
+        "valeur": 50,
+        "sources": [
+          "src:eelv-programme-2022",
+          "src:renaissance-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "emploi": {
+        "valeur": 80,
+        "sources": [
+          "src:eelv-programme-2022",
+          "src:renaissance-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "europe": {
+        "valeur": 27,
+        "sources": [
+          "src:eelv-programme-2022",
+          "src:renaissance-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      }
+    },
+    "eelv|modem": {
+      "logement": {
+        "valeur": 60,
+        "sources": [
+          "src:eelv-programme-2022",
+          "src:modem-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "fiscalite": {
+        "valeur": 70,
+        "sources": [
+          "src:eelv-programme-2022",
+          "src:modem-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "education": {
+        "valeur": 44,
+        "sources": [
+          "src:eelv-programme-2022",
+          "src:modem-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "environnement": {
+        "valeur": 68,
+        "sources": [
+          "src:eelv-programme-2022",
+          "src:modem-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "securite": {
+        "valeur": 50,
+        "sources": [
+          "src:eelv-programme-2022",
+          "src:modem-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "sante": {
+        "valeur": 46,
+        "sources": [
+          "src:eelv-programme-2022",
+          "src:modem-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "emploi": {
+        "valeur": 74,
+        "sources": [
+          "src:eelv-programme-2022",
+          "src:modem-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "europe": {
+        "valeur": 30,
+        "sources": [
+          "src:eelv-programme-2022",
+          "src:modem-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      }
+    },
+    "eelv|lr": {
+      "logement": {
+        "valeur": 78,
+        "sources": [
+          "src:eelv-programme-2022",
+          "src:lr-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "fiscalite": {
+        "valeur": 82,
+        "sources": [
+          "src:eelv-programme-2022",
+          "src:lr-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "education": {
+        "valeur": 60,
+        "sources": [
+          "src:eelv-programme-2022",
+          "src:lr-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "environnement": {
+        "valeur": 85,
+        "sources": [
+          "src:eelv-programme-2022",
+          "src:lr-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "securite": {
+        "valeur": 80,
+        "sources": [
+          "src:eelv-programme-2022",
+          "src:lr-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "sante": {
+        "valeur": 62,
+        "sources": [
+          "src:eelv-programme-2022",
+          "src:lr-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "emploi": {
+        "valeur": 85,
+        "sources": [
+          "src:eelv-programme-2022",
+          "src:lr-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "europe": {
+        "valeur": 50,
+        "sources": [
+          "src:eelv-programme-2022",
+          "src:lr-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      }
+    },
+    "eelv|rn": {
+      "logement": {
+        "valeur": 72,
+        "sources": [
+          "src:eelv-programme-2022",
+          "src:rn-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "fiscalite": {
+        "valeur": 80,
+        "sources": [
+          "src:eelv-programme-2022",
+          "src:rn-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "education": {
+        "valeur": 67,
+        "sources": [
+          "src:eelv-programme-2022",
+          "src:rn-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "environnement": {
+        "valeur": 92,
+        "sources": [
+          "src:eelv-programme-2022",
+          "src:rn-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "securite": {
+        "valeur": 95,
+        "sources": [
+          "src:eelv-programme-2022",
+          "src:rn-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "sante": {
+        "valeur": 57,
+        "sources": [
+          "src:eelv-programme-2022",
+          "src:rn-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "emploi": {
+        "valeur": 72,
+        "sources": [
+          "src:eelv-programme-2022",
+          "src:rn-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "europe": {
+        "valeur": 88,
+        "sources": [
+          "src:eelv-programme-2022",
+          "src:rn-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      }
+    },
+    "modem|renaissance": {
+      "logement": {
+        "valeur": 14,
+        "sources": [
+          "src:modem-programme-2022",
+          "src:renaissance-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "fiscalite": {
+        "valeur": 17,
+        "sources": [
+          "src:modem-programme-2022",
+          "src:renaissance-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "education": {
+        "valeur": 14,
+        "sources": [
+          "src:modem-programme-2022",
+          "src:renaissance-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "environnement": {
+        "valeur": 19,
+        "sources": [
+          "src:modem-programme-2022",
+          "src:renaissance-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "securite": {
+        "valeur": 17,
+        "sources": [
+          "src:modem-programme-2022",
+          "src:renaissance-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "sante": {
+        "valeur": 10,
+        "sources": [
+          "src:modem-programme-2022",
+          "src:renaissance-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "emploi": {
+        "valeur": 14,
+        "sources": [
+          "src:modem-programme-2022",
+          "src:renaissance-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "europe": {
+        "valeur": 11,
+        "sources": [
+          "src:modem-programme-2022",
+          "src:renaissance-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      }
+    },
+    "lr|renaissance": {
+      "logement": {
+        "valeur": 28,
+        "sources": [
+          "src:lr-programme-2022",
+          "src:renaissance-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "fiscalite": {
+        "valeur": 26,
+        "sources": [
+          "src:lr-programme-2022",
+          "src:renaissance-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "education": {
+        "valeur": 24,
+        "sources": [
+          "src:lr-programme-2022",
+          "src:renaissance-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "environnement": {
+        "valeur": 36,
+        "sources": [
+          "src:lr-programme-2022",
+          "src:renaissance-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "securite": {
+        "valeur": 30,
+        "sources": [
+          "src:lr-programme-2022",
+          "src:renaissance-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "sante": {
+        "valeur": 22,
+        "sources": [
+          "src:lr-programme-2022",
+          "src:renaissance-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "emploi": {
+        "valeur": 24,
+        "sources": [
+          "src:lr-programme-2022",
+          "src:renaissance-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "europe": {
+        "valeur": 40,
+        "sources": [
+          "src:lr-programme-2022",
+          "src:renaissance-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      }
+    },
+    "renaissance|rn": {
+      "logement": {
+        "valeur": 42,
+        "sources": [
+          "src:renaissance-programme-2022",
+          "src:rn-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "fiscalite": {
+        "valeur": 48,
+        "sources": [
+          "src:renaissance-programme-2022",
+          "src:rn-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "education": {
+        "valeur": 40,
+        "sources": [
+          "src:renaissance-programme-2022",
+          "src:rn-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "environnement": {
+        "valeur": 68,
+        "sources": [
+          "src:renaissance-programme-2022",
+          "src:rn-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "securite": {
+        "valeur": 58,
+        "sources": [
+          "src:renaissance-programme-2022",
+          "src:rn-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "sante": {
+        "valeur": 37,
+        "sources": [
+          "src:renaissance-programme-2022",
+          "src:rn-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "emploi": {
+        "valeur": 55,
+        "sources": [
+          "src:renaissance-programme-2022",
+          "src:rn-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "europe": {
+        "valeur": 85,
+        "sources": [
+          "src:renaissance-programme-2022",
+          "src:rn-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      }
+    },
+    "lr|modem": {
+      "logement": {
+        "valeur": 24,
+        "sources": [
+          "src:lr-programme-2022",
+          "src:modem-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "fiscalite": {
+        "valeur": 21,
+        "sources": [
+          "src:lr-programme-2022",
+          "src:modem-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "education": {
+        "valeur": 19,
+        "sources": [
+          "src:lr-programme-2022",
+          "src:modem-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "environnement": {
+        "valeur": 34,
+        "sources": [
+          "src:lr-programme-2022",
+          "src:modem-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "securite": {
+        "valeur": 28,
+        "sources": [
+          "src:lr-programme-2022",
+          "src:modem-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "sante": {
+        "valeur": 19,
+        "sources": [
+          "src:lr-programme-2022",
+          "src:modem-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "emploi": {
+        "valeur": 21,
+        "sources": [
+          "src:lr-programme-2022",
+          "src:modem-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "europe": {
+        "valeur": 37,
+        "sources": [
+          "src:lr-programme-2022",
+          "src:modem-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      }
+    },
+    "modem|rn": {
+      "logement": {
+        "valeur": 40,
+        "sources": [
+          "src:modem-programme-2022",
+          "src:rn-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "fiscalite": {
+        "valeur": 44,
+        "sources": [
+          "src:modem-programme-2022",
+          "src:rn-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "education": {
+        "valeur": 37,
+        "sources": [
+          "src:modem-programme-2022",
+          "src:rn-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "environnement": {
+        "valeur": 64,
+        "sources": [
+          "src:modem-programme-2022",
+          "src:rn-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "securite": {
+        "valeur": 54,
+        "sources": [
+          "src:modem-programme-2022",
+          "src:rn-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "sante": {
+        "valeur": 34,
+        "sources": [
+          "src:modem-programme-2022",
+          "src:rn-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "emploi": {
+        "valeur": 51,
+        "sources": [
+          "src:modem-programme-2022",
+          "src:rn-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "europe": {
+        "valeur": 88,
+        "sources": [
+          "src:modem-programme-2022",
+          "src:rn-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      }
+    },
+    "lr|rn": {
+      "logement": {
+        "valeur": 34,
+        "sources": [
+          "src:lr-programme-2022",
+          "src:rn-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "fiscalite": {
+        "valeur": 39,
+        "sources": [
+          "src:lr-programme-2022",
+          "src:rn-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "education": {
+        "valeur": 27,
+        "sources": [
+          "src:lr-programme-2022",
+          "src:rn-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "environnement": {
+        "valeur": 54,
+        "sources": [
+          "src:lr-programme-2022",
+          "src:rn-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "securite": {
+        "valeur": 38,
+        "sources": [
+          "src:lr-programme-2022",
+          "src:rn-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "sante": {
+        "valeur": 29,
+        "sources": [
+          "src:lr-programme-2022",
+          "src:rn-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "emploi": {
+        "valeur": 44,
+        "sources": [
+          "src:lr-programme-2022",
+          "src:rn-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      },
+      "europe": {
+        "valeur": 34,
+        "sources": [
+          "src:lr-programme-2022",
+          "src:rn-programme-2022"
+        ],
+        "verifie_le": null,
+        "confiance": "perime",
+        "auteur": "humain"
+      }
+    }
+  }
+}

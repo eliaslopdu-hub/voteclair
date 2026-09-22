@@ -1,0 +1,77 @@
+{
+  "parti": "eelv",
+  "comparateur": {
+    "logement": {
+      "valeur": "Rénovation thermique massive obligatoire du parc existant avec financement public. Encadrement strict des loyers dans les zones tendues. Interdiction de louer les passoires thermiques (DPE F et G). Développement de l'habitat coopératif et de l'éco-construction.",
+      "sources": [
+        "src:eelv-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "fiscalite": {
+      "valeur": "Fiscalité écologique progressive et socialement juste : taxe carbone avec dividende redistribué. Réorientation de 80 Md€ d'aides fiscales vers la transition écologique. ISF climatique sur les patrimoines à forte empreinte carbone. Fin des niches fiscales brunes.",
+      "sources": [
+        "src:eelv-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "education": {
+      "valeur": "Éducation à l'environnement et au développement durable dans tous les programmes. Mixité sociale forte par la carte scolaire réformée. Réforme pédagogique progressive vers la coopération. Gratuité totale des fournitures et de la restauration scolaire.",
+      "sources": [
+        "src:eelv-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "environnement": {
+      "valeur": "Sortie du nucléaire à horizon 2035. Objectif 100 % énergies renouvelables d'ici 2050. Interdiction des pesticides de synthèse à horizon 5 ans. Agriculture biologique et paysanne soutenue. Fin des subventions aux énergies fossiles. Loi sur l'artificialisation des sols.",
+      "sources": [
+        "src:eelv-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "securite": {
+      "valeur": "Accueil digne et structuré des réfugiés climatiques et politiques. Droit d'asile garanti et respecté. Approche humaniste de l'immigration fondée sur le respect des droits fondamentaux. Régularisation des personnes intégrées depuis plus de 3 ans.",
+      "sources": [
+        "src:eelv-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "sante": {
+      "valeur": "Santé environnementale au cœur de la politique de prévention. Remboursement des médecines complémentaires validées. Renforcement du service public hospitalier. Lutte contre les déserts médicaux par des centres de santé publics pluridisciplinaires. Zéro dépassement d'honoraires.",
+      "sources": [
+        "src:eelv-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "emploi": {
+      "valeur": "Semaine de 4 jours (32 heures) sans perte de salaire. SMIC à 1 600 € net. Retraite progressive et flexible. Développement de 1 million d'emplois verts dans la transition écologique. Revenu universel d'existence étudié. Encadrement des hautes rémunérations.",
+      "sources": [
+        "src:eelv-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "europe": {
+      "valeur": "Fédéralisme européen vert : réforme des traités pour permettre la planification écologique. Europe puissance climatique mondiale. Budget européen vert. Taxe carbone aux frontières. Convergence sociale et fiscale par le haut. Souveraineté européenne en matière de santé.",
+      "sources": [
+        "src:eelv-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    }
+  }
+}

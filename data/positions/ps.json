@@ -1,0 +1,77 @@
+{
+  "parti": "ps",
+  "comparateur": {
+    "logement": {
+      "valeur": "Encadrement des loyers dans les zones tendues élargi à toutes les grandes villes. Développement du logement social et intermédiaire. Aide à l'accession pour les primo-accédants modestes. Lutte contre la vacance des logements par la taxation.",
+      "sources": [
+        "src:ps-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "fiscalite": {
+      "valeur": "Rétablissement d'un ISF recentré sur le capital financier et les grandes fortunes. Maintien de la progressivité de l'impôt sur le revenu avec renforcement des tranches supérieures. Lutte résolue contre l'évasion fiscale via la coopération internationale.",
+      "sources": [
+        "src:ps-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "education": {
+      "valeur": "Investissement massif dans l'école publique : revalorisation de 20 % des enseignants, mixité scolaire renforcée. Réforme du lycée professionnel avec cofinancement État/régions. Gratuité effective de la restauration scolaire pour les foyers modestes.",
+      "sources": [
+        "src:ps-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "environnement": {
+      "valeur": "Planification climatique ambitieuse avec loi de programmation énergie-climat. Compatibilité maintenue entre nucléaire et renouvelables dans la transition. Développement fort des énergies vertes. Taxe carbone aux frontières de l'UE. Rénovation thermique massive.",
+      "sources": [
+        "src:ps-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "securite": {
+      "valeur": "Politique migratoire humaniste : régularisation au cas par cas des personnes intégrées, droit d'asile garanti. Maintien de l'État de droit et des libertés publiques. Police républicaine, lutte contre les violences policières par des mécanismes de contrôle renforcés.",
+      "sources": [
+        "src:ps-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "sante": {
+      "valeur": "Service public hospitalier fort avec arrêt des suppressions de lits et recrutements massifs. Remboursement intégral des soins essentiels. Lutte contre les déserts médicaux par conventionnement sélectif. Prévention renforcée, notamment en santé mentale et pédiatrie.",
+      "sources": [
+        "src:ps-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "emploi": {
+      "valeur": "SMIC à 1 500 € net revalorisé. Semaine de 35 heures maintenue et défendue. Abrogation de la réforme des retraites portant l'âge légal à 64 ans. Droits syndicaux renforcés. Contrat de travail stable comme norme, lutte contre les abus de l'intérim.",
+      "sources": [
+        "src:ps-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "europe": {
+      "valeur": "Europe sociale et environnementale ambitieuse. Pro-intégration européenne et approfondissement de l'UE. Réforme du Pacte de stabilité pour permettre l'investissement public. Budget européen renforcé. Harmonisation sociale et fiscale par le haut.",
+      "sources": [
+        "src:ps-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    }
+  }
+}
