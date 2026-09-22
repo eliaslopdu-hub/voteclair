@@ -28,6 +28,7 @@ import sys, os, json, subprocess
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import politique as P
+import projeter
 
 refus = []
 
@@ -120,6 +121,46 @@ def controle_fichier(pol, rel, prefixe, base, sources):
                          "independantes" % chemin)
 
 
+def controle_projection(base, modifies):
+    """Autorise un diff HTML s'il n'est QUE la projection de data/.
+
+    La veille ecrit dans data/, puis lance tools/projeter.py : la PR
+    contient donc des fichiers HTML. Les refuser en bloc casserait la
+    chaine ; les accepter en bloc rouvrirait la porte que ce garde-fou
+    est cense fermer.
+
+    On tranche en rejouant la projection : on part du HTML de la branche
+    de base, on y projette les donnees de la branche proposee, et le
+    resultat doit etre exactement le HTML propose. Si un caractere a ete
+    ajoute a la main quelque part dans ces fichiers, l'egalite tombe.
+    """
+    html_modifies = [f for f in modifies if not f.startswith("data/")]
+    if not html_modifies:
+        return
+
+    try:
+        partis = charge_a("HEAD", "data/partis.json")
+        elections = charge_a("HEAD", "data/elections.json")
+        projeter.LECTEUR = lambda f: git("show", "%s:%s" % (base, f))
+        projeter.reinitialiser()
+        attendu = projeter.projeter_tout(partis, elections)
+    except Exception as e:                       # noqa: BLE001
+        refus.append("PROJECTION IMPOSSIBLE — %s : dans le doute, on refuse." % e)
+        return
+    finally:
+        projeter.LECTEUR = projeter.lire_du_disque
+
+    for f in html_modifies:
+        if f not in attendu:
+            refus.append("HORS PERIMETRE   %s — ce fichier n'est pas produit par "
+                         "la projection ; le noyau du site est fige." % f)
+            continue
+        if git("show", "HEAD:%s" % f) != attendu[f]:
+            refus.append("HORS PROJECTION  %s — ce fichier contient des "
+                         "modifications que la projection de data/ ne produit "
+                         "pas. Une main est passee par la." % f)
+
+
 def main(base):
     pol = P.charger()
     modifies = [l for l in git("diff", "--name-only", "%s...HEAD" % base).split("\n") if l]
@@ -132,10 +173,7 @@ def main(base):
         print("   ", f)
     print()
 
-    for f in modifies:
-        if not f.startswith("data/"):
-            refus.append("HORS PERIMETRE   %s — seul data/ peut etre modifie "
-                         "automatiquement ; le noyau du site est fige." % f)
+    controle_projection(base, modifies)
 
     index = {rel: prefixe for rel, prefixe, _ in P.fichiers_data()}
     sources = charge_a("HEAD", "data/sources.json") or {}
