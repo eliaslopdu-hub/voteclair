@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#6C63FF" />
+  <title>Contact – VoteClair | Nous écrire</title>
+  <meta name="description" content="Contacter VoteClair pour signaler une erreur, poser une question ou proposer une collaboration." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.voteclair.fr/contact.html" />
+  <meta property="og:title" content="Contact – VoteClair" />
+  <meta property="og:description" content="Contacter VoteClair pour toute question sur le quiz, les partis ou la méthodologie." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.voteclair.fr/contact.html" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗳️</text></svg>" />
+  <link rel="stylesheet" href="css/fonts.css" />
+  <link rel="stylesheet" href="css/main.css" />
+  <style>
+    .contact-hero { padding: calc(var(--nav-height) + 80px) 0 60px; }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 48px;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding-bottom: 80px;
+    }
+
+    .breadcrumb { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 32px; }
+    .breadcrumb a { color: var(--accent); }
+    .breadcrumb span { margin: 0 6px; }
+
+    .contact-form-wrap h2 { font-size: 1.4rem; margin-bottom: 24px; }
+
+    .form-group { margin-bottom: 20px; }
+    .form-group label {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 16px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      color: var(--text);
+      transition: border-color 0.2s;
+      outline: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(108,99,255,0.12);
+    }
+    .form-group textarea { resize: vertical; min-height: 140px; line-height: 1.6; }
+    .form-group select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235C5C78' stroke-width='1.5' fill='none'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px; }
+
+    .form-note { font-size: 0.8rem; color: var(--text-muted); margin-top: 8px; }
+
+    .form-submit { margin-top: 8px; }
+    .form-success {
+      display: none;
+      background: rgba(56,161,105,0.08);
+      border: 1px solid rgba(56,161,105,0.3);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      margin-top: 20px;
+      font-size: 0.95rem;
+      color: #2F855A;
+    }
+
+    /* Sidebar infos */
+    .contact-info h2 { font-size: 1.3rem; margin-bottom: 24px; }
+    .contact-info-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+    .contact-info-card h3 { font-size: 0.95rem; color: var(--text); margin-bottom: 10px; }
+    .contact-info-card p  { font-size: 0.875rem; color: var(--text-muted); line-height: 1.65; margin: 0; }
+    .contact-info-card a  { color: var(--accent); }
+    .contact-info-card .ci-icon { font-size: 1.5rem; margin-bottom: 10px; }
+
+    .contact-email-display {
+      font-weight: 700;
+      color: var(--accent);
+      font-size: 0.95rem;
+      word-break: break-all;
+    }
+
+    @media (max-width: 768px) {
+      .contact-layout { grid-template-columns: 1fr; }
+      .contact-info { order: -1; }
+    }
+  </style>
+  <meta property="og:image" content="https://www.voteclair.fr/assets/og-default.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+</head>
+<body>
+<a class="skip-link" href="#main-content">Aller au contenu principal</a>
+
+<!-- ═══ NAVBAR ═══ -->
+<nav class="navbar" role="navigation" aria-label="Navigation principale">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Vote<span>Clair</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="quiz.html" class="nav-cta">Quiz</a></li>
+      <li><a href="partis.html">Partis</a></li>
+      <li><a href="face-a-face.html">Comparer</a></li>
+      <li class="nav-has-dropdown">
+        <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">En savoir plus <span class="nav-dropdown-arrow">▾</span></button>
+        <ul class="nav-dropdown-menu">
+          <li><a href="institutions.html">Institutions</a></li>
+          <li><a href="histoire.html">Histoire</a></li>
+          <li><a href="pourquoi-voter.html">Pourquoi voter ?</a></li>
+          <li><a href="calendrier.html">Calendrier</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="a-propos.html">À propos</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </li>
+    </ul>
+    <button class="nav-burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<nav class="nav-mobile" aria-label="Menu mobile">
+  <a href="index.html">Accueil</a>
+  <a href="quiz.html" class="nav-mobile-cta">Quiz</a>
+  <a href="partis.html">Partis</a>
+  <a href="face-a-face.html">Comparer</a>
+  <div class="nav-mobile-divider">En savoir plus</div>
+  <a href="institutions.html">Institutions</a>
+  <a href="histoire.html">Histoire</a>
+  <a href="pourquoi-voter.html">Pourquoi voter ?</a>
+  <a href="calendrier.html">Calendrier électoral</a>
+  <a href="blog.html">Blog</a>
+  <a href="a-propos.html">À propos</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="contact-hero" id="main-content">
+  <div class="container">
+    <div style="text-align:center;max-width:560px;margin:0 auto">
+      <span class="section-label">Contact</span>
+      <h1 style="font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:16px">Nous contacter</h1>
+      <p style="color:var(--text-muted)">Une question, une erreur à signaler, une suggestion ? VoteClair étant tenu par une seule personne, je réponds dès que possible.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONTENU ═══ -->
+<div class="container">
+  <div class="contact-layout">
+
+    <!-- Formulaire -->
+    <div class="contact-form-wrap">
+      <nav class="breadcrumb" aria-label="Fil d'Ariane">
+        <a href="index.html">Accueil</a><span aria-hidden="true">›</span> Contact
+      </nav>
+      <h2>Envoyer un message</h2>
+
+      <form id="contact-form" novalidate>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+          <div class="form-group">
+            <label for="cf-nom">Nom <span style="color:#CC0000">*</span></label>
+            <input type="text" id="cf-nom" name="nom" placeholder="Votre nom" required autocomplete="family-name" />
+          </div>
+          <div class="form-group">
+            <label for="cf-prenom">Prénom</label>
+            <input type="text" id="cf-prenom" name="prenom" placeholder="Votre prénom" autocomplete="given-name" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="cf-email">Adresse e-mail <span style="color:#CC0000">*</span></label>
+          <input type="email" id="cf-email" name="email" placeholder="votre@email.fr" required autocomplete="email" />
+        </div>
+
+        <div class="form-group">
+          <label for="cf-sujet">Sujet <span style="color:#CC0000">*</span></label>
+          <select id="cf-sujet" name="sujet" required>
+            <option value="">— Choisissez un sujet —</option>
+            <option value="erreur">Signaler une erreur ou inexactitude</option>
+            <option value="quiz">Question sur le quiz</option>
+            <option value="parti">Information sur un parti</option>
+            <option value="methodologie">Question sur la méthodologie</option>
+            <option value="presse">Presse / médias</option>
+            <option value="partenariat">Proposition de partenariat</option>
+            <option value="rgpd">Exercice de droits RGPD</option>
+            <option value="autre">Autre</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="cf-message">Message <span style="color:#CC0000">*</span></label>
+          <textarea id="cf-message" name="message" placeholder="Décrivez votre demande en détail..." required></textarea>
+          <p class="form-note">Minimum 20 caractères. Soyez aussi précis que possible pour faciliter la réponse.</p>
+        </div>
+
+        <p class="form-note" style="margin-bottom:20px">
+          Ce formulaire ne transmet rien à VoteClair : il prépare un message dans votre logiciel de messagerie,
+          que vous restez libre d'envoyer ou non. Aucune donnée n'est enregistrée sur ce site.
+          Voir la <a href="confidentialite.html" style="color:var(--accent)">politique de confidentialité</a>.
+        </p>
+
+        <div id="form-error" style="display:none;background:rgba(204,0,0,0.08);border:1px solid rgba(204,0,0,0.3);border-radius:8px;padding:12px 16px;font-size:0.875rem;color:#CC0000;margin-bottom:16px"></div>
+
+        <div class="form-submit">
+          <button type="submit" class="btn btn-primary" style="padding:14px 32px;font-size:1rem">Rédiger le message →</button>
+        </div>
+
+        <div id="form-success" class="form-success">
+          ✓ <strong>Votre logiciel de messagerie vient de s'ouvrir</strong> avec le message pré-rempli — il ne part pas tant que vous ne l'envoyez pas vous-même.
+          <br /><br />
+          Rien ne s'est ouvert ? Écrivez directement à <strong>contact@voteclair.fr</strong>.
+        </div>
+      </form>
+    </div>
+
+    <!-- Infos latérales -->
+    <aside class="contact-info">
+      <h2>Informations de contact</h2>
+
+      <div class="contact-info-card">
+        <div class="ci-icon">✉️</div>
+        <h3>Email direct</h3>
+        <p>Pour toute demande urgente ou sensible :</p>
+        <p class="contact-email-display">contact@voteclair.fr</p>
+      </div>
+
+      <div class="contact-info-card">
+        <div class="ci-icon">⏱️</div>
+        <h3>Délai de réponse</h3>
+        <p>VoteClair est tenu par une seule personne : je réponds dès que possible, mais je ne peux pas garantir de délai. Les demandes relatives aux droits RGPD sont traitées dans le délai légal d'<strong>un mois</strong>.</p>
+      </div>
+
+      <div class="contact-info-card">
+        <div class="ci-icon">🛡️</div>
+        <h3>Droits RGPD</h3>
+        <p>VoteClair ne collecte aucune donnée personnelle : le quiz fonctionne entièrement dans votre navigateur. Pour toute question relative à vos droits, sélectionnez « Exercice de droits RGPD » dans le formulaire ou écrivez directement à <strong>contact@voteclair.fr</strong>.</p>
+      </div>
+
+      <div class="contact-info-card">
+        <div class="ci-icon">🔎</div>
+        <h3>Signaler une erreur</h3>
+        <p>Vous avez repéré une information incorrecte sur un parti ? Merci de préciser la page concernée, la section, et les sources que vous proposez. Je vérifie chaque signalement et je corrige publiquement les erreurs confirmées.</p>
+      </div>
+
+      <div class="contact-info-card">
+        <div class="ci-icon">📰</div>
+        <h3>Presse & médias</h3>
+        <p>Journalistes, chercheurs, enseignants : <a href="a-propos.html">consultez notre page À propos</a> pour une présentation détaillée du projet et de sa méthodologie.</p>
+      </div>
+    </aside>
+
+  </div>
+</div>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="nav-logo">Vote<span>Clair</span></div>
+        <p>VoteClair est indépendant et sans financement partisan. Outil civique gratuit pour voter en connaissance de cause.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <a href="index.html">Accueil</a>
+        <a href="quiz.html">Quiz d'orientation</a>
+        <a href="partis.html">Les partis</a>
+        <a href="face-a-face.html">Comparer</a>
+        <a href="blog.html">Blog</a>
+        <a href="a-propos.html">À propos</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>En savoir plus</h4>
+        <a href="institutions.html">Institutions</a>
+        <a href="histoire.html">Histoire</a>
+        <a href="pourquoi-voter.html">Pourquoi voter ?</a>
+        <a href="calendrier.html">Calendrier électoral</a>
+      </div>
+      <div class="footer-col">
+        <h4>Légal & transparence</h4>
+        <a href="methodologie.html">Méthodologie du quiz</a>
+        <a href="mentions-legales.html">Mentions légales</a>
+        <a href="confidentialite.html">Politique de confidentialité</a>
+        <a href="politique-cookies.html">Politique de cookies</a>
+        <a href="conditions-utilisation.html">Conditions d'utilisation</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 VoteClair — Outil civique indépendant</span>
+      <span>RGPD conforme · <a href="politique-cookies.html" style="color:inherit;text-decoration:underline">Gérer mes cookies</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/nav.js"></script>
+<script src="js/cookie-consent.js"></script>
+<script>
+  const form = document.getElementById('contact-form');
+  const errorBox = document.getElementById('form-error');
+  const successBox = document.getElementById('form-success');
+
+  const SUJETS = {
+    erreur:       'Signalement d\u2019une erreur',
+    quiz:         'Question sur le quiz',
+    parti:        'Information sur un parti',
+    methodologie: 'Question sur la m\u00e9thodologie',
+    presse:       'Presse / m\u00e9dias',
+    partenariat:  'Proposition de partenariat',
+    rgpd:         'Exercice de droits RGPD',
+    autre:        'Autre'
+  };
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    errorBox.style.display = 'none';
+
+    const nom = document.getElementById('cf-nom').value.trim();
+    const prenom = document.getElementById('cf-prenom').value.trim();
+    const email = document.getElementById('cf-email').value.trim();
+    const sujet = document.getElementById('cf-sujet').value;
+    const message = document.getElementById('cf-message').value.trim();
+
+    if (!nom) { showError('Veuillez indiquer votre nom.'); return; }
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showError('Veuillez indiquer une adresse e-mail valide.'); return; }
+    if (!sujet) { showError('Veuillez choisir un sujet.'); return; }
+    if (message.length < 20) { showError('Votre message est trop court (minimum 20 caract\u00e8res).'); return; }
+
+    /* Le site n'a pas de serveur : on pr\u00e9pare le message dans le logiciel de
+       messagerie de l'utilisateur. Rien n'est transmis \u00e0 VoteClair \u00e0 ce stade. */
+    const objet = '[VoteClair] ' + (SUJETS[sujet] || 'Message');
+    const corps =
+      'De : ' + (prenom ? prenom + ' ' : '') + nom + '\n' +
+      'Adresse de r\u00e9ponse : ' + email + '\n' +
+      'Sujet : ' + (SUJETS[sujet] || sujet) + '\n\n' +
+      message + '\n';
+
+    const href = 'mailto:contact@voteclair.fr'
+      + '?subject=' + encodeURIComponent(objet)
+      + '&body=' + encodeURIComponent(corps);
+
+    const btn = form.querySelector('button[type="submit"]');
+    btn.disabled = true;
+    btn.textContent = 'Ouverture de votre messagerie\u2026';
+
+    window.location.href = href;
+
+    btn.style.display = 'none';
+    successBox.style.display = 'block';
+    successBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  });
+
+  function showError(msg) {
+    errorBox.textContent = msg;
+    errorBox.style.display = 'block';
+    errorBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+</script>
+</body>
+</html>
