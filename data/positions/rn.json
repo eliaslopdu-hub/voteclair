@@ -73,5 +73,210 @@
       "confiance": "perime",
       "auteur": "humain"
     }
+  },
+  "points_programme": [
+    {
+      "valeur": "Priorité nationale dans l'accès aux aides sociales et au logement",
+      "source_citee": "Programme RN 2024 – rassemblementnational.fr",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    {
+      "valeur": "Contrôle strict de l'immigration avec quotas annuels votés au Parlement",
+      "source_citee": "Programme RN 2024",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    {
+      "valeur": "Retrait de la France du commandement intégré de l'OTAN",
+      "source_citee": "Programme présidentiel 2022",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    {
+      "valeur": "Baisse de la TVA sur l'énergie et les produits de première nécessité à 5,5%",
+      "source_citee": "Programme législatif RN 2024",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    {
+      "valeur": "Retraite à 60 ans pour les carrières longues (40 ans de cotisation)",
+      "source_citee": "Programme présidentiel 2022",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    {
+      "valeur": "Rétablissement de la police de proximité dans les quartiers",
+      "source_citee": "Programme sécurité RN",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    {
+      "valeur": "Référendum d'initiative citoyenne (RIC) sur les grands sujets nationaux",
+      "source_citee": "Programme présidentiel 2022",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    {
+      "valeur": "Relance industrielle française par le protectionnisme et les préférences nationales",
+      "source_citee": "Programme économique RN",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    {
+      "valeur": "Laïcité stricte : refus du communautarisme dans les institutions",
+      "source_citee": "Programme RN 2024",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    {
+      "valeur": "Révision des traités européens pour récupérer des compétences souveraines",
+      "source_citee": "Programme européen RN 2024",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    }
+  ],
+  "profondeur": [
+    "Fondé en 1972 par Jean-Marie Le Pen à partir de diverses mouvances de la droite radicale, le Front National a longtemps été cantonné aux marges du système politique français. Pendant vingt ans, le parti reste une force protestataire sans représentation parlementaire significative. Le choc du 21 avril 2002, lorsque Jean-Marie Le Pen accède au second tour de la présidentielle face à Jacques Chirac, marque un tournant : l'extrême droite n'est plus marginale.",
+    "Marine Le Pen prend la tête du parti en 2011 et entreprend une stratégie de \"dédiabolisation\" : changement de nom (Rassemblement National en 2018), rupture affichée avec les positions les plus radicales, effort de normalisation. Cette refonte porte ses fruits électoraux : 33,9% au second tour en 2017, 41,5% en 2022. Jordan Bardella, président du parti depuis 2022, incarne cette nouvelle génération.",
+    "Aux législatives de 2024, le RN obtient 143 sièges après une dissolution surprise de Macron, devenant le premier groupe d'opposition. Le parti se positionne comme la force anti-establishment par excellence, captant une large part du vote des classes populaires et des zones rurales."
+  ],
+  "figures": [
+    {
+      "nom": "Marine Le Pen",
+      "role": "Présidente du groupe RN à l'AN",
+      "initiales": null,
+      "bio": "Avocate, fille du fondateur, elle a transformé le FN en force électorale mainstream. Candidate trois fois à la présidentielle (2012, 2017, 2022).",
+      "photo": "assets/figures/marine-le-pen-2025-cropped.jpg",
+      "alt": "Marine Le Pen",
+      "credit_auteur": "Vox España",
+      "licence_label": "CC0",
+      "licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "commons_url": "https://commons.wikimedia.org/wiki/File:Marine_Le_Pen_2025_(cropped).jpg"
+    },
+    {
+      "nom": "Jordan Bardella",
+      "role": "Président du RN depuis 2022",
+      "initiales": null,
+      "bio": "Né en 1995 en Seine-Saint-Denis, eurodéputé depuis 2019. Incarne le renouvellement générationnel du parti. Pressenti Premier ministre en 2024.",
+      "photo": "assets/figures/mep-jordan-bardella.jpg",
+      "alt": "Jordan Bardella",
+      "credit_auteur": "European Union",
+      "licence_label": "European Parliament",
+      "licence_url": "https://www.europarl.europa.eu/legal-notice/",
+      "commons_url": "https://commons.wikimedia.org/wiki/File:MEP_Jordan_Bardella.jpg"
+    },
+    {
+      "nom": "Sébastien Chenu",
+      "role": "Vice-président de l'Assemblée nationale",
+      "initiales": null,
+      "bio": "Ancien UMP, rejoint le FN en 2014. Porte-parole médiatique influent, représente l'aile \"normalisée\" du parti.",
+      "photo": "assets/figures/sebastien-chenu-2.jpg",
+      "alt": "Sébastien Chenu",
+      "credit_auteur": "Timeolove122",
+      "licence_label": "CC0",
+      "licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "commons_url": "https://commons.wikimedia.org/wiki/File:S%C3%A9bastien_Chenu_(2).jpg"
+    },
+    {
+      "nom": "Florian Philippot",
+      "role": "Ancien vice-président (parti en 2017)",
+      "initiales": null,
+      "bio": "Polytechnicien, il a co-construit la ligne souverainiste et anti-euro du FN/RN avant de fonder Les Patriotes.",
+      "photo": "assets/figures/2022-04-16-16-49-26-mam-paris-02.jpg",
+      "alt": "Florian Philippot",
+      "credit_auteur": "Thomas Bresson",
+      "licence_label": "CC BY 4.0",
+      "licence_url": "https://creativecommons.org/licenses/by/4.0",
+      "commons_url": "https://commons.wikimedia.org/wiki/File:2022-04-16_16-49-26_MAM-Paris_02.jpg"
+    }
+  ],
+  "positions_fiche": {
+    "entete": [
+      "Thème",
+      "Position du Rassemblement National"
+    ],
+    "lignes": [
+      {
+        "theme": "Immigration",
+        "valeur": "Contrôle strict, quotas annuels votés par le Parlement, priorité nationale, remise en cause du droit du sol",
+        "sources": [],
+        "verifie_le": null,
+        "confiance": "a_verifier",
+        "auteur": "humain"
+      },
+      {
+        "theme": "Économie",
+        "valeur": "Protectionnisme, préférence nationale, baisse de la TVA sur les nécessités, soutien aux PME",
+        "sources": [],
+        "verifie_le": null,
+        "confiance": "a_verifier",
+        "auteur": "humain"
+      },
+      {
+        "theme": "Environnement",
+        "valeur": "Défense du nucléaire, scepticisme sur les politiques climatiques contraignantes, priorité à la souveraineté alimentaire",
+        "sources": [],
+        "verifie_le": null,
+        "confiance": "a_verifier",
+        "auteur": "humain"
+      },
+      {
+        "theme": "Europe",
+        "valeur": "Révision des traités, récupération de compétences souveraines, critique de la Commission européenne",
+        "sources": [],
+        "verifie_le": null,
+        "confiance": "a_verifier",
+        "auteur": "humain"
+      },
+      {
+        "theme": "Social",
+        "valeur": "Retraite à 60 ans pour carrières longues, baisse des charges sur les bas salaires, priorité aux Français",
+        "sources": [],
+        "verifie_le": null,
+        "confiance": "a_verifier",
+        "auteur": "humain"
+      },
+      {
+        "theme": "Sécurité",
+        "valeur": "Tolérance zéro, peines planchers, police de proximité, expulsions des étrangers délinquants",
+        "sources": [],
+        "verifie_le": null,
+        "confiance": "a_verifier",
+        "auteur": "humain"
+      },
+      {
+        "theme": "Institutions",
+        "valeur": "RIC (référendum d'initiative citoyenne), rétablissement de la proportionnelle, réforme de la justice",
+        "sources": [],
+        "verifie_le": null,
+        "confiance": "a_verifier",
+        "auteur": "humain"
+      }
+    ]
+  },
+  "programme_officiel": {
+    "label": "rassemblementnational.fr — Programme législatif et présidentiel",
+    "url": "https://www.rassemblementnational.fr"
   }
 }

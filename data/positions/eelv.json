@@ -73,5 +73,210 @@
       "confiance": "perime",
       "auteur": "humain"
     }
+  },
+  "points_programme": [
+    {
+      "valeur": "Planification écologique d'urgence : neutralité carbone avant 2050, accélérée",
+      "source_citee": "Programme EELV 2022 – lesecologistes.fr",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    {
+      "valeur": "Sortie du nucléaire progressif, investissement massif dans les énergies renouvelables",
+      "source_citee": "Programme énergie EELV",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    {
+      "valeur": "100% énergies renouvelables d'ici 2050 : solaire, éolien, hydraulique, géothermie",
+      "source_citee": "Programme énergie EELV 2022",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    {
+      "valeur": "Réforme de la PAC pour une agriculture 100% biologique et relocalisée",
+      "source_citee": "Programme agriculture EELV",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    {
+      "valeur": "SMIC à 1 600 € net et semaine de travail à 4 jours sans perte de salaire",
+      "source_citee": "Programme social EELV 2022",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    {
+      "valeur": "Droit au logement opposable renforcé, rénovation thermique de tous les logements",
+      "source_citee": "Programme logement EELV",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    {
+      "valeur": "Justice climatique internationale : taxe carbone aux frontières européennes",
+      "source_citee": "Programme européen EELV 2024",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    {
+      "valeur": "Politique d'accueil digne des demandeurs d'asile et réfugiés climatiques",
+      "source_citee": "Programme EELV 2022",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    {
+      "valeur": "Fédéralisme européen renforcé, élection du Parlement au suffrage proportionnel",
+      "source_citee": "Programme européen EELV 2024",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    {
+      "valeur": "Gratuité des transports en commun dans les grandes agglomérations",
+      "source_citee": "Programme mobilité EELV",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    }
+  ],
+  "profondeur": [
+    "Les racines d'EELV plongent dans les mouvements écologistes des années 1970, portés par des figures comme René Dumont, premier candidat écologiste à la présidentielle (1974). Les Verts sont fondés en 1984 et percent aux élections européennes de 1989 (10,6%) et régionales de 1992. La liste Europe Écologie menée par Daniel Cohn-Bendit aux européennes 2009 (16,3%) ouvre la voie à la refondation.",
+    "En 2010, Les Verts fusionnent avec Europe Écologie pour former EELV. Le parti connaît un pic d'influence lors du quinquennat Hollande, avec plusieurs ministres écologistes (Cécile Duflot, Pascal Canfin), avant de quitter le gouvernement en 2014 en désaccord avec la politique économique. Eva Joly obtient 2,3% à la présidentielle 2012, Yannick Jadot 4,6% en 2022.",
+    "Marine Tondelier, élue secrétaire nationale en 2022, insuffle un nouveau dynamisme. Refusant l'étiquette \"bobo parisien\", elle défend une écologie populaire et sociale. EELV participe à la NUPES puis au Nouveau Front Populaire en 2024, où le parti obtient 23 sièges. Le défi reste de convaincre que l'écologie n'est pas un luxe de classe moyenne mais une nécessité pour tous."
+  ],
+  "figures": [
+    {
+      "nom": "Marine Tondelier",
+      "role": "Secrétaire nationale d'EELV",
+      "initiales": null,
+      "bio": "Ancienne conseillère municipale à Hénin-Beaumont (face au RN). Élue secrétaire nationale en 2022. Incarne une écologie populaire, enracinée dans les territoires.",
+      "photo": "assets/figures/20210819-tondelier-m-cr3.jpg",
+      "alt": "Marine Tondelier",
+      "credit_auteur": "Greenbox",
+      "licence_label": "CC BY-SA 4.0",
+      "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "commons_url": "https://commons.wikimedia.org/wiki/File:20210819_tondelier.m-cr3.jpg"
+    },
+    {
+      "nom": "Yannick Jadot",
+      "role": "Eurodéputé, candidat présidentiel 2022",
+      "initiales": null,
+      "bio": "Ingénieur agronome, ancien de Greenpeace. Eurodéputé depuis 2009. Candidat à la présidentielle 2022 avec 4,6%. Figure de l'écologie pragmatique et européenne.",
+      "photo": "assets/figures/20210819-jadot-yannick-5704.jpg",
+      "alt": "Yannick Jadot",
+      "credit_auteur": "Greenbox",
+      "licence_label": "CC BY-SA 4.0",
+      "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "commons_url": "https://commons.wikimedia.org/wiki/File:20210819_jadot.yannick_5704.jpg"
+    },
+    {
+      "nom": "Cécile Duflot",
+      "role": "Ancienne ministre du Logement",
+      "initiales": null,
+      "bio": "Ancienne secrétaire nationale des Verts, ministre du Logement (2012-2014). Aujourd'hui directrice générale d'Oxfam France. Voix influente de l'écologie politique.",
+      "photo": "assets/figures/europe-ecologie-closing-rally-regional-elections-2010-03-10-n11-.jpg",
+      "alt": "Cécile Duflot",
+      "credit_auteur": "Marie-Lan Nguyen",
+      "licence_label": "CC BY 3.0",
+      "licence_url": "https://creativecommons.org/licenses/by/3.0",
+      "commons_url": "https://commons.wikimedia.org/wiki/File:Europe_Ecologie_closing_rally_regional_elections_2010-03-10_n11_(cropped).jpg"
+    },
+    {
+      "nom": "Sandra Regol",
+      "role": "Députée du Bas-Rhin",
+      "initiales": null,
+      "bio": "Première vice-présidente de l'Assemblée nationale issue d'EELV. Incarne la nouvelle génération élue en 2022, à la croisée des luttes écologistes et féministes.",
+      "photo": "assets/figures/sandra-regol-cropped.jpg",
+      "alt": "Sandra Regol",
+      "credit_auteur": "Sikora62",
+      "licence_label": "CC0",
+      "licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "commons_url": "https://commons.wikimedia.org/wiki/File:Sandra_Regol_(cropped).jpg"
+    }
+  ],
+  "positions_fiche": {
+    "entete": [
+      "Thème",
+      "Position d'Europe Écologie Les Verts"
+    ],
+    "lignes": [
+      {
+        "theme": "Immigration",
+        "valeur": "Accueil humaniste, droit d'asile élargi aux réfugiés climatiques, régularisation des sans-papiers",
+        "sources": [],
+        "verifie_le": null,
+        "confiance": "a_verifier",
+        "auteur": "humain"
+      },
+      {
+        "theme": "Économie",
+        "valeur": "Économie circulaire, décroissance choisie dans les secteurs polluants, relocalisations vertes",
+        "sources": [],
+        "verifie_le": null,
+        "confiance": "a_verifier",
+        "auteur": "humain"
+      },
+      {
+        "theme": "Environnement",
+        "valeur": "Urgence climatique absolue, sortie du nucléaire et des fossiles, biodiversité constitutionnalisée",
+        "sources": [],
+        "verifie_le": null,
+        "confiance": "a_verifier",
+        "auteur": "humain"
+      },
+      {
+        "theme": "Europe",
+        "valeur": "Fédéralisme européen, Green Deal renforcé, défense des droits humains dans les traités",
+        "sources": [],
+        "verifie_le": null,
+        "confiance": "a_verifier",
+        "auteur": "humain"
+      },
+      {
+        "theme": "Social",
+        "valeur": "SMIC à 1 600 €, semaine de 4 jours, revenu universel de base étudié, gratuité des transports",
+        "sources": [],
+        "verifie_le": null,
+        "confiance": "a_verifier",
+        "auteur": "humain"
+      },
+      {
+        "theme": "Sécurité",
+        "valeur": "Prévention, désescalade, réforme de la police, lutte contre les violences policières",
+        "sources": [],
+        "verifie_le": null,
+        "confiance": "a_verifier",
+        "auteur": "humain"
+      },
+      {
+        "theme": "Institutions",
+        "valeur": "VIe République, proportionnelle, droits de vote à 16 ans, démocratie participative",
+        "sources": [],
+        "verifie_le": null,
+        "confiance": "a_verifier",
+        "auteur": "humain"
+      }
+    ]
+  },
+  "programme_officiel": {
+    "label": "lesecologistes.fr — Programme et engagements",
+    "url": "https://www.lesecologistes.fr"
   }
 }

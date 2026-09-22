@@ -73,5 +73,210 @@
       "confiance": "perime",
       "auteur": "humain"
     }
+  },
+  "points_programme": [
+    {
+      "valeur": "Contrôle strict de l'immigration et renforcement des expulsions",
+      "source_citee": "Programme LR 2022 – republicains.fr",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    {
+      "valeur": "Baisse des charges pour les entreprises et simplification fiscale",
+      "source_citee": "Programme économique LR",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    {
+      "valeur": "Maintien et consolidation de la retraite à 64 ans",
+      "source_citee": "Programme LR 2024",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    {
+      "valeur": "Développement du nucléaire civil : 14 nouveaux réacteurs EPR2",
+      "source_citee": "Programme énergie LR",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    {
+      "valeur": "Rétablissement des peines planchers pour les récidivistes",
+      "source_citee": "Programme sécurité LR",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    {
+      "valeur": "Décentralisation et autonomie renforcée des collectivités territoriales",
+      "source_citee": "Programme LR 2022",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    {
+      "valeur": "Défense d'une Europe des nations souveraines et compétitives",
+      "source_citee": "Programme européen LR 2024",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    {
+      "valeur": "Réforme de l'éducation : autorité, mérite, discipline, orientation précoce",
+      "source_citee": "Programme LR 2022",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    {
+      "valeur": "10 000 policiers et gendarmes supplémentaires, lutte contre la délinquance",
+      "source_citee": "Programme sécurité LR",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    {
+      "valeur": "Soutien à l'agriculture française et aux territoires ruraux",
+      "source_citee": "Programme LR 2022",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    }
+  ],
+  "profondeur": [
+    "Les Républicains sont les héritiers du gaullisme, une tradition politique fondée par le général de Gaulle après la Seconde Guerre mondiale. Du RPF (1947) au RPR (1976) fondé par Jacques Chirac, en passant par l'UNR et l'UDR, cette famille politique a gouverné la France pendant de nombreuses décennies. Chirac sera président de 1995 à 2007, Sarkozy de 2007 à 2012.",
+    "Après la défaite de Sarkozy en 2012, le parti traverse une crise identitaire profonde. Rebaptisé Les Républicains en 2015, il est secoué par des dissidences, notamment celle d'Éric Ciotti qui tente un rapprochement avec le RN en 2024. Laurent Wauquiez, ancien président du parti (2017-2019), reprend les rênes en 2022 et tire le parti vers une droite plus ferme sur l'immigration et la sécurité.",
+    "LR représente la droite républicaine traditionnelle : conservatrice sur les questions de société, libérale sur l'économie, et attachée à une certaine conception de l'État gaullien. Le parti peine à trouver sa place dans un paysage dominé par Renaissance au centre et le RN à sa droite."
+  ],
+  "figures": [
+    {
+      "nom": "Laurent Wauquiez",
+      "role": "Président de LR depuis 2022",
+      "initiales": null,
+      "bio": "Énarque, normalien, ancien ministre. Préside la région Auvergne-Rhône-Alpes depuis 2016. Ligne droite affirmée sur immigration et sécurité.",
+      "photo": "assets/figures/laurent-wauquiez-2021.jpg",
+      "alt": "Laurent Wauquiez",
+      "credit_auteur": "Un Gone",
+      "licence_label": "CC BY-SA 4.0",
+      "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "commons_url": "https://commons.wikimedia.org/wiki/File:Laurent_Wauquiez_2021.jpg"
+    },
+    {
+      "nom": "Nicolas Sarkozy",
+      "role": "Président de la République (2007-2012)",
+      "initiales": null,
+      "bio": "Ancien président, condamné dans plusieurs affaires judiciaires. A modernisé la droite française avec le \"sarkozysme\".",
+      "photo": "assets/figures/nicolas-sarkozy-20220927.jpg",
+      "alt": "Nicolas Sarkozy",
+      "credit_auteur": "首相官邸",
+      "licence_label": "CC BY 4.0",
+      "licence_url": "https://creativecommons.org/licenses/by/4.0",
+      "commons_url": "https://commons.wikimedia.org/wiki/File:Nicolas_Sarkozy_20220927.jpg"
+    },
+    {
+      "nom": "Jacques Chirac",
+      "role": "Président de la République (1995-2007)",
+      "initiales": null,
+      "bio": "Fondateur du RPR, deux fois Premier ministre, deux fois président. Incarne le gaullisme social et le refus de la guerre en Irak (2003).",
+      "photo": "assets/figures/jacques-chirac-1997-cropped.jpg",
+      "alt": "Jacques Chirac",
+      "credit_auteur": "Christian Lambiotte",
+      "licence_label": "CC BY 4.0",
+      "licence_url": "https://creativecommons.org/licenses/by/4.0",
+      "commons_url": "https://commons.wikimedia.org/wiki/File:Jacques_Chirac_(1997)_(cropped).jpg"
+    },
+    {
+      "nom": "Valérie Pécresse",
+      "role": "Présidente d'Île-de-France",
+      "initiales": null,
+      "bio": "Candidate LR à la présidentielle 2022 (4,8%). Gère la plus grande région de France depuis 2015.",
+      "photo": "assets/figures/valerie-pecresse-at-a-2024-paralympic-games-media-conference-in-.jpg",
+      "alt": "Valérie Pécresse",
+      "credit_auteur": "Gail Leenstra",
+      "licence_label": "CC BY-SA 4.0",
+      "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "commons_url": "https://commons.wikimedia.org/wiki/File:Val%C3%A9rie_P%C3%A9cresse_at_a_2024_Paralympic_Games_media_conference_in_2024_3_(cropped).jpg"
+    }
+  ],
+  "positions_fiche": {
+    "entete": [
+      "Thème",
+      "Position des Républicains"
+    ],
+    "lignes": [
+      {
+        "theme": "Immigration",
+        "valeur": "Contrôle strict, fin du droit du sol automatique, expulsions facilitées, quotas sectoriels",
+        "sources": [],
+        "verifie_le": null,
+        "confiance": "a_verifier",
+        "auteur": "humain"
+      },
+      {
+        "theme": "Économie",
+        "valeur": "Libéralisme économique, baisse des impôts de production, flexibilisation du marché du travail",
+        "sources": [],
+        "verifie_le": null,
+        "confiance": "a_verifier",
+        "auteur": "humain"
+      },
+      {
+        "theme": "Environnement",
+        "valeur": "Pro-nucléaire fort, transition écologique par la technologie, refus des interdictions brutales",
+        "sources": [],
+        "verifie_le": null,
+        "confiance": "a_verifier",
+        "auteur": "humain"
+      },
+      {
+        "theme": "Europe",
+        "valeur": "Europe des nations, récupération de certaines compétences, réforme des institutions",
+        "sources": [],
+        "verifie_le": null,
+        "confiance": "a_verifier",
+        "auteur": "humain"
+      },
+      {
+        "theme": "Social",
+        "valeur": "Retraite à 64 ans assumée, conditionnalité des aides, valorisation du travail",
+        "sources": [],
+        "verifie_le": null,
+        "confiance": "a_verifier",
+        "auteur": "humain"
+      },
+      {
+        "theme": "Sécurité",
+        "valeur": "Tolérance zéro, peines planchers, moyens accrus pour la justice et la police",
+        "sources": [],
+        "verifie_le": null,
+        "confiance": "a_verifier",
+        "auteur": "humain"
+      },
+      {
+        "theme": "Institutions",
+        "valeur": "Renforcement de l'autorité de l'État, décentralisation, réforme de la haute fonction publique",
+        "sources": [],
+        "verifie_le": null,
+        "confiance": "a_verifier",
+        "auteur": "humain"
+      }
+    ]
+  },
+  "programme_officiel": {
+    "label": "republicains.fr — Programme et engagements",
+    "url": "https://www.republicains.fr"
   }
 }

@@ -73,5 +73,210 @@
       "confiance": "perime",
       "auteur": "humain"
     }
+  },
+  "points_programme": [
+    {
+      "valeur": "Réforme des retraites pour assurer l'équilibre financier du système (64 ans)",
+      "source_citee": "Programme présidentiel 2022 – en-marche.fr",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    {
+      "valeur": "Objectif plein emploi : taux de chômage sous 5% d'ici 2027",
+      "source_citee": "Programme présidentiel 2022",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    {
+      "valeur": "Développement du nucléaire civil : 6 nouveaux EPR2 et prolongation du parc",
+      "source_citee": "Loi énergie-climat 2023",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    {
+      "valeur": "Plan France 2030 : investissement dans les industries vertes et technologiques",
+      "source_citee": "Plan France 2030 – gouvernement.fr",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    {
+      "valeur": "Construction européenne renforcée : défense, économie, numérique, énergie",
+      "source_citee": "Programme européen Renaissance 2024",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    {
+      "valeur": "Baisse des impôts de production pour les entreprises françaises",
+      "source_citee": "Loi de finances 2021-2024",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    {
+      "valeur": "École : revalorisation des enseignants, choc des savoirs, groupes de niveau",
+      "source_citee": "Programme éducation 2024",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    {
+      "valeur": "Lutte contre l'immigration irrégulière, intégration par le travail et la langue",
+      "source_citee": "Loi immigration 2024",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    {
+      "valeur": "Investissement dans la santé, lutte contre les déserts médicaux",
+      "source_citee": "Programme présidentiel 2022",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    {
+      "valeur": "Réforme de l'État : simplification administrative et décentralisation",
+      "source_citee": "Programme présidentiel 2022",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    }
+  ],
+  "profondeur": [
+    "Fondé en avril 2016 par Emmanuel Macron, alors ministre de l'Économie du gouvernement Hollande, le mouvement En Marche ! rompt avec le clivage gauche-droite traditionnel. \"Ni de gauche, ni de droite\" : ce positionnement centriste inédit, qualifié par ses détracteurs de \"en même temps\", permet à Macron de remporter la présidentielle de 2017 au premier tour avec 24,01% des voix, puis l'élection face à Marine Le Pen avec 66,1%.",
+    "La République En Marche (LREM) balaie les législatives en obtenant 350 sièges, une majorité absolue historique. Le parti rassemble des transfuges de la gauche, du centre et de la droite modérée, incarnant une recomposition du champ politique. Rebaptisé Renaissance en mai 2022, il perd sa majorité absolue aux législatives de juin 2022 et gouverne depuis en minorité.",
+    "Le bilan macroniste est contesté : réforme du Code du travail, suppression de l'ISF, crise des Gilets Jaunes, réforme des retraites imposée par 49.3... mais aussi relance post-Covid, France 2030, réindustrialisation affichée et rôle actif dans la défense de l'Ukraine. Aux législatives 2024, après dissolution, Renaissance obtient 166 sièges derrière le NFP."
+  ],
+  "figures": [
+    {
+      "nom": "Emmanuel Macron",
+      "role": "Président de la République",
+      "initiales": null,
+      "bio": "Énarque, banquier d'affaires chez Rothschild, ministre de l'Économie (2014-2016). Fondateur d'En Marche !, président depuis 2017. Réélu en 2022.",
+      "photo": "assets/figures/emmanuel-macron-2025-cropped.jpg",
+      "alt": "Emmanuel Macron",
+      "credit_auteur": "Nebojša Tejić",
+      "licence_label": "Public domain",
+      "licence_url": null,
+      "commons_url": "https://commons.wikimedia.org/wiki/File:Emmanuel_Macron_2025_(cropped).jpg"
+    },
+    {
+      "nom": "Gabriel Attal",
+      "role": "Premier ministre (jan-sept 2024)",
+      "initiales": null,
+      "bio": "Le plus jeune Premier ministre de la Ve République à 34 ans. Ancien porte-parole du gouvernement, ministre de l'Éducation. Incarne le renouveau du parti.",
+      "photo": "assets/figures/gabriel-attal-2025-close-crop.jpg",
+      "alt": "Gabriel Attal",
+      "credit_auteur": "Ismail Aissoub",
+      "licence_label": "CC BY 4.0",
+      "licence_url": "https://creativecommons.org/licenses/by/4.0",
+      "commons_url": "https://commons.wikimedia.org/wiki/File:Gabriel_Attal_2025_(close_crop).jpg"
+    },
+    {
+      "nom": "Élisabeth Borne",
+      "role": "Première ministre (2022-2024)",
+      "initiales": null,
+      "bio": "Polytechnicienne, ex-ministre du Travail. A porté la réforme des retraites. Première femme Premier ministre depuis Édith Cresson.",
+      "photo": "assets/figures/la-premiere-ministre-francaise-elisabeth-borne-cropped.jpg",
+      "alt": "Élisabeth Borne",
+      "credit_auteur": "Benoît Granier",
+      "licence_label": "Licence Ouverte",
+      "licence_url": "https://www.etalab.gouv.fr/licence-ouverte-open-licence",
+      "commons_url": "https://commons.wikimedia.org/wiki/File:La_Premi%C3%A8re_ministre_fran%C3%A7aise_%C3%89lisabeth_Borne_(cropped).jpg"
+    },
+    {
+      "nom": "Bruno Le Maire",
+      "role": "Ministre de l'Économie (2017-2024)",
+      "initiales": null,
+      "bio": "Ancien LR passé à Renaissance. Ministre de l'Économie le plus longtemps en poste depuis Giscard. Partisant du \"choc de compétitivité\".",
+      "photo": "assets/figures/eu2024be-240223-informal-meeting-of-economic-and-financial-affai.jpg",
+      "alt": "Bruno Le Maire",
+      "credit_auteur": "Belgian Presidency of the Council of the EU 2024 from Belgium",
+      "licence_label": "CC BY 2.0",
+      "licence_url": "https://creativecommons.org/licenses/by/2.0",
+      "commons_url": "https://commons.wikimedia.org/wiki/File:EU2024BE_240223_Informal_meeting_of_economic_and_financial_affairs_ministers_Gent_JNZT_0040_(53545889372).jpg"
+    }
+  ],
+  "positions_fiche": {
+    "entete": [
+      "Thème",
+      "Position de Renaissance"
+    ],
+    "lignes": [
+      {
+        "theme": "Immigration",
+        "valeur": "Lutte contre l'immigration irrégulière, intégration par le travail, européanisation de la politique migratoire",
+        "sources": [],
+        "verifie_le": null,
+        "confiance": "a_verifier",
+        "auteur": "humain"
+      },
+      {
+        "theme": "Économie",
+        "valeur": "Libéralisme modéré, attractivité pour les investissements étrangers, baisse des impôts de production",
+        "sources": [],
+        "verifie_le": null,
+        "confiance": "a_verifier",
+        "auteur": "humain"
+      },
+      {
+        "theme": "Environnement",
+        "valeur": "Pro-nucléaire et renouvelables, planification écologique, neutralité carbone 2050",
+        "sources": [],
+        "verifie_le": null,
+        "confiance": "a_verifier",
+        "auteur": "humain"
+      },
+      {
+        "theme": "Europe",
+        "valeur": "Fédéralisme européen, Europe puissance sur la scène mondiale, défense commune",
+        "sources": [],
+        "verifie_le": null,
+        "confiance": "a_verifier",
+        "auteur": "humain"
+      },
+      {
+        "theme": "Social",
+        "valeur": "Retraite à 64 ans, activation des chômeurs, investissement dans la santé et l'éducation",
+        "sources": [],
+        "verifie_le": null,
+        "confiance": "a_verifier",
+        "auteur": "humain"
+      },
+      {
+        "theme": "Sécurité",
+        "valeur": "Renforcement des moyens policiers, justice plus ferme, lutte contre la criminalité organisée",
+        "sources": [],
+        "verifie_le": null,
+        "confiance": "a_verifier",
+        "auteur": "humain"
+      },
+      {
+        "theme": "Institutions",
+        "valeur": "Réforme constitutionnelle avortée, simplification administrative, décentralisation ciblée",
+        "sources": [],
+        "verifie_le": null,
+        "confiance": "a_verifier",
+        "auteur": "humain"
+      }
+    ]
+  },
+  "programme_officiel": {
+    "label": "parti-renaissance.fr — Programme et engagements",
+    "url": "https://parti-renaissance.fr"
   }
 }
