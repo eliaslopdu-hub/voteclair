@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Fichiers système et techniques
+Disallow: /js/
+Disallow: /css/
+Disallow: /assets/
+
+# Sitemap
+Sitemap: https://www.voteclair.fr/sitemap.xml
