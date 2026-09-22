@@ -1,0 +1,228 @@
+{
+  "format": "v1",
+  "note": "Table figée : indice dans QUESTIONS -> identifiant de question, et ordre des options. Les liens de partage #r= encodent ces indices. Toute modification de ce fichier invalide des liens déjà en circulation.",
+  "questions": [
+    {
+      "index": 0,
+      "qid": "q2",
+      "options": [
+        "CDI / Fonctionnaire",
+        "CDD / Intérim",
+        "Au chômage",
+        "Indépendant / Entrepreneur",
+        "Retraité",
+        "Étudiant"
+      ]
+    },
+    {
+      "index": 1,
+      "qid": "q5",
+      "options": null
+    },
+    {
+      "index": 2,
+      "qid": "q6",
+      "options": null
+    },
+    {
+      "index": 3,
+      "qid": "q7",
+      "options": null
+    },
+    {
+      "index": 4,
+      "qid": "q8",
+      "options": null
+    },
+    {
+      "index": 5,
+      "qid": "q9",
+      "options": null
+    },
+    {
+      "index": 6,
+      "qid": "q10",
+      "options": null
+    },
+    {
+      "index": 7,
+      "qid": "q11",
+      "options": null
+    },
+    {
+      "index": 8,
+      "qid": "q12",
+      "options": null
+    },
+    {
+      "index": 9,
+      "qid": "q16",
+      "options": null
+    },
+    {
+      "index": 10,
+      "qid": "q22",
+      "options": null
+    },
+    {
+      "index": 11,
+      "qid": "q24",
+      "options": null
+    },
+    {
+      "index": 12,
+      "qid": "q25",
+      "options": null
+    },
+    {
+      "index": 13,
+      "qid": "q26",
+      "options": null
+    },
+    {
+      "index": 14,
+      "qid": "q28",
+      "options": null
+    },
+    {
+      "index": 15,
+      "qid": "q1",
+      "options": [
+        "18-25 ans",
+        "26-40 ans",
+        "41-60 ans",
+        "60 ans et plus"
+      ]
+    },
+    {
+      "index": 16,
+      "qid": "q3",
+      "options": [
+        "Moins de 1 200 €",
+        "1 200 à 2 500 €",
+        "2 500 à 4 000 €",
+        "Plus de 4 000 €"
+      ]
+    },
+    {
+      "index": 17,
+      "qid": "q4",
+      "options": [
+        "Grande ville (100 000 hab. et +)",
+        "Ville moyenne",
+        "Zone rurale ou périurbaine",
+        "Outre-mer"
+      ]
+    },
+    {
+      "index": 18,
+      "qid": "q13",
+      "options": null
+    },
+    {
+      "index": 19,
+      "qid": "q14",
+      "options": null
+    },
+    {
+      "index": 20,
+      "qid": "q15",
+      "options": null
+    },
+    {
+      "index": 21,
+      "qid": "q17",
+      "options": null
+    },
+    {
+      "index": 22,
+      "qid": "q18",
+      "options": null
+    },
+    {
+      "index": 23,
+      "qid": "q19",
+      "options": null
+    },
+    {
+      "index": 24,
+      "qid": "q20",
+      "options": null
+    },
+    {
+      "index": 25,
+      "qid": "q21",
+      "options": null
+    },
+    {
+      "index": 26,
+      "qid": "q23",
+      "options": null
+    },
+    {
+      "index": 27,
+      "qid": "q27",
+      "options": null
+    },
+    {
+      "index": 28,
+      "qid": "q29",
+      "options": null
+    },
+    {
+      "index": 29,
+      "qid": "q30",
+      "options": null
+    },
+    {
+      "index": 30,
+      "qid": "q31",
+      "options": null
+    },
+    {
+      "index": 31,
+      "qid": "q32",
+      "options": null
+    },
+    {
+      "index": 32,
+      "qid": "q33",
+      "options": null
+    },
+    {
+      "index": 33,
+      "qid": "q34",
+      "options": null
+    },
+    {
+      "index": 34,
+      "qid": "q35",
+      "options": null
+    },
+    {
+      "index": 35,
+      "qid": "q36",
+      "options": null
+    },
+    {
+      "index": 36,
+      "qid": "q37",
+      "options": null
+    },
+    {
+      "index": 37,
+      "qid": "q38",
+      "options": null
+    },
+    {
+      "index": 38,
+      "qid": "q39",
+      "options": null
+    },
+    {
+      "index": 39,
+      "qid": "q40",
+      "options": null
+    }
+  ]
+}
