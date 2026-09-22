@@ -1,0 +1,14 @@
+# Système
+.DS_Store
+**/.DS_Store
+
+# Outillage
+tools/__pycache__/
+**/__pycache__/
+*.pyc
+
+# Veille : cache de récupération (les preuves, elles, sont versionnées)
+data/veille/cache/
+
+# Réglages locaux Claude Code
+.claude/settings.local.json
