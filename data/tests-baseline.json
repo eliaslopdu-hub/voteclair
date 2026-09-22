@@ -1,0 +1,11 @@
+{
+  "date": "2026-09-22",
+  "empreinte_ordre_v1": "09f7fef990026eba2a64f04c8756b714b101ccddea9872ae4f6e6f780b5c1fb3",
+  "dette": {
+    "faits sans aucune source": 157,
+    "faits jamais verifies": 445,
+    "faits sur source perimee": 288,
+    "sources sans URL": 8,
+    "questions notees sans poids (tous partis confondus)": 19
+  }
+}

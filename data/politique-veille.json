@@ -1,0 +1,63 @@
+{
+  "note": "Declare, par chemin de donnee, a quelle cadence un fait doit etre reverifie, s'il peut etre publie automatiquement, et le rang de source minimal exige. Ce fichier est le garde-fou applicatif : le garde-fou de plateforme est .github/CODEOWNERS, qui empeche GitHub lui-meme de fusionner sans relecture humaine les chemins marques auto=false. Les deux, parce que celui-ci est du code qui peut etre mal ecrit.",
+  "rangs": {
+    "1": "Journal officiel, Legifrance, Conseil constitutionnel, decret",
+    "2": "Programme officiel, statuts deposes, site officiel du parti",
+    "3": "Assemblee nationale, Senat, CNCCFP, ministere de l'Interieur (donnees ouvertes)",
+    "4": "Presse, agregateur, encyclopedie collaborative — jamais suffisant pour publier"
+  },
+  "rang_max_publiable": 3,
+  "champs": {
+    "elections.*.date": {
+      "cadence_jours": 7,
+      "auto": true,
+      "rang_min": 1,
+      "double_source": true,
+      "sources_attendues": ["Legifrance — decret de convocation des electeurs", "JORF"],
+      "justification": "La date d'un decret de convocation ne s'interprete pas : elle se lit."
+    },
+    "elections.*.statut": {
+      "cadence_jours": 7,
+      "auto": true,
+      "rang_min": 1,
+      "double_source": true,
+      "justification": "Le passage d'estime a confirme est exactement la publication du decret."
+    },
+    "elections.*.description": { "auto": false, "justification": "Texte editorial." },
+    "elections.*.qui_vote": { "auto": false, "justification": "Texte editorial." },
+    "elections.*.ce_qui_est_elu": { "auto": false, "justification": "Texte editorial." },
+
+    "partis.*.dirigeant": {
+      "cadence_jours": 30,
+      "auto": true,
+      "rang_min": 2,
+      "double_source": true,
+      "sources_attendues": ["Site officiel du parti — page instances", "Journal officiel des associations"],
+      "justification": "Fait verifiable mot pour mot, mais deux sources exigees : un site de parti peut etre en retard sur un congres."
+    },
+    "partis.*.site": {
+      "cadence_jours": 90,
+      "auto": true,
+      "rang_min": 2,
+      "double_source": false,
+      "justification": "Seul le champ archive est ecrit automatiquement ; la valeur elle-meme ne change qu'a la main."
+    },
+    "partis.*.fonde_en": { "cadence_jours": 730, "auto": false, "rang_min": 2 },
+    "partis.*.nom": { "cadence_jours": 180, "auto": false, "rang_min": 2, "justification": "Un changement de nom accompagne souvent une recomposition : jamais sans arbitrage." },
+    "partis.*.ideologie": { "auto": false, "justification": "Qualification politique — jugement editorial." },
+    "partis.*.axe": { "auto": false, "justification": "Qualification politique — jugement editorial." },
+    "partis.*.perimetre": { "auto": false, "justification": "Decide si un parti est visible sur le site. Jamais automatique." },
+
+    "positions.*.comparateur": { "cadence_jours": 365, "auto": false, "rang_min": 2 },
+    "positions.*.points_programme": { "cadence_jours": 365, "auto": false, "rang_min": 2 },
+    "positions.*.positions_fiche": { "cadence_jours": 365, "auto": false, "rang_min": 2 },
+    "positions.*.figures": { "cadence_jours": 180, "auto": false, "justification": "Une photo engage une licence : jamais remplacee sans controle humain." },
+    "positions.*.profondeur": { "auto": false, "justification": "Texte editorial." },
+
+    "poids.**": { "auto": false, "justification": "Chaque poids est un jugement politique. Aucune automatisation ne doit le rendre." },
+    "distances.**": { "auto": false, "justification": "Idem : une distance entre deux partis est un arbitrage, pas une mesure." },
+    "questions.**": { "auto": false, "justification": "Modifier une question change le sens des reponses deja donnees." },
+    "themes.**": { "auto": false },
+    "sources.*.archive": { "cadence_jours": 90, "auto": true, "rang_min": 4, "double_source": false, "justification": "N'ecrit qu'une copie Wayback, jamais la valeur d'un fait." }
+  }
+}
