@@ -4,15 +4,22 @@ Se lance sur une branche de veille, avant la fusion :
 
     python3 tools/garde_fou.py origin/main
 
-Trois interdits, dans cet ordre de gravite :
+Quatre interdits, dans cet ordre de gravite :
 
   1. toucher autre chose que data/          — le noyau (quiz, methodologie,
      design, calcul de correspondance) est fige. Une automatisation qui
      modifie quiz.js change le sens des reponses deja donnees.
   2. toucher un champ marque auto=false     — poids, distances, questions,
      ideologie, perimetre : ce sont des jugements politiques.
-  3. publier un fait sans source suffisante — `confirme` exige une source
-     de rang <= rang_min declare pour ce champ.
+  3. reecrire une source existante          — on ajoute une preuve, on ne
+     retouche pas celles qui ont deja servi a valider un fait.
+  4. publier un fait sans source suffisante — `confirme` exige une source
+     du rang declare, et deux sources quand le champ l'exige.
+
+Le diff se fait feuille par feuille, pas enveloppe par enveloppe : tous les
+fichiers de data/ ne sont pas au format enveloppe (data/poids/ contient des
+entiers nus), et un controle qui ne verrait que les enveloppes laisserait
+passer une modification des poids du quiz.
 
 Le garde-fou de plateforme (.github/CODEOWNERS) fait le meme travail cote
 GitHub. Les deux, parce que celui-ci est du code, et que du code se trompe.
@@ -37,8 +44,80 @@ def charge_a(ref, rel):
         return None
 
 
-def aplatis(contenu, prefixe):
-    return {c: e for c, e in P.enveloppes(contenu, prefixe)} if contenu else {}
+def feuilles(obj, chemin=""):
+    """Rend (chemin, valeur) pour chaque feuille scalaire de l'arbre."""
+    if isinstance(obj, dict):
+        for k, v in obj.items():
+            yield from feuilles(v, "%s.%s" % (chemin, k) if chemin else k)
+    elif isinstance(obj, list):
+        for i, v in enumerate(obj):
+            yield from feuilles(v, "%s[%d]" % (chemin, i))
+    else:
+        yield chemin, obj
+
+
+def regle_couvrante(pol, chemin):
+    """La regle du chemin, ou de son plus proche ancetre qui en a une.
+
+    `partis.lr.dirigeant.valeur` n'a pas de regle propre ; c'est
+    `partis.*.dirigeant` qui la porte.
+    """
+    segs = chemin.split(".")
+    for i in range(len(segs), 0, -1):
+        r = P.regle(pol, ".".join(segs[:i]))
+        if r is not None:
+            return ".".join(segs[:i]), r
+    return None, None
+
+
+def controle_fichier(pol, rel, prefixe, base, sources):
+    avant, apres = charge_a(base, rel), charge_a("HEAD", rel)
+    fa = dict(feuilles(avant, prefixe)) if avant is not None else {}
+    fb = dict(feuilles(apres, prefixe)) if apres is not None else {}
+
+    # Une source nouvelle est une preuve versee au dossier, pas un fait
+    # publie : on l'autorise. Retoucher une source existante, non.
+    sources_avant = set((avant or {}).keys()) if prefixe == "sources" else set()
+
+    for chemin in sorted(set(fa) | set(fb)):
+        if fa.get(chemin, object()) == fb.get(chemin, object()):
+            continue
+        if prefixe == "sources":
+            sid = chemin.split(".")[1] if "." in chemin else None
+            if sid is not None and sid not in sources_avant:
+                continue                      # ajout d'une source : permis
+            if chemin.endswith(".archive"):
+                continue                      # copie Wayback : permis
+            refus.append("SOURCE REECRITE  %s — une source qui a deja servi "
+                         "ne se retouche pas" % chemin)
+            continue
+        motif, r = regle_couvrante(pol, chemin)
+        if r is None:
+            refus.append("SANS REGLE       %s — aucune regle ne couvre ce "
+                         "chemin ; par defaut, interdit" % chemin)
+        elif not r.get("auto"):
+            refus.append("CHAMP GELE       %s (regle %s) — auto=false%s"
+                         % (chemin, motif,
+                            " : " + r["justification"] if r.get("justification") else ""))
+
+    # Rang et nombre de sources, sur les enveloppes passees en 'confirme'.
+    if apres is None:
+        return
+    ea = dict(P.enveloppes(avant, prefixe)) if avant is not None else {}
+    for chemin, env in P.enveloppes(apres, prefixe):
+        if ea.get(chemin) == env or env.get("confiance") != "confirme":
+            continue
+        _, r = regle_couvrante(pol, chemin)
+        if r is None or not r.get("auto"):
+            continue
+        mini = r.get("rang_min", pol["rang_max_publiable"])
+        rangs = [sources[s]["rang"] for s in env.get("sources", []) if s in sources]
+        if not rangs or min(rangs) > mini:
+            refus.append("SOURCE FAIBLE    %s — marque 'confirme' sans source "
+                         "de rang <= %d" % (chemin, mini))
+        elif r.get("double_source") and len(env.get("sources", [])) < 2:
+            refus.append("SOURCE UNIQUE    %s — ce champ exige deux sources "
+                         "independantes" % chemin)
 
 
 def main(base):
@@ -53,46 +132,20 @@ def main(base):
         print("   ", f)
     print()
 
-    # 1. Perimetre de fichiers
-    hors = [f for f in modifies if not f.startswith("data/")]
-    for f in hors:
-        refus.append("HORS PERIMETRE  %s — seul data/ peut etre modifie "
-                     "automatiquement ; le noyau du site est fige." % f)
+    for f in modifies:
+        if not f.startswith("data/"):
+            refus.append("HORS PERIMETRE   %s — seul data/ peut etre modifie "
+                         "automatiquement ; le noyau du site est fige." % f)
 
-    # 2 et 3. Champ par champ
     index = {rel: prefixe for rel, prefixe, _ in P.fichiers_data()}
+    sources = charge_a("HEAD", "data/sources.json") or {}
     for rel in modifies:
-        if not rel.startswith("data/") or not rel.endswith(".json"):
-            continue
-        prefixe = index.get(rel)
-        if prefixe is None:
-            continue
-        avant = aplatis(charge_a(base, rel), prefixe)
-        apres = aplatis(charge_a("HEAD", rel), prefixe)
-        sources = charge_a("HEAD", "data/sources.json") or {}
-
-        for chemin in sorted(set(avant) | set(apres)):
-            a, b = avant.get(chemin), apres.get(chemin)
-            if a == b:
-                continue
-            r = P.regle(pol, chemin)
-            if r is None or not r.get("auto"):
-                refus.append("CHAMP GELE      %s — auto=false%s"
-                             % (chemin, (" : " + r["justification"])
-                                if r and r.get("justification") else ""))
-                continue
-            if b and b.get("confiance") == "confirme":
-                rangs = [sources[s]["rang"] for s in b.get("sources", []) if s in sources]
-                mini = r.get("rang_min", pol["rang_max_publiable"])
-                if not rangs or min(rangs) > mini:
-                    refus.append("SOURCE FAIBLE   %s — marque 'confirme' sans source "
-                                 "de rang <= %d" % (chemin, mini))
-                elif r.get("double_source") and len(b.get("sources", [])) < 2:
-                    refus.append("SOURCE UNIQUE   %s — ce champ exige deux sources "
-                                 "independantes" % chemin)
+        if rel.startswith("data/") and rel.endswith(".json") and rel in index:
+            controle_fichier(pol, rel, index[rel], base, sources)
 
     if refus:
-        print("REFUS (%d) — cette branche ne peut pas etre fusionnee telle quelle :\n" % len(refus))
+        print("REFUS (%d) — cette branche ne peut pas etre fusionnee telle quelle :\n"
+              % len(refus))
         for m in refus:
             print("  " + m)
         print("\nCe n'est pas un bug : la politique de veille interdit ces "
