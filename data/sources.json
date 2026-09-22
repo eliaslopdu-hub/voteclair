@@ -163,5 +163,27 @@
     "consulte_le": "2026-09-22",
     "archive": null,
     "note": "Rang 4. À remplacer par les résultats du ministère de l'Intérieur."
+  },
+  "src:decret-2026-301-senatoriales": {
+    "libelle_cite": "Décret n° 2026-301 du 21 avril 2026 portant convocation des collèges électoraux pour l'élection des sénateurs",
+    "editeur": "Légifrance / JORF",
+    "rang": 1,
+    "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000053925339",
+    "date_publication": "2026-04-22",
+    "annee_citee": null,
+    "consulte_le": "2026-09-22",
+    "archive": null,
+    "note": "Convoque les collèges électoraux le dimanche 27 septembre 2026 pour la série 2."
+  },
+  "src:franceinfo-attal-sg-renaissance": {
+    "libelle_cite": "Gabriel Attal officiellement élu secrétaire général de Renaissance",
+    "editeur": "franceinfo",
+    "rang": 4,
+    "url": "https://www.franceinfo.fr/politique/la-republique-en-marche/gabriel-attal-a-ete-officiellement-elu-secretaire-general-de-renaissance_6943445.html",
+    "date_publication": "2024-12-14",
+    "annee_citee": null,
+    "consulte_le": "2026-09-22",
+    "archive": null,
+    "note": "Seconde source, indépendante du parti : le site officiel d'un parti peut être en retard sur ses propres instances."
   }
 }

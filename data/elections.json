@@ -140,12 +140,13 @@
       "date": {
         "valeur": "2026-09-27",
         "sources": [
+          "src:decret-2026-301-senatoriales",
           "src:senat-senatoriales-2026"
         ],
         "verifie_le": "2026-09-22",
         "confiance": "confirme",
         "auteur": "humain",
-        "note": "Confirmé par le site officiel du Sénat : série 2, 178 sièges sur 348, 64 circonscriptions."
+        "note": "Convoqué par le décret n° 2026-301 du 21 avril 2026 (JORF du 22 avril). Série 2, 178 sièges sur 348."
       },
       "statut": "confirme",
       "titre": "Élections sénatoriales",

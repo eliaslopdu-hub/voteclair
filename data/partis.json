@@ -187,7 +187,8 @@
     "dirigeant": {
       "valeur": "Gabriel Attal",
       "sources": [
-        "src:renaissance-site-officiel"
+        "src:renaissance-site-officiel",
+        "src:franceinfo-attal-sg-renaissance"
       ],
       "verifie_le": "2026-09-22",
       "confiance": "confirme",
@@ -196,7 +197,7 @@
         "comparateur": "Gabriel Attal",
         "fiche": "Gabriel Attal"
       },
-      "note": "Secrétaire général depuis décembre 2024. Emmanuel Macron est président d'honneur : le site le présentait en co-dirigeant, ce qui confondait fonction partisane et magistrature."
+      "note": "Secrétaire général depuis décembre 2024. Emmanuel Macron est président d'honneur : le site le présentait en co-dirigeant, ce qui confondait fonction partisane et magistrature. Élu secrétaire général en décembre 2024."
     },
     "fonde_en": {
       "valeur": "2016 (En Marche !) · Renommé Renaissance en 2022",
