@@ -3,33 +3,62 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#6C63FF" />
   <title>Les Républicains – VoteClair</title>
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.voteclair.fr/parti-les-republicains.html" />
   <meta name="description" content="Programme, idéologie, figures et positions des Républicains. Présentation neutre et sourcée." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/fonts.css" />
   <link rel="stylesheet" href="css/main.css" />
   <link rel="stylesheet" href="css/partis.css" />
+  <meta property="og:image" content="https://www.voteclair.fr/assets/og-default.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
 </head>
 <body>
-<nav class="navbar">
+<a class="skip-link" href="#main-content">Aller au contenu principal</a>
+<!-- ═══ NAVBAR ═══ -->
+<nav class="navbar" role="navigation" aria-label="Navigation principale">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">Vote<span>Clair</span></a>
     <ul class="nav-links">
       <li><a href="index.html">Accueil</a></li>
-      <li><a href="quiz.html" class="nav-cta">Faire le quiz</a></li>
+      <li><a href="quiz.html" class="nav-cta">Quiz</a></li>
       <li><a href="partis.html">Partis</a></li>
-      <li><a href="institutions.html">Institutions</a></li>
-      <li><a href="histoire.html">Histoire</a></li>
+      <li><a href="face-a-face.html">Comparer</a></li>
+      <li class="nav-has-dropdown">
+        <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">En savoir plus <span class="nav-dropdown-arrow">▾</span></button>
+        <ul class="nav-dropdown-menu">
+          <li><a href="institutions.html">Institutions</a></li>
+          <li><a href="histoire.html">Histoire</a></li>
+          <li><a href="pourquoi-voter.html">Pourquoi voter ?</a></li>
+          <li><a href="calendrier.html">Calendrier</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="a-propos.html">À propos</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </li>
     </ul>
-    <button class="nav-burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    <button class="nav-burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </nav>
-<nav class="nav-mobile">
-  <a href="index.html">Accueil</a><a href="quiz.html">Quiz</a>
-  <a href="partis.html">Partis</a><a href="institutions.html">Institutions</a><a href="histoire.html">Histoire</a>
+<nav class="nav-mobile" aria-label="Menu mobile">
+  <a href="index.html">Accueil</a>
+  <a href="quiz.html" class="nav-mobile-cta">Quiz</a>
+  <a href="partis.html">Partis</a>
+  <a href="face-a-face.html">Comparer</a>
+  <div class="nav-mobile-divider">En savoir plus</div>
+  <a href="institutions.html">Institutions</a>
+  <a href="histoire.html">Histoire</a>
+  <a href="pourquoi-voter.html">Pourquoi voter ?</a>
+  <a href="calendrier.html">Calendrier électoral</a>
+  <a href="blog.html">Blog</a>
+  <a href="a-propos.html">À propos</a>
+  <a href="contact.html">Contact</a>
 </nav>
 
-<div class="parti-hero">
+<div class="parti-hero" id="main-content">
   <div class="container">
     <div class="breadcrumb" style="margin-bottom:24px">
       <a href="index.html">Accueil</a> <span>›</span> <a href="partis.html">Partis</a> <span>›</span> <span>Les Républicains</span>
@@ -40,10 +69,10 @@
         <span class="badge" style="background:#0066CC;color:#fff;margin-bottom:12px">LR</span>
         <h1>Les Républicains</h1>
         <div class="parti-hero-meta">
-          <span>📍 <strong>Idéologie :</strong> Droite conservatrice · Gaullisme social</span>
+          <span> <strong>Idéologie :</strong> Droite conservatrice · Gaullisme social</span>
           <span><strong>Chef :</strong> Laurent Wauquiez</span>
           <span><strong>Fondé en :</strong> 2015 (ex-UMP, ex-RPR)</span>
-          <span>🌐 <a href="https://www.republicains.fr" target="_blank" rel="noopener" style="color:#0066CC">republicains.fr ↗</a></span>
+          <span> <a href="https://www.republicains.fr" target="_blank" rel="noopener" style="color:#0066CC">republicains.fr ↗</a></span>
         </div>
       </div>
     </div>
@@ -74,10 +103,10 @@
 
   <h2 class="fade-in" style="margin-bottom:24px">Figures importantes</h2>
   <div class="figures-grid">
-    <div class="figure-card fade-in"><div class="figure-avatar" style="background:rgba(0,102,204,0.12);color:#0066CC">LW</div><div class="figure-name">Laurent Wauquiez</div><div class="figure-role">Président de LR depuis 2022</div><p class="figure-bio">Énarque, normalien, ancien ministre. Préside la région Auvergne-Rhône-Alpes depuis 2016. Ligne droite affirmée sur immigration et sécurité.</p></div>
-    <div class="figure-card fade-in"><div class="figure-avatar" style="background:rgba(0,102,204,0.12);color:#0066CC">NS</div><div class="figure-name">Nicolas Sarkozy</div><div class="figure-role">Président de la République (2007-2012)</div><p class="figure-bio">Ancien président, condamné dans plusieurs affaires judiciaires. A modernisé la droite française avec le "sarkozysme".</p></div>
-    <div class="figure-card fade-in"><div class="figure-avatar" style="background:rgba(0,102,204,0.12);color:#0066CC">JC</div><div class="figure-name">Jacques Chirac</div><div class="figure-role">Président de la République (1995-2007)</div><p class="figure-bio">Fondateur du RPR, deux fois Premier ministre, deux fois président. Incarne le gaullisme social et le refus de la guerre en Irak (2003).</p></div>
-    <div class="figure-card fade-in"><div class="figure-avatar" style="background:rgba(0,102,204,0.12);color:#0066CC">VP</div><div class="figure-name">Valérie Pécresse</div><div class="figure-role">Présidente d'Île-de-France</div><p class="figure-bio">Candidate LR à la présidentielle 2022 (4,8%). Gère la plus grande région de France depuis 2015.</p></div>
+    <div class="figure-card fade-in"><img class="figure-photo" src="assets/figures/laurent-wauquiez-2021.jpg" alt="Laurent Wauquiez" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="figure-avatar" style="background:rgba(0,102,204,0.12);color:#0066CC;display:none">LW</div><div class="figure-name">Laurent Wauquiez</div><div class="figure-role">Président de LR depuis 2022</div><p class="figure-bio">Énarque, normalien, ancien ministre. Préside la région Auvergne-Rhône-Alpes depuis 2016. Ligne droite affirmée sur immigration et sécurité.</p><p class="figure-credit">Photo : Un Gone · <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener nofollow">CC BY-SA 4.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Laurent_Wauquiez_2021.jpg" target="_blank" rel="noopener nofollow">Commons</a></p></div>
+    <div class="figure-card fade-in"><img class="figure-photo" src="assets/figures/nicolas-sarkozy-20220927.jpg" alt="Nicolas Sarkozy" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="figure-avatar" style="background:rgba(0,102,204,0.12);color:#0066CC;display:none">NS</div><div class="figure-name">Nicolas Sarkozy</div><div class="figure-role">Président de la République (2007-2012)</div><p class="figure-bio">Ancien président, condamné dans plusieurs affaires judiciaires. A modernisé la droite française avec le "sarkozysme".</p><p class="figure-credit">Photo : 首相官邸 · <a href="https://creativecommons.org/licenses/by/4.0" target="_blank" rel="noopener nofollow">CC BY 4.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Nicolas_Sarkozy_20220927.jpg" target="_blank" rel="noopener nofollow">Commons</a></p></div>
+    <div class="figure-card fade-in"><img class="figure-photo" src="assets/figures/jacques-chirac-1997-cropped.jpg" alt="Jacques Chirac" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="figure-avatar" style="background:rgba(0,102,204,0.12);color:#0066CC;display:none">JC</div><div class="figure-name">Jacques Chirac</div><div class="figure-role">Président de la République (1995-2007)</div><p class="figure-bio">Fondateur du RPR, deux fois Premier ministre, deux fois président. Incarne le gaullisme social et le refus de la guerre en Irak (2003).</p><p class="figure-credit">Photo : Christian Lambiotte · <a href="https://creativecommons.org/licenses/by/4.0" target="_blank" rel="noopener nofollow">CC BY 4.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Jacques_Chirac_(1997)_(cropped).jpg" target="_blank" rel="noopener nofollow">Commons</a></p></div>
+    <div class="figure-card fade-in"><img class="figure-photo" src="assets/figures/valerie-pecresse-at-a-2024-paralympic-games-media-conference-in-.jpg" alt="Valérie Pécresse" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="figure-avatar" style="background:rgba(0,102,204,0.12);color:#0066CC;display:none">VP</div><div class="figure-name">Valérie Pécresse</div><div class="figure-role">Présidente d'Île-de-France</div><p class="figure-bio">Candidate LR à la présidentielle 2022 (4,8%). Gère la plus grande région de France depuis 2015.</p><p class="figure-credit">Photo : Gail Leenstra · <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener nofollow">CC BY-SA 4.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Val%C3%A9rie_P%C3%A9cresse_at_a_2024_Paralympic_Games_media_conference_in_2024_3_(cropped).jpg" target="_blank" rel="noopener nofollow">Commons</a></p></div>
   </div>
 
   <h2 class="fade-in" style="margin-bottom:16px">Positions sur les grands thèmes</h2>
@@ -106,11 +135,12 @@
     <div class="footer-inner">
       <div class="footer-brand"><div class="nav-logo">Vote<span>Clair</span></div><p>Outil civique indépendant. Présentation neutre de tous les partis.</p></div>
       <div class="footer-col"><h4>Les partis</h4><a href="parti-europe-ecologie.html">Europe Écologie</a><a href="parti-la-france-insoumise.html">La France Insoumise</a><a href="parti-modem.html">MoDem</a><a href="parti-parti-socialiste.html">Parti Socialiste</a><a href="parti-rassemblement-national.html">Rassemblement National</a><a href="parti-renaissance.html">Renaissance</a></div>
-      <div class="footer-col"><h4>Légal</h4><a href="#">Mentions légales</a><a href="#">Confidentialité</a></div>
+      <div class="footer-col"><h4>Légal &amp; transparence</h4><a href="methodologie.html">Méthodologie du quiz</a><a href="mentions-legales.html">Mentions légales</a><a href="confidentialite.html">Politique de confidentialité</a><a href="conditions-utilisation.html">Conditions d'utilisation</a></div>
     </div>
-    <div class="footer-bottom"><span>© 2024 VoteClair — Indépendant · Sans publicité · Sans tracking</span></div>
+    <div class="footer-bottom"><span>© 2026 VoteClair — Outil civique indépendant</span><span>RGPD conforme · <a href="politique-cookies.html" style="color:inherit;text-decoration:underline">Gérer mes cookies</a></span></div>
   </div>
 </footer>
 <script src="js/nav.js"></script>
+<script src="js/cookie-consent.js"></script>
 </body>
 </html>

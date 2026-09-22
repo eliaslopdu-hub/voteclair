@@ -3,55 +3,79 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#6C63FF" />
   <title>Quiz d'orientation politique – VoteClair</title>
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.voteclair.fr/quiz.html" />
   <meta name="description" content="Répondez à 25 questions pour découvrir quels partis politiques défendent le mieux vos valeurs. Résultats anonymes et non stockés." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/fonts.css" />
   <link rel="stylesheet" href="css/main.css" />
   <link rel="stylesheet" href="css/quiz.css" />
+  <meta property="og:image" content="https://www.voteclair.fr/assets/og-default.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
 </head>
 <body>
+<a class="skip-link" href="#main-content">Aller au contenu principal</a>
 
 <!-- ═══ NAVBAR ═══ -->
-<nav class="navbar">
+<nav class="navbar" role="navigation" aria-label="Navigation principale">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">Vote<span>Clair</span></a>
     <ul class="nav-links">
       <li><a href="index.html">Accueil</a></li>
-      <li><a href="quiz.html" class="nav-cta">Faire le quiz</a></li>
+      <li><a href="quiz.html" class="nav-cta">Quiz</a></li>
       <li><a href="partis.html">Partis</a></li>
-      <li><a href="institutions.html">Institutions</a></li>
-      <li><a href="histoire.html">Histoire</a></li>
+      <li><a href="face-a-face.html">Comparer</a></li>
+      <li class="nav-has-dropdown">
+        <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">En savoir plus <span class="nav-dropdown-arrow">▾</span></button>
+        <ul class="nav-dropdown-menu">
+          <li><a href="institutions.html">Institutions</a></li>
+          <li><a href="histoire.html">Histoire</a></li>
+          <li><a href="pourquoi-voter.html">Pourquoi voter ?</a></li>
+          <li><a href="calendrier.html">Calendrier</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="a-propos.html">À propos</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </li>
     </ul>
-    <button class="nav-burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    <button class="nav-burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </nav>
-<nav class="nav-mobile">
+<nav class="nav-mobile" aria-label="Menu mobile">
   <a href="index.html">Accueil</a>
-  <a href="quiz.html">Quiz</a>
+  <a href="quiz.html" class="nav-mobile-cta">Quiz</a>
   <a href="partis.html">Partis</a>
+  <a href="face-a-face.html">Comparer</a>
+  <div class="nav-mobile-divider">En savoir plus</div>
   <a href="institutions.html">Institutions</a>
   <a href="histoire.html">Histoire</a>
+  <a href="pourquoi-voter.html">Pourquoi voter ?</a>
+  <a href="calendrier.html">Calendrier électoral</a>
+  <a href="blog.html">Blog</a>
+  <a href="a-propos.html">À propos</a>
+  <a href="contact.html">Contact</a>
 </nav>
 
-<div class="quiz-wrapper">
+<div class="quiz-wrapper" id="main-content">
 
   <!-- ═══ INTRO ═══ -->
   <div class="quiz-intro" id="quiz-intro">
     <div class="quiz-disclaimer">
       <strong>Information importante</strong><br />
-      Ce quiz est un outil d'orientation indicatif basé sur vos réponses à 25 questions.
-      Il ne vote pas à votre place et ne représente pas une analyse exhaustive de vos convictions.
+      Ce quiz est un outil d'orientation indicatif. Il ne vote pas à votre place.
       <strong>Aucune de vos réponses n'est enregistrée.</strong> Tout est traité localement dans votre navigateur.
     </div>
 
     <h1>Quiz d'orientation politique</h1>
-    <p>31 questions en 3 étapes : profil, positions sur curseur, dilemmes d'arbitrage — puis vous pondérez vos thèmes prioritaires pour des résultats vraiment personnalisés.</p>
+    <p>15 questions pour un résultat en 3 minutes. Option : continuer avec 25 questions de plus pour un résultat plus précis.</p>
 
-    <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-bottom:32px">
+    <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-bottom:28px">
       <div class="card" style="padding:14px 20px;text-align:center;min-width:130px">
         <div style="font-size:0.75rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin-bottom:4px">Durée</div>
-        <div style="font-size:0.8rem;color:var(--text-muted)">~7 minutes</div>
+        <div style="font-size:0.8rem;color:var(--text-muted)">~3 minutes</div>
       </div>
       <div class="card" style="padding:14px 20px;text-align:center;min-width:130px">
         <div style="font-size:0.75rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin-bottom:4px">Données</div>
@@ -63,9 +87,23 @@
       </div>
     </div>
 
-    <button class="btn btn-primary" style="font-size:1rem;padding:14px 32px" onclick="startQuiz()">
-      Commencer le quiz →
+    <!-- Sélection du profil -->
+    <div style="margin-bottom:28px">
+      <p style="font-size:0.85rem;font-weight:600;text-transform:uppercase;letter-spacing:0.07em;color:var(--text-muted);margin-bottom:12px;text-align:center">Vous êtes ? <span style="color:#e53e3e">*</span></p>
+      <div class="profil-grid">
+        <button class="profil-btn" onclick="setUserProfil('gerant', this)">Gérant / Chef d'entreprise</button>
+        <button class="profil-btn" onclick="setUserProfil('salarie', this)">Salarié</button>
+        <button class="profil-btn" onclick="setUserProfil('etudiant', this)">Étudiant</button>
+        <button class="profil-btn" onclick="setUserProfil('retraite', this)">Retraité</button>
+        <button class="profil-btn" onclick="setUserProfil('autre', this)">Autre</button>
+      </div>
+      <p id="profil-error" style="display:none;color:#e53e3e;font-size:0.82rem;text-align:center;margin-top:10px;font-weight:600">← Veuillez sélectionner votre profil pour continuer</p>
+    </div>
+
+    <button class="btn btn-primary" style="font-size:1.05rem;padding:16px 40px;box-shadow:0 4px 24px rgba(108,99,255,0.4)" onclick="startQuiz()">
+      Commencer — 15 questions → 3 min
     </button>
+    <p style="font-size:0.78rem;color:var(--text-muted);margin-top:10px">Gratuit · Confidentiel · Sans inscription</p>
   </div>
 
   <!-- ═══ QUIZ MAIN ═══ -->
@@ -74,12 +112,17 @@
       Vos réponses ne sont <strong>jamais enregistrées</strong>. Ce quiz est purement indicatif.
     </div>
 
+    <!-- Approfondi context note (hidden by default) -->
+    <div id="approfondi-note" style="display:none;background:rgba(108,99,255,0.08);border:1px solid rgba(108,99,255,0.2);border-radius:8px;padding:12px 16px;margin-bottom:16px;font-size:0.85rem;color:var(--text-muted)">
+      <strong>Suite du quiz approfondi</strong> — Tes premières réponses sont conservées.
+    </div>
+
     <!-- Progress -->
     <div class="quiz-progress">
       <div class="progress-bar-track">
         <div class="progress-bar-fill" id="progress-fill" style="width:0%"></div>
       </div>
-      <span class="progress-label" id="progress-label">Question 1 / 25</span>
+      <span class="progress-label" id="progress-label">Question 1 / 15</span>
     </div>
 
     <!-- Question card -->
@@ -117,6 +160,9 @@
     </div>
   </div>
 
+  <!-- ═══ RÉSULTATS RAPIDES ═══ -->
+  <div class="quiz-quick-results" id="quiz-quick-results"></div>
+
   <!-- ═══ RÉSULTATS ═══ -->
   <div class="quiz-results" id="quiz-results">
     <h2 class="results-title">Voici les partis qui représentent le mieux vos valeurs</h2>
@@ -128,6 +174,8 @@
       <strong>Rappel important</strong> — Ces résultats sont une orientation indicative basée sur vos réponses.
       VoteClair ne vote pas à votre place. Nous vous encourageons à approfondir votre lecture des
       programmes officiels de chaque parti avant de vous forger une opinion définitive.
+      <br /><br />
+      <a href="methodologie.html" style="color:var(--accent);font-size:0.85rem">→ Comment sont calculés ces scores ? Voir la méthodologie complète</a>
     </div>
 
     <div class="results-actions">
@@ -155,11 +203,16 @@
         <a href="partis.html">Les partis</a>
         <a href="institutions.html">Institutions</a>
         <a href="histoire.html">Histoire</a>
+        <a href="pourquoi-voter.html">Pourquoi voter ?</a>
+        <a href="calendrier.html">Calendrier électoral</a>
       </div>
       <div class="footer-col">
-        <h4>Légal</h4>
-        <a href="#">Mentions légales</a>
-        <a href="#">Confidentialité</a>
+        <h4>Légal & transparence</h4>
+        <a href="methodologie.html">Méthodologie du quiz</a>
+        <a href="mentions-legales.html">Mentions légales</a>
+        <a href="confidentialite.html">Politique de confidentialité</a>
+        <a href="politique-cookies.html">Politique de cookies</a>
+        <a href="conditions-utilisation.html">Conditions d'utilisation</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -170,5 +223,6 @@
 
 <script src="js/quiz.js"></script>
 <script src="js/nav.js"></script>
+<script src="js/cookie-consent.js"></script>
 </body>
 </html>
