@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#6C63FF" />
+  <title>Méthodologie du quiz – VoteClair</title>
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.voteclair.fr/methodologie.html" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗳️</text></svg>" />
+  <meta name="description" content="Comment fonctionne le quiz d'orientation politique VoteClair ? Découvrez notre méthodologie, comment les scores sont calculés, quelles sources nous utilisons." />
+  <link rel="stylesheet" href="css/fonts.css" />
+  <link rel="stylesheet" href="css/main.css" />
+  <style>
+    .methodo-hero {
+      padding: calc(var(--nav-height) + 80px) 0 80px;
+    }
+
+    .alert-box {
+      background: rgba(108,99,255,0.07);
+      border: 1px solid rgba(108,99,255,0.25);
+      border-left: 4px solid var(--accent);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      margin-bottom: 32px;
+    }
+    .alert-box p {
+      font-size: 0.95rem;
+      color: var(--text);
+      margin: 0;
+    }
+    .alert-box strong { color: var(--text); }
+
+    .warning-box {
+      background: rgba(237,137,54,0.07);
+      border: 1px solid rgba(237,137,54,0.25);
+      border-left: 4px solid #ED8936;
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      margin: 24px 0;
+    }
+    .warning-box p { font-size: 0.9rem; color: var(--text); margin: 0; }
+
+    .methodo-toc {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 32px;
+      margin-bottom: 48px;
+    }
+    .methodo-toc h3 {
+      font-size: 1rem;
+      margin-bottom: 16px;
+      color: var(--text-muted);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .methodo-toc ol {
+      list-style: decimal;
+      padding-left: 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px 32px;
+    }
+    .methodo-toc li a {
+      font-size: 0.9rem;
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .methodo-toc li a:hover { color: var(--text); }
+
+    .methodo-section {
+      scroll-margin-top: 80px;
+    }
+
+    .step-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--gap);
+      margin-top: 32px;
+    }
+    .step-card {
+      padding: 24px 20px;
+      text-align: center;
+    }
+    .step-num {
+      width: 44px;
+      height: 44px;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-size: 1.1rem;
+      margin: 0 auto 16px;
+    }
+    .step-card h4 { font-size: 1rem; margin-bottom: 8px; }
+    .step-card p  { font-size: 0.88rem; }
+
+    .formula-box {
+      background: #1A1A2E;
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      margin: 24px 0;
+      font-family: 'Courier New', monospace;
+      font-size: 0.9rem;
+      color: #B8B3FF;
+      line-height: 1.8;
+      overflow-x: auto;
+    }
+    .formula-box .comment { color: rgba(255,255,255,0.35); }
+    .formula-box .keyword { color: #FFBE00; }
+    .formula-box .value   { color: #4CAF50; }
+
+    .partis-included {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+      margin-top: 32px;
+    }
+    .parti-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 16px 18px;
+    }
+    .parti-dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .parti-row-body h4 { font-size: 0.9rem; margin-bottom: 2px; }
+    .parti-row-body p  { font-size: 0.78rem; }
+
+    .themes-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 24px;
+      font-size: 0.9rem;
+    }
+    .themes-table th {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 12px 16px;
+      text-align: left;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .themes-table td {
+      border: 1px solid var(--border);
+      padding: 12px 16px;
+      color: var(--text);
+      vertical-align: top;
+    }
+    .themes-table tr:nth-child(even) td { background: rgba(0,0,0,0.02); }
+
+    .limites-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--gap);
+      margin-top: 32px;
+    }
+    .limite-card {
+      padding: 24px;
+      border-left: 3px solid #ED8936;
+    }
+    .limite-card h4 { font-size: 0.95rem; margin-bottom: 8px; }
+    .limite-card p  { font-size: 0.88rem; }
+
+    .sources-list {
+      margin-top: 24px;
+      display: grid;
+      gap: 12px;
+    }
+    .source-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 16px 18px;
+    }
+    .source-icon { font-size: 1.3rem; }
+    .source-body h4 { font-size: 0.9rem; margin-bottom: 4px; }
+    .source-body p  { font-size: 0.82rem; }
+    .source-body a  { color: var(--accent); font-size: 0.8rem; }
+
+    @media (max-width: 768px) {
+      .step-cards    { grid-template-columns: 1fr; }
+      .limites-grid  { grid-template-columns: 1fr; }
+      .methodo-toc ol { grid-template-columns: 1fr; }
+      .themes-table  { font-size: 0.8rem; }
+    }
+  </style>
+  <meta property="og:image" content="https://www.voteclair.fr/assets/og-default.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+</head>
+<body>
+<a class="skip-link" href="#main-content">Aller au contenu principal</a>
+
+<!-- ═══ NAVBAR ═══ -->
+<nav class="navbar" role="navigation" aria-label="Navigation principale">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Vote<span>Clair</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="quiz.html" class="nav-cta">Quiz</a></li>
+      <li><a href="partis.html">Partis</a></li>
+      <li><a href="face-a-face.html">Comparer</a></li>
+      <li class="nav-has-dropdown">
+        <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">En savoir plus <span class="nav-dropdown-arrow">▾</span></button>
+        <ul class="nav-dropdown-menu">
+          <li><a href="institutions.html">Institutions</a></li>
+          <li><a href="histoire.html">Histoire</a></li>
+          <li><a href="pourquoi-voter.html">Pourquoi voter ?</a></li>
+          <li><a href="calendrier.html">Calendrier</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="a-propos.html">À propos</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </li>
+    </ul>
+    <button class="nav-burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<nav class="nav-mobile" aria-label="Menu mobile">
+  <a href="index.html">Accueil</a>
+  <a href="quiz.html" class="nav-mobile-cta">Quiz</a>
+  <a href="partis.html">Partis</a>
+  <a href="face-a-face.html">Comparer</a>
+  <div class="nav-mobile-divider">En savoir plus</div>
+  <a href="institutions.html">Institutions</a>
+  <a href="histoire.html">Histoire</a>
+  <a href="pourquoi-voter.html">Pourquoi voter ?</a>
+  <a href="calendrier.html">Calendrier électoral</a>
+  <a href="blog.html">Blog</a>
+  <a href="a-propos.html">À propos</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="methodo-hero" id="main-content">
+  <div class="container">
+    <span class="section-label">Transparence totale</span>
+    <h1 style="max-width:700px;margin-bottom:20px">Méthodologie du quiz d'orientation</h1>
+    <p style="max-width:620px;font-size:1.05rem;margin-bottom:32px;color:var(--text-muted)">
+      VoteClair s'engage à une transparence totale sur son fonctionnement. Cette page explique
+      en détail comment les questions sont construites, comment les scores sont calculés, quels
+      partis sont inclus et pourquoi, et quelles sont les limites de l'outil.
+    </p>
+    <div class="alert-box">
+      <p>
+        <strong>Rappel fondamental :</strong> Le quiz est un outil d'orientation indicatif. Il ne vote pas à votre place,
+        ne constitue pas une recommandation officielle, et ne remplace pas la lecture des programmes.
+        Vous gardez votre entier libre arbitre.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TABLE DES MATIÈRES ═══ -->
+<section style="padding-bottom:0">
+  <div class="container">
+    <div class="methodo-toc">
+      <h3>Sommaire</h3>
+      <ol>
+        <li><a href="#structure">Structure du quiz</a></li>
+        <li><a href="#calcul">Calcul des scores</a></li>
+        <li><a href="#partis">Partis inclus</a></li>
+        <li><a href="#themes">Thèmes et pondération</a></li>
+        <li><a href="#positions">Comment nous positionnons les partis</a></li>
+        <li><a href="#validation">Comment je vérifie que le quiz est juste</a></li>
+        <li><a href="#limites">Limites et biais reconnus</a></li>
+        <li><a href="#neutralite">Notre engagement de neutralité</a></li>
+        <li><a href="#sources">Sources utilisées</a></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 1. STRUCTURE ═══ -->
+<section class="section methodo-section" id="structure">
+  <div class="container">
+    <span class="section-label">Section 1</span>
+    <h2 class="fade-in" style="margin-bottom:12px">Structure du quiz</h2>
+    <p class="fade-in" style="max-width:760px;margin-bottom:0;font-size:1rem">
+      Le quiz existe en <strong>deux formats</strong>. Le <strong>quiz rapide</strong> pose <strong>15 questions</strong>
+      et donne un résultat indicatif en quelques minutes. Le <strong>quiz approfondi</strong> reprend ces réponses
+      et ajoute <strong>25 questions supplémentaires</strong>, soit <strong>40 au total</strong>, puis une étape de
+      pondération thématique. Vous ne repartez jamais de zéro : le rapide est le début de l'approfondi.
+    </p>
+    <div class="step-cards">
+      <div class="card step-card fade-in">
+        <div class="step-num">1</div>
+        <h4>Questions de profil</h4>
+        <p><strong>4 questions</strong> (1 dans le quiz rapide) sur votre situation professionnelle, votre âge, vos revenus et votre lieu de résidence. Leur poids est volontairement réduit (×0,5) pour ne pas laisser la sociologie décider à votre place.</p>
+      </div>
+      <div class="card step-card fade-in">
+        <div class="step-num">2</div>
+        <h4>Positions sur curseur</h4>
+        <p><strong>28 questions</strong> (11 dans le quiz rapide) notées de 1 à 5, couvrant 7 thèmes : économie, environnement, sécurité, social, Europe, immigration, institutions.</p>
+      </div>
+      <div class="card step-card fade-in">
+        <div class="step-num">3</div>
+        <h4>Dilemmes d'arbitrage</h4>
+        <p><strong>8 choix binaires</strong> (3 dans le quiz rapide) entre deux positions contradictoires, pour trancher là où un curseur permettrait de rester dans l'entre-deux.</p>
+      </div>
+    </div>
+    <div style="margin-top:32px">
+      <div class="card step-card fade-in" style="max-width:460px;margin:0 auto;text-align:center;padding:24px">
+        <div class="step-num" style="background:rgba(108,99,255,0.2);color:var(--accent)">+</div>
+        <h4>Pondération thématique</h4>
+        <p>À la fin du quiz approfondi, vous indiquez l'importance de chaque thème : <strong>« Peu important » (×0,6)</strong>, <strong>« Important » (×1)</strong> ou <strong>« Priorité absolue » (×2)</strong>. Les thèmes qui comptent vraiment pour vous pèsent davantage.</p>
+      </div>
+    </div>
+    <div class="fade-in" style="margin-top:28px;max-width:760px;padding:16px 20px;border-left:3px solid var(--accent);background:rgba(108,99,255,0.06);border-radius:8px">
+      <p style="margin:0;font-size:0.9rem">
+        <strong>Une question sans réponse n'est pas comptée.</strong> Si vous laissez un curseur intact, la question
+        est ignorée dans le calcul plutôt qu'enregistrée comme une position neutre — car une réponse « au milieu »
+        n'est pas neutre : elle favoriserait mécaniquement les partis du centre.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 2. CALCUL DES SCORES ═══ -->
+<section class="section section--alt methodo-section" id="calcul">
+  <div class="container">
+    <span class="section-label">Section 2</span>
+    <h2 class="fade-in" style="margin-bottom:12px">Calcul des scores</h2>
+    <p class="fade-in" style="max-width:760px;margin-bottom:24px;font-size:1rem">
+      Chaque réponse attribue des points à un ou plusieurs partis. Le score final d'un parti est un
+      <strong>pourcentage d'accord</strong> : les points qu'il a réellement obtenus, divisés par les points
+      qu'il <em>aurait pu</em> obtenir sur les questions auxquelles vous avez répondu.
+    </p>
+
+    <div class="formula-box fade-in">
+      <span class="comment">// Pour chaque question répondue, et pour chaque parti :</span><br />
+      obtenu[parti]  += points_de_votre_reponse[parti] × facteur_theme<br />
+      maximum[parti] += meilleur_score_possible_sur_cette_question[parti] × facteur_theme<br /><br />
+      <span class="comment">// Les facteurs thématiques selon votre choix :</span><br />
+      <span class="keyword">"Peu important"</span>      → facteur = <span class="value">0.6</span><br />
+      <span class="keyword">"Important"</span>          → facteur = <span class="value">1.0</span><br />
+      <span class="keyword">"Priorité absolue"</span>   → facteur = <span class="value">2.0</span><br />
+      <span class="comment">// (les questions de profil utilisent un facteur fixe de 0.5)</span><br /><br />
+      <span class="comment">// Résultat final, calculé parti par parti :</span><br />
+      accord[parti] = (obtenu[parti] / maximum[parti]) × 100
+    </div>
+
+    <div class="fade-in" style="margin-top:24px;max-width:760px">
+      <h3 style="font-size:1.05rem;margin-bottom:10px">Pourquoi les pourcentages ne font pas 100 à eux tous</h3>
+      <p style="font-size:0.95rem;margin-bottom:12px">
+        Chaque parti est évalué <strong>indépendamment des autres</strong> : il n'y a pas de gâteau de 100 %
+        à se partager. Vous pouvez très bien être à 70 % d'accord avec deux partis proches, ou à moins de
+        40 % avec les sept. C'est volontaire, et c'est ce qui permet trois choses :
+      </p>
+      <ul style="font-size:0.95rem;line-height:1.8">
+        <li>Un chiffre qui veut dire quelque chose : « 68 % » signifie que vous partagez environ deux tiers des positions de ce parti — pas qu'il a remporté 68 % d'une compétition interne.</li>
+        <li>La possibilité d'afficher <strong>« aucun parti ne correspond vraiment à vos réponses »</strong> quand aucune formation n'atteint 40 %. C'est une réponse honnête, et un système qui répartit 100 % entre sept partis ne peut jamais la donner.</li>
+        <li>Une comparaison juste entre partis : une question où un parti peut gagner 4 points ne pèse pas plus lourd qu'une question où il ne peut en gagner qu'un, puisque le maximum atteignable entre au dénominateur.</li>
+      </ul>
+    </div>
+
+    <div class="alert-box fade-in">
+      <p>
+        <strong>Traitement local uniquement.</strong> Tous les calculs s'effectuent dans votre navigateur (JavaScript côté client).
+        Aucune réponse n'est envoyée à un serveur. Aucune donnée ne quitte votre appareil.
+        Vous pouvez vérifier ce comportement en coupant votre connexion internet pendant le quiz.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 3. PARTIS INCLUS ═══ -->
+<section class="section methodo-section" id="partis">
+  <div class="container">
+    <span class="section-label">Section 3</span>
+    <h2 class="fade-in" style="margin-bottom:12px">Partis inclus dans le quiz</h2>
+    <p class="fade-in" style="max-width:700px;margin-bottom:8px;font-size:1rem">
+      Le quiz inclut les <strong>7 formations politiques</strong> représentées au Parlement ou ayant obtenu plus de 5 % aux dernières élections législatives ou européennes. Le choix d'inclure ces 7 partis et pas d'autres repose sur deux critères objectifs :
+    </p>
+    <ul style="margin:12px 0 24px 24px;color:var(--text-muted);font-size:0.92rem;list-style:disc">
+      <li>Présence au Parlement (groupe parlementaire constitué à l'Assemblée nationale)</li>
+      <li>Score supérieur à 5 % au niveau national lors des dernières élections générales</li>
+    </ul>
+    <div class="partis-included">
+      <div class="parti-row fade-in">
+        <div class="parti-dot" style="background:#003189"></div>
+        <div class="parti-row-body">
+          <h4>Rassemblement National</h4>
+          <p>Groupe constitué à l'Assemblée nationale</p>
+        </div>
+      </div>
+      <div class="parti-row fade-in">
+        <div class="parti-dot" style="background:#0066CC"></div>
+        <div class="parti-row-body">
+          <h4>Les Républicains</h4>
+          <p>Groupe constitué à l'Assemblée nationale</p>
+        </div>
+      </div>
+      <div class="parti-row fade-in">
+        <div class="parti-dot" style="background:#FFBE00"></div>
+        <div class="parti-row-body">
+          <h4>Renaissance</h4>
+          <p>Groupe constitué à l'Assemblée nationale</p>
+        </div>
+      </div>
+      <div class="parti-row fade-in">
+        <div class="parti-dot" style="background:#FF6600"></div>
+        <div class="parti-row-body">
+          <h4>MoDem</h4>
+          <p>Groupe constitué à l'Assemblée nationale</p>
+        </div>
+      </div>
+      <div class="parti-row fade-in">
+        <div class="parti-dot" style="background:#E75480"></div>
+        <div class="parti-row-body">
+          <h4>Parti Socialiste</h4>
+          <p>Groupe constitué à l'Assemblée nationale</p>
+        </div>
+      </div>
+      <div class="parti-row fade-in">
+        <div class="parti-dot" style="background:#CC0000"></div>
+        <div class="parti-row-body">
+          <h4>La France Insoumise</h4>
+          <p>Groupe constitué à l'Assemblée nationale</p>
+        </div>
+      </div>
+      <div class="parti-row fade-in">
+        <div class="parti-dot" style="background:#4CAF50"></div>
+        <div class="parti-row-body">
+          <h4>Europe Écologie – Les Verts</h4>
+          <p>Groupe constitué à l'Assemblée nationale</p>
+        </div>
+      </div>
+    </div>
+    <div class="warning-box fade-in" style="margin-top:24px">
+      <p><strong>Partis non inclus :</strong> des formations comme Reconquête !, Lutte Ouvrière, le NPA, Génération.s ou Horizons ne figurent pas dans le quiz, faute d'atteindre <em>simultanément</em> les deux critères ci-dessus. Cela ne constitue en aucun cas un jugement sur leur légitimité. Si votre sensibilité est l'une de celles-là, le quiz ne pourra pas vous le dire — c'est une limite réelle de l'outil, rappelée sur la page de résultats.</p>
+
+      <div style="margin-top:20px;padding:16px 20px;border-left:3px solid #E8C547;background:rgba(232,197,71,0.08);border-radius:8px">
+        <p style="margin:0 0 10px 0;font-size:0.95rem"><strong>Pourquoi le comparateur couvre 8 partis et le quiz 7</strong></p>
+        <p style="margin:0;font-size:0.92rem">Le <a href="face-a-face.html" style="color:var(--accent)">comparateur face-à-face</a> inclut le Parti Communiste Français, absent du quiz. La raison est assumée : le comparateur se contente de <em>présenter</em> des positions sourcées, ce qu'on peut faire pour toute formation disposant d'un programme public ; le quiz, lui, <em>attribue un résultat</em>, ce qui exige une base de points suffisamment solide. Le PCF sera intégré au quiz dès que ses positions y seront documentées au même niveau que les sept autres.</p>
+      </div>
+
+      <div style="margin-top:16px;padding:16px 20px;border-left:3px solid var(--accent);background:rgba(108,99,255,0.06);border-radius:8px">
+        <p style="margin:0 0 10px 0;font-size:0.95rem"><strong>Ce qui changera pour la présidentielle 2027</strong></p>
+        <p style="margin:0;font-size:0.92rem">Une élection présidentielle n'élit pas des partis mais des candidats. Dès la publication de la <strong>liste officielle des candidats par le Conseil constitutionnel</strong> (attendue à la mi-mars 2027), le périmètre de VoteClair suivra cette liste — et plus les critères ci-dessus. C'est le seul critère d'inclusion réellement incontestable, puisqu'il ne dépend d'aucun choix de ma part.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 4. THÈMES ET PONDÉRATION ═══ -->
+<section class="section section--alt methodo-section" id="themes">
+  <div class="container">
+    <span class="section-label">Section 4</span>
+    <h2 class="fade-in" style="margin-bottom:12px">Thèmes couverts</h2>
+    <p class="fade-in" style="max-width:700px;margin-bottom:0;font-size:1rem">
+      Le quiz couvre 7 thèmes politiques majeurs. Chaque question est assignée à l'un d'eux.
+    </p>
+    <table class="themes-table fade-in">
+      <thead>
+        <tr>
+          <th>Thème</th>
+          <th>Questions couvertes</th>
+          <th>Exemples de sujets</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Économie & fiscalité</strong></td>
+          <td>Q7, Q13, Q17, Q20</td>
+          <td>ISF, impôts entreprises, protectionnisme, budget de l'État</td>
+        </tr>
+        <tr>
+          <td><strong>Environnement & énergie</strong></td>
+          <td>Q6, Q10, Q16, Q22</td>
+          <td>Nucléaire, renouvelables, transition écologique, agriculture</td>
+        </tr>
+        <tr>
+          <td><strong>Sécurité & justice</strong></td>
+          <td>Q5, Q14, Q19</td>
+          <td>Peines planchers, police de proximité, recidivisme</td>
+        </tr>
+        <tr>
+          <td><strong>Social & travail</strong></td>
+          <td>Q9, Q11, Q15, Q21</td>
+          <td>SMIC, retraites, services publics, droits des femmes</td>
+        </tr>
+        <tr>
+          <td><strong>Europe & géopolitique</strong></td>
+          <td>Q12, Q18, Q24</td>
+          <td>Construction européenne, OTAN, souveraineté nationale</td>
+        </tr>
+        <tr>
+          <td><strong>Immigration</strong></td>
+          <td>Q8, Q23</td>
+          <td>Quotas, priorité nationale, droit d'asile</td>
+        </tr>
+        <tr>
+          <td><strong>Institutions & démocratie</strong></td>
+          <td>Q25, Q26, Q31</td>
+          <td>Proportionnelle, VIe République, référendum d'initiative citoyenne</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ═══ 5. POSITIONNEMENT DES PARTIS ═══ -->
+<section class="section methodo-section" id="positions">
+  <div class="container">
+    <span class="section-label">Section 5</span>
+    <h2 class="fade-in" style="margin-bottom:12px">Comment nous positionnons les partis</h2>
+    <p class="fade-in" style="max-width:700px;margin-bottom:24px;font-size:1rem">
+      Les positions attribuées à chaque parti dans le quiz reposent exclusivement sur des
+      <strong>sources primaires officielles</strong> : programmes, manifestes, déclarations de vote, et
+      prises de position officielles des partis. Nous ne nous basons pas sur des classements
+      journalistiques, des études tiers ou des perceptions générales.
+    </p>
+    <div class="step-cards">
+      <div class="card step-card fade-in">
+        <div class="step-num" style="background:rgba(56,161,105,0.15);color:#38A169;font-size:1.3rem"></div>
+        <h4>Programmes officiels</h4>
+        <p>Nous lisons les programmes en entier et extrayons les positions explicites sur chaque thème couvert par le quiz.</p>
+      </div>
+      <div class="card step-card fade-in">
+        <div class="step-num" style="background:rgba(56,161,105,0.15);color:#38A169;font-size:1.3rem"></div>
+        <h4>Votes au Parlement</h4>
+        <p>Pour les partis représentés à l'Assemblée, nous croisons les programmes avec les votes effectifs (nosdeputes.fr).</p>
+      </div>
+      <div class="card step-card fade-in">
+        <div class="step-num" style="background:rgba(56,161,105,0.15);color:#38A169;font-size:1.3rem"></div>
+        <h4>Mise à jour régulière</h4>
+        <p>Les positions sont révisées après chaque élection nationale ou changement de programme officiel publié par un parti.</p>
+      </div>
+    </div>
+    <div class="warning-box fade-in">
+      <p>
+        <strong>Dernière mise à jour des positions :</strong> Janvier 2026, basée sur les programmes des législatives 2024 et des européennes 2024.
+        Les programmes évoluent : si vous constatez une erreur, contactez-nous via la page <a href="contact.html" style="color:var(--accent)">Contact</a>.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 6. LIMITES ═══ -->
+<section class="section methodo-section" id="validation">
+  <div class="container">
+    <span class="section-label">Validation</span>
+    <h2 class="fade-in" style="margin-bottom:12px">Comment je vérifie que le quiz est juste</h2>
+    <p class="fade-in" style="max-width:760px;margin-bottom:24px;font-size:1rem">
+      Publier une méthodologie ne suffit pas : encore faut-il que le moteur donne le bon résultat.
+      Le calcul est donc soumis à quatre tests automatisés, rejoués à chaque modification des questions
+      ou des points. Voici les résultats de la dernière exécution.
+    </p>
+
+    <div class="limites-grid">
+      <div class="card limite-card fade-in">
+        <h4>✅ Test des profils types</h4>
+        <p>Pour chacun des 7 partis, on simule un sympathisant qui répond systématiquement dans le sens de ce parti. <strong>Les 7 obtiennent bien leur propre parti en tête, à 100 %</strong>, dans les deux formats du quiz. Si un seul échouait, le quiz ne serait pas publié.</p>
+      </div>
+      <div class="card limite-card fade-in">
+        <h4>✅ Test de cohérence entre formats</h4>
+        <p>Un même profil doit obtenir le même parti en tête en 15 questions et en 40. C'est vérifié pour les 7 profils types : le quiz approfondi affine le résultat, il ne le contredit pas.</p>
+      </div>
+      <div class="card limite-card fade-in">
+        <h4>✅ Test de stabilité</h4>
+        <p>On déplace un seul curseur d'un cran et on vérifie que le classement ne se retourne pas arbitrairement. <strong>Zéro retournement</strong> sur l'ensemble des variations testées.</p>
+      </div>
+      <div class="card limite-card fade-in">
+        <h4>⚠️ Test d'équilibre des points</h4>
+        <p>Sur 20 000 profils de réponses aléatoires, tous les partis devraient arriver en tête à peu près aussi souvent. Ce n'est pas encore le cas — l'écart est documenté dans les <a href="#limites" style="color:var(--accent)">limites reconnues</a> ci-dessous. C'est le chantier en cours.</p>
+      </div>
+    </div>
+
+    <div class="alert-box fade-in" style="margin-top:28px">
+      <p>
+        <strong>Vous pouvez refaire ces tests vous-même.</strong> Les questions et les points attribués
+        sont entièrement lisibles dans le fichier <code>js/quiz.js</code>, directement depuis votre navigateur.
+        Si vous trouvez un cas où le résultat vous paraît faux, <a href="contact.html" style="color:var(--accent)">signalez-le-moi</a> :
+        je publie la correction et je mets cette page à jour.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt methodo-section" id="limites">
+  <div class="container">
+    <span class="section-label">Section 6</span>
+    <h2 class="fade-in" style="margin-bottom:12px">Limites et biais reconnus</h2>
+    <p class="fade-in" style="max-width:700px;margin-bottom:0;font-size:1rem">
+      Tout outil de ce type comporte des limites. Je les assume et je les expose publiquement, y compris celles que j'ai mesurées et pas encore corrigées.
+    </p>
+    <div class="limites-grid">
+      <div class="card limite-card fade-in">
+        <h4>Réduction à 15 ou 40 questions</h4>
+        <p>Un programme politique couvre des dizaines de sujets. Le quiz n'en couvre qu'une fraction. Des positions importantes peuvent être absentes, en particulier dans le format rapide.</p>
+      </div>
+      <div class="card limite-card fade-in">
+        <h4>Binarisation des nuances</h4>
+        <p>Certains partis ont des positions nuancées ou contradictoires sur un même sujet. Nous attribuons la position majoritaire ou officielle, ce qui peut simplifier la réalité.</p>
+      </div>
+      <div class="card limite-card fade-in">
+        <h4>Évolution des programmes</h4>
+        <p>Les partis font évoluer leurs positions. Un décalage peut exister entre notre base de données et la dernière prise de position d'un parti.</p>
+      </div>
+      <div class="card limite-card fade-in">
+        <h4>Questions sociologiques</h4>
+        <p>Les 4 questions de profil (âge, revenu, etc.) introduisent des corrélations statistiques, pas des causalités. Un retraité peut voter LFI, un étudiant peut voter LR.</p>
+      </div>
+      <div class="card limite-card fade-in">
+        <h4>Choix des thèmes couverts</h4>
+        <p>Nous avons choisi 7 thèmes. D'autres sujets importants (laïcité, logement, numérique, outre-mer) sont peu ou pas représentés dans la version actuelle.</p>
+      </div>
+      <div class="card limite-card fade-in">
+        <h4>Biais résiduel mesuré</h4>
+        <p>En simulant 20 000 profils de réponses <strong>aléatoires</strong>, Renaissance arrive en tête dans 25,7 % des cas et La France Insoumise dans 7,8 % — au lieu de 14,3 % si tout était parfaitement équilibré. Ce déséquilibre vient des tables de points, pas du calcul : certains partis figurent dans davantage d'options. Il est en cours de correction. Il affecte surtout les réponses incohérentes : sur des réponses cohérentes, chaque profil type obtient bien son parti à 100 %.</p>
+      </div>
+      <div class="card limite-card fade-in">
+        <h4>Partis non couverts</h4>
+        <p>Des forces politiques significatives (Reconquête !, PCF, NPA...) ne sont pas dans le quiz. Si votre affiliation principale est l'une d'elles, le résultat sera moins pertinent.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 7. NEUTRALITÉ ═══ -->
+<section class="section methodo-section" id="neutralite">
+  <div class="container">
+    <span class="section-label">Section 7</span>
+    <h2 class="fade-in" style="margin-bottom:12px">Notre engagement de neutralité</h2>
+    <div style="max-width:760px">
+      <p class="fade-in" style="font-size:1rem;margin-bottom:24px">
+        VoteClair est conscient du risque de manipulation politique inhérent à tout outil de ce type.
+        Voici les principes que nous appliquons pour garantir notre neutralité :
+      </p>
+      <div class="why-item fade-in">
+        <span class="why-num">01</span>
+        <div class="why-item-body">
+          <h3>Aucun financement partisan</h3>
+          <p>VoteClair n'est financé par aucun parti, fondation politique, syndicat ou groupe d'intérêt. <strong>Le site n'affiche aucune publicité à ce jour</strong> et ne génère aucun revenu ; si cela devait changer, ce serait annoncé ici avec la date. L'outil est maintenu bénévolement par une seule personne.</p>
+        </div>
+      </div>
+      <div class="why-item fade-in">
+        <span class="why-num">02</span>
+        <div class="why-item-body">
+          <h3>Présentation identique de tous les partis</h3>
+          <p>Les pages de présentation des 7 partis suivent exactement le même modèle. Même structure, même nombre de sections, même traitement visuel. Aucun parti n'est mis en avant ou relégué.</p>
+        </div>
+      </div>
+      <div class="why-item fade-in">
+        <span class="why-num">03</span>
+        <div class="why-item-body">
+          <h3>Résultats dans l'ordre alphabétique par défaut</h3>
+          <p>La liste des partis dans les pages de présentation est affichée par ordre alphabétique — pas par taille, ni par orientation politique. Seule la page de résultats du quiz trie par score décroissant.</p>
+        </div>
+      </div>
+      <div class="why-item fade-in">
+        <span class="why-num">04</span>
+        <div class="why-item-body">
+          <h3>Questions formulées de façon équilibrée</h3>
+          <p>Chaque question est relue pour s'assurer qu'elle ne favorise pas implicitement une réponse. Nous évitons les formulations émotionnelles ou les termes connotés idéologiquement.</p>
+        </div>
+      </div>
+      <div class="why-item fade-in">
+        <span class="why-num">05</span>
+        <div class="why-item-body">
+          <h3>Code ouvert à la vérification</h3>
+          <p>Le code source de <code>quiz.js</code> est lisible par n'importe qui dans le navigateur. Les poids attribués à chaque réponse sont directement visibles dans le fichier JavaScript. Rien n'est caché.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 8. SOURCES ═══ -->
+<section class="section section--alt methodo-section" id="sources">
+  <div class="container">
+    <span class="section-label">Section 8</span>
+    <h2 class="fade-in" style="margin-bottom:12px">Sources utilisées</h2>
+    <p class="fade-in" style="max-width:700px;margin-bottom:0;font-size:1rem">
+      Toutes les informations présentées sur VoteClair sont issues de sources primaires vérifiables.
+    </p>
+    <div class="sources-list">
+      <div class="source-item fade-in">
+        <div class="source-icon"></div>
+        <div class="source-body">
+          <h4>Programmes officiels des partis</h4>
+          <p>Programmes des législatives 2022, des européennes 2024, et documents programmatiques officiels publiés sur les sites de chaque parti.</p>
+        </div>
+      </div>
+      <div class="source-item fade-in">
+        <div class="source-icon"></div>
+        <div class="source-body">
+          <h4>Assemblée nationale — Votes et scrutins</h4>
+          <p>Résultats des votes enregistrés à l'Assemblée nationale.</p>
+          <a href="https://www.assemblee-nationale.fr/dyn/scrutins" target="_blank" rel="noopener">assemblee-nationale.fr/dyn/scrutins →</a>
+        </div>
+      </div>
+      <div class="source-item fade-in">
+        <div class="source-icon"></div>
+        <div class="source-body">
+          <h4>NosDéputés.fr</h4>
+          <p>Suivi des votes et de l'activité parlementaire des députés et groupes politiques.</p>
+          <a href="https://www.nosdeputes.fr" target="_blank" rel="noopener">nosdeputes.fr →</a>
+        </div>
+      </div>
+      <div class="source-item fade-in">
+        <div class="source-icon"></div>
+        <div class="source-body">
+          <h4>Ministère de l'Intérieur — Résultats électoraux</h4>
+          <p>Résultats officiels de toutes les élections françaises depuis 2002.</p>
+          <a href="https://www.interieur.gouv.fr/Elections/Les-resultats" target="_blank" rel="noopener">interieur.gouv.fr →</a>
+        </div>
+      </div>
+      <div class="source-item fade-in">
+        <div class="source-icon"></div>
+        <div class="source-body">
+          <h4>Vie Publique</h4>
+          <p>Fiches synthétiques sur les partis, les élections et les institutions françaises.</p>
+          <a href="https://www.vie-publique.fr" target="_blank" rel="noopener">vie-publique.fr →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA QUIZ ═══ -->
+<section class="section" style="text-align:center">
+  <div class="container">
+    <h2 class="fade-in" style="margin-bottom:16px">Prêt à faire le quiz ?</h2>
+    <p style="max-width:480px;margin:0 auto 28px;color:var(--text-muted)">Maintenant que vous connaissez notre méthodologie, vous pouvez faire le quiz en toute connaissance de cause.</p>
+    <a href="quiz.html" class="btn btn-primary" style="font-size:1rem;padding:14px 32px">Commencer le quiz →</a>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="nav-logo">Vote<span>Clair</span></div>
+        <p>VoteClair est indépendant et sans financement partisan. Outil civique gratuit pour voter en connaissance de cause.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <a href="index.html">Accueil</a>
+        <a href="quiz.html">Quiz d'orientation</a>
+        <a href="partis.html">Les partis</a>
+        <a href="institutions.html">Institutions</a>
+        <a href="histoire.html">Histoire</a>
+        <a href="pourquoi-voter.html">Pourquoi voter ?</a>
+        <a href="calendrier.html">Calendrier électoral</a>
+        <a href="blog.html">Blog</a>
+        <a href="a-propos.html">À propos</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Les partis</h4>
+        <a href="parti-rassemblement-national.html">Rassemblement National</a>
+        <a href="parti-les-republicains.html">Les Républicains</a>
+        <a href="parti-renaissance.html">Renaissance</a>
+        <a href="parti-modem.html">MoDem</a>
+        <a href="parti-parti-socialiste.html">Parti Socialiste</a>
+        <a href="parti-la-france-insoumise.html">La France Insoumise</a>
+        <a href="parti-europe-ecologie.html">Europe Écologie</a>
+      </div>
+      <div class="footer-col">
+        <h4>Légal & transparence</h4>
+        <a href="methodologie.html">Méthodologie du quiz</a>
+        <a href="mentions-legales.html">Mentions légales</a>
+        <a href="confidentialite.html">Politique de confidentialité</a>
+        <a href="politique-cookies.html">Politique de cookies</a>
+        <a href="conditions-utilisation.html">Conditions d'utilisation</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 VoteClair — Outil civique indépendant</span>
+      <span>RGPD conforme · <a href="politique-cookies.html" style="color:inherit;text-decoration:underline">Gérer mes cookies</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/nav.js"></script>
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+<script src="js/cookie-consent.js"></script>
+</body>
+</html>
