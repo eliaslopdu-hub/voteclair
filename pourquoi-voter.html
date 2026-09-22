@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#6C63FF" />
+  <title>Pourquoi voter ? – VoteClair</title>
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.voteclair.fr/pourquoi-voter.html" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗳️</text></svg>" />
+  <meta name="description" content="Comprendre pourquoi voter est essentiel pour la démocratie française. Abstention, impact du vote, inscription sur les listes électorales." />
+  <link rel="stylesheet" href="css/fonts.css" />
+  <link rel="stylesheet" href="css/main.css" />
+  <style>
+    .pv-hero {
+      padding: calc(var(--nav-height) + 80px) 0 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .pv-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 50% at 15% 50%, rgba(108,99,255,0.07) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 40% at 85% 60%, rgba(108,99,255,0.04) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .pv-hero-inner {
+      max-width: 760px;
+    }
+    .pv-hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      margin-bottom: 20px;
+    }
+    .pv-hero p {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin-bottom: 40px;
+      line-height: 1.75;
+    }
+
+    /* Stats dramatiques */
+    .abst-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--gap);
+      margin-top: 48px;
+    }
+    .abst-stat {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px 24px;
+      text-align: center;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+    .abst-stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      font-weight: 900;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+    .abst-stat-label {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .abst-stat--alert .abst-stat-number { color: #E53E3E; }
+
+    /* Raisons de voter */
+    .reasons-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--gap);
+      margin-top: 48px;
+    }
+    .reason-card {
+      padding: 32px 28px;
+    }
+    .reason-icon {
+      width: 52px;
+      height: 52px;
+      background: rgba(108,99,255,0.1);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 18px;
+    }
+    .reason-card h3 {
+      margin-bottom: 10px;
+      font-size: 1.15rem;
+    }
+
+    /* Timeline historique */
+    .timeline {
+      margin-top: 48px;
+      position: relative;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 24px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--border);
+    }
+    .timeline-item {
+      display: flex;
+      gap: 32px;
+      padding: 0 0 40px 0;
+      position: relative;
+    }
+    .timeline-dot {
+      width: 50px;
+      min-width: 50px;
+      height: 50px;
+      background: var(--accent);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 0.8rem;
+      position: relative;
+      z-index: 1;
+    }
+    .timeline-body {
+      padding-top: 10px;
+    }
+    .timeline-body h4 {
+      font-size: 1rem;
+      margin-bottom: 6px;
+      color: var(--text);
+    }
+    .timeline-body p {
+      font-size: 0.9rem;
+    }
+
+    /* Exemples concrets de bascule */
+    .bascule-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--gap);
+      margin-top: 40px;
+    }
+    .bascule-card {
+      padding: 24px;
+      border-left: 3px solid var(--accent);
+    }
+    .bascule-card h4 {
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
+    .bascule-card p { font-size: 0.88rem; }
+    .bascule-votes {
+      display: inline-block;
+      background: rgba(108,99,255,0.1);
+      color: var(--accent);
+      padding: 2px 10px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-top: 10px;
+    }
+
+    /* CTA inscription */
+    .inscription-box {
+      background: linear-gradient(135deg, rgba(108,99,255,0.08) 0%, rgba(108,99,255,0.03) 100%);
+      border: 1px solid rgba(108,99,255,0.2);
+      border-radius: var(--radius);
+      padding: 48px 40px;
+      text-align: center;
+      margin-top: 48px;
+    }
+    .inscription-box h3 {
+      font-size: 1.6rem;
+      margin-bottom: 12px;
+    }
+    .inscription-box p {
+      max-width: 500px;
+      margin: 0 auto 28px;
+    }
+    .inscription-steps {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+    .insc-step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      max-width: 140px;
+    }
+    .insc-step-num {
+      width: 36px;
+      height: 36px;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+    .insc-step-label {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      text-align: center;
+      line-height: 1.4;
+    }
+
+    /* Idées reçues */
+    .idees-recues {
+      margin-top: 48px;
+      display: grid;
+      gap: 16px;
+    }
+    .idee-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .idee-fausse {
+      padding: 24px;
+      background: rgba(229, 62, 62, 0.04);
+      border-right: 1px solid var(--border);
+    }
+    .idee-vraie {
+      padding: 24px;
+    }
+    .idee-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .idee-label--fausse { color: #E53E3E; }
+    .idee-label--vraie  { color: #38A169; }
+    .idee-text {
+      font-size: 0.92rem;
+      color: var(--text);
+      line-height: 1.55;
+    }
+
+    @media (max-width: 768px) {
+      .abst-stats    { grid-template-columns: 1fr; }
+      .reasons-grid  { grid-template-columns: 1fr; }
+      .bascule-grid  { grid-template-columns: 1fr; }
+      .idee-item     { grid-template-columns: 1fr; }
+      .idee-fausse   { border-right: none; border-bottom: 1px solid var(--border); }
+      .inscription-box { padding: 32px 20px; }
+    }
+  </style>
+  <meta property="og:image" content="https://www.voteclair.fr/assets/og-default.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+</head>
+<body>
+<a class="skip-link" href="#main-content">Aller au contenu principal</a>
+
+<!-- ═══ NAVBAR ═══ -->
+<nav class="navbar" role="navigation" aria-label="Navigation principale">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Vote<span>Clair</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="quiz.html" class="nav-cta">Quiz</a></li>
+      <li><a href="partis.html">Partis</a></li>
+      <li><a href="face-a-face.html">Comparer</a></li>
+      <li class="nav-has-dropdown">
+        <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">En savoir plus <span class="nav-dropdown-arrow">▾</span></button>
+        <ul class="nav-dropdown-menu">
+          <li><a href="institutions.html">Institutions</a></li>
+          <li><a href="histoire.html">Histoire</a></li>
+          <li><a href="pourquoi-voter.html">Pourquoi voter ?</a></li>
+          <li><a href="calendrier.html">Calendrier</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="a-propos.html">À propos</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </li>
+    </ul>
+    <button class="nav-burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<nav class="nav-mobile" aria-label="Menu mobile">
+  <a href="index.html">Accueil</a>
+  <a href="quiz.html" class="nav-mobile-cta">Quiz</a>
+  <a href="partis.html">Partis</a>
+  <a href="face-a-face.html">Comparer</a>
+  <div class="nav-mobile-divider">En savoir plus</div>
+  <a href="institutions.html">Institutions</a>
+  <a href="histoire.html">Histoire</a>
+  <a href="pourquoi-voter.html">Pourquoi voter ?</a>
+  <a href="calendrier.html">Calendrier électoral</a>
+  <a href="blog.html">Blog</a>
+  <a href="a-propos.html">À propos</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="pv-hero" id="main-content">
+  <div class="container">
+    <div class="pv-hero-inner">
+      <span class="section-label">Démocratie & citoyenneté</span>
+      <h1>Pourquoi voter est<br /><em style="font-style:normal;color:var(--accent)">votre acte le plus puissant</em></h1>
+      <p style="color:var(--text-muted)">
+        En France, des millions de citoyens ne votent pas — par désintérêt, déception ou sentiment d'inutilité.
+        Pourtant, chaque voix compte. Cette page vous explique pourquoi votre vote a un impact réel,
+        et comment exercer ce droit facilement.
+      </p>
+      <a href="quiz.html" class="btn btn-primary" style="font-size:1rem;padding:14px 32px">Commencer le quiz d'orientation →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ L'ABSTENTION EN CHIFFRES ═══ -->
+<section class="section section--alt">
+  <div class="container">
+    <span class="section-label">Le constat</span>
+    <h2 class="section-title fade-in">L'abstention, une crise silencieuse</h2>
+    <p class="section-subtitle fade-in">La France est l'un des pays d'Europe où l'abstention a le plus progressé en 30 ans.</p>
+    <div class="abst-stats">
+      <div class="abst-stat abst-stat--alert fade-in">
+        <div class="abst-stat-number">34%</div>
+        <div class="abst-stat-label">des Français n'ont pas voté au 1er tour des législatives 2022 — un record historique</div>
+      </div>
+      <div class="abst-stat abst-stat--alert fade-in">
+        <div class="abst-stat-number">54%</div>
+        <div class="abst-stat-label">d'abstention chez les 18–34 ans lors des élections législatives 2022</div>
+      </div>
+      <div class="abst-stat fade-in">
+        <div class="abst-stat-number">500 000</div>
+        <div class="abst-stat-label">voix d'écart suffisent parfois pour changer la majorité parlementaire</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 6 RAISONS DE VOTER ═══ -->
+<section class="section">
+  <div class="container">
+    <span class="section-label">Arguments concrets</span>
+    <h2 class="section-title fade-in">6 raisons de voter, même quand on doute</h2>
+    <p class="section-subtitle fade-in">L'abstention n'est pas neutre. Elle a des effets politiques concrets.</p>
+    <div class="reasons-grid">
+
+      <div class="card reason-card fade-in">
+        <div class="reason-icon"></div>
+        <h3>Votre vote influence vraiment les résultats</h3>
+        <p>Les scrutins à deux tours en France amplifient chaque voix au premier tour. Des dizaines de circonscriptions sont remportées à quelques centaines de voix près. En 2022, 14 circonscriptions ont été décidées à moins de 100 voix d'écart.</p>
+      </div>
+
+      <div class="card reason-card fade-in">
+        <div class="reason-icon"></div>
+        <h3>L'abstention n'est pas neutre</h3>
+        <p>Ne pas voter n'est pas une position neutre. Cela avantage mécaniquement les partis dont les électeurs se mobilisent davantage. En restant chez soi, vous amplifiez le poids des autres.</p>
+      </div>
+
+      <div class="card reason-card fade-in">
+        <div class="reason-icon"></div>
+        <h3>Les partis sont financés selon les votes</h3>
+        <p>En France, le financement public des partis est directement lié au nombre de voix obtenues. Voter pour un petit parti lui permet d'exister financièrement, même s'il ne gagne pas l'élection.</p>
+      </div>
+
+      <div class="card reason-card fade-in">
+        <div class="reason-icon"></div>
+        <h3>Des générations ont conquis ce droit</h3>
+        <p>Les femmes n'ont obtenu le droit de vote en France qu'en 1944. Les jeunes de 18 ans en 1974. Ces droits n'ont rien d'évident : ils ont été arrachés par des décennies de luttes sociales et politiques.</p>
+      </div>
+
+      <div class="card reason-card fade-in">
+        <div class="reason-icon"></div>
+        <h3>Le vote envoie un message aux politiques</h3>
+        <p>Un score élevé pour un parti — ou une participation en hausse — est un signal que les élus ne peuvent pas ignorer. Même un vote "protestataire" ou pour un petit parti impacte les équilibres politiques.</p>
+      </div>
+
+      <div class="card reason-card fade-in">
+        <div class="reason-icon"></div>
+        <h3>C'est la base de la légitimité démocratique</h3>
+        <p>Une démocratie dont les élus sont choisis par 30% des citoyens perd en légitimité. Votre participation — ou votre absence — façonne la qualité de la représentation nationale.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ÉLECTIONS À 100 VOIX PRÈS ═══ -->
+<section class="section section--alt">
+  <div class="container">
+    <span class="section-label">Preuves concrètes</span>
+    <h2 class="section-title fade-in">Des élections qui ont basculé à quelques voix près</h2>
+    <p class="section-subtitle fade-in">Ces résultats historiques montrent que chaque voix compte réellement.</p>
+    <div class="bascule-grid">
+      <div class="card bascule-card fade-in">
+        <h4>Législatives 2022 — Hérault 4e circonscription</h4>
+        <p>Le député sortant a été réélu face à son adversaire de la NUPES avec moins de 50 voix d'écart sur plus de 40 000 inscrits.</p>
+        <span class="bascule-votes">~50 voix d'écart</span>
+      </div>
+      <div class="card bascule-card fade-in">
+        <h4>Législatives 2022 — Haut-Rhin 2e circonscription</h4>
+        <p>Une victoire au second tour s'est jouée à moins de 80 voix dans une circonscription de plus de 60 000 inscrits.</p>
+        <span class="bascule-votes">~80 voix d'écart</span>
+      </div>
+      <div class="card bascule-card fade-in">
+        <h4>Présidentielle 2002 — entrée de Le Pen au 2nd tour</h4>
+        <p>Jean-Marie Le Pen a devancé Lionel Jospin pour accéder au second tour avec seulement 0,7 point d'écart. L'abstention record (28 %) a été déterminante dans ce résultat historique.</p>
+        <span class="bascule-votes">0,7 point d'écart</span>
+      </div>
+      <div class="card bascule-card fade-in">
+        <h4>Municipales 2020 — des centaines de communes</h4>
+        <p>Lors des municipales de 2020, des centaines de maires ont été élus (ou battus) avec des écarts inférieurs à 20 voix dans des communes de taille petite à moyenne.</p>
+        <span class="bascule-votes">&lt; 20 voix dans beaucoup de communes</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONQUÊTE DU DROIT DE VOTE ═══ -->
+<section class="section">
+  <div class="container">
+    <span class="section-label">Mémoire historique</span>
+    <h2 class="section-title fade-in">Le suffrage universel : un droit conquis, pas donné</h2>
+    <p class="section-subtitle fade-in">Ce que nous considérons comme acquis a nécessité des siècles de luttes.</p>
+    <div class="timeline">
+      <div class="timeline-item fade-in">
+        <div class="timeline-dot">1789</div>
+        <div class="timeline-body">
+          <h4>Révolution française — suffrage censitaire</h4>
+          <p>La Révolution instaure un droit de vote… mais uniquement pour les hommes propriétaires payant un certain impôt. La majorité de la population en est exclue.</p>
+        </div>
+      </div>
+      <div class="timeline-item fade-in">
+        <div class="timeline-dot">1848</div>
+        <div class="timeline-body">
+          <h4>Suffrage universel masculin</h4>
+          <p>La IIe République proclame le suffrage universel pour tous les hommes majeurs, sans condition de richesse. 9 millions de nouveaux électeurs accèdent au vote d'un coup.</p>
+        </div>
+      </div>
+      <div class="timeline-item fade-in">
+        <div class="timeline-dot">1944</div>
+        <div class="timeline-body">
+          <h4>Les femmes obtiennent le droit de vote</h4>
+          <p>Après des décennies de luttes des suffragettes et militantes, l'ordonnance du 21 avril 1944 accorde enfin le droit de vote aux femmes françaises. Elles votent pour la première fois en avril 1945.</p>
+        </div>
+      </div>
+      <div class="timeline-item fade-in">
+        <div class="timeline-dot">1974</div>
+        <div class="timeline-body">
+          <h4>La majorité abaissée à 18 ans</h4>
+          <p>Valéry Giscard d'Estaing fait adopter l'abaissement de la majorité civique de 21 à 18 ans, intégrant des millions de jeunes dans le corps électoral.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ IDÉES REÇUES ═══ -->
+<section class="section section--alt">
+  <div class="container">
+    <span class="section-label">Démystifier</span>
+    <h2 class="section-title fade-in">Les idées reçues sur le vote</h2>
+    <p class="section-subtitle fade-in">Des arguments souvent entendus — et ce qu'ils oublient.</p>
+    <div class="idees-recues">
+      <div class="idee-item fade-in">
+        <div class="idee-fausse">
+          <div class="idee-label idee-label--fausse"> Idée reçue</div>
+          <p class="idee-text">"Mon vote ne change rien, les politiques font ce qu'ils veulent de toute façon."</p>
+        </div>
+        <div class="idee-vraie">
+          <div class="idee-label idee-label--vraie">✓ Réalité</div>
+          <p class="idee-text">Les programmes électoraux sont partiellement mis en œuvre après chaque victoire. La retraite à 64 ans, la retraite à 60 ans, la proportionnelle, la sortie du nucléaire — tout cela dépend directement des résultats électoraux.</p>
+        </div>
+      </div>
+      <div class="idee-item fade-in">
+        <div class="idee-fausse">
+          <div class="idee-label idee-label--fausse"> Idée reçue</div>
+          <p class="idee-text">"Je ne connais pas assez la politique pour voter."</p>
+        </div>
+        <div class="idee-vraie">
+          <div class="idee-label idee-label--vraie">✓ Réalité</div>
+          <p class="idee-text">Il suffit d'avoir des priorités — emploi, santé, environnement, sécurité. VoteClair est précisément fait pour vous aider à relier ces priorités aux partis en 7 minutes.</p>
+        </div>
+      </div>
+      <div class="idee-item fade-in">
+        <div class="idee-fausse">
+          <div class="idee-label idee-label--fausse"> Idée reçue</div>
+          <p class="idee-text">"Tous les partis se ressemblent, c'est du pareil au même."</p>
+        </div>
+        <div class="idee-vraie">
+          <div class="idee-label idee-label--vraie">✓ Réalité</div>
+          <p class="idee-text">Les différences programmatiques entre LFI, EELV, le PS, Renaissance, LR et le RN sont très importantes sur les retraites, la fiscalité, l'Europe, l'immigration ou le nucléaire. Les résultats concrets pour les citoyens sont radicalement différents selon qui gouverne.</p>
+        </div>
+      </div>
+      <div class="idee-item fade-in">
+        <div class="idee-fausse">
+          <div class="idee-label idee-label--fausse"> Idée reçue</div>
+          <p class="idee-text">"Ne pas voter, c'est aussi un choix politique."</p>
+        </div>
+        <div class="idee-vraie">
+          <div class="idee-label idee-label--vraie">✓ Réalité</div>
+          <p class="idee-text">C'est vrai que c'est un choix. Mais contrairement au vote blanc ou nul, l'abstention n'est pas comptée ni mentionnée dans les résultats officiels. Elle n'envoie aucun message clair et ne pèse sur aucune décision.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ COMMENT S'INSCRIRE ═══ -->
+<section class="section">
+  <div class="container">
+    <div class="inscription-box fade-in">
+      <span class="section-label">Passez à l'action</span>
+      <h3>S'inscrire sur les listes électorales</h3>
+      <p>Pour voter, il faut être inscrit. L'inscription est gratuite, rapide et peut se faire en ligne en quelques minutes.</p>
+      <div class="inscription-steps">
+        <div class="insc-step">
+          <div class="insc-step-num">1</div>
+          <span class="insc-step-label">Rendez-vous sur service-public.fr</span>
+        </div>
+        <div class="insc-step">
+          <div class="insc-step-num">2</div>
+          <span class="insc-step-label">Créez un compte France Connect</span>
+        </div>
+        <div class="insc-step">
+          <div class="insc-step-num">3</div>
+          <span class="insc-step-label">Remplissez le formulaire en ligne</span>
+        </div>
+        <div class="insc-step">
+          <div class="insc-step-num">4</div>
+          <span class="insc-step-label">Recevez votre confirmation par email</span>
+        </div>
+      </div>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+        <a href="https://www.service-public.fr/particuliers/vosdroits/R12675" target="_blank" rel="noopener" class="btn btn-primary">
+          S'inscrire sur les listes →
+        </a>
+        <a href="quiz.html" class="btn btn-outline">Faire le quiz d'orientation</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="nav-logo">Vote<span>Clair</span></div>
+        <p>VoteClair est indépendant et sans financement partisan. Outil civique gratuit pour voter en connaissance de cause.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <a href="index.html">Accueil</a>
+        <a href="quiz.html">Quiz d'orientation</a>
+        <a href="partis.html">Les partis</a>
+        <a href="institutions.html">Institutions</a>
+        <a href="histoire.html">Histoire</a>
+        <a href="pourquoi-voter.html">Pourquoi voter ?</a>
+        <a href="calendrier.html">Calendrier électoral</a>
+        <a href="blog.html">Blog</a>
+        <a href="a-propos.html">À propos</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Les partis</h4>
+        <a href="parti-rassemblement-national.html">Rassemblement National</a>
+        <a href="parti-les-republicains.html">Les Républicains</a>
+        <a href="parti-renaissance.html">Renaissance</a>
+        <a href="parti-modem.html">MoDem</a>
+        <a href="parti-parti-socialiste.html">Parti Socialiste</a>
+        <a href="parti-la-france-insoumise.html">La France Insoumise</a>
+        <a href="parti-europe-ecologie.html">Europe Écologie</a>
+      </div>
+      <div class="footer-col">
+        <h4>Légal & transparence</h4>
+        <a href="methodologie.html">Méthodologie du quiz</a>
+        <a href="mentions-legales.html">Mentions légales</a>
+        <a href="confidentialite.html">Politique de confidentialité</a>
+        <a href="politique-cookies.html">Politique de cookies</a>
+        <a href="conditions-utilisation.html">Conditions d'utilisation</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 VoteClair — Outil civique indépendant</span>
+      <span>RGPD conforme · <a href="politique-cookies.html" style="color:inherit;text-decoration:underline">Gérer mes cookies</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/nav.js"></script>
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+<script src="js/cookie-consent.js"></script>
+</body>
+</html>
