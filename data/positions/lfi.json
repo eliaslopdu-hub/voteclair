@@ -278,5 +278,19 @@
   "programme_officiel": {
     "label": "\"L'Avenir en commun\" – lafranceinsoumise.fr",
     "url": "https://lafranceinsoumise.fr"
-  }
+  },
+  "engagements": [
+    "Porter le SMIC à 1 600 € net immédiatement",
+    "Instaurer la retraite à 60 ans pour tous",
+    "Convoquer une Assemblée constituante pour la VIe République",
+    "Bloquer les prix sur les produits de première nécessité",
+    "Garantir la gratuité de l'éducation de la crèche à l'université",
+    "Sortir du libre-échange et relocaliser l'industrie française"
+  ],
+  "engagements_gerant": [
+    "Partage obligatoire de la valeur entre actionnaires et salariés",
+    "Hausse de l'IS pour les grandes entreprises (allègements maintenus pour PME)",
+    "Encadrement strict des licenciements économiques"
+  ],
+  "note_resultat": "Vos positions sur la justice sociale, les salaires et la souveraineté populaire correspondent à La France Insoumise."
 }

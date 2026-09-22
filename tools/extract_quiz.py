@@ -12,7 +12,7 @@ silencieusement les liens `#r=` déjà partagés : un lien rouvert
 afficherait un autre verdict politique, présenté comme les réponses de
 la personne. Ce fichier fige l'ordre pour qu'un test puisse le défendre.
 """
-import sys, os
+import sys, os, json
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from jsdata import eval_litteral, ecrire_json
 
@@ -81,6 +81,22 @@ def main():
                 if p not in poids:
                     raise SystemExit("parti inconnu dans les poids : %r (%s)" % (p, qid))
                 poids[p].setdefault(qid, {})[ck] = pts
+
+    # ── Les trois blocs editoriaux du quiz ────────────────────────────
+    # ENGAGEMENTS, NOTES et ENGAGEMENTS_GERANT decrivent chacun un parti :
+    # ils rejoignent data/positions/<parti>.json, aupres des autres textes
+    # qui le concernent, plutot que de rester dans un fichier de quiz.
+    engagements = eval_litteral(QUIZ, "const ENGAGEMENTS = {", "const NOTES = {", "ENGAGEMENTS")
+    notes = eval_litteral(QUIZ, "const NOTES = {", "const ENGAGEMENTS_GERANT = {", "NOTES")
+    gerant = eval_litteral(QUIZ, "const ENGAGEMENTS_GERANT = {", "/* ====", "ENGAGEMENTS_GERANT")
+    os.makedirs(os.path.join(DATA, "positions"), exist_ok=True)
+    for p in partis:
+        chemin = os.path.join(DATA, "positions", "%s.json" % p)
+        d = json.load(open(chemin, encoding="utf-8")) if os.path.exists(chemin) else {"parti": p}
+        d["engagements"] = engagements[p]
+        d["engagements_gerant"] = gerant[p]
+        d["note_resultat"] = notes[p]
+        ecrire_json(chemin, d)
 
     os.makedirs(os.path.join(DATA, "poids"), exist_ok=True)
     ecrire_json(os.path.join(DATA, "questions.json"),

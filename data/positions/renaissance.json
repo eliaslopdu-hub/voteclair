@@ -278,5 +278,19 @@
   "programme_officiel": {
     "label": "parti-renaissance.fr — Programme et engagements",
     "url": "https://parti-renaissance.fr"
-  }
+  },
+  "engagements": [
+    "Réformer les retraites pour assurer l'équilibre financier du système",
+    "Viser le plein emploi à 5% de chômage d'ici 2027",
+    "Développer le nucléaire civil avec 6 nouveaux EPR",
+    "Renforcer la construction européenne (défense, économie, numérique)",
+    "Baisser les impôts de production pour les entreprises",
+    "Investir massivement dans la santé et réduire les déserts médicaux"
+  ],
+  "engagements_gerant": [
+    "Suppression de la CVAE (cotisation sur la valeur ajoutée des entreprises)",
+    "France 2030 : plan d'investissement pour l'industrie et l'innovation",
+    "Facilitation des négociations salariales au niveau de l'entreprise"
+  ],
+  "note_resultat": "Votre pragmatisme économique et votre attachement à l'Europe rejoignent la ligne de Renaissance."
 }

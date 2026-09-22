@@ -278,5 +278,19 @@
   "programme_officiel": {
     "label": "rassemblementnational.fr — Programme législatif et présidentiel",
     "url": "https://www.rassemblementnational.fr"
-  }
+  },
+  "engagements": [
+    "Instaurer des quotas annuels d'immigration votés au Parlement",
+    "Accorder la priorité nationale dans l'accès aux aides sociales et au logement",
+    "Retirer la France du commandement intégré de l'OTAN",
+    "Baisser la TVA sur l'énergie et les produits de première nécessité",
+    "Rétablir la retraite à 60 ans pour les carrières longues",
+    "Rétablir la police de proximité et renforcer les effectifs"
+  ],
+  "engagements_gerant": [
+    "Baisse des charges patronales sur les bas et moyens salaires",
+    "Préférence nationale dans les marchés publics pour les entreprises françaises",
+    "Protection des entreprises françaises face à la concurrence étrangère déloyale"
+  ],
+  "note_resultat": "Vos positions sur la sécurité, l'immigration et la souveraineté nationale s'alignent avec le Rassemblement National."
 }

@@ -40,7 +40,9 @@ def lire_fiche(fichier):
         if (m := re.search(r"<strong>%s\s*:</strong>([^<]*)" % lab, bloc)) else None
     )
     lien = re.search(r'<a href="(https?://[^"]+)"', bloc)
+    couleur = re.search(r'parti-color-block" style="background:(#[0-9A-Fa-f]{6})', html)
     return {
+        "couleur": couleur.group(1) if couleur else None,
         "nom": re.search(r"<h1>([^<]+)</h1>", html).group(1).strip(),
         "ideologie": champ("Idéologie"),
         "chef": champ("Chef"),
@@ -64,6 +66,9 @@ def main():
                          "const PARTIS_META = {", "const THEMES = {", "PARTIS_META")
     faf = eval_litteral(os.path.join(RACINE, "face-a-face.html"),
                         "const PARTIS = {", "const THEMES = [", "PARTIS")
+
+    ordre_quiz = {p: i for i, p in enumerate(meta)}
+    ordre_comparateur = {p: i for i, p in enumerate(faf)}
 
     registre, divergences = {}, []
     for pid in faf:
@@ -90,13 +95,33 @@ def main():
         if chef_diverge:
             divergences.append(("dirigeant", pid, dict(chefs)))
 
+        # La couleur aussi diverge : sur 7 partis, 5 ont au comparateur une
+        # teinte differente de celle du quiz et de leur fiche.
+        if a_fiche and fiche["couleur"] and f["couleur"].upper() != fiche["couleur"].upper():
+            divergences.append(("couleur", pid,
+                                {"quiz_et_fiche": fiche["couleur"], "comparateur": f["couleur"]}))
+
         registre[pid] = {
             "nom": nom,
+            # Le quiz affiche des libelles plus courts ("MoDem",
+            # "Europe Ecologie") que la fiche. Ce n'est pas un desaccord
+            # sur le nom, c'est une contrainte de place : on garde les deux.
+            "nom_quiz": meta[pid]["nom"] if au_quiz else None,
             "sigle": f["sigle"],
             "slug": meta[pid]["slug"] if au_quiz else pid,
             "fichier": FICHIERS.get(pid),
-            "couleur": f["couleur"],
+            # Le quiz et la fiche s'accordent sur une couleur ; le
+            # comparateur en utilise une variante plus foncee, sans doute
+            # pour le contraste sur ses fonds clairs. On garde les deux :
+            # ecraser l'une par l'autre changerait le rendu de pages qui
+            # n'ont rien demande.
+            "couleur": fiche["couleur"] if a_fiche else f["couleur"],
+            "couleur_comparateur": f["couleur"],
             "couleurBg": f["couleurBg"],
+            "ordre": {
+                "quiz": ordre_quiz.get(pid),
+                "comparateur": ordre_comparateur.get(pid),
+            },
             "axe": f["axe"],
             "ideologie": fiche["ideologie"] if a_fiche else None,
             "dirigeant": env(

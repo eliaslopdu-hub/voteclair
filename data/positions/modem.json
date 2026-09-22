@@ -278,5 +278,19 @@
   "programme_officiel": {
     "label": "mouvementdemocrate.fr",
     "url": "https://www.mouvementdemocrate.fr"
-  }
+  },
+  "engagements": [
+    "Réformer les institutions pour introduire plus de proportionnelle",
+    "Renforcer la démocratie européenne fédérale",
+    "Assurer la transition énergétique de façon pragmatique",
+    "Faire de l'éducation une priorité nationale — revaloriser les enseignants",
+    "Renforcer le dialogue social entre partenaires sociaux",
+    "Lutter contre la pauvreté par l'insertion professionnelle"
+  ],
+  "engagements_gerant": [
+    "Simplification administrative pour les TPE/PME",
+    "Dialogue social renforcé : co-gestion à l'allemande",
+    "Renforcement du statut de l'entrepreneur individuel"
+  ],
+  "note_resultat": "Votre positionnement centriste et pro-européen correspond à la ligne du MoDem."
 }

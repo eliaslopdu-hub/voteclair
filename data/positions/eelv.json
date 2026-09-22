@@ -278,5 +278,19 @@
   "programme_officiel": {
     "label": "lesecologistes.fr — Programme et engagements",
     "url": "https://www.lesecologistes.fr"
-  }
+  },
+  "engagements": [
+    "Planifier la neutralité carbone avant 2050",
+    "Sortir progressivement du nucléaire en faveur des renouvelables",
+    "Réformer l'agriculture vers le bio et l'agroécologie",
+    "Porter le SMIC à 1 600 € net et instaurer la semaine de 4 jours",
+    "Renforcer le droit au logement opposable",
+    "Instaurer une taxe carbone aux frontières de l'UE"
+  ],
+  "engagements_gerant": [
+    "Semaine de 4 jours pour améliorer la productivité et le bien-être au travail",
+    "Conditionnalité sociale et environnementale des aides publiques aux entreprises",
+    "Taxe carbone aux frontières : protection des entreprises françaises face aux importations"
+  ],
+  "note_resultat": "Votre priorité à l'écologie et à la transformation sociale rejoint les positions d'Europe Écologie."
 }

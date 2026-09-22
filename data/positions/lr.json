@@ -278,5 +278,19 @@
   "programme_officiel": {
     "label": "republicains.fr — Programme et engagements",
     "url": "https://www.republicains.fr"
-  }
+  },
+  "engagements": [
+    "Contrôler strictement l'immigration et renforcer les expulsions",
+    "Baisser les charges pour les entreprises et simplifier la fiscalité",
+    "Maintenir la retraite à 64 ans",
+    "Développer le nucléaire civil avec 14 nouveaux réacteurs",
+    "Rétablir les peines planchers pour les récidivistes",
+    "Décentraliser et renforcer l'autonomie des collectivités"
+  ],
+  "engagements_gerant": [
+    "Baisse de l'impôt sur les sociétés pour les PME et ETI",
+    "Simplification du code du travail et facilitation des embauches",
+    "Réduction significative des cotisations patronales"
+  ],
+  "note_resultat": "Votre conservatisme économique et votre attachement à l'ordre correspondent à la ligne des Républicains."
 }
