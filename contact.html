@@ -13,6 +13,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.voteclair.fr/contact.html" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗳️</text></svg>" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
   <link rel="stylesheet" href="css/fonts.css" />
   <link rel="stylesheet" href="css/main.css" />
   <style>
@@ -28,7 +29,7 @@
     }
 
     .breadcrumb { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 32px; }
-    .breadcrumb a { color: var(--accent); }
+    .breadcrumb a { color: var(--accent-text); }
     .breadcrumb span { margin: 0 6px; }
 
     .contact-form-wrap h2 { font-size: 1.4rem; margin-bottom: 24px; }
@@ -89,12 +90,12 @@
     }
     .contact-info-card h3 { font-size: 0.95rem; color: var(--text); margin-bottom: 10px; }
     .contact-info-card p  { font-size: 0.875rem; color: var(--text-muted); line-height: 1.65; margin: 0; }
-    .contact-info-card a  { color: var(--accent); }
+    .contact-info-card a  { color: var(--accent-text); }
     .contact-info-card .ci-icon { font-size: 1.5rem; margin-bottom: 10px; }
 
     .contact-email-display {
       font-weight: 700;
-      color: var(--accent);
+      color: var(--accent-text);
       font-size: 0.95rem;
       word-break: break-all;
     }
@@ -215,19 +216,19 @@
         <p class="form-note" style="margin-bottom:20px">
           Ce formulaire ne transmet rien à VoteClair : il prépare un message dans votre logiciel de messagerie,
           que vous restez libre d'envoyer ou non. Aucune donnée n'est enregistrée sur ce site.
-          Voir la <a href="confidentialite.html" style="color:var(--accent)">politique de confidentialité</a>.
+          Voir la <a href="confidentialite.html" style="color:var(--accent-text)">politique de confidentialité</a>.
         </p>
 
-        <div id="form-error" style="display:none;background:rgba(204,0,0,0.08);border:1px solid rgba(204,0,0,0.3);border-radius:8px;padding:12px 16px;font-size:0.875rem;color:#CC0000;margin-bottom:16px"></div>
+        <div id="form-error" role="alert" aria-live="assertive" style="display:none;background:rgba(204,0,0,0.08);border:1px solid rgba(204,0,0,0.3);border-radius:8px;padding:12px 16px;font-size:0.875rem;color:#CC0000;margin-bottom:16px"></div>
 
         <div class="form-submit">
           <button type="submit" class="btn btn-primary" style="padding:14px 32px;font-size:1rem">Rédiger le message →</button>
         </div>
 
-        <div id="form-success" class="form-success">
+        <div id="form-success" class="form-success" role="status" aria-live="polite">
           ✓ <strong>Votre logiciel de messagerie vient de s'ouvrir</strong> avec le message pré-rempli — il ne part pas tant que vous ne l'envoyez pas vous-même.
           <br /><br />
-          Rien ne s'est ouvert ? Écrivez directement à <strong>contact@voteclair.fr</strong>.
+          Rien ne s'est ouvert ? Écrivez directement à <strong><span class="vc-mail" data-u="contact" data-d="voteclair.fr">contact [arobase] voteclair.fr</span></strong>.
         </div>
       </form>
     </div>
@@ -240,7 +241,7 @@
         <div class="ci-icon">✉️</div>
         <h3>Email direct</h3>
         <p>Pour toute demande urgente ou sensible :</p>
-        <p class="contact-email-display">contact@voteclair.fr</p>
+        <p class="contact-email-display"><span class="vc-mail" data-u="contact" data-d="voteclair.fr">contact [arobase] voteclair.fr</span></p>
       </div>
 
       <div class="contact-info-card">
@@ -252,7 +253,7 @@
       <div class="contact-info-card">
         <div class="ci-icon">🛡️</div>
         <h3>Droits RGPD</h3>
-        <p>VoteClair ne collecte aucune donnée personnelle : le quiz fonctionne entièrement dans votre navigateur. Pour toute question relative à vos droits, sélectionnez « Exercice de droits RGPD » dans le formulaire ou écrivez directement à <strong>contact@voteclair.fr</strong>.</p>
+        <p>VoteClair ne collecte aucune donnée personnelle : le quiz fonctionne entièrement dans votre navigateur. Pour toute question relative à vos droits, sélectionnez « Exercice de droits RGPD » dans le formulaire ou écrivez directement à <strong><span class="vc-mail" data-u="contact" data-d="voteclair.fr">contact [arobase] voteclair.fr</span></strong>.</p>
       </div>
 
       <div class="contact-info-card">
@@ -319,6 +320,8 @@
   const errorBox = document.getElementById('form-error');
   const successBox = document.getElementById('form-success');
 
+  const ADRESSE = 'contact' + String.fromCharCode(64) + 'voteclair.fr';
+
   const SUJETS = {
     erreur:       'Signalement d\u2019une erreur',
     quiz:         'Question sur le quiz',
@@ -340,10 +343,12 @@
     const sujet = document.getElementById('cf-sujet').value;
     const message = document.getElementById('cf-message').value.trim();
 
-    if (!nom) { showError('Veuillez indiquer votre nom.'); return; }
-    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showError('Veuillez indiquer une adresse e-mail valide.'); return; }
-    if (!sujet) { showError('Veuillez choisir un sujet.'); return; }
-    if (message.length < 20) { showError('Votre message est trop court (minimum 20 caract\u00e8res).'); return; }
+    clearInvalid();
+
+    if (!nom) { showError('Veuillez indiquer votre nom.', 'cf-nom'); return; }
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showError('Veuillez indiquer une adresse e-mail valide.', 'cf-email'); return; }
+    if (!sujet) { showError('Veuillez choisir un sujet.', 'cf-sujet'); return; }
+    if (message.length < 20) { showError('Votre message est trop court (minimum 20 caract\u00e8res).', 'cf-message'); return; }
 
     /* Le site n'a pas de serveur : on pr\u00e9pare le message dans le logiciel de
        messagerie de l'utilisateur. Rien n'est transmis \u00e0 VoteClair \u00e0 ce stade. */
@@ -354,7 +359,7 @@
       'Sujet : ' + (SUJETS[sujet] || sujet) + '\n\n' +
       message + '\n';
 
-    const href = 'mailto:contact@voteclair.fr'
+    const href = 'mailto:' + ADRESSE
       + '?subject=' + encodeURIComponent(objet)
       + '&body=' + encodeURIComponent(corps);
 
@@ -369,11 +374,43 @@
     successBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   });
 
-  function showError(msg) {
+  const CHAMPS = ['cf-nom', 'cf-email', 'cf-sujet', 'cf-message'];
+
+  function clearInvalid() {
+    CHAMPS.forEach(function (id) {
+      document.getElementById(id).removeAttribute('aria-invalid');
+    });
+  }
+
+  /* Le message est annoncé par aria-live ; le focus ramène l'utilisateur sur le
+     champ fautif, ce que scrollIntoView seul ne fait pas au clavier. */
+  function showError(msg, champId) {
     errorBox.textContent = msg;
     errorBox.style.display = 'block';
     errorBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    if (champId) {
+      const champ = document.getElementById(champId);
+      champ.setAttribute('aria-invalid', 'true');
+      champ.focus({ preventScroll: true });
+    }
   }
+</script>
+
+<script>
+  /* Adresse de contact assemblée côté client : les moissonneurs de spam lisent
+     le HTML brut, pas le DOM. Sans JavaScript, la mention « contact [arobase]
+     voteclair.fr » reste lisible, et les pages légales portent l'adresse en
+     clair comme la LCEN l'exige. */
+  (function () {
+    document.querySelectorAll('.vc-mail').forEach(function (el) {
+      var adresse = el.dataset.u + String.fromCharCode(64) + el.dataset.d;
+      var a = document.createElement('a');
+      a.href = 'mailto:' + adresse;
+      a.textContent = adresse;
+      a.style.color = 'inherit';
+      el.replaceChildren(a);
+    });
+  })();
 </script>
 </body>
 </html>

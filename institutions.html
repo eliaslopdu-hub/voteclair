@@ -7,6 +7,8 @@
   <title>Comment fonctionne la démocratie française – VoteClair</title>
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://www.voteclair.fr/institutions.html" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗳️</text></svg>" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
   <meta name="description" content="Comprendre les institutions françaises : le scrutin à deux tours, le Parlement, le Président, comment voter et s'inscrire sur les listes électorales." />
   <link rel="stylesheet" href="css/fonts.css" />
   <link rel="stylesheet" href="css/main.css" />
@@ -60,7 +62,7 @@
 </nav>
 
 <!-- ═══ PAGE HERO ═══ -->
-<div class="page-hero page-hero--image" id="main-content" style="background: linear-gradient(105deg, rgba(10,10,28,0.88) 0%, rgba(10,10,28,0.65) 55%, rgba(10,10,28,0.25) 100%), url('https://images.unsplash.com/photo-1548661710-7f540f8fd9be?w=1920&q=80') center/cover no-repeat;">
+<div class="page-hero page-hero--image" id="main-content" style="background: linear-gradient(105deg, rgba(10,10,28,0.88) 0%, rgba(10,10,28,0.65) 55%, rgba(10,10,28,0.25) 100%), url('assets/assemblee-nationale.webp') center/cover no-repeat;">
   <div class="container">
     <div class="breadcrumb">
       <a href="index.html">Accueil</a> <span>›</span> <span>Institutions</span>
@@ -79,17 +81,17 @@
     <p style="color:var(--text);font-size:1rem;margin-top:16px;max-width:800px;line-height:1.8">
       Le droit de vote est l'un des droits fondamentaux conquis au fil des luttes démocratiques. En France, le suffrage universel masculin date de 1848, et les femmes ont obtenu le droit de vote en 1944. Aujourd'hui, l'abstention est un enjeu majeur : lors des législatives 2022, plus de la moitié des électeurs ne s'est pas déplacée. Chaque voix compte, en particulier dans les scrutins serrés.
     </p>
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-top:32px">
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(220px, 100%), 1fr));gap:16px;margin-top:32px">
       <div class="card" style="padding:20px;border-left:4px solid var(--accent)">
-        <h4 style="font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--accent);margin-bottom:6px">1848</h4>
+        <h4 style="font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--accent-text);margin-bottom:6px">1848</h4>
         <p style="font-size:0.82rem">Instauration du suffrage universel masculin en France</p>
       </div>
       <div class="card" style="padding:20px;border-left:4px solid var(--accent)">
-        <h4 style="font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--accent);margin-bottom:6px">1944</h4>
+        <h4 style="font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--accent-text);margin-bottom:6px">1944</h4>
         <p style="font-size:0.82rem">Les femmes obtiennent le droit de vote</p>
       </div>
       <div class="card" style="padding:20px;border-left:4px solid var(--accent)">
-        <h4 style="font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--accent);margin-bottom:6px">1974</h4>
+        <h4 style="font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--accent-text);margin-bottom:6px">1974</h4>
         <p style="font-size:0.82rem">Abaissement de la majorité électorale de 21 à 18 ans</p>
       </div>
       <div class="card" style="padding:20px;border-left:4px solid #CC0000">
@@ -109,13 +111,13 @@
       <div class="scrutin-tour">
         <h3>1er Tour</h3>
         <p>Un candidat est élu directement s'il obtient <strong style="color:var(--text)">plus de 50% des suffrages exprimés</strong> et au moins 25% des inscrits. Sinon, les deux premiers accèdent au 2nd tour.</p>
-        <p style="margin-top:10px;font-size:0.8rem;color:var(--accent)">Pour les législatives : seuil à 12,5% des inscrits pour se maintenir</p>
+        <p style="margin-top:10px;font-size:0.8rem;color:var(--accent-text)">Pour les législatives : seuil à 12,5% des inscrits pour se maintenir</p>
       </div>
       <div class="scrutin-arrow">→</div>
       <div class="scrutin-tour">
         <h3>2nd Tour</h3>
         <p>Duel entre les deux candidats qualifiés. La <strong style="color:var(--text)">majorité relative suffit</strong> : celui qui obtient le plus de voix l'emporte, même sans dépasser 50%.</p>
-        <p style="margin-top:10px;font-size:0.8rem;color:var(--accent)">Pas de seuil minimum requis</p>
+        <p style="margin-top:10px;font-size:0.8rem;color:var(--accent-text)">Pas de seuil minimum requis</p>
       </div>
     </div>
 
@@ -210,60 +212,62 @@
   <div class="inst-section fade-in">
     <p class="inst-section-label">Section 4</p>
     <h2>Les élections en France</h2>
-    <table class="elections-table">
-      <thead>
-        <tr>
-          <th>Élection</th>
-          <th>Fréquence</th>
-          <th>Qui vote</th>
-          <th>Ce qu'on élit</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Présidentielle</td>
-          <td>Tous les 5 ans</td>
-          <td>Tous les citoyens français</td>
-          <td>Le Président de la République</td>
-        </tr>
-        <tr>
-          <td>Législatives</td>
-          <td>Tous les 5 ans</td>
-          <td>Tous les citoyens français</td>
-          <td>577 députés à l'Assemblée nationale</td>
-        </tr>
-        <tr>
-          <td>Sénatoriales</td>
-          <td>Tous les 6 ans (par moitié)</td>
-          <td>Grands électeurs (élus locaux)</td>
-          <td>348 sénateurs</td>
-        </tr>
-        <tr>
-          <td>Européennes</td>
-          <td>Tous les 5 ans</td>
-          <td>Citoyens UE résidant en France</td>
-          <td>81 eurodéputés français</td>
-        </tr>
-        <tr>
-          <td>Municipales</td>
-          <td>Tous les 6 ans</td>
-          <td>Citoyens français et UE</td>
-          <td>Conseillers municipaux et maires</td>
-        </tr>
-        <tr>
-          <td>Régionales</td>
-          <td>Tous les 6 ans</td>
-          <td>Tous les citoyens français</td>
-          <td>Conseillers régionaux et présidents de région</td>
-        </tr>
-        <tr>
-          <td>Départementales</td>
-          <td>Tous les 6 ans</td>
-          <td>Tous les citoyens français</td>
-          <td>Conseillers départementaux (binôme homme-femme)</td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="table-scroll" role="region" tabindex="0" aria-label="Les élections en France (tableau, défilable horizontalement)">
+      <table class="elections-table">
+        <thead>
+          <tr>
+            <th>Élection</th>
+            <th>Fréquence</th>
+            <th>Qui vote</th>
+            <th>Ce qu'on élit</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Présidentielle</td>
+            <td>Tous les 5 ans</td>
+            <td>Tous les citoyens français</td>
+            <td>Le Président de la République</td>
+          </tr>
+          <tr>
+            <td>Législatives</td>
+            <td>Tous les 5 ans</td>
+            <td>Tous les citoyens français</td>
+            <td>577 députés à l'Assemblée nationale</td>
+          </tr>
+          <tr>
+            <td>Sénatoriales</td>
+            <td>Tous les 6 ans (par moitié)</td>
+            <td>Grands électeurs (élus locaux)</td>
+            <td>348 sénateurs</td>
+          </tr>
+          <tr>
+            <td>Européennes</td>
+            <td>Tous les 5 ans</td>
+            <td>Citoyens UE résidant en France</td>
+            <td>81 eurodéputés français</td>
+          </tr>
+          <tr>
+            <td>Municipales</td>
+            <td>Tous les 6 ans</td>
+            <td>Citoyens français et UE</td>
+            <td>Conseillers municipaux et maires</td>
+          </tr>
+          <tr>
+            <td>Régionales</td>
+            <td>Tous les 6 ans</td>
+            <td>Tous les citoyens français</td>
+            <td>Conseillers régionaux et présidents de région</td>
+          </tr>
+          <tr>
+            <td>Départementales</td>
+            <td>Tous les 6 ans</td>
+            <td>Tous les citoyens français</td>
+            <td>Conseillers départementaux (binôme homme-femme)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 
   <!-- ── 5. S'inscrire ── -->

@@ -13,6 +13,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.voteclair.fr/politique-cookies.html" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗳️</text></svg>" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
   <link rel="stylesheet" href="css/fonts.css" />
   <link rel="stylesheet" href="css/main.css" />
   <style>
@@ -26,7 +27,7 @@
     .legal-section strong { color: var(--text); }
     .legal-meta { display: inline-block; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 4px 12px; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 40px; }
     .breadcrumb { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 32px; }
-    .breadcrumb a { color: var(--accent); }
+    .breadcrumb a { color: var(--accent-text); }
     .breadcrumb span { margin: 0 6px; }
 
     .cookie-table {
@@ -157,80 +158,84 @@
 
       <h3>2.1 Cookies essentiels (exemptés de consentement)</h3>
       <p>Ces cookies sont strictement nécessaires au fonctionnement du site. Ils ne peuvent pas être désactivés.</p>
-      <table class="cookie-table">
-        <thead>
-          <tr>
-            <th>Nom</th>
-            <th>Émetteur</th>
-            <th>Finalité</th>
-            <th>Durée</th>
-            <th>Type</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>vc_cookie_consent</code></td>
-            <td>VoteClair (propriétaire)</td>
-            <td>Mémorise votre choix relatif aux cookies (accepté, refusé, personnalisé)</td>
-            <td>12 mois</td>
-            <td><span class="badge-essential">Essentiel</span></td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="table-scroll" role="region" tabindex="0" aria-label="2.1 Cookies essentiels (exemptés de consentement) (tableau, défilable horizontalement)">
+        <table class="cookie-table">
+          <thead>
+            <tr>
+              <th>Nom</th>
+              <th>Émetteur</th>
+              <th>Finalité</th>
+              <th>Durée</th>
+              <th>Type</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>vc_cookie_consent</code></td>
+              <td>VoteClair (propriétaire)</td>
+              <td>Mémorise votre choix relatif aux cookies (accepté, refusé, personnalisé)</td>
+              <td>12 mois</td>
+              <td><span class="badge-essential">Essentiel</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
       <p>Ce cookie est stocké dans le <code>localStorage</code> de votre navigateur, et non comme un cookie HTTP classique. Il ne contient aucune donnée personnelle et ne quitte jamais votre appareil.</p>
 
       <h3>2.2 Cookies publicitaires (non actifs à ce jour)</h3>
       <p><strong>À ce jour, VoteClair n'affiche aucune publicité</strong> et ne dépose aucun cookie non essentiel. Les descriptions ci-dessous s'appliqueraient si une régie publicitaire (Google AdSense) était activée à l'avenir. Le cas échéant, cette page serait mise à jour avec la date de mise en service, et votre consentement explicite serait recueilli au préalable.</p>
       <p>Ces cookies sont déposés uniquement si vous avez <strong>donné votre consentement</strong>. Ils sont utilisés par Google pour diffuser des publicités personnalisées basées sur vos centres d'intérêt.</p>
-      <table class="cookie-table">
-        <thead>
-          <tr>
-            <th>Nom</th>
-            <th>Émetteur</th>
-            <th>Finalité</th>
-            <th>Durée</th>
-            <th>Type</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>__gads</code></td>
-            <td>Google (doubleclick.net)</td>
-            <td>Enregistrement et report des actions publicitaires pour la mesure des conversions</td>
-            <td>13 mois</td>
-            <td><span class="badge-ads">Publicitaire</span></td>
-          </tr>
-          <tr>
-            <td><code>__gpi</code></td>
-            <td>Google (doubleclick.net)</td>
-            <td>Identifiant publicitaire pour la diffusion d'annonces personnalisées</td>
-            <td>13 mois</td>
-            <td><span class="badge-ads">Publicitaire</span></td>
-          </tr>
-          <tr>
-            <td><code>IDE</code></td>
-            <td>Google (doubleclick.net)</td>
-            <td>Ciblage publicitaire, mesure de performance des annonces</td>
-            <td>13 mois</td>
-            <td><span class="badge-ads">Publicitaire</span></td>
-          </tr>
-          <tr>
-            <td><code>NID</code></td>
-            <td>Google</td>
-            <td>Mémorise les préférences et autres informations pour personnaliser les annonces</td>
-            <td>6 mois</td>
-            <td><span class="badge-ads">Publicitaire</span></td>
-          </tr>
-          <tr>
-            <td><code>CONSENT</code></td>
-            <td>Google</td>
-            <td>Enregistre l'état du consentement côté Google</td>
-            <td>2 ans</td>
-            <td><span class="badge-ads">Publicitaire</span></td>
-          </tr>
-        </tbody>
-      </table>
-      <p>Ces cookies pourraient collecter votre adresse IP, les pages visitées, la durée de visite et d'autres données de navigation. Ces informations seraient transmises à Google LLC (États-Unis) dans le cadre du programme Google AdSense. Pour plus d'informations, consultez la <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color:var(--accent)">politique de confidentialité de Google</a>.</p>
+      <div class="table-scroll" role="region" tabindex="0" aria-label="2.2 Cookies publicitaires (non actifs à ce jour) (tableau, défilable horizontalement)">
+        <table class="cookie-table">
+          <thead>
+            <tr>
+              <th>Nom</th>
+              <th>Émetteur</th>
+              <th>Finalité</th>
+              <th>Durée</th>
+              <th>Type</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>__gads</code></td>
+              <td>Google (doubleclick.net)</td>
+              <td>Enregistrement et report des actions publicitaires pour la mesure des conversions</td>
+              <td>13 mois</td>
+              <td><span class="badge-ads">Publicitaire</span></td>
+            </tr>
+            <tr>
+              <td><code>__gpi</code></td>
+              <td>Google (doubleclick.net)</td>
+              <td>Identifiant publicitaire pour la diffusion d'annonces personnalisées</td>
+              <td>13 mois</td>
+              <td><span class="badge-ads">Publicitaire</span></td>
+            </tr>
+            <tr>
+              <td><code>IDE</code></td>
+              <td>Google (doubleclick.net)</td>
+              <td>Ciblage publicitaire, mesure de performance des annonces</td>
+              <td>13 mois</td>
+              <td><span class="badge-ads">Publicitaire</span></td>
+            </tr>
+            <tr>
+              <td><code>NID</code></td>
+              <td>Google</td>
+              <td>Mémorise les préférences et autres informations pour personnaliser les annonces</td>
+              <td>6 mois</td>
+              <td><span class="badge-ads">Publicitaire</span></td>
+            </tr>
+            <tr>
+              <td><code>CONSENT</code></td>
+              <td>Google</td>
+              <td>Enregistre l'état du consentement côté Google</td>
+              <td>2 ans</td>
+              <td><span class="badge-ads">Publicitaire</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Ces cookies pourraient collecter votre adresse IP, les pages visitées, la durée de visite et d'autres données de navigation. Ces informations seraient transmises à Google LLC (États-Unis) dans le cadre du programme Google AdSense. Pour plus d'informations, consultez la <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color:var(--accent-text)">politique de confidentialité de Google</a>.</p>
 
       <h3>2.3 Cookies de mesure d'audience</h3>
       <p>VoteClair n'utilise pas actuellement de solution d'analytics tierce. Si une telle solution était intégrée à l'avenir, cette section serait mise à jour en amont et votre consentement serait de nouveau sollicité.</p>
@@ -252,15 +257,15 @@
       <h3>Paramétrage via votre navigateur</h3>
       <p>Vous pouvez également configurer votre navigateur pour bloquer ou supprimer les cookies. Voici les liens vers les paramètres des principaux navigateurs :</p>
       <ul>
-        <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener" style="color:var(--accent)">Google Chrome</a></li>
-        <li><a href="https://support.mozilla.org/fr/kb/protection-renforcee-contre-pistage-firefox-version-bureau" target="_blank" rel="noopener" style="color:var(--accent)">Mozilla Firefox</a></li>
-        <li><a href="https://support.apple.com/fr-fr/guide/safari/sfri11471/mac" target="_blank" rel="noopener" style="color:var(--accent)">Safari</a></li>
-        <li><a href="https://support.microsoft.com/fr-fr/windows/supprimer-et-g%C3%A9rer-les-cookies-168dab11-0753-043d-7c16-ede5947fc64d" target="_blank" rel="noopener" style="color:var(--accent)">Microsoft Edge</a></li>
+        <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener" style="color:var(--accent-text)">Google Chrome</a></li>
+        <li><a href="https://support.mozilla.org/fr/kb/protection-renforcee-contre-pistage-firefox-version-bureau" target="_blank" rel="noopener" style="color:var(--accent-text)">Mozilla Firefox</a></li>
+        <li><a href="https://support.apple.com/fr-fr/guide/safari/sfri11471/mac" target="_blank" rel="noopener" style="color:var(--accent-text)">Safari</a></li>
+        <li><a href="https://support.microsoft.com/fr-fr/windows/supprimer-et-g%C3%A9rer-les-cookies-168dab11-0753-043d-7c16-ede5947fc64d" target="_blank" rel="noopener" style="color:var(--accent-text)">Microsoft Edge</a></li>
       </ul>
       <p><strong>Attention :</strong> la désactivation de tous les cookies peut affecter le fonctionnement de certains sites web que vous visitez.</p>
 
       <h3>Opt-out Google AdSense</h3>
-      <p>Vous pouvez également désactiver la personnalisation des annonces Google en visitant la page <a href="https://adssettings.google.com" target="_blank" rel="noopener" style="color:var(--accent)">Paramètres des annonces Google</a> ou en installant le <a href="https://support.google.com/ads/answer/7395996" target="_blank" rel="noopener" style="color:var(--accent)">module complémentaire de désinscription Google Analytics</a>.</p>
+      <p>Vous pouvez également désactiver la personnalisation des annonces Google en visitant la page <a href="https://adssettings.google.com" target="_blank" rel="noopener" style="color:var(--accent-text)">Paramètres des annonces Google</a> ou en installant le <a href="https://support.google.com/ads/answer/7395996" target="_blank" rel="noopener" style="color:var(--accent-text)">module complémentaire de désinscription Google Analytics</a>.</p>
     </div>
 
     <!-- 4. Base légale -->

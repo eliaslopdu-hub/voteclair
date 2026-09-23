@@ -27,6 +27,13 @@
     "elections.*.qui_vote": { "auto": false, "justification": "Texte editorial." },
     "elections.*.ce_qui_est_elu": { "auto": false, "justification": "Texte editorial." },
 
+    "elections.elections[0].date": { "auto": false, "justification": "euro-2024 — scrutin tenu le 9 juin 2024, date etablie par decret et sourcee au rang 1. Une date passee ne change plus : la reverifier tous les 7 jours fabrique du travail sans objet. Ces index suivent l ordre de data/elections.json : inserer une election en milieu de liste decalerait le gel sur la mauvaise ligne." },
+    "elections.elections[1].date": { "auto": false, "justification": "legis-2024-1 — scrutin tenu le 30 juin 2024, date etablie par decret et sourcee au rang 1. Une date passee ne change plus : la reverifier tous les 7 jours fabrique du travail sans objet." },
+    "elections.elections[2].date": { "auto": false, "justification": "legis-2024-2 — scrutin tenu le 7 juillet 2024, date etablie par decret et sourcee au rang 1. Une date passee ne change plus : la reverifier tous les 7 jours fabrique du travail sans objet." },
+    "elections.elections[3].date": { "auto": false, "justification": "muni-2026-1 — scrutin tenu le 15 mars 2026, date etablie par decret et sourcee au rang 1. Une date passee ne change plus : la reverifier tous les 7 jours fabrique du travail sans objet." },
+    "elections.elections[4].date": { "auto": false, "justification": "muni-2026-2 — scrutin tenu le 22 mars 2026, date etablie par decret et sourcee au rang 1. Une date passee ne change plus : la reverifier tous les 7 jours fabrique du travail sans objet." },
+    "elections.elections[5].date": { "auto": false, "justification": "sena-2026 — scrutin tenu le 27 septembre 2026, date etablie par decret et sourcee au rang 1. Une date passee ne change plus : la reverifier tous les 7 jours fabrique du travail sans objet." },
+
     "partis.*.dirigeant": {
       "cadence_jours": 30,
       "auto": true,

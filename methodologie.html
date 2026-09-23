@@ -8,7 +8,8 @@
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://www.voteclair.fr/methodologie.html" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗳️</text></svg>" />
-  <meta name="description" content="Comment fonctionne le quiz d'orientation politique VoteClair ? Découvrez notre méthodologie, comment les scores sont calculés, quelles sources nous utilisons." />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <meta name="description" content="Comment fonctionne le quiz d'orientation politique VoteClair ? Découvrez notre méthodologie, le calcul des scores et les sources que nous utilisons." />
   <link rel="stylesheet" href="css/fonts.css" />
   <link rel="stylesheet" href="css/main.css" />
   <style>
@@ -66,7 +67,7 @@
     }
     .methodo-toc li a {
       font-size: 0.9rem;
-      color: var(--accent);
+      color: var(--accent-text);
       text-decoration: none;
       transition: color 0.2s;
     }
@@ -120,7 +121,7 @@
 
     .partis-included {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
       gap: 16px;
       margin-top: 32px;
     }
@@ -197,7 +198,7 @@
     .source-icon { font-size: 1.3rem; }
     .source-body h4 { font-size: 0.9rem; margin-bottom: 4px; }
     .source-body p  { font-size: 0.82rem; }
-    .source-body a  { color: var(--accent); font-size: 0.8rem; }
+    .source-body a  { color: var(--accent-text); font-size: 0.8rem; }
 
     @media (max-width: 768px) {
       .step-cards    { grid-template-columns: 1fr; }
@@ -324,7 +325,7 @@
     </div>
     <div style="margin-top:32px">
       <div class="card step-card fade-in" style="max-width:460px;margin:0 auto;text-align:center;padding:24px">
-        <div class="step-num" style="background:rgba(108,99,255,0.2);color:var(--accent)">+</div>
+        <div class="step-num" style="background:rgba(108,99,255,0.2);color:var(--accent-text)">+</div>
         <h4>Pondération thématique</h4>
         <p>À la fin du quiz approfondi, vous indiquez l'importance de chaque thème : <strong>« Peu important » (×0,6)</strong>, <strong>« Important » (×1)</strong> ou <strong>« Priorité absolue » (×2)</strong>. Les thèmes qui comptent vraiment pour vous pèsent davantage.</p>
       </div>
@@ -455,7 +456,7 @@
 
       <div style="margin-top:20px;padding:16px 20px;border-left:3px solid #E8C547;background:rgba(232,197,71,0.08);border-radius:8px">
         <p style="margin:0 0 10px 0;font-size:0.95rem"><strong>Pourquoi le comparateur couvre 8 partis et le quiz 7</strong></p>
-        <p style="margin:0;font-size:0.92rem">Le <a href="face-a-face.html" style="color:var(--accent)">comparateur face-à-face</a> inclut le Parti Communiste Français, absent du quiz. La raison est assumée : le comparateur se contente de <em>présenter</em> des positions sourcées, ce qu'on peut faire pour toute formation disposant d'un programme public ; le quiz, lui, <em>attribue un résultat</em>, ce qui exige une base de points suffisamment solide. Le PCF sera intégré au quiz dès que ses positions y seront documentées au même niveau que les sept autres.</p>
+        <p style="margin:0;font-size:0.92rem">Le <a href="face-a-face.html" style="color:var(--accent-text)">comparateur face-à-face</a> inclut le Parti Communiste Français, absent du quiz. La raison est assumée : le comparateur se contente de <em>présenter</em> des positions sourcées, ce qu'on peut faire pour toute formation disposant d'un programme public ; le quiz, lui, <em>attribue un résultat</em>, ce qui exige une base de points suffisamment solide. Le PCF sera intégré au quiz dès que ses positions y seront documentées au même niveau que les sept autres.</p>
       </div>
 
       <div style="margin-top:16px;padding:16px 20px;border-left:3px solid var(--accent);background:rgba(108,99,255,0.06);border-radius:8px">
@@ -474,52 +475,54 @@
     <p class="fade-in" style="max-width:700px;margin-bottom:0;font-size:1rem">
       Le quiz couvre 7 thèmes politiques majeurs. Chaque question est assignée à l'un d'eux.
     </p>
-    <table class="themes-table fade-in">
-      <thead>
-        <tr>
-          <th>Thème</th>
-          <th>Questions couvertes</th>
-          <th>Exemples de sujets</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Économie & fiscalité</strong></td>
-          <td>Q7, Q13, Q17, Q20</td>
-          <td>ISF, impôts entreprises, protectionnisme, budget de l'État</td>
-        </tr>
-        <tr>
-          <td><strong>Environnement & énergie</strong></td>
-          <td>Q6, Q10, Q16, Q22</td>
-          <td>Nucléaire, renouvelables, transition écologique, agriculture</td>
-        </tr>
-        <tr>
-          <td><strong>Sécurité & justice</strong></td>
-          <td>Q5, Q14, Q19</td>
-          <td>Peines planchers, police de proximité, recidivisme</td>
-        </tr>
-        <tr>
-          <td><strong>Social & travail</strong></td>
-          <td>Q9, Q11, Q15, Q21</td>
-          <td>SMIC, retraites, services publics, droits des femmes</td>
-        </tr>
-        <tr>
-          <td><strong>Europe & géopolitique</strong></td>
-          <td>Q12, Q18, Q24</td>
-          <td>Construction européenne, OTAN, souveraineté nationale</td>
-        </tr>
-        <tr>
-          <td><strong>Immigration</strong></td>
-          <td>Q8, Q23</td>
-          <td>Quotas, priorité nationale, droit d'asile</td>
-        </tr>
-        <tr>
-          <td><strong>Institutions & démocratie</strong></td>
-          <td>Q25, Q26, Q31</td>
-          <td>Proportionnelle, VIe République, référendum d'initiative citoyenne</td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="table-scroll" role="region" tabindex="0" aria-label="Thèmes couverts (tableau, défilable horizontalement)">
+      <table class="themes-table fade-in">
+        <thead>
+          <tr>
+            <th>Thème</th>
+            <th>Questions couvertes</th>
+            <th>Exemples de sujets</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Économie & fiscalité</strong></td>
+            <td>Q7, Q13, Q17, Q20</td>
+            <td>ISF, impôts entreprises, protectionnisme, budget de l'État</td>
+          </tr>
+          <tr>
+            <td><strong>Environnement & énergie</strong></td>
+            <td>Q6, Q10, Q16, Q22</td>
+            <td>Nucléaire, renouvelables, transition écologique, agriculture</td>
+          </tr>
+          <tr>
+            <td><strong>Sécurité & justice</strong></td>
+            <td>Q5, Q14, Q19</td>
+            <td>Peines planchers, police de proximité, recidivisme</td>
+          </tr>
+          <tr>
+            <td><strong>Social & travail</strong></td>
+            <td>Q9, Q11, Q15, Q21</td>
+            <td>SMIC, retraites, services publics, droits des femmes</td>
+          </tr>
+          <tr>
+            <td><strong>Europe & géopolitique</strong></td>
+            <td>Q12, Q18, Q24</td>
+            <td>Construction européenne, OTAN, souveraineté nationale</td>
+          </tr>
+          <tr>
+            <td><strong>Immigration</strong></td>
+            <td>Q8, Q23</td>
+            <td>Quotas, priorité nationale, droit d'asile</td>
+          </tr>
+          <tr>
+            <td><strong>Institutions & démocratie</strong></td>
+            <td>Q25, Q26, Q31</td>
+            <td>Proportionnelle, VIe République, référendum d'initiative citoyenne</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </section>
 
@@ -562,7 +565,7 @@
         c'est la raison de l'avertissement « non réactualisée » affiché sur chaque comparaison.
         Une reprise complète des positions sur les programmes postérieurs à 2024 est engagée.
         D'ici là, lisez ces positions comme un instantané de 2022, pas comme l'état actuel des programmes.
-        Si vous constatez une erreur, signalez-la via la page <a href="contact.html" style="color:var(--accent)">Contact</a>.
+        Si vous constatez une erreur, signalez-la via la page <a href="contact.html" style="color:var(--accent-text)">Contact</a>.
       </p>
     </div>
   </div>
@@ -594,7 +597,7 @@
       </div>
       <div class="card limite-card fade-in">
         <h4>⚠️ Test d'équilibre des points</h4>
-        <p>Sur 20 000 profils de réponses aléatoires, tous les partis devraient arriver en tête à peu près aussi souvent. Ce n'est pas encore le cas — l'écart est documenté dans les <a href="#limites" style="color:var(--accent)">limites reconnues</a> ci-dessous. C'est le chantier en cours.</p>
+        <p>Sur 20 000 profils de réponses aléatoires, tous les partis devraient arriver en tête à peu près aussi souvent. Ce n'est pas encore le cas — l'écart est documenté dans les <a href="#limites" style="color:var(--accent-text)">limites reconnues</a> ci-dessous. C'est le chantier en cours.</p>
       </div>
     </div>
 
@@ -602,7 +605,7 @@
       <p>
         <strong>Vous pouvez refaire ces tests vous-même.</strong> Les questions et les points attribués
         sont entièrement lisibles dans le fichier <code>js/quiz.js</code>, directement depuis votre navigateur.
-        Si vous trouvez un cas où le résultat vous paraît faux, <a href="contact.html" style="color:var(--accent)">signalez-le-moi</a> :
+        Si vous trouvez un cas où le résultat vous paraît faux, <a href="contact.html" style="color:var(--accent-text)">signalez-le-moi</a> :
         je publie la correction et je mets cette page à jour.
       </p>
     </div>
