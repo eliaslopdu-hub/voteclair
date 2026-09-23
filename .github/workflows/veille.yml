@@ -49,11 +49,39 @@ jobs:
           echo "total=$n" >> "$GITHUB_OUTPUT"
           echo "$n fait(s) à traiter."
 
-      - name: Rien à faire — on s'arrête là
+      # Rien a faire : on l'inscrit quand meme, pour deux raisons.
+      #
+      # La premiere est documentaire. « Verifie le 1er novembre, rien
+      # n'avait bouge » est une information — la meme honnetete que celle
+      # qu'on promet au lecteur sur les fiches.
+      #
+      # La seconde est vitale. GitHub desactive une planification apres
+      # 60 jours sans activite sur un depot public. Un agent concu pour ne
+      # rien produire les mois calmes se couperait donc tout seul apres
+      # deux mois de calme, silencieusement, et precisement quand on a
+      # cesse de le surveiller. Ce commit mensuel est ce qui le maintient
+      # en vie jusqu'au scrutin.
+      #
+      # Aucune IA sur ce chemin : l'etape 2 ne s'est pas executee. C'est du
+      # code deterministe qui ajoute une ligne datee a un journal.
+      - name: Rien à faire — inscrire le passage
         if: steps.perimes.outputs.total == '0'
         run: |
           echo "Aucun fait périmé. Aucune recherche lancée, aucun coût engagé." \
             >> "$GITHUB_STEP_SUMMARY"
+          mkdir -p data/veille
+          if [ ! -f data/veille/journal.md ]; then
+            printf '%s\n\n%s\n\n' \
+              "# Journal des passages de la veille" \
+              "Une ligne par exécution qui n'a rien eu à proposer. Celles qui ont proposé quelque chose sont dans l'historique des Pull Requests." \
+              > data/veille/journal.md
+          fi
+          echo "- $(date -u +%Y-%m-%d) — aucun fait périmé, rien à proposer." \
+            >> data/veille/journal.md
+          git add data/veille/journal.md
+          git -c user.email=veille@voteclair -c user.name=veille \
+              commit -q -m "veille: passage du $(date -u +%Y-%m-%d), rien à proposer"
+          git push origin "HEAD:${{ github.ref_name }}"
 
       # ─── 2. Recherche, uniquement sur les faits listes ───────────────
       - name: Recherche et proposition
@@ -182,3 +210,14 @@ jobs:
             projection de `data/`, et que le quiz reste identique au bit
             près. Ils ne savent pas si un fait est *vrai* — c'est ce que
             vous apportez.
+
+            **Aucune coche verte n'apparaîtra ci-dessous, et c'est normal :**
+            GitHub ne déclenche aucun contrôle sur une PR ouverte par un
+            workflow. Le vert est ailleurs — cette PR n'existe que parce que
+            les contrôles sont passés. Ils tournent avant son ouverture,
+            dans la même exécution, et le moindre échec l'interrompt avant
+            cette étape. Le journal de l'exécution les montre un par un.
+
+            En revanche, si vous ajoutez vous-même un commit à cette
+            branche, il ne sera vérifié qu'après la fusion, par le contrôle
+            qui tourne sur `main`.
