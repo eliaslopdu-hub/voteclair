@@ -8,7 +8,7 @@
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://www.voteclair.fr/calendrier.html" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%236C63FF'/><path d='M8 13h16v11a2 2 0 01-2 2H10a2 2 0 01-2-2V13zm4-5h8v5H12V8zm3 8v5h2v-5h-2z' fill='white'/></svg>" />
-  <meta name="description" content="Toutes les élections françaises 2025–2027 : présidentielle, législatives, municipales, sénatoriales, régionales. Dates butoirs d'inscription et compte à rebours." />
+  <meta name="description" content="Les échéances électorales françaises dont la date est établie : sénatoriales 2026, présidentielle 2027. Compte à rebours et détail de chaque scrutin." />
   <link rel="stylesheet" href="css/fonts.css" />
   <link rel="stylesheet" href="css/main.css" />
   <style>
@@ -493,9 +493,9 @@
     <div class="cal-hero-inner">
       <span class="section-label">Agenda citoyen</span>
       <h1>Calendrier électoral<br /><em style="font-style:normal;color:var(--accent)">2025 – 2027</em></h1>
-      <p>Toutes les échéances électorales françaises : présidentielle, législatives, municipales, régionales, sénatoriales. Dates butoirs d'inscription incluses.</p>
+      <p>Les échéances électorales françaises dont la date est établie : sénatoriales, présidentielle, et les scrutins déjà tenus. Un scrutin dont la date n'est pas fixée n'est pas affiché plutôt qu'annoncé à une date approximative.</p>
       <div class="disclaimer-badge">
-        Dates 2026–2027 estimées — non encore officialisées par décret
+        Dates 2027 estimées — non encore officialisées par décret
       </div>
     </div>
   </div>
@@ -690,21 +690,6 @@ const ELECTIONS = [
 
   /* ── 2026 ── */
   {
-    id: 'muni-2026-inscription',
-    titre: 'Date limite d\'inscription',
-    sous_titre: 'Municipales mars 2026',
-    emoji: '',
-    date: '2026-02-07',
-    type: 'butoir',
-    statut: 'estime',
-    couleur: '#FC8181',
-    description: 'Dernier délai estimé pour s\'inscrire sur les listes électorales et pouvoir voter aux élections municipales de mars 2026. L\'inscription est gratuite et peut se faire en ligne via service-public.fr.',
-    qui_vote: null,
-    ce_qui_est_elu: null,
-    date_inscription: null,
-    lien: 'https://www.service-public.fr/particuliers/vosdroits/R12675',
-  },
-  {
     id: 'muni-2026-1',
     titre: 'Élections municipales',
     sous_titre: '1er tour',
@@ -716,7 +701,7 @@ const ELECTIONS = [
     description: 'Election des maires et conseillers municipaux dans les 35 000 communes de France. Dans les communes de plus de 1 000 habitants, le scrutin est de liste à deux tours avec prime majoritaire.',
     qui_vote: 'Tous les citoyens français ET européens résidant en France inscrits sur les listes',
     ce_qui_est_elu: 'Maires et conseillers municipaux',
-    date_inscription: '2026-02-07',
+    date_inscription: null,
     lien: 'https://www.vie-publique.fr/fiches/19440-quelles-sont-les-regles-du-scrutin-municipal',
   },
   {
@@ -752,66 +737,6 @@ const ELECTIONS = [
 
   /* ── 2027 ── */
   {
-    id: 'regionales-2027-inscription',
-    titre: 'Date limite d\'inscription',
-    sous_titre: 'Régionales mars 2027',
-    emoji: '',
-    date: '2027-01-29',
-    type: 'butoir',
-    statut: 'estime',
-    couleur: '#FC8181',
-    description: 'Dernier délai estimé pour s\'inscrire sur les listes électorales pour voter aux élections régionales de mars 2027.',
-    qui_vote: null,
-    ce_qui_est_elu: null,
-    date_inscription: null,
-    lien: 'https://www.service-public.fr/particuliers/vosdroits/R12675',
-  },
-  {
-    id: 'regionales-2027-1',
-    titre: 'Élections régionales',
-    sous_titre: '1er tour',
-    emoji: '',
-    date: '2027-03-14',
-    type: 'locale',
-    statut: 'estime',
-    couleur: '#38B2AC',
-    description: 'Election des présidents et conseillers régionaux dans les 13 régions métropolitaines, les 4 collectivités d\'outre-mer à statut particulier, et la Collectivité de Corse.',
-    qui_vote: 'Tous les citoyens français inscrits sur les listes électorales',
-    ce_qui_est_elu: 'Présidents et conseillers régionaux (environ 1 800 élus)',
-    date_inscription: '2027-01-29',
-    lien: 'https://www.vie-publique.fr/fiches/23877-scrutin-regional-comment-sont-elus-les-conseillers-regionaux',
-  },
-  {
-    id: 'regionales-2027-2',
-    titre: 'Élections régionales',
-    sous_titre: '2e tour',
-    emoji: '',
-    date: '2027-03-21',
-    type: 'locale',
-    statut: 'estime',
-    couleur: '#38B2AC',
-    description: '2e tour des élections régionales si aucune liste n\'a obtenu la majorité absolue des suffrages exprimés et le quart des électeurs inscrits au 1er tour.',
-    qui_vote: 'Tous les citoyens français inscrits sur les listes électorales',
-    ce_qui_est_elu: 'Présidents et conseillers régionaux',
-    date_inscription: null,
-    lien: 'https://www.vie-publique.fr/fiches/23877-scrutin-regional-comment-sont-elus-les-conseillers-regionaux',
-  },
-  {
-    id: 'presidentielle-2027-inscription',
-    titre: 'Date limite d\'inscription',
-    sous_titre: 'Présidentielle 2027',
-    emoji: '',
-    date: '2027-02-26',
-    type: 'butoir',
-    statut: 'estime',
-    couleur: '#FC8181',
-    description: 'Dernier délai estimé pour s\'inscrire sur les listes électorales pour pouvoir voter à l\'élection présidentielle 2027. À ne surtout pas manquer — c\'est le scrutin le plus important.',
-    qui_vote: null,
-    ce_qui_est_elu: null,
-    date_inscription: null,
-    lien: 'https://www.service-public.fr/particuliers/vosdroits/R12675',
-  },
-  {
     id: 'presidentielle-2027-1',
     titre: 'Élection présidentielle',
     sous_titre: '1er tour',
@@ -823,7 +748,7 @@ const ELECTIONS = [
     description: 'Election du Président de la République française au suffrage universel direct à deux tours. Le mandat en cours d\'Emmanuel Macron expire en mai 2027. Chaque candidat doit réunir 500 parrainages d\'élus pour se présenter.',
     qui_vote: 'Tous les citoyens français inscrits sur les listes électorales',
     ce_qui_est_elu: 'Le Président de la République (mandat de 5 ans non renouvelable immédiatement)',
-    date_inscription: '2027-02-26',
+    date_inscription: null,
     lien: 'https://www.vie-publique.fr/fiches/19460-comment-se-deroule-l-election-presidentielle',
   },
   {
@@ -840,51 +765,6 @@ const ELECTIONS = [
     ce_qui_est_elu: 'Le Président de la République',
     date_inscription: null,
     lien: 'https://www.vie-publique.fr/fiches/19460-comment-se-deroule-l-election-presidentielle',
-  },
-  {
-    id: 'legislatives-2027-inscription',
-    titre: 'Date limite d\'inscription',
-    sous_titre: 'Législatives 2027',
-    emoji: '',
-    date: '2027-04-30',
-    type: 'butoir',
-    statut: 'estime',
-    couleur: '#FC8181',
-    description: 'Dernier délai estimé pour s\'inscrire sur les listes électorales pour voter aux élections législatives de juin 2027.',
-    qui_vote: null,
-    ce_qui_est_elu: null,
-    date_inscription: null,
-    lien: 'https://www.service-public.fr/particuliers/vosdroits/R12675',
-  },
-  {
-    id: 'legislatives-2027-1',
-    titre: 'Élections législatives',
-    sous_titre: '1er tour',
-    emoji: '',
-    date: '2027-06-13',
-    type: 'nationale',
-    statut: 'estime',
-    couleur: '#ED8936',
-    description: 'Election des 577 députés de l\'Assemblée nationale au scrutin uninominal majoritaire à deux tours dans 577 circonscriptions. Les élections législatives suivent généralement la présidentielle de 5 à 7 semaines.',
-    qui_vote: 'Tous les citoyens français inscrits sur les listes électorales',
-    ce_qui_est_elu: '577 députés à l\'Assemblée nationale (mandat de 5 ans)',
-    date_inscription: '2027-04-30',
-    lien: 'https://www.vie-publique.fr/fiches/19462-comment-se-deroulent-les-elections-legislatives',
-  },
-  {
-    id: 'legislatives-2027-2',
-    titre: 'Élections législatives',
-    sous_titre: '2e tour',
-    emoji: '',
-    date: '2027-06-20',
-    type: 'nationale',
-    statut: 'estime',
-    couleur: '#ED8936',
-    description: '2e tour des élections législatives dans les circonscriptions où aucun candidat n\'a obtenu la majorité absolue et 25 % des inscrits au 1er tour. Possibilité de triangulaires voire quadrangulaires.',
-    qui_vote: 'Tous les citoyens français inscrits sur les listes électorales',
-    ce_qui_est_elu: '577 députés à l\'Assemblée nationale',
-    date_inscription: null,
-    lien: 'https://www.vie-publique.fr/fiches/19462-comment-se-deroulent-les-elections-legislatives',
   },
 ];
 
@@ -1198,7 +1078,10 @@ function openDrawer(id) {
   `;
 
   const footerLinks = [];
-  if (el.type === 'butoir' || (el.date_inscription && !pastEl)) {
+  /* L'appel a s'inscrire ne depend plus d'une date butoir affichee : les
+     dates limites estimees ont ete retirees du calendrier faute de source,
+     mais la demarche, elle, reste ouverte pour tout scrutin a venir. */
+  if (!pastEl) {
     footerLinks.push(`<a href="https://www.service-public.fr/particuliers/vosdroits/R12675" target="_blank" rel="noopener" class="drawer-btn-primary">S'inscrire sur les listes →</a>`);
   }
   if (el.lien) {

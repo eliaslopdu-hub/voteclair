@@ -65,28 +65,6 @@
       "lien_infos": "https://www.interieur.gouv.fr/Elections/Les-resultats/Legislatives"
     },
     {
-      "id": "muni-2026-inscription",
-      "nature": "butoir",
-      "date": {
-        "valeur": "2026-02-07",
-        "sources": [],
-        "verifie_le": "2026-09-22",
-        "confiance": "a_verifier",
-        "auteur": "humain",
-        "note": "Scrutin passé (15 et 22 mars 2026) : cette date limite d'inscription n'a PAS été revérifiée et reste celle du site d'origine, calée sur un scrutin au 22 mars. Elle est probablement fausse. À confirmer sur service-public.fr ou à supprimer."
-      },
-      "statut": "estime",
-      "titre": "Date limite d'inscription",
-      "sous_titre": "Municipales mars 2026",
-      "emoji": "",
-      "couleur": "#FC8181",
-      "description": "Dernier délai estimé pour s'inscrire sur les listes électorales et pouvoir voter aux élections municipales de mars 2026. L'inscription est gratuite et peut se faire en ligne via service-public.fr.",
-      "qui_vote": null,
-      "ce_qui_est_elu": null,
-      "date_inscription": null,
-      "lien_infos": "https://www.service-public.fr/particuliers/vosdroits/R12675"
-    },
-    {
       "id": "muni-2026-1",
       "nature": "locale",
       "date": {
@@ -107,7 +85,7 @@
       "description": "Premier tour des élections municipales, le 15 mars 2026. Participation en hausse par rapport à 2020.",
       "qui_vote": "Tous les citoyens français ET européens résidant en France inscrits sur les listes",
       "ce_qui_est_elu": "Maires et conseillers municipaux",
-      "date_inscription": "2026-02-07",
+      "date_inscription": null,
       "lien_infos": "https://www.vie-publique.fr/fiches/19440-quelles-sont-les-regles-du-scrutin-municipal"
     },
     {
@@ -160,105 +138,17 @@
       "lien_infos": "https://www.senat.fr/role/senat/election_senateurs.html"
     },
     {
-      "id": "regionales-2027-inscription",
-      "nature": "butoir",
-      "date": {
-        "valeur": "2027-01-29",
-        "sources": [],
-        "verifie_le": null,
-        "confiance": "a_verifier",
-        "auteur": "humain",
-        "note": "Non revérifié au 2026-09-22. Le décalage confirmé de la présidentielle (18 avril / 2 mai 2027) peut déplacer ce scrutin : à recontrôler avant toute publication."
-      },
-      "statut": "estime",
-      "titre": "Date limite d'inscription",
-      "sous_titre": "Régionales mars 2027",
-      "emoji": "",
-      "couleur": "#FC8181",
-      "description": "Dernier délai estimé pour s'inscrire sur les listes électorales pour voter aux élections régionales de mars 2027.",
-      "qui_vote": null,
-      "ce_qui_est_elu": null,
-      "date_inscription": null,
-      "lien_infos": "https://www.service-public.fr/particuliers/vosdroits/R12675"
-    },
-    {
-      "id": "regionales-2027-1",
-      "nature": "locale",
-      "date": {
-        "valeur": "2027-03-14",
-        "sources": [],
-        "verifie_le": null,
-        "confiance": "a_verifier",
-        "auteur": "humain",
-        "note": "Non revérifié au 2026-09-22. Le décalage confirmé de la présidentielle (18 avril / 2 mai 2027) peut déplacer ce scrutin : à recontrôler avant toute publication."
-      },
-      "statut": "estime",
-      "titre": "Élections régionales",
-      "sous_titre": "1er tour",
-      "emoji": "",
-      "couleur": "#38B2AC",
-      "description": "Election des présidents et conseillers régionaux dans les 13 régions métropolitaines, les 4 collectivités d'outre-mer à statut particulier, et la Collectivité de Corse.",
-      "qui_vote": "Tous les citoyens français inscrits sur les listes électorales",
-      "ce_qui_est_elu": "Présidents et conseillers régionaux (environ 1 800 élus)",
-      "date_inscription": "2027-01-29",
-      "lien_infos": "https://www.vie-publique.fr/fiches/23877-scrutin-regional-comment-sont-elus-les-conseillers-regionaux"
-    },
-    {
-      "id": "regionales-2027-2",
-      "nature": "locale",
-      "date": {
-        "valeur": "2027-03-21",
-        "sources": [],
-        "verifie_le": null,
-        "confiance": "a_verifier",
-        "auteur": "humain",
-        "note": "Non revérifié au 2026-09-22. Le décalage confirmé de la présidentielle (18 avril / 2 mai 2027) peut déplacer ce scrutin : à recontrôler avant toute publication."
-      },
-      "statut": "estime",
-      "titre": "Élections régionales",
-      "sous_titre": "2e tour",
-      "emoji": "",
-      "couleur": "#38B2AC",
-      "description": "2e tour des élections régionales si aucune liste n'a obtenu la majorité absolue des suffrages exprimés et le quart des électeurs inscrits au 1er tour.",
-      "qui_vote": "Tous les citoyens français inscrits sur les listes électorales",
-      "ce_qui_est_elu": "Présidents et conseillers régionaux",
-      "date_inscription": null,
-      "lien_infos": "https://www.vie-publique.fr/fiches/23877-scrutin-regional-comment-sont-elus-les-conseillers-regionaux"
-    },
-    {
-      "id": "presidentielle-2027-inscription",
-      "nature": "butoir",
-      "date": {
-        "valeur": "2027-02-26",
-        "sources": [],
-        "verifie_le": null,
-        "confiance": "a_verifier",
-        "auteur": "humain",
-        "note": "Non revérifié au 2026-09-22. Le décalage confirmé de la présidentielle (18 avril / 2 mai 2027) peut déplacer ce scrutin : à recontrôler avant toute publication."
-      },
-      "statut": "estime",
-      "titre": "Date limite d'inscription",
-      "sous_titre": "Présidentielle 2027",
-      "emoji": "",
-      "couleur": "#FC8181",
-      "description": "Dernier délai estimé pour s'inscrire sur les listes électorales pour pouvoir voter à l'élection présidentielle 2027. À ne surtout pas manquer — c'est le scrutin le plus important.",
-      "qui_vote": null,
-      "ce_qui_est_elu": null,
-      "date_inscription": null,
-      "lien_infos": "https://www.service-public.fr/particuliers/vosdroits/R12675"
-    },
-    {
       "id": "presidentielle-2027-1",
       "nature": "nationale",
       "date": {
         "valeur": "2027-04-18",
         "sources": [
-          "src:wikipedia-presidentielle-2027"
+          "src:service-public-presidentielle-2027"
         ],
-        "verifie_le": "2026-09-22",
+        "verifie_le": "2026-09-23",
         "confiance": "a_verifier",
         "auteur": "humain",
-        "note": "Date corrigée (le site indiquait le 11 avril). Rang 4 uniquement : le décret de convocation n'est pas paru. NE PAS passer en 'confirme' sans Légifrance."
+        "note": "Dates arrêtées en conseil des ministres du 1er juillet 2026 et publiées par Service-Public.fr (rang 3). Le décret de convocation n'est pas paru — il doit l'être au plus tard le 7 février 2027. NE PAS passer en « confirme » sans Légifrance."
       },
       "statut": "estime",
       "titre": "Élection présidentielle",
@@ -268,7 +158,7 @@
       "description": "Election du Président de la République française au suffrage universel direct à deux tours. Le mandat en cours d'Emmanuel Macron expire en mai 2027. Chaque candidat doit réunir 500 parrainages d'élus pour se présenter.",
       "qui_vote": "Tous les citoyens français inscrits sur les listes électorales",
       "ce_qui_est_elu": "Le Président de la République (mandat de 5 ans non renouvelable immédiatement)",
-      "date_inscription": "2027-02-26",
+      "date_inscription": null,
       "lien_infos": "https://www.vie-publique.fr/fiches/19460-comment-se-deroule-l-election-presidentielle"
     },
     {
@@ -277,12 +167,12 @@
       "date": {
         "valeur": "2027-05-02",
         "sources": [
-          "src:wikipedia-presidentielle-2027"
+          "src:service-public-presidentielle-2027"
         ],
-        "verifie_le": "2026-09-22",
+        "verifie_le": "2026-09-23",
         "confiance": "a_verifier",
         "auteur": "humain",
-        "note": "Date corrigée (le site indiquait le 25 avril). Rang 4 uniquement : décret de convocation non paru."
+        "note": "Dates arrêtées en conseil des ministres du 1er juillet 2026 et publiées par Service-Public.fr (rang 3). Le décret de convocation n'est pas paru — il doit l'être au plus tard le 7 février 2027. NE PAS passer en « confirme » sans Légifrance."
       },
       "statut": "estime",
       "titre": "Élection présidentielle",
@@ -294,72 +184,6 @@
       "ce_qui_est_elu": "Le Président de la République",
       "date_inscription": null,
       "lien_infos": "https://www.vie-publique.fr/fiches/19460-comment-se-deroule-l-election-presidentielle"
-    },
-    {
-      "id": "legislatives-2027-inscription",
-      "nature": "butoir",
-      "date": {
-        "valeur": "2027-04-30",
-        "sources": [],
-        "verifie_le": null,
-        "confiance": "a_verifier",
-        "auteur": "humain",
-        "note": "Non revérifié au 2026-09-22. Le décalage confirmé de la présidentielle (18 avril / 2 mai 2027) peut déplacer ce scrutin : à recontrôler avant toute publication."
-      },
-      "statut": "estime",
-      "titre": "Date limite d'inscription",
-      "sous_titre": "Législatives 2027",
-      "emoji": "",
-      "couleur": "#FC8181",
-      "description": "Dernier délai estimé pour s'inscrire sur les listes électorales pour voter aux élections législatives de juin 2027.",
-      "qui_vote": null,
-      "ce_qui_est_elu": null,
-      "date_inscription": null,
-      "lien_infos": "https://www.service-public.fr/particuliers/vosdroits/R12675"
-    },
-    {
-      "id": "legislatives-2027-1",
-      "nature": "nationale",
-      "date": {
-        "valeur": "2027-06-13",
-        "sources": [],
-        "verifie_le": null,
-        "confiance": "a_verifier",
-        "auteur": "humain",
-        "note": "Non revérifié au 2026-09-22. Le décalage confirmé de la présidentielle (18 avril / 2 mai 2027) peut déplacer ce scrutin : à recontrôler avant toute publication."
-      },
-      "statut": "estime",
-      "titre": "Élections législatives",
-      "sous_titre": "1er tour",
-      "emoji": "",
-      "couleur": "#ED8936",
-      "description": "Election des 577 députés de l'Assemblée nationale au scrutin uninominal majoritaire à deux tours dans 577 circonscriptions. Les élections législatives suivent généralement la présidentielle de 5 à 7 semaines.",
-      "qui_vote": "Tous les citoyens français inscrits sur les listes électorales",
-      "ce_qui_est_elu": "577 députés à l'Assemblée nationale (mandat de 5 ans)",
-      "date_inscription": "2027-04-30",
-      "lien_infos": "https://www.vie-publique.fr/fiches/19462-comment-se-deroulent-les-elections-legislatives"
-    },
-    {
-      "id": "legislatives-2027-2",
-      "nature": "nationale",
-      "date": {
-        "valeur": "2027-06-20",
-        "sources": [],
-        "verifie_le": null,
-        "confiance": "a_verifier",
-        "auteur": "humain",
-        "note": "Non revérifié au 2026-09-22. Le décalage confirmé de la présidentielle (18 avril / 2 mai 2027) peut déplacer ce scrutin : à recontrôler avant toute publication."
-      },
-      "statut": "estime",
-      "titre": "Élections législatives",
-      "sous_titre": "2e tour",
-      "emoji": "",
-      "couleur": "#ED8936",
-      "description": "2e tour des élections législatives dans les circonscriptions où aucun candidat n'a obtenu la majorité absolue et 25 % des inscrits au 1er tour. Possibilité de triangulaires voire quadrangulaires.",
-      "qui_vote": "Tous les citoyens français inscrits sur les listes électorales",
-      "ce_qui_est_elu": "577 députés à l'Assemblée nationale",
-      "date_inscription": null,
-      "lien_infos": "https://www.vie-publique.fr/fiches/19462-comment-se-deroulent-les-elections-legislatives"
     }
   ]
 }

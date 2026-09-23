@@ -142,17 +142,6 @@
     "archive": null,
     "note": "Rang 4 : sert de date à l'élection, pas de preuve suffisante à elle seule."
   },
-  "src:wikipedia-presidentielle-2027": {
-    "libelle_cite": "Élection présidentielle française de 2027",
-    "editeur": "Wikipédia",
-    "rang": 4,
-    "url": "https://fr.wikipedia.org/wiki/%C3%89lection_pr%C3%A9sidentielle_fran%C3%A7aise_de_2027",
-    "date_publication": null,
-    "annee_citee": null,
-    "consulte_le": "2026-09-22",
-    "archive": null,
-    "note": "Rang 4 — JAMAIS suffisant pour publier. À remplacer par le décret de convocation dès sa parution."
-  },
   "src:wikipedia-municipales-2026": {
     "libelle_cite": "Élections municipales françaises de 2026",
     "editeur": "Wikipédia",
@@ -185,5 +174,16 @@
     "consulte_le": "2026-09-22",
     "archive": null,
     "note": "Seconde source, indépendante du parti : le site officiel d'un parti peut être en retard sur ses propres instances."
+  },
+  "src:service-public-presidentielle-2027": {
+    "libelle_cite": "Élection présidentielle — Service-Public.fr (fiche F1940)",
+    "editeur": "Service-Public.fr (DILA)",
+    "rang": 3,
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F1940",
+    "date_publication": null,
+    "annee_citee": null,
+    "consulte_le": "2026-09-23",
+    "archive": null,
+    "note": "Page vérifiée le 1er juillet 2026 : « La prochaine élection présidentielle se déroulera le 18 avril 2027 pour le premier tour et le 2 mai 2027 pour le second tour. » Source officielle de rang 3 qui remplace Wikipédia, mais ne vaut pas décret de convocation."
   }
 }
