@@ -1,0 +1,231 @@
+name: Veille politique
+
+# Propose une mise a jour des donnees. Ne publie jamais : ouvre une Pull Request.
+#
+# Cadence : le 1er de chaque mois. La vie politique francaise ne produit pas
+# d'evenement structurant toutes les 48 h ; une cadence trop courte ne capte
+# pas plus de faits, elle fabrique du bruit editorial.
+#
+# Cout : GitHub Actions est gratuit sur depot public. L'etape de recherche
+# appelle l'API Anthropic, qui est payante — quelques centimes par execution,
+# et seulement si des faits sont reellement perimes (voir l'etape 1).
+
+on:
+  schedule:
+    - cron: '0 6 1 * *'        # 1er du mois, 06:00 UTC
+  workflow_dispatch:            # declenchement manuel sur evenement
+
+permissions:
+  contents: write
+  pull-requests: write
+  id-token: write        # exige par claude-code-action pour s'authentifier
+
+jobs:
+  veille:
+    runs-on: ubuntu-latest
+    # Un agent sans surveillance doit avoir une fin. Sans plafond, une
+    # recherche qui tourne en rond consomme des jetons jusqu'a la limite
+    # de GitHub, six heures plus tard.
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          # Historique complet, pour trois raisons qui tiennent toutes au
+          # meme fil : le garde-fou se compare a origin/main, l'etape du
+          # perimetre defait son commit d'essai avec HEAD~1, et l'action
+          # qui ouvre la PR a besoin de l'historique de la base. Un clone
+          # superficiel les fait echouer chacun a sa facon, et seulement
+          # en production.
+          fetch-depth: 0
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '20'
+
+      # ─── 1. Y a-t-il seulement quelque chose a faire ? ───────────────
+      # Sans cette porte, l'automatisation cherche une raison de modifier
+      # le site tous les mois. C'est elle qui rend la cadence inoffensive.
+      - name: Faits à revérifier
+        id: perimes
+        run: |
+          mkdir -p .veille
+          python3 tools/perimes.py | tee .veille/rapport.txt
+          python3 tools/perimes.py --json > .veille/perimes.json
+          n=$(python3 -c "import json;print(json.load(open('.veille/perimes.json'))['total_a_traiter'])")
+          echo "total=$n" >> "$GITHUB_OUTPUT"
+          echo "$n fait(s) à traiter."
+
+      # Rien a faire : on l'inscrit quand meme, pour deux raisons.
+      #
+      # La premiere est documentaire. « Verifie le 1er novembre, rien
+      # n'avait bouge » est une information — la meme honnetete que celle
+      # qu'on promet au lecteur sur les fiches.
+      #
+      # La seconde est vitale. GitHub desactive une planification apres
+      # 60 jours sans activite sur un depot public. Un agent concu pour ne
+      # rien produire les mois calmes se couperait donc tout seul apres
+      # deux mois de calme, silencieusement, et precisement quand on a
+      # cesse de le surveiller. Ce commit mensuel est ce qui le maintient
+      # en vie jusqu'au scrutin.
+      #
+      # Aucune IA sur ce chemin : l'etape 2 ne s'est pas executee. C'est du
+      # code deterministe qui ajoute une ligne datee a un journal.
+      - name: Rien à faire — inscrire le passage
+        if: steps.perimes.outputs.total == '0'
+        run: |
+          echo "Aucun fait périmé. Aucune recherche lancée, aucun coût engagé." \
+            >> "$GITHUB_STEP_SUMMARY"
+          mkdir -p data/veille
+          if [ ! -f data/veille/journal.md ]; then
+            printf '%s\n\n%s\n\n' \
+              "# Journal des passages de la veille" \
+              "Une ligne par exécution qui n'a rien eu à proposer. Celles qui ont proposé quelque chose sont dans l'historique des Pull Requests." \
+              > data/veille/journal.md
+          fi
+          echo "- $(date -u +%Y-%m-%d) — aucun fait périmé, rien à proposer." \
+            >> data/veille/journal.md
+          git add data/veille/journal.md
+          git -c user.email=veille@voteclair -c user.name=veille \
+              commit -q -m "veille: passage du $(date -u +%Y-%m-%d), rien à proposer"
+          git push origin "HEAD:${{ github.ref_name }}"
+
+      # ─── 2. Recherche, uniquement sur les faits listes ───────────────
+      - name: Recherche et proposition
+        if: steps.perimes.outputs.total != '0'
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          # L'action s'authentifie sinon comme l'appli GitHub « Claude »,
+          # qu'il faudrait installer sur le depot. Lui donner le jeton de
+          # l'execution evite cette dependance : elle n'a de toute facon
+          # rien a ecrire sur GitHub, c'est l'etape 5 qui ouvre la PR.
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          # Des drapeaux de ligne de commande, pas un objet JSON : l'action
+          # les passe tels quels a la CLI. Ecrit en JSON, ni le modele ni la
+          # liste d'outils n'etaient pris en compte.
+          claude_args: |
+            --model claude-opus-5
+            --max-turns 120
+            --allowedTools "WebSearch,WebFetch,Read,Edit,Bash(python3 tools/*)"
+          prompt: |
+            Tu mets à jour les données d'un site d'information politique
+            française. Un lecteur s'en sert pour décider de son vote : une
+            information inventée est plus nuisible qu'une information absente.
+
+            PÉRIMÈTRE STRICT — ne traite QUE les chemins listés dans
+            .veille/perimes.json. Tout le reste est hors sujet, y compris si tu
+            remarques autre chose d'inexact : signale-le dans ton résumé,
+            ne le modifie pas.
+
+            INTERDICTIONS ABSOLUES
+            - Ne modifie aucun fichier hors de data/. Le quiz, la
+              méthodologie, les poids, les distances et le design sont figés.
+            - Ne touche à aucun fichier HTML, même pour y répercuter une
+              donnée : tools/projeter.py s'en charge après toi, et une
+              retouche manuelle ferait échouer le garde-fou.
+            - Ne modifie jamais un champ dont la politique dit auto=false
+              (data/politique-veille.json fait foi).
+            - N'invente jamais une valeur. Si tu ne trouves pas de source
+              suffisante, laisse le fait tel quel et explique pourquoi.
+
+            MÉTHODE, pour chaque chemin de .veille/perimes.json
+            1. Cherche la valeur actuelle sur une source du rang exigé
+               (rang_min). Rang 1 = Légifrance/JO, 2 = site officiel du
+               parti, 3 = Assemblée/Sénat/Intérieur. La presse est rang 4 :
+               elle peut dater un événement, jamais le prouver seule.
+            2. Si double_source est vrai, il faut deux sources indépendantes.
+            3. Enregistre chaque source dans data/sources.json avec son url,
+               son éditeur, son rang et consulte_le (date du jour).
+            4. Mets à jour l'enveloppe du fait : valeur, sources,
+               verifie_le (date du jour), confiance.
+               - confiance "confirme" seulement si le rang exigé est atteint.
+               - sinon "a_verifier", en laissant la valeur d'origine si tu
+                 n'as rien de mieux, et en expliquant dans note.
+            5. Si la valeur n'a pas changé, mets seulement verifie_le à jour :
+               c'est un résultat utile, pas un échec.
+
+            CONTRÔLE avant de terminer, obligatoire :
+              python3 tools/verifier.py
+            Il doit passer. S'il échoue, corrige ou reviens en arrière.
+
+            RÉSUMÉ — écris data/veille/rapport-du-jour.md avec, par fait :
+            le chemin, l'ancienne et la nouvelle valeur, la source et sa
+            date, et ce dont tu n'es pas sûr. Cette dernière colonne est la
+            plus importante : c'est elle que le relecteur humain lira.
+
+      # ─── 3. Projection : data/ atteint les pages ─────────────────────
+      # Sans cette etape, la PR ne modifierait que data/ et le visiteur
+      # continuerait de lire l'ancien HTML. C'est elle qui rend la veille
+      # utile ; elle est deterministe et ne fait appel a aucune IA.
+      - name: Projeter data/ sur le site
+        if: steps.perimes.outputs.total != '0'
+        run: python3 tools/projeter.py
+
+      # ─── 4. Les garde-fous, apres l'IA et avant l'humain ─────────────
+      - name: Invariants
+        if: steps.perimes.outputs.total != '0'
+        run: python3 tools/verifier.py
+
+      - name: Aller-retour quiz et comparateur
+        if: steps.perimes.outputs.total != '0'
+        run: |
+          python3 tools/verif_roundtrip_quiz.py
+          python3 tools/verif_roundtrip_comparateur.py
+          python3 tools/tests_pipeline.py
+
+      - name: Périmètre — rien hors de data/, rien de gelé
+        if: steps.perimes.outputs.total != '0'
+        run: |
+          git add -A
+          git -c user.email=veille@voteclair -c user.name=veille \
+              commit -m "veille: proposition" --allow-empty -q
+          python3 tools/garde_fou.py "origin/${{ github.ref_name }}"
+          git reset --soft HEAD~1
+
+      # ─── 5. Proposition, jamais publication ──────────────────────────
+      - name: Ouvrir la Pull Request
+        if: steps.perimes.outputs.total != '0'
+        uses: peter-evans/create-pull-request@v8
+        with:
+          # Nom lu par .github/workflows/verification.yml, qui n'applique le
+          # garde-fou qu'aux PR venant de cette branche. Changer l'un sans
+          # l'autre desarme le controle sans rien afficher.
+          branch: veille/proposition
+          delete-branch: true
+          title: "Veille du ${{ github.run_id }} — proposition de mise à jour"
+          commit-message: "veille: mise a jour des donnees, sources datees"
+          add-paths: |
+            data/**
+            partis.html
+            face-a-face.html
+            calendrier.html
+            parti-*.html
+          body: |
+            Proposition automatique. **Rien n'est publié tant que cette PR
+            n'est pas fusionnée.**
+
+            À relire en priorité :
+            - la colonne « ce dont je ne suis pas sûr » du rapport
+              (`data/veille/rapport-du-jour.md`) ;
+            - tout fait passé en `confiance: "confirme"` ;
+            - toute valeur qui a changé, par opposition à un simple
+              `verifie_le` rafraîchi.
+
+            Les contrôles automatiques ont déjà vérifié qu'aucun champ gelé
+            n'a bougé, que les pages HTML ne contiennent rien d'autre que la
+            projection de `data/`, et que le quiz reste identique au bit
+            près. Ils ne savent pas si un fait est *vrai* — c'est ce que
+            vous apportez.
+
+            **Aucune coche verte n'apparaîtra ci-dessous, et c'est normal :**
+            GitHub ne déclenche aucun contrôle sur une PR ouverte par un
+            workflow. Le vert est ailleurs — cette PR n'existe que parce que
+            les contrôles sont passés. Ils tournent avant son ouverture,
+            dans la même exécution, et le moindre échec l'interrompt avant
+            cette étape. Le journal de l'exécution les montre un par un.
+
+            En revanche, si vous ajoutez vous-même un commit à cette
+            branche, il ne sera vérifié qu'après la fusion, par le contrôle
+            qui tourne sur `main`.

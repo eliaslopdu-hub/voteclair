@@ -1,0 +1,1543 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#6C63FF" />
+  <title>Face à face – Comparez deux partis – VoteClair</title>
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.voteclair.fr/face-a-face.html" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗳️</text></svg>" />
+  <meta name="description" content="Comparez les positions de deux partis politiques français thème par thème. Logement, fiscalité, éducation, environnement… Outil civique neutre et sourcé." />
+  <meta name="keywords" content="comparateur partis politiques, face à face politique, LFI PS RN Renaissance, comparaison programmes" />
+  <link rel="stylesheet" href="css/fonts.css" />
+  <link rel="stylesheet" href="css/main.css" />
+  <style>
+    /* ================================================================
+       FACE-À-FACE — styles dédiés
+       ================================================================ */
+
+    /* ── Disclaimer ── */
+    .disclaimer {
+      background: rgba(108,99,255,0.07);
+      border: 1px solid rgba(108,99,255,0.18);
+      border-radius: var(--radius);
+      padding: 14px 20px;
+      margin-bottom: 36px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    .disclaimer-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 1px; }
+
+    /* ── Slots ── */
+    .slots-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 28px;
+    }
+    .slot {
+      border: 2px dashed var(--border);
+      border-radius: var(--radius);
+      min-height: 176px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background: var(--surface);
+      transition: border-color 0.25s, box-shadow 0.25s, background 0.25s;
+      position: relative;
+      overflow: hidden;
+    }
+    .slot.slot--empty:hover {
+      border-color: var(--accent);
+      background: rgba(108,99,255,0.03);
+      cursor: pointer;
+    }
+    .slot-placeholder { text-align: center; pointer-events: none; }
+    .slot-placeholder-icon { font-size: 2.4rem; opacity: 0.3; margin-bottom: 10px; }
+    .slot-placeholder p { font-size: 0.88rem; font-weight: 500; color: var(--text-muted); }
+
+    .slot.slot--filled {
+      align-items: flex-start;
+      flex-direction: column;
+      padding: 0;
+      border-style: solid;
+      cursor: default;
+    }
+    .slot-header {
+      width: 100%;
+      padding: 16px 20px 14px;
+      color: #fff;
+    }
+    .slot-header-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 6px;
+    }
+    .slot-sigle {
+      font-size: 1.5rem;
+      font-weight: 900;
+      font-family: 'Playfair Display', serif;
+      letter-spacing: -0.01em;
+    }
+    .slot-remove {
+      background: rgba(255,255,255,0.22);
+      border: none;
+      color: #fff;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+      line-height: 1;
+    }
+    .slot-remove:hover { background: rgba(255,255,255,0.38); }
+    .slot-nom { font-size: 0.88rem; font-weight: 600; color: rgba(255,255,255,0.9); line-height: 1.3; }
+    .slot-body { padding: 14px 20px 16px; width: 100%; }
+    .slot-chef { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 8px; }
+    .slot-axe {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 20px;
+      color: #fff;
+    }
+
+    /* ── Hint message ── */
+    .selection-hint {
+      text-align: center;
+      padding: 14px 20px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin-bottom: 28px;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: all 0.3s;
+    }
+    .selection-hint.hint--ready {
+      background: rgba(108,99,255,0.07);
+      border-color: rgba(108,99,255,0.22);
+      color: var(--accent);
+      font-weight: 500;
+    }
+    .selection-hint.hint--done { display: none; }
+
+    /* ── Thermomètre ── */
+    .thermometre-wrapper {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 32px;
+      margin-bottom: 32px;
+      display: none;
+    }
+    .thermometre-wrapper.visible { display: block; animation: slideDown 0.4s ease; }
+    .thermometre-label {
+      text-align: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+    .thermometre-bar-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    .thermo-parti {
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      width: 70px;
+    }
+    .thermo-parti-sigle {
+      font-size: 0.82rem;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 6px;
+      color: #fff;
+      text-align: center;
+    }
+    .thermo-track {
+      flex: 1;
+      height: 20px;
+      background: var(--surface-2);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .thermo-fill {
+      height: 100%;
+      border-radius: 10px;
+      width: 0;
+      transition: width 0.9s cubic-bezier(0.4,0,0.2,1), background-color 0.9s ease;
+    }
+    .thermo-fill.pulse { animation: thermoPulse 1.6s ease-in-out infinite; }
+    @keyframes thermoPulse { 0%,100%{opacity:1} 50%{opacity:0.65} }
+    .thermo-score {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .thermo-phrase {
+      text-align: center;
+      font-size: 0.93rem;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    /* ── Grille de sélection ── */
+    .grid-section-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 14px;
+    }
+    .partis-select-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-bottom: 52px;
+    }
+    .parti-sel-card {
+      background: var(--surface);
+      border: 2px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px 12px 14px;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s, opacity 0.2s;
+      text-align: center;
+      position: relative;
+      user-select: none;
+    }
+    .parti-sel-card:hover:not(.disabled) {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.09);
+    }
+    .parti-sel-card.disabled {
+      opacity: 0.32;
+      cursor: not-allowed;
+      filter: grayscale(0.5);
+    }
+    .parti-sel-card.active {
+      border-width: 2px;
+    }
+    .parti-sel-sigle {
+      display: inline-block;
+      font-size: 1rem;
+      font-weight: 900;
+      padding: 7px 14px;
+      border-radius: 7px;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+    .parti-sel-nom {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.3;
+      margin-bottom: 4px;
+    }
+    .parti-sel-chef {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      margin-bottom: 7px;
+    }
+    .parti-sel-axe {
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 12px;
+      color: #fff;
+      display: inline-block;
+    }
+    .parti-sel-check {
+      position: absolute;
+      top: 7px;
+      right: 7px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      color: #fff;
+      font-size: 0.65rem;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+    }
+    .parti-sel-card.active .parti-sel-check { display: flex; }
+
+    /* ── Zone comparaison ── */
+    .comparison-wrapper { display: none; }
+    .comparison-wrapper.visible { display: block; animation: slideDown 0.5s ease; }
+    @keyframes slideDown { from{opacity:0;transform:translateY(22px)} to{opacity:1;transform:translateY(0)} }
+
+    .comparison-col-headers {
+      display: grid;
+      grid-template-columns: 1fr 64px 1fr;
+      gap: 0;
+      margin-bottom: 16px;
+      align-items: center;
+    }
+    .comp-col-label {
+      text-align: center;
+      padding: 10px 16px;
+      border-radius: var(--radius-sm);
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.92rem;
+    }
+    .comp-col-vs {
+      text-align: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* ── Thème row ── */
+    .theme-row {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--surface);
+      margin-bottom: 14px;
+      transition: box-shadow 0.2s;
+    }
+    .theme-row:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
+
+    .theme-row-title-bar {
+      background: var(--bg);
+      padding: 13px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border);
+      cursor: pointer;
+    }
+    .theme-row-title-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 600;
+      font-size: 0.92rem;
+      color: var(--text);
+    }
+    .theme-icon { font-size: 1.15rem; }
+    .theme-row-title-right { display: flex; align-items: center; gap: 10px; }
+
+    .diverg-badge {
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 12px;
+    }
+    .diverg-badge.high { background: rgba(192,57,43,0.11); color: #C0392B; }
+    .diverg-badge.medium { background: rgba(214,137,16,0.11); color: #B7770D; }
+    .diverg-badge.low { background: rgba(30,132,73,0.11); color: #1E8449; }
+
+    .accordion-arrow {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      transition: transform 0.25s;
+      display: none;
+    }
+    .theme-row.open .accordion-arrow { transform: rotate(180deg); }
+
+    .theme-row-body {
+      display: grid;
+      grid-template-columns: 1fr 64px 1fr;
+    }
+    .theme-position {
+      padding: 18px 20px;
+      font-size: 0.86rem;
+      line-height: 1.7;
+      color: var(--text);
+    }
+    .theme-position-label {
+      font-size: 0.65rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 3px 9px;
+      border-radius: 4px;
+      color: #fff;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+    .theme-position-left { border-right: 1px solid var(--border); }
+    .theme-position-right { border-left: 1px solid var(--border); }
+
+    .theme-diverg-col {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 8px;
+      position: relative;
+    }
+    .diverg-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      cursor: help;
+      flex-shrink: 0;
+    }
+    .diverg-dot-tooltip {
+      position: absolute;
+      bottom: calc(100% + 10px);
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1A1A2E;
+      color: rgba(255,255,255,0.92);
+      font-size: 0.75rem;
+      padding: 9px 13px;
+      border-radius: 8px;
+      width: 210px;
+      text-align: center;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.2s;
+      z-index: 20;
+      line-height: 1.55;
+      white-space: normal;
+    }
+    .diverg-dot-tooltip::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 6px solid transparent;
+      border-top-color: #1A1A2E;
+    }
+    .diverg-dot:hover .diverg-dot-tooltip { opacity: 1; }
+
+    .theme-row-source {
+      grid-column: 1 / -1;
+      padding: 7px 20px;
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      background: var(--bg);
+      opacity: 0.75;
+    }
+
+    .src-item { display: inline-block; }
+    .src-item + .src-item { margin-left: 2px; }
+    .src-item--ancienne { color: #B7791F; }
+    .src-alerte {
+      display: inline-block;
+      margin-left: 4px;
+      padding: 1px 6px;
+      border-radius: 10px;
+      background: rgba(183, 121, 31, 0.14);
+      color: #B7791F;
+      font-weight: 600;
+      font-size: 0.92em;
+      white-space: nowrap;
+      cursor: help;
+    }
+
+    /* ── Verdict ── */
+    .verdict-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px 28px;
+      margin-top: 28px;
+      text-align: center;
+    }
+    .verdict-phrase {
+      font-size: 0.98rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 28px;
+      max-width: 680px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .verdict-phrase strong { color: var(--text); }
+    .verdict-counters {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-bottom: 8px;
+    }
+    .verdict-counter { text-align: center; }
+    .verdict-count-value {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: 5px;
+      display: block;
+    }
+    .verdict-count-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--text-muted);
+    }
+    .cnt-red .verdict-count-value { color: #C0392B; }
+    .cnt-orange .verdict-count-value { color: #B7770D; }
+    .cnt-green .verdict-count-value { color: #1E8449; }
+
+    /* ── Actions ── */
+    .comparison-actions {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      margin-top: 36px;
+      flex-wrap: wrap;
+    }
+
+    /* ── Animations ── */
+    @keyframes slotEnter { from{opacity:0;transform:scale(0.96)} to{opacity:1;transform:scale(1)} }
+    .slot--filled { animation: slotEnter 0.3s ease; }
+
+    /* ── Responsive ── */
+    @media (max-width: 960px) {
+      .partis-select-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .slots-wrapper { grid-template-columns: 1fr; gap: 14px; }
+      .slot { min-height: 150px; }
+      .partis-select-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+      .thermometre-wrapper { padding: 20px; }
+      .thermometre-bar-row { gap: 10px; }
+      .thermo-parti { width: 52px; }
+      .thermo-parti-sigle { font-size: 0.72rem; padding: 3px 8px; }
+      .accordion-arrow { display: block; }
+      /* Accordion mode on mobile */
+      .theme-row-body { display: none; grid-template-columns: 1fr; }
+      .theme-row.open .theme-row-body { display: grid; }
+      .theme-position-left { border-right: none; border-bottom: 1px solid var(--border); }
+      .theme-position-right { border-left: none; }
+      .theme-diverg-col { display: none; }
+      .comparison-col-headers { grid-template-columns: 1fr 40px 1fr; }
+      .comp-col-vs { font-size: 0.65rem; }
+      .verdict-counters { gap: 24px; }
+      .verdict-count-value { font-size: 2.2rem; }
+      /* Sticky thermo on mobile */
+      .thermometre-wrapper.visible.sticky-active {
+        position: sticky;
+        top: var(--nav-height);
+        z-index: 100;
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+        margin-bottom: 0;
+      }
+    }
+    @media (max-width: 480px) {
+      .comparison-actions { flex-direction: column; align-items: stretch; text-align: center; }
+      .partis-select-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+    }
+  </style>
+  <meta property="og:image" content="https://www.voteclair.fr/assets/og-default.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+</head>
+<body>
+<a class="skip-link" href="#main-content">Aller au contenu principal</a>
+
+<!-- ═══ NAVBAR ═══ -->
+<nav class="navbar" role="navigation" aria-label="Navigation principale">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Vote<span>Clair</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="quiz.html" class="nav-cta">Quiz</a></li>
+      <li><a href="partis.html">Partis</a></li>
+      <li><a href="face-a-face.html">Comparer</a></li>
+      <li class="nav-has-dropdown">
+        <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">En savoir plus <span class="nav-dropdown-arrow">▾</span></button>
+        <ul class="nav-dropdown-menu">
+          <li><a href="institutions.html">Institutions</a></li>
+          <li><a href="histoire.html">Histoire</a></li>
+          <li><a href="pourquoi-voter.html">Pourquoi voter ?</a></li>
+          <li><a href="calendrier.html">Calendrier</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="a-propos.html">À propos</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </li>
+    </ul>
+    <button class="nav-burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<nav class="nav-mobile" aria-label="Menu mobile">
+  <a href="index.html">Accueil</a>
+  <a href="quiz.html" class="nav-mobile-cta">Quiz</a>
+  <a href="partis.html">Partis</a>
+  <a href="face-a-face.html">Comparer</a>
+  <div class="nav-mobile-divider">En savoir plus</div>
+  <a href="institutions.html">Institutions</a>
+  <a href="histoire.html">Histoire</a>
+  <a href="pourquoi-voter.html">Pourquoi voter ?</a>
+  <a href="calendrier.html">Calendrier électoral</a>
+  <a href="blog.html">Blog</a>
+  <a href="a-propos.html">À propos</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<div class="page-hero" id="main-content">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="index.html">Accueil</a> <span>›</span> <span>Face à face</span>
+    </div>
+    <h1>Face à face</h1>
+    <p class="section-subtitle">Sélectionnez deux partis et comparez leurs positions thème par thème. Outil entièrement neutre, aucune préférence éditoriale.</p>
+  </div>
+</div>
+
+<!-- ═══ MAIN ═══ -->
+<main>
+<section class="section" style="padding-top:36px; padding-bottom:80px;">
+  <div class="container">
+
+    <!-- Disclaimer -->
+    <div class="disclaimer">
+      <span class="disclaimer-icon">ℹ️</span>
+      <span>Les positions présentées sont issues des programmes officiels des partis et de leurs déclarations publiques. Aucun jugement de valeur n'est porté. L'espace accordé à chaque parti est strictement identique. Le score de divergence est un indicateur factuel de distance idéologique, non un classement.</span>
+    </div>
+
+    <!-- ── Slots de comparaison ── -->
+    <div class="slots-wrapper">
+      <div class="slot slot--empty" id="slot1" onclick="handleSlotClick(1)">
+        <div class="slot-placeholder">
+          <div class="slot-placeholder-icon">+</div>
+          <p>Choisissez un parti</p>
+        </div>
+      </div>
+      <div class="slot slot--empty" id="slot2" onclick="handleSlotClick(2)">
+        <div class="slot-placeholder">
+          <div class="slot-placeholder-icon">+</div>
+          <p>Choisissez un parti</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hint -->
+    <div class="selection-hint" id="selectionHint">
+      <span></span>
+      <span>Sélectionnez un premier parti ci-dessous pour commencer</span>
+    </div>
+
+    <!-- ── Thermomètre ── -->
+    <div class="thermometre-wrapper" id="thermometre">
+      <div class="thermometre-label">Distance idéologique globale</div>
+      <div class="thermometre-bar-row">
+        <div class="thermo-parti" id="thermoParti1">
+          <span class="thermo-parti-sigle" id="thermoSigle1">—</span>
+        </div>
+        <div class="thermo-track">
+          <div class="thermo-fill" id="thermoFill"></div>
+        </div>
+        <div class="thermo-parti" id="thermoParti2">
+          <span class="thermo-parti-sigle" id="thermoSigle2">—</span>
+        </div>
+      </div>
+      <div class="thermo-score" id="thermoScore">—</div>
+      <div class="thermo-phrase" id="thermoPhrase"></div>
+    </div>
+
+    <!-- ── Grille de sélection ── -->
+    <p class="grid-section-title">Sélectionnez les partis à comparer :</p>
+    <div class="partis-select-grid" id="partisGrid"></div>
+
+    <!-- ── Zone comparaison ── -->
+    <div class="comparison-wrapper" id="comparisonWrapper">
+
+      <div class="comparison-col-headers" id="compColHeaders">
+        <div class="comp-col-label" id="compLabel1">Parti 1</div>
+        <div class="comp-col-vs">vs</div>
+        <div class="comp-col-label" id="compLabel2">Parti 2</div>
+      </div>
+
+      <div id="themesContainer"></div>
+
+      <!-- Verdict -->
+      <div class="verdict-box" id="verdictBox">
+        <p class="verdict-phrase" id="verdictPhrase"></p>
+        <div class="verdict-counters">
+          <div class="verdict-counter cnt-red">
+            <span class="verdict-count-value" id="cntOpp">0</span>
+            <div class="verdict-count-label"> Opposition franche</div>
+          </div>
+          <div class="verdict-counter cnt-orange">
+            <span class="verdict-count-value" id="cntNua">0</span>
+            <div class="verdict-count-label"> Nuances</div>
+          </div>
+          <div class="verdict-counter cnt-green">
+            <span class="verdict-count-value" id="cntCon">0</span>
+            <div class="verdict-count-label"> Convergence</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Actions -->
+      <div class="comparison-actions">
+        <button class="btn btn-outline" onclick="resetComparison()">↺ Comparer deux autres partis</button>
+        <a href="quiz.html" class="btn btn-primary">Faire le quiz →</a>
+        <a href="partis.html" class="btn btn-outline">Voir tous les partis</a>
+      </div>
+
+    </div><!-- /comparison-wrapper -->
+
+  </div>
+</section>
+</main>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="nav-logo">Vote<span>Clair</span></div>
+        <p>Outil civique indépendant. Aucune donnée personnelle collectée.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <a href="index.html">Accueil</a>
+        <a href="quiz.html">Quiz</a>
+        <a href="face-a-face.html">Face à face</a>
+        <a href="institutions.html">Institutions</a>
+        <a href="histoire.html">Histoire</a>
+        <a href="pourquoi-voter.html">Pourquoi voter ?</a>
+        <a href="calendrier.html">Calendrier électoral</a>
+        <a href="blog.html">Blog</a>
+        <a href="a-propos.html">À propos</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Les partis</h4>
+        <a href="parti-europe-ecologie.html">Europe Écologie</a>
+        <a href="parti-la-france-insoumise.html">La France Insoumise</a>
+        <a href="parti-les-republicains.html">Les Républicains</a>
+        <a href="parti-modem.html">MoDem</a>
+        <a href="parti-parti-socialiste.html">Parti Socialiste</a>
+        <a href="parti-rassemblement-national.html">Rassemblement National</a>
+        <a href="parti-renaissance.html">Renaissance</a>
+      </div>
+      <div class="footer-col">
+        <h4>Légal & transparence</h4>
+        <a href="methodologie.html">Méthodologie du quiz</a>
+        <a href="mentions-legales.html">Mentions légales</a>
+        <a href="confidentialite.html">Politique de confidentialité</a>
+        <a href="politique-cookies.html">Politique de cookies</a>
+        <a href="conditions-utilisation.html">Conditions d'utilisation</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 VoteClair — Outil civique indépendant</span>
+      <span>RGPD conforme · <a href="politique-cookies.html" style="color:inherit;text-decoration:underline">Gérer mes cookies</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/nav.js"></script>
+<script>
+/* ================================================================
+   FACE-À-FACE — données et logique
+   ================================================================ */
+
+/* ── Données des partis ────────────────────────────────────────── */
+const PARTIS = {
+
+  lfi: {
+    id: 'lfi',
+    nom: 'La France Insoumise',
+    sigle: 'LFI',
+    chef: 'Jean-Luc Mélenchon / M. Bompard',
+    couleur: '#CC0000',
+    couleurBg: '#fff0f0',
+    axe: 'Gauche radicale',
+    positions: {
+      logement: {
+        texte: "Encadrement strict des loyers dans toutes les agglomérations. Réquisition des logements vacants appartenant aux grands propriétaires. Gel des expulsions locatives. Construction de 200 000 logements sociaux par an financée par l'État.",
+        source: "L'Avenir en commun — Programme LFI 2022",
+        scores: { pcf:10, ps:30, eelv:24, renaissance:78, modem:72, lr:88, rn:62 }
+      },
+      fiscalite: {
+        texte: "Rétablissement de l'ISF renforcé sur le capital financier et immobilier. Suppression de la flat tax sur les dividendes. Hausse des tranches supérieures de l'impôt sur le revenu. Taxation des superprofits et des héritages importants.",
+        source: "L'Avenir en commun — Programme LFI 2022",
+        scores: { pcf:12, ps:34, eelv:30, renaissance:86, modem:80, lr:88, rn:54 }
+      },
+      education: {
+        texte: "Service public unifié de l'éducation nationale, laïc et gratuit de la maternelle à l'université. Suppression du financement public des écoles privées. Recrutement massif d'enseignants titulaires. Réforme des programmes vers l'esprit critique.",
+        source: "L'Avenir en commun — Programme LFI 2022",
+        scores: { pcf:6, ps:22, eelv:18, renaissance:68, modem:65, lr:78, rn:70 }
+      },
+      environnement: {
+        texte: "Planification écologique sous contrôle public avec un pôle public de l'énergie. Sortie progressive du nucléaire à horizon 2045. Développement massif des énergies renouvelables. Interdiction des pesticides les plus dangereux. Réforme de la PAC.",
+        source: "L'Avenir en commun — Programme LFI 2022",
+        scores: { pcf:22, ps:26, eelv:16, renaissance:70, modem:68, lr:82, rn:88 }
+      },
+      securite: {
+        texte: "Réforme en profondeur des forces de l'ordre et interdiction légale des violences policières. Régularisation des travailleurs sans-papiers. Accueil digne des demandeurs d'asile conforme au droit international. Droit de vote aux étrangers résidant en France.",
+        source: "L'Avenir en commun — Programme LFI 2022",
+        scores: { pcf:14, ps:36, eelv:20, renaissance:74, modem:70, lr:88, rn:98 }
+      },
+      sante: {
+        texte: "Hôpital public renforcé : fin des suppressions de lits et de postes, revalorisation massive des soignants. Remboursement à 100 % des soins de base par la Sécurité sociale. Fin des dépassements d'honoraires. Médecine préventive prioritaire.",
+        source: "L'Avenir en commun — Programme LFI 2022",
+        scores: { pcf:6, ps:18, eelv:20, renaissance:64, modem:60, lr:74, rn:50 }
+      },
+      emploi: {
+        texte: "SMIC à 1 600 € net immédiat. Semaine de 32 heures sans perte de salaire. Retraite à 60 ans. Abrogation de la réforme des retraites à 64 ans. CDI comme norme par défaut. Encadrement strict de l'intérim et des contrats précaires.",
+        source: "L'Avenir en commun — Programme LFI 2022",
+        scores: { pcf:8, ps:34, eelv:30, renaissance:88, modem:82, lr:90, rn:58 }
+      },
+      europe: {
+        texte: "Désobéissance aux traités européens si contraires à l'intérêt général. Renégociation du Traité de stabilité budgétaire (TSCG). Sortie du commandement intégré de l'OTAN. Opposition aux traités de libre-échange (CETA, Mercosur). Multilatéralisme.",
+        source: "L'Avenir en commun — Programme LFI 2022",
+        scores: { pcf:20, ps:48, eelv:42, renaissance:95, modem:90, lr:72, rn:55 }
+      }
+    }
+  },
+
+  pcf: {
+    id: 'pcf',
+    nom: 'Parti Communiste Français',
+    sigle: 'PCF',
+    chef: 'Fabien Roussel',
+    couleur: '#B30000',
+    couleurBg: '#fff0f0',
+    axe: 'Extrême gauche',
+    positions: {
+      logement: {
+        texte: "Socialisation du foncier et du logement : constitution d'un pôle public de l'habitat. Encadrement strict des loyers. Développement massif du parc social public. Réquisition des logements vides appartenant aux investisseurs institutionnels.",
+        source: "Programme PCF — Jours heureux, 2022",
+        scores: { lfi:10, ps:26, eelv:22, renaissance:80, modem:74, lr:90, rn:64 }
+      },
+      fiscalite: {
+        texte: "Nationalisation des grandes entreprises et des banques. ISF fortement renforcé incluant le capital productif. Impôt sur les sociétés progressif. Taxation des profits financiers et des héritages importants. Fin des niches fiscales pour les grandes fortunes.",
+        source: "Programme PCF — Jours heureux, 2022",
+        scores: { lfi:12, ps:36, eelv:32, renaissance:88, modem:82, lr:90, rn:56 }
+      },
+      education: {
+        texte: "École publique unique, laïque et gratuite de la maternelle à l'université et à la formation continue. Recrutement de 300 000 enseignants. Suppression de tout financement public à l'enseignement privé. Égalité absolue entre établissements.",
+        source: "Programme PCF — Jours heureux, 2022",
+        scores: { lfi:6, ps:24, eelv:20, renaissance:70, modem:67, lr:80, rn:73 }
+      },
+      environnement: {
+        texte: "Planification écologique publique avec nationalisation du secteur énergétique. Maintien du nucléaire public comme outil de transition vers 100 % renouvelables. Interdiction des pesticides de synthèse. Agriculture paysanne et biologique soutenue.",
+        source: "Programme PCF — Jours heureux, 2022",
+        scores: { lfi:22, ps:28, eelv:38, renaissance:66, modem:63, lr:78, rn:85 }
+      },
+      securite: {
+        texte: "Régularisation des travailleurs étrangers en situation irrégulière. Droits civiques complets pour les résidents étrangers. Police républicaine au service des citoyens, sous contrôle démocratique. Lutte contre les discriminations systémiques.",
+        source: "Programme PCF — Jours heureux, 2022",
+        scores: { lfi:14, ps:38, eelv:24, renaissance:76, modem:72, lr:90, rn:98 }
+      },
+      sante: {
+        texte: "Extension de la Sécurité sociale à 100 % de remboursement sur tous les soins. Fin définitive des dépassements d'honoraires. Fin du numerus clausus. Recrutement massif de soignants dans le secteur public. Médecine du travail renforcée.",
+        source: "Programme PCF — Jours heureux, 2022",
+        scores: { lfi:6, ps:16, eelv:18, renaissance:67, modem:62, lr:77, rn:53 }
+      },
+      emploi: {
+        texte: "SMIC à 1 600 € net immédiat. Retraite à 60 ans avec 37,5 annuités. Semaine de 32 heures. Droits syndicaux renforcés et cogestion dans les entreprises. Suppression des contrats précaires et de l'intérim structurel.",
+        source: "Programme PCF — Jours heureux, 2022",
+        scores: { lfi:8, ps:36, eelv:32, renaissance:90, modem:84, lr:92, rn:60 }
+      },
+      europe: {
+        texte: "Sortie du commandement intégré de l'OTAN. Renégociation des traités européens pour permettre une Europe sociale et écologique. Fin des traités de libre-échange. Europe des peuples non du capital. Veto sur les directives libérales.",
+        source: "Programme PCF — Jours heureux, 2022",
+        scores: { lfi:20, ps:50, eelv:44, renaissance:95, modem:90, lr:74, rn:57 }
+      }
+    }
+  },
+
+  ps: {
+    id: 'ps',
+    nom: 'Parti Socialiste',
+    sigle: 'PS',
+    chef: 'Olivier Faure',
+    couleur: '#E75480',
+    couleurBg: '#fff0f5',
+    axe: 'Gauche',
+    positions: {
+      logement: {
+        texte: "Encadrement des loyers dans les zones tendues élargi à toutes les grandes villes. Développement du logement social et intermédiaire. Aide à l'accession pour les primo-accédants modestes. Lutte contre la vacance des logements par la taxation.",
+        source: "Projet socialiste — PS, 2022",
+        scores: { lfi:30, pcf:26, eelv:20, renaissance:58, modem:52, lr:72, rn:50 }
+      },
+      fiscalite: {
+        texte: "Rétablissement d'un ISF recentré sur le capital financier et les grandes fortunes. Maintien de la progressivité de l'impôt sur le revenu avec renforcement des tranches supérieures. Lutte résolue contre l'évasion fiscale via la coopération internationale.",
+        source: "Projet socialiste — PS, 2022",
+        scores: { lfi:34, pcf:36, eelv:28, renaissance:72, modem:66, lr:78, rn:48 }
+      },
+      education: {
+        texte: "Investissement massif dans l'école publique : revalorisation de 20 % des enseignants, mixité scolaire renforcée. Réforme du lycée professionnel avec cofinancement État/régions. Gratuité effective de la restauration scolaire pour les foyers modestes.",
+        source: "Projet socialiste — PS, 2022",
+        scores: { lfi:22, pcf:24, eelv:14, renaissance:52, modem:48, lr:62, rn:65 }
+      },
+      environnement: {
+        texte: "Planification climatique ambitieuse avec loi de programmation énergie-climat. Compatibilité maintenue entre nucléaire et renouvelables dans la transition. Développement fort des énergies vertes. Taxe carbone aux frontières de l'UE. Rénovation thermique massive.",
+        source: "Projet socialiste — PS, 2022",
+        scores: { lfi:26, pcf:28, eelv:32, renaissance:56, modem:53, lr:70, rn:80 }
+      },
+      securite: {
+        texte: "Politique migratoire humaniste : régularisation au cas par cas des personnes intégrées, droit d'asile garanti. Maintien de l'État de droit et des libertés publiques. Police républicaine, lutte contre les violences policières par des mécanismes de contrôle renforcés.",
+        source: "Projet socialiste — PS, 2022",
+        scores: { lfi:36, pcf:38, eelv:22, renaissance:48, modem:44, lr:72, rn:92 }
+      },
+      sante: {
+        texte: "Service public hospitalier fort avec arrêt des suppressions de lits et recrutements massifs. Remboursement intégral des soins essentiels. Lutte contre les déserts médicaux par conventionnement sélectif. Prévention renforcée, notamment en santé mentale et pédiatrie.",
+        source: "Projet socialiste — PS, 2022",
+        scores: { lfi:18, pcf:16, eelv:14, renaissance:45, modem:40, lr:55, rn:44 }
+      },
+      emploi: {
+        texte: "SMIC à 1 500 € net revalorisé. Semaine de 35 heures maintenue et défendue. Abrogation de la réforme des retraites portant l'âge légal à 64 ans. Droits syndicaux renforcés. Contrat de travail stable comme norme, lutte contre les abus de l'intérim.",
+        source: "Projet socialiste — PS, 2022",
+        scores: { lfi:34, pcf:36, eelv:28, renaissance:70, modem:64, lr:78, rn:50 }
+      },
+      europe: {
+        texte: "Europe sociale et environnementale ambitieuse. Pro-intégration européenne et approfondissement de l'UE. Réforme du Pacte de stabilité pour permettre l'investissement public. Budget européen renforcé. Harmonisation sociale et fiscale par le haut.",
+        source: "Projet socialiste — PS, 2022",
+        scores: { lfi:48, pcf:50, eelv:32, renaissance:34, modem:37, lr:44, rn:80 }
+      }
+    }
+  },
+
+  eelv: {
+    id: 'eelv',
+    nom: 'Europe Écologie Les Verts',
+    sigle: 'EELV',
+    chef: 'Marine Tondelier',
+    couleur: '#2E7D32',
+    couleurBg: '#f0faf0',
+    axe: 'Gauche écologiste',
+    positions: {
+      logement: {
+        texte: "Rénovation thermique massive obligatoire du parc existant avec financement public. Encadrement strict des loyers dans les zones tendues. Interdiction de louer les passoires thermiques (DPE F et G). Développement de l'habitat coopératif et de l'éco-construction.",
+        source: "Programme EELV — 2022, lesecologistes.fr",
+        scores: { lfi:24, pcf:22, ps:20, renaissance:66, modem:60, lr:78, rn:72 }
+      },
+      fiscalite: {
+        texte: "Fiscalité écologique progressive et socialement juste : taxe carbone avec dividende redistribué. Réorientation de 80 Md€ d'aides fiscales vers la transition écologique. ISF climatique sur les patrimoines à forte empreinte carbone. Fin des niches fiscales brunes.",
+        source: "Programme EELV — 2022, lesecologistes.fr",
+        scores: { lfi:30, pcf:32, ps:28, renaissance:76, modem:70, lr:82, rn:80 }
+      },
+      education: {
+        texte: "Éducation à l'environnement et au développement durable dans tous les programmes. Mixité sociale forte par la carte scolaire réformée. Réforme pédagogique progressive vers la coopération. Gratuité totale des fournitures et de la restauration scolaire.",
+        source: "Programme EELV — 2022, lesecologistes.fr",
+        scores: { lfi:18, pcf:20, ps:14, renaissance:48, modem:44, lr:60, rn:67 }
+      },
+      environnement: {
+        texte: "Sortie du nucléaire à horizon 2035. Objectif 100 % énergies renouvelables d'ici 2050. Interdiction des pesticides de synthèse à horizon 5 ans. Agriculture biologique et paysanne soutenue. Fin des subventions aux énergies fossiles. Loi sur l'artificialisation des sols.",
+        source: "Programme EELV — 2022, lesecologistes.fr",
+        scores: { lfi:16, pcf:38, ps:32, renaissance:72, modem:68, lr:85, rn:92 }
+      },
+      securite: {
+        texte: "Accueil digne et structuré des réfugiés climatiques et politiques. Droit d'asile garanti et respecté. Approche humaniste de l'immigration fondée sur le respect des droits fondamentaux. Régularisation des personnes intégrées depuis plus de 3 ans.",
+        source: "Programme EELV — 2022, lesecologistes.fr",
+        scores: { lfi:20, pcf:24, ps:22, renaissance:56, modem:50, lr:80, rn:95 }
+      },
+      sante: {
+        texte: "Santé environnementale au cœur de la politique de prévention. Remboursement des médecines complémentaires validées. Renforcement du service public hospitalier. Lutte contre les déserts médicaux par des centres de santé publics pluridisciplinaires. Zéro dépassement d'honoraires.",
+        source: "Programme EELV — 2022, lesecologistes.fr",
+        scores: { lfi:20, pcf:18, ps:14, renaissance:50, modem:46, lr:62, rn:57 }
+      },
+      emploi: {
+        texte: "Semaine de 4 jours (32 heures) sans perte de salaire. SMIC à 1 600 € net. Retraite progressive et flexible. Développement de 1 million d'emplois verts dans la transition écologique. Revenu universel d'existence étudié. Encadrement des hautes rémunérations.",
+        source: "Programme EELV — 2022, lesecologistes.fr",
+        scores: { lfi:30, pcf:32, ps:28, renaissance:80, modem:74, lr:85, rn:72 }
+      },
+      europe: {
+        texte: "Fédéralisme européen vert : réforme des traités pour permettre la planification écologique. Europe puissance climatique mondiale. Budget européen vert. Taxe carbone aux frontières. Convergence sociale et fiscale par le haut. Souveraineté européenne en matière de santé.",
+        source: "Programme EELV — 2022, lesecologistes.fr",
+        scores: { lfi:42, pcf:44, ps:32, renaissance:27, modem:30, lr:50, rn:88 }
+      }
+    }
+  },
+
+  renaissance: {
+    id: 'renaissance',
+    nom: 'Renaissance',
+    sigle: 'REN',
+    chef: 'Gabriel Attal',
+    couleur: '#C8A200',
+    couleurBg: '#fffef0',
+    axe: 'Centre',
+    positions: {
+      logement: {
+        texte: "Libéralisation partielle de la construction par l'assouplissement des règles de zonage. Aides à l'accession à la propriété (prêt à taux zéro renforcé). Incitations fiscales aux investisseurs pour construire dans les zones tendues. MaPrimeRénov' pour la rénovation énergétique.",
+        source: "Programme Renaissance — Ensemble !, 2022",
+        scores: { lfi:78, pcf:80, ps:58, eelv:66, modem:14, lr:28, rn:42 }
+      },
+      fiscalite: {
+        texte: "Maintien de la flat tax à 30 % sur les revenus du capital. Confirmation de la suppression de l'ISF. Baisse progressive de l'impôt sur les sociétés pour renforcer la compétitivité. Réduction ciblée de la dépense publique. Lutte contre la fraude fiscale internationale.",
+        source: "Programme Renaissance — Ensemble !, 2022",
+        scores: { lfi:86, pcf:88, ps:72, eelv:76, modem:17, lr:26, rn:48 }
+      },
+      education: {
+        texte: "Autonomie renforcée des établissements. Valorisation du mérite et de l'excellence. Investissement fort dans le numérique éducatif et la formation professionnelle. Partenariats public-privé pour l'apprentissage. Réforme du lycée professionnel avec les entreprises.",
+        source: "Programme Renaissance — Ensemble !, 2022",
+        scores: { lfi:68, pcf:70, ps:52, eelv:48, modem:14, lr:24, rn:40 }
+      },
+      environnement: {
+        texte: "Mix énergétique nucléaire + renouvelables pour la sécurité énergétique et le climat. Objectif neutralité carbone 2050. Soutien fort aux technologies propres et à l'innovation verte. Financement européen de la transition (REpowerEU). Rénovation thermique via incitations.",
+        source: "Programme Renaissance — Ensemble !, 2022",
+        scores: { lfi:70, pcf:66, ps:56, eelv:72, modem:19, lr:36, rn:68 }
+      },
+      securite: {
+        texte: "Maîtrise de l'immigration légale et lutte ferme contre l'immigration irrégulière. Accords avec les pays d'origine pour les retours. Intégration par les valeurs républicaines et la langue française. Renforcement des capacités de l'agence Frontex.",
+        source: "Programme Renaissance — Ensemble !, 2022",
+        scores: { lfi:74, pcf:76, ps:48, eelv:56, modem:17, lr:30, rn:58 }
+      },
+      sante: {
+        texte: "Investissement fort dans la e-santé et la télémédecine. Soutien à la médecine libérale et aux médecins de ville. Incitations financières pour l'installation dans les déserts médicaux. Renforcement de la prévention. Réforme du financement hospitalier.",
+        source: "Programme Renaissance — Ensemble !, 2022",
+        scores: { lfi:64, pcf:67, ps:45, eelv:50, modem:10, lr:22, rn:37 }
+      },
+      emploi: {
+        texte: "Plein emploi par la compétitivité et la flexibilité du marché du travail. Baisse des cotisations patronales pour l'embauche. Maintien de la réforme des retraites à 64 ans comme gage de soutenabilité budgétaire. Valorisation de l'apprentissage. Formation tout au long de la vie.",
+        source: "Programme Renaissance — Ensemble !, 2022",
+        scores: { lfi:88, pcf:90, ps:70, eelv:80, modem:14, lr:24, rn:55 }
+      },
+      europe: {
+        texte: "Pro-européen convaincu : approfondissement de l'intégration européenne. Europe de la défense et souveraineté stratégique. Harmonisation fiscale minimale à l'échelle de l'UE. Budget européen renforcé pour la transition et la compétitivité. Élargissement maîtrisé.",
+        source: "Programme Renaissance — Ensemble !, 2022",
+        scores: { lfi:95, pcf:95, ps:34, eelv:27, modem:11, lr:40, rn:85 }
+      }
+    }
+  },
+
+  modem: {
+    id: 'modem',
+    nom: 'Mouvement Démocrate',
+    sigle: 'MoDem',
+    chef: 'François Bayrou',
+    couleur: '#E05000',
+    couleurBg: '#fff5f0',
+    axe: 'Centre',
+    positions: {
+      logement: {
+        texte: "Régulation équilibrée du marché locatif avec plafonnement des loyers dans les zones les plus tendues. Soutien à la construction mixte public-privé. Aides ciblées pour les ménages aux revenus modestes. Partenariats avec les collectivités pour les logements intermédiaires.",
+        source: "Programme MoDem, 2022 — mouvementdemocrate.fr",
+        scores: { lfi:72, pcf:74, ps:52, eelv:60, renaissance:14, lr:24, rn:40 }
+      },
+      fiscalite: {
+        texte: "Compétitivité fiscale maintenue pour attirer les investissements. Conservation des dispositifs favorables à l'épargne productive. Lutte résolue contre la fraude et l'évasion fiscale. Équilibre budgétaire à moyen terme par maîtrise des dépenses plutôt que hausses d'impôts.",
+        source: "Programme MoDem, 2022 — mouvementdemocrate.fr",
+        scores: { lfi:80, pcf:82, ps:66, eelv:70, renaissance:17, lr:21, rn:44 }
+      },
+      education: {
+        texte: "Liberté de l'enseignement affirmée, soutien aux écoles privées sous contrat. Autonomie pédagogique des établissements. Partenariats public-privé pour la formation professionnelle et l'apprentissage. Investissement dans le numérique et les compétences de demain.",
+        source: "Programme MoDem, 2022 — mouvementdemocrate.fr",
+        scores: { lfi:65, pcf:67, ps:48, eelv:44, renaissance:14, lr:19, rn:37 }
+      },
+      environnement: {
+        texte: "Pragmatisme énergétique : maintien du nucléaire associé au développement des renouvelables. Fiscalité environnementale modérée et socialement acceptable. Rénovation thermique incitative. Approche technologique et économique de la transition plutôt que contraignante.",
+        source: "Programme MoDem, 2022 — mouvementdemocrate.fr",
+        scores: { lfi:68, pcf:63, ps:53, eelv:68, renaissance:19, lr:34, rn:64 }
+      },
+      securite: {
+        texte: "Immigration régulée par les besoins économiques et les capacités d'intégration. Coopération européenne renforcée sur le contrôle des frontières. Humanisme modéré : respect de la dignité des personnes tout en maintenant une politique ferme sur les reconduites.",
+        source: "Programme MoDem, 2022 — mouvementdemocrate.fr",
+        scores: { lfi:70, pcf:72, ps:44, eelv:50, renaissance:17, lr:28, rn:54 }
+      },
+      sante: {
+        texte: "Liberté du patient et du médecin libéral préservée. Soutien aux complémentaires santé responsables. Télémédecine et numérique en santé pour lutter contre les déserts. Prévention renforcée. Financement équilibré entre secteur public et libéral.",
+        source: "Programme MoDem, 2022 — mouvementdemocrate.fr",
+        scores: { lfi:60, pcf:62, ps:40, eelv:46, renaissance:10, lr:19, rn:34 }
+      },
+      emploi: {
+        texte: "Dialogue social constant. Formation tout au long de la vie et reconversion professionnelle soutenues. Flexisécurité à la nordique. Soutien fort aux PME et TPE. Participation des salariés aux décisions et aux résultats. Apprentissage valorisé dès le collège.",
+        source: "Programme MoDem, 2022 — mouvementdemocrate.fr",
+        scores: { lfi:82, pcf:84, ps:64, eelv:74, renaissance:14, lr:21, rn:51 }
+      },
+      europe: {
+        texte: "Fédéralisme européen modéré et progressif. Défenseur historique de l'intégration européenne. Subsidiarité bien comprise entre niveaux européen, national et local. Europe de la défense et des valeurs communes. Souveraineté partagée sur les grandes décisions mondiales.",
+        source: "Programme MoDem, 2022 — mouvementdemocrate.fr",
+        scores: { lfi:90, pcf:90, ps:37, eelv:30, renaissance:11, lr:37, rn:88 }
+      }
+    }
+  },
+
+  lr: {
+    id: 'lr',
+    nom: 'Les Républicains',
+    sigle: 'LR',
+    chef: 'Bruno Retailleau',
+    couleur: '#003F8F',
+    couleurBg: '#f0f4ff',
+    axe: 'Droite',
+    positions: {
+      logement: {
+        texte: "Libéralisation du marché locatif : fin de l'encadrement des loyers jugé contreproductif. Soutien à la propriété privée comme priorité. Simplification des normes de construction pour relancer le bâtiment. Lutte contre les squats et facilitation des expulsions.",
+        source: "Programme LR — La France au sens propre, 2022",
+        scores: { lfi:88, pcf:90, ps:72, eelv:78, renaissance:28, modem:24, rn:34 }
+      },
+      fiscalite: {
+        texte: "Baisse des prélèvements obligatoires parmi les plus élevés d'Europe. Suppression de l'ISF confirmée et rejet de tout retour. Réduction des dépenses publiques de 60 milliards sur 5 ans. Flat tax maintenue. Règle d'or budgétaire inscrite dans la Constitution.",
+        source: "Programme LR — La France au sens propre, 2022",
+        scores: { lfi:88, pcf:90, ps:78, eelv:82, renaissance:26, modem:21, rn:39 }
+      },
+      education: {
+        texte: "Retour à l'autorité et à la discipline dans les établissements scolaires. Uniforme ou tenue vestimentaire encouragés. Valorisation du mérite et des résultats. Soutien à l'enseignement privé sous contrat. Réforme des concours pour revaloriser les enseignants.",
+        source: "Programme LR — La France au sens propre, 2022",
+        scores: { lfi:78, pcf:80, ps:62, eelv:60, renaissance:24, modem:19, rn:27 }
+      },
+      environnement: {
+        texte: "Nucléaire comme atout stratégique et climatique à développer (nouveaux EPR). Refus des interdictions trop rapides (voiture thermique 2035 contestée). Technologies propres et innovation comme solution, pas les contraintes réglementaires. Pragmatisme économique.",
+        source: "Programme LR — La France au sens propre, 2022",
+        scores: { lfi:82, pcf:78, ps:70, eelv:85, renaissance:36, modem:34, rn:54 }
+      },
+      securite: {
+        texte: "Durcissement significatif de la politique migratoire : quotas annuels votés par le Parlement. Fin du droit du sol automatique, expulsions facilitées. Renforcement majeur des effectifs et des moyens des forces de l'ordre. Tolérance zéro pour la délinquance.",
+        source: "Programme LR — La France au sens propre, 2022",
+        scores: { lfi:88, pcf:90, ps:72, eelv:80, renaissance:30, modem:28, rn:38 }
+      },
+      sante: {
+        texte: "Préservation de la médecine libérale face aux velléités d'étatisation. Responsabilisation des patients via le ticket modérateur. Lutte contre les déserts médicaux par incitations financières à l'installation. Efficacité managériale dans les hôpitaux publics.",
+        source: "Programme LR — La France au sens propre, 2022",
+        scores: { lfi:74, pcf:77, ps:55, eelv:62, renaissance:22, modem:19, rn:29 }
+      },
+      emploi: {
+        texte: "Flexibilisation du marché du travail pour libérer les embauches. Baisse des charges patronales sur tous les niveaux de salaire. Travail le dimanche libéralisé par accord de branche. Valorisation forte de l'apprentissage et de la formation professionnelle. Retraite à 65 ans.",
+        source: "Programme LR — La France au sens propre, 2022",
+        scores: { lfi:90, pcf:92, ps:78, eelv:85, renaissance:24, modem:21, rn:44 }
+      },
+      europe: {
+        texte: "Souverainisme modéré au sein de l'UE : réforme du droit communautaire pour restituer des compétences aux États. Europe des nations, subsidiarité renforcée. Primauté du droit national sur certains points. Frontières extérieures de Schengen protégées.",
+        source: "Programme LR — La France au sens propre, 2022",
+        scores: { lfi:72, pcf:74, ps:44, eelv:50, renaissance:40, modem:37, rn:34 }
+      }
+    }
+  },
+
+  rn: {
+    id: 'rn',
+    nom: 'Rassemblement National',
+    sigle: 'RN',
+    chef: 'Jordan Bardella',
+    couleur: '#002395',
+    couleurBg: '#f0f2ff',
+    axe: 'Extrême droite',
+    positions: {
+      logement: {
+        texte: "Priorité nationale dans l'attribution des logements sociaux : les ressortissants français seraient servis en premier. Expulsion facilitée des locataires en situation irrégulière. Soutien à l'accession à la propriété des Français par des prêts bonifiés.",
+        source: "Programme RN — 2022, rassemblementnational.fr",
+        scores: { lfi:62, pcf:64, ps:50, eelv:72, renaissance:42, modem:40, lr:34 }
+      },
+      fiscalite: {
+        texte: "Baisse de la TVA à 5,5 % sur les produits de première nécessité (carburant, énergie, alimentaire). Suppression de l'impôt sur le revenu pour les moins de 30 ans. Protectionnisme fiscal national et refus de la taxation internationale minimale de l'OCDE.",
+        source: "Programme RN — 2022, rassemblementnational.fr",
+        scores: { lfi:54, pcf:56, ps:48, eelv:80, renaissance:48, modem:44, lr:39 }
+      },
+      education: {
+        texte: "Retour aux fondamentaux : lecture, calcul, grammaire. Uniforme scolaire rendu obligatoire. Interdiction de toute revendication communautaire ou religieuse dans l'école. Valorisation de la culture et de l'histoire nationales. Autorité de l'enseignant réaffirmée.",
+        source: "Programme RN — 2022, rassemblementnational.fr",
+        scores: { lfi:70, pcf:73, ps:65, eelv:67, renaissance:40, modem:37, lr:27 }
+      },
+      environnement: {
+        texte: "Rejet de l'« écologie punitive » et des interdictions coercitives. Maintien des voitures thermiques au-delà de 2035. Nucléaire comme priorité absolue pour l'indépendance énergétique. Refus des objectifs climatiques européens jugés inapplicables économiquement.",
+        source: "Programme RN — 2022, rassemblementnational.fr",
+        scores: { lfi:88, pcf:85, ps:80, eelv:92, renaissance:68, modem:64, lr:54 }
+      },
+      securite: {
+        texte: "Immigration zéro et suppression du droit du sol. Priorité nationale dans l'accès aux droits sociaux. Expulsion de tous les étrangers en situation irrégulière et des délinquants étrangers. Fermeture des frontières et sortie de l'espace Schengen.",
+        source: "Programme RN — 2022, rassemblementnational.fr",
+        scores: { lfi:98, pcf:98, ps:92, eelv:95, renaissance:58, modem:54, lr:38 }
+      },
+      sante: {
+        texte: "Accès prioritaire aux soins pour les ressortissants français et européens. Valorisation des médecins formés en France. Sécurité sociale maintenue pour les nationaux. Lutte contre la fraude à l'aide médicale d'État (AME), réservée aux cas urgents.",
+        source: "Programme RN — 2022, rassemblementnational.fr",
+        scores: { lfi:50, pcf:53, ps:44, eelv:57, renaissance:37, modem:34, lr:29 }
+      },
+      emploi: {
+        texte: "Priorité d'embauche pour les travailleurs français par une réforme du droit du travail. Protectionnisme économique et réindustrialisation nationale. Sortie des accords de libre-échange européens jugés défavorables. SMIC ajusté sur les prix alimentaires et énergétiques.",
+        source: "Programme RN — 2022, rassemblementnational.fr",
+        scores: { lfi:58, pcf:60, ps:50, eelv:72, renaissance:55, modem:51, lr:44 }
+      },
+      europe: {
+        texte: "Réforme radicale ou sortie de l'euro monétaire au profit d'une monnaie commune. Réduction drastique des pouvoirs de la Commission européenne. Retour de la souveraineté nationale dans tous les domaines régaliens. Fin de l'espace Schengen et contrôles aux frontières rétablis.",
+        source: "Programme RN — 2022, rassemblementnational.fr",
+        scores: { lfi:55, pcf:57, ps:80, eelv:88, renaissance:85, modem:88, lr:34 }
+      }
+    }
+  }
+};
+
+/* ── Thèmes ────────────────────────────────────────────────────── */
+const THEMES = [
+  { key: 'logement',      icon: '', label: 'Logement' },
+  { key: 'fiscalite',     icon: '', label: 'Fiscalité & impôts' },
+  { key: 'education',     icon: '', label: 'Éducation & jeunesse' },
+  { key: 'environnement', icon: '', label: 'Environnement' },
+  { key: 'securite',      icon: '', label: 'Sécurité & immigration' },
+  { key: 'sante',         icon: '', label: 'Santé' },
+  { key: 'emploi',        icon: '', label: 'Emploi & salaires' },
+  { key: 'europe',        icon: '', label: 'Europe & international' }
+];
+
+/* ── État ──────────────────────────────────────────────────────── */
+const state = { slot1: null, slot2: null, lastFilled: 0 };
+
+/* ── Utilitaires ───────────────────────────────────────────────── */
+function getThemeScore(id1, id2, themeKey) {
+  const p1 = PARTIS[id1];
+  const p2 = PARTIS[id2];
+  const s1 = p1.positions[themeKey].scores[id2] ?? 50;
+  const s2 = p2.positions[themeKey].scores[id1] ?? 50;
+  return Math.round((s1 + s2) / 2);
+}
+
+function getGlobalScore(id1, id2) {
+  const scores = THEMES.map(t => getThemeScore(id1, id2, t.key));
+  return Math.round(scores.reduce((a, b) => a + b, 0) / scores.length);
+}
+
+function getLevelInfo(score) {
+  if (score >= 65) return { cls: 'high',   label: 'Très différents', color: '#C0392B' };
+  if (score >= 38) return { cls: 'medium', label: 'Nuancés',          color: '#B7770D' };
+  return              { cls: 'low',    label: 'Proches',            color: '#1E8449' };
+}
+
+function getThermoColor(score) {
+  if (score >= 80) return '#C0392B';
+  if (score >= 60) return '#E67E22';
+  if (score >= 30) return '#F39C12';
+  return '#27AE60';
+}
+
+function getThermoPhrase(score) {
+  if (score < 30) return 'Ces deux partis partagent de nombreuses valeurs communes.';
+  if (score < 60) return 'Des différences marquées sur plusieurs sujets clés.';
+  if (score < 80) return 'Deux visions très différentes de la société.';
+  return 'Ces deux partis s\'opposent sur presque tout.';
+}
+
+function getTooltipText(id1, id2, themeKey) {
+  const score = getThemeScore(id1, id2, themeKey);
+  const s1 = PARTIS[id1].sigle, s2 = PARTIS[id2].sigle;
+  const t = THEMES.find(x => x.key === themeKey).label.toLowerCase();
+  if (score >= 65) return `Sur ${t}, ${s1} et ${s2} défendent des positions fondamentalement opposées.`;
+  if (score >= 38) return `Sur ${t}, ${s1} et ${s2} ont des approches différentes avec quelques nuances.`;
+  return `Sur ${t}, ${s1} et ${s2} partagent des orientations généralement proches.`;
+}
+
+/* ── Rendu ─────────────────────────────────────────────────────── */
+function renderGrid() {
+  const grid = document.getElementById('partisGrid');
+  grid.innerHTML = '';
+  Object.values(PARTIS).forEach(p => {
+    const isSelected = (state.slot1 === p.id || state.slot2 === p.id);
+    const card = document.createElement('div');
+    card.className = 'parti-sel-card' + (isSelected ? ' active disabled' : '');
+    card.style.setProperty('--party-color', p.couleur);
+    card.dataset.id = p.id;
+    if (!isSelected) card.onclick = () => selectParti(p.id);
+    card.innerHTML = `
+      <div class="parti-sel-sigle" style="background:${p.couleur}">${p.sigle}</div>
+      <div class="parti-sel-nom">${p.nom}</div>
+      <div class="parti-sel-chef">${p.chef}</div>
+      <div class="parti-sel-axe" style="background:${p.couleur}">${p.axe}</div>
+      <div class="parti-sel-check" style="background:${p.couleur}">✓</div>
+    `;
+    grid.appendChild(card);
+  });
+}
+
+function renderSlot(num) {
+  const id = state['slot' + num];
+  const el = document.getElementById('slot' + num);
+  if (!id) {
+    el.className = 'slot slot--empty';
+    el.onclick = () => handleSlotClick(num);
+    el.innerHTML = `
+      <div class="slot-placeholder">
+        <div class="slot-placeholder-icon">+</div>
+        <p>Choisissez un parti</p>
+      </div>`;
+    return;
+  }
+  const p = PARTIS[id];
+  el.className = 'slot slot--filled';
+  el.style.borderColor = p.couleur;
+  el.onclick = null;
+  el.innerHTML = `
+    <div class="slot-header" style="background:${p.couleur}">
+      <div class="slot-header-top">
+        <span class="slot-sigle">${p.sigle}</span>
+        <button class="slot-remove" onclick="removeParti(${num})" title="Retirer">✕</button>
+      </div>
+      <div class="slot-nom">${p.nom}</div>
+    </div>
+    <div class="slot-body">
+      <div class="slot-chef"> ${p.chef}</div>
+      <span class="slot-axe" style="background:${p.couleur}88;color:${p.couleur};border:1px solid ${p.couleur}44">${p.axe}</span>
+    </div>`;
+}
+
+function updateHint() {
+  const hint = document.getElementById('selectionHint');
+  const n1 = state.slot1, n2 = state.slot2;
+  if (!n1 && !n2) {
+    hint.className = 'selection-hint';
+    hint.innerHTML = '<span></span><span>Sélectionnez un premier parti ci-dessous pour commencer</span>';
+  } else if ((n1 && !n2) || (!n1 && n2)) {
+    hint.className = 'selection-hint hint--ready';
+    hint.innerHTML = '<span>→</span><span>Sélectionnez un deuxième parti pour lancer la comparaison</span>';
+  } else {
+    hint.className = 'selection-hint hint--done';
+  }
+}
+
+function updateThermometre() {
+  const wrapper = document.getElementById('thermometre');
+  if (!state.slot1 || !state.slot2) {
+    wrapper.classList.remove('visible');
+    return;
+  }
+  const p1 = PARTIS[state.slot1], p2 = PARTIS[state.slot2];
+  const score = getGlobalScore(state.slot1, state.slot2);
+
+  document.getElementById('thermoSigle1').textContent = p1.sigle;
+  document.getElementById('thermoSigle1').style.background = p1.couleur;
+  document.getElementById('thermoSigle2').textContent = p2.sigle;
+  document.getElementById('thermoSigle2').style.background = p2.couleur;
+
+  const fill = document.getElementById('thermoFill');
+  fill.style.width = '0';
+  fill.classList.remove('pulse');
+  const color = getThermoColor(score);
+  document.getElementById('thermoScore').textContent = score + ' / 100';
+  document.getElementById('thermoScore').style.color = color;
+  document.getElementById('thermoPhrase').textContent = getThermoPhrase(score);
+
+  wrapper.classList.add('visible');
+  // animate fill after next paint
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      fill.style.backgroundColor = color;
+      fill.style.width = score + '%';
+      if (score >= 80) fill.classList.add('pulse');
+    });
+  });
+}
+
+function renderTheme(themeKey, id1, id2) {
+  const t = THEMES.find(x => x.key === themeKey);
+  const p1 = PARTIS[id1], p2 = PARTIS[id2];
+  const pos1 = p1.positions[themeKey];
+  const pos2 = p2.positions[themeKey];
+  const score = getThemeScore(id1, id2, themeKey);
+  const level = getLevelInfo(score);
+  const tooltip = getTooltipText(id1, id2, themeKey);
+
+  const row = document.createElement('div');
+  row.className = 'theme-row';
+  row.innerHTML = `
+    <div class="theme-row-title-bar" onclick="toggleAccordion(this.parentElement)">
+      <div class="theme-row-title-left">
+        <span class="theme-icon">${t.icon}</span>
+        <span>${t.label}</span>
+      </div>
+      <div class="theme-row-title-right">
+        <span class="diverg-badge ${level.cls}">${level.label}</span>
+        <span class="accordion-arrow">▼</span>
+      </div>
+    </div>
+    <div class="theme-row-body">
+      <div class="theme-position theme-position-left">
+        <span class="theme-position-label" style="background:${p1.couleur}">${p1.sigle}</span>
+        <p>${pos1.texte}</p>
+      </div>
+      <div class="theme-diverg-col">
+        <div class="diverg-dot" style="background:${level.color}">
+          <div class="diverg-dot-tooltip">${tooltip}</div>
+        </div>
+      </div>
+      <div class="theme-position theme-position-right">
+        <span class="theme-position-label" style="background:${p2.couleur}">${p2.sigle}</span>
+        <p>${pos2.texte}</p>
+      </div>
+      <div class="theme-row-source">${renderSources(p1, pos1, p2, pos2)}</div>
+    </div>`;
+  return row;
+}
+
+/* Affiche la source de CHAQUE parti comparé — et signale les positions
+   trop anciennes pour être présentées comme actuelles. Un programme de
+   2022 a précédé la dissolution de 2024 et la réforme des retraites : le
+   donner sans date à un lycéen serait une erreur factuelle. */
+const ANCIENNETE_MAX_MOIS = 24;
+
+function sourceEstAncienne(source) {
+  const m = /(20\d{2})/.exec(source || '');
+  if (!m) return false;
+  const moisEcoules = (new Date().getFullYear() - parseInt(m[1], 10)) * 12;
+  return moisEcoules > ANCIENNETE_MAX_MOIS;
+}
+
+function renderSources(p1, pos1, p2, pos2) {
+  const lignes = [];
+  const vus = new Set();
+
+  [[p1, pos1], [p2, pos2]].forEach(([parti, pos]) => {
+    if (!pos || !pos.source) return;
+    const cle = parti.sigle + '|' + pos.source;
+    if (vus.has(cle)) return;
+    vus.add(cle);
+    const vieux = sourceEstAncienne(pos.source);
+    lignes.push(
+      '<span class="src-item' + (vieux ? ' src-item--ancienne' : '') + '">' +
+        '<strong>' + parti.sigle + '</strong> : ' + pos.source +
+        (vieux ? ' <span class="src-alerte" title="Position non réactualisée depuis cette date">⚠ non réactualisée</span>' : '') +
+      '</span>'
+    );
+  });
+
+  return lignes.length ? 'Sources — ' + lignes.join(' · ') : '';
+}
+
+function updateComparison() {
+  const wrapper = document.getElementById('comparisonWrapper');
+  const id1 = state.slot1, id2 = state.slot2;
+  if (!id1 || !id2) {
+    wrapper.classList.remove('visible');
+    return;
+  }
+  const p1 = PARTIS[id1], p2 = PARTIS[id2];
+
+  // column headers
+  document.getElementById('compLabel1').textContent = p1.sigle + ' — ' + p1.nom;
+  document.getElementById('compLabel1').style.background = p1.couleur;
+  document.getElementById('compLabel2').textContent = p2.sigle + ' — ' + p2.nom;
+  document.getElementById('compLabel2').style.background = p2.couleur;
+
+  // theme rows
+  const container = document.getElementById('themesContainer');
+  container.innerHTML = '';
+  THEMES.forEach(t => container.appendChild(renderTheme(t.key, id1, id2)));
+
+  // verdict
+  const scores = THEMES.map(t => getThemeScore(id1, id2, t.key));
+  const opp = scores.filter(s => s >= 65).length;
+  const nua = scores.filter(s => s >= 38 && s < 65).length;
+  const con = scores.filter(s => s < 38).length;
+
+  document.getElementById('verdictPhrase').innerHTML =
+    `Sur <strong>8 thèmes analysés</strong>, <strong>${p1.sigle}</strong> et <strong>${p2.sigle}</strong>
+     s'opposent frontalement sur <strong>${opp}</strong>,
+     présentent des nuances sur <strong>${nua}</strong>
+     et convergent sur <strong>${con}</strong>.`;
+
+  wrapper.classList.add('visible');
+  animateCounters(opp, nua, con);
+  wrapper.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function animateCounters(opp, nua, con) {
+  animateCounter('cntOpp', opp);
+  animateCounter('cntNua', nua);
+  animateCounter('cntCon', con);
+}
+
+function animateCounter(id, target) {
+  const el = document.getElementById(id);
+  let current = 0;
+  el.textContent = '0';
+  if (target === 0) return;
+  const step = Math.max(1, Math.ceil(target / 20));
+  const interval = setInterval(() => {
+    current = Math.min(current + step, target);
+    el.textContent = current;
+    if (current >= target) clearInterval(interval);
+  }, 50);
+}
+
+/* ── Actions ───────────────────────────────────────────────────── */
+function selectParti(id) {
+  if (state.slot1 === id || state.slot2 === id) return;
+  if (!state.slot1) {
+    state.slot1 = id;
+    state.lastFilled = 1;
+  } else if (!state.slot2) {
+    state.slot2 = id;
+    state.lastFilled = 2;
+  } else {
+    // both filled: replace oldest
+    if (state.lastFilled === 1) {
+      state.slot1 = id;
+      state.lastFilled = 1;
+    } else {
+      state.slot2 = id;
+      state.lastFilled = 2;
+    }
+  }
+  refresh();
+}
+
+function removeParti(num) {
+  state['slot' + num] = null;
+  refresh();
+}
+
+function handleSlotClick(num) {
+  // clicking empty slot does nothing extra — selection happens via grid
+}
+
+function resetComparison() {
+  state.slot1 = null;
+  state.slot2 = null;
+  state.lastFilled = 0;
+  refresh();
+  document.getElementById('partisGrid').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function refresh() {
+  renderSlot(1);
+  renderSlot(2);
+  renderGrid();
+  updateHint();
+  updateThermometre();
+  if (state.slot1 && state.slot2) updateComparison();
+  else document.getElementById('comparisonWrapper').classList.remove('visible');
+}
+
+function toggleAccordion(row) {
+  // only active on mobile (accordion-arrow is shown)
+  const arrow = row.querySelector('.accordion-arrow');
+  if (getComputedStyle(arrow).display === 'none') return;
+  row.classList.toggle('open');
+}
+
+/* ── Init ──────────────────────────────────────────────────────── */
+renderGrid();
+updateHint();
+</script>
+<script src="js/cookie-consent.js"></script>
+</body>
+</html>

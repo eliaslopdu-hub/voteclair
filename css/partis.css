@@ -77,17 +77,48 @@
 .parti-card-chef strong { color: var(--text); }
 
 .parti-programme {
-  flex: 1;
   margin-bottom: 20px;
 }
 
-.parti-programme-title {
+.parti-programme summary.parti-programme-title {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 10px 0;
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--text-muted);
-  margin-bottom: 10px;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  user-select: none;
+  transition: color 0.15s;
+}
+
+.parti-programme summary.parti-programme-title::-webkit-details-marker { display: none; }
+
+.parti-programme summary.parti-programme-title::after {
+  content: '+';
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.parti-programme[open] summary.parti-programme-title::after {
+  content: '−';
+}
+
+.parti-programme summary.parti-programme-title:hover {
+  color: var(--text);
+}
+
+.parti-programme ul {
+  margin-top: 4px;
 }
 
 .parti-programme li {
@@ -280,12 +311,24 @@
   text-align: center;
 }
 
+.figure-photo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top center;
+  margin: 0 auto 14px;
+  display: block;
+  border: 3px solid var(--border);
+  background: var(--surface-2);
+}
+
 .figure-avatar {
-  width: 56px;
-  height: 56px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   background: var(--surface-2);
-  margin: 0 auto 12px;
+  margin: 0 auto 14px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -333,3 +376,20 @@
   .parti-hero-inner { flex-direction: column; align-items: flex-start; }
   .positions-table th, .positions-table td { padding: 10px 12px; }
 }
+
+/* ── Crédit photo (attribution des licences Wikimedia Commons) ── */
+.figure-credit {
+  margin-top: 10px;
+  font-size: 0.68rem;
+  line-height: 1.45;
+  color: var(--text-muted);
+  opacity: 0.85;
+  word-break: break-word;
+}
+
+.figure-credit a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.figure-credit a:hover { color: var(--accent); }

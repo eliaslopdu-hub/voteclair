@@ -1,0 +1,21 @@
+# Système
+.DS_Store
+**/.DS_Store
+
+# Outillage
+tools/__pycache__/
+**/__pycache__/
+*.pyc
+
+# Veille : cache de récupération (les preuves, elles, sont versionnées)
+data/veille/cache/
+
+# Réglages locaux Claude Code
+.claude/settings.local.json
+
+# Artefacts d'une execution de veille : la liste des faits perimes et le
+# rapport de l'etape 1. Ce ne sont pas du contenu du site, et l'etape du
+# garde-fou fait `git add -A` — laisses a la racine, ils se feraient
+# refuser comme « hors perimetre ». Un seul dossier ignore, pour que tout
+# ce que l'agent ecrirait ailleurs reste attrape par le garde-fou.
+.veille/

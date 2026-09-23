@@ -1,0 +1,397 @@
+{
+  "rapide_count": 15,
+  "ordre": [
+    "q2",
+    "q5",
+    "q6",
+    "q7",
+    "q8",
+    "q9",
+    "q10",
+    "q11",
+    "q12",
+    "q16",
+    "q22",
+    "q24",
+    "q25",
+    "q26",
+    "q28",
+    "q1",
+    "q3",
+    "q4",
+    "q13",
+    "q14",
+    "q15",
+    "q17",
+    "q18",
+    "q19",
+    "q20",
+    "q21",
+    "q23",
+    "q27",
+    "q29",
+    "q30",
+    "q31",
+    "q32",
+    "q33",
+    "q34",
+    "q35",
+    "q36",
+    "q37",
+    "q38",
+    "q39",
+    "q40"
+  ],
+  "questions": {
+    "q2": {
+      "type": "single",
+      "theme": "profil",
+      "question": "Quelle est votre situation professionnelle ?",
+      "options": [
+        "CDI / Fonctionnaire",
+        "CDD / Intérim",
+        "Au chômage",
+        "Indépendant / Entrepreneur",
+        "Retraité",
+        "Étudiant"
+      ],
+      "profileWeight": 0.5
+    },
+    "q5": {
+      "type": "scale",
+      "theme": "securite",
+      "question": "La sécurité et l'ordre public sont pour moi une priorité électorale.",
+      "scaleMin": "Pas du tout",
+      "scaleMax": "Absolument"
+    },
+    "q6": {
+      "type": "scale",
+      "theme": "environnement",
+      "question": "La protection de l'environnement doit être la priorité n°1 des politiques publiques.",
+      "scaleMin": "Pas du tout",
+      "scaleMax": "Absolument"
+    },
+    "q7": {
+      "type": "scale",
+      "theme": "economie",
+      "question": "Les grandes fortunes et grandes entreprises paient trop peu d'impôts en France.",
+      "scaleMin": "Pas d'accord",
+      "scaleMax": "Tout à fait d'accord"
+    },
+    "q8": {
+      "type": "scale",
+      "theme": "immigration",
+      "question": "L'immigration en France est trop importante et doit être davantage contrôlée.",
+      "scaleMin": "Pas d'accord",
+      "scaleMax": "Tout à fait d'accord"
+    },
+    "q9": {
+      "type": "scale",
+      "theme": "social",
+      "question": "La réforme des retraites à 64 ans était une décision économiquement nécessaire.",
+      "scaleMin": "Tout à fait faux",
+      "scaleMax": "Tout à fait vrai"
+    },
+    "q10": {
+      "type": "scale",
+      "theme": "environnement",
+      "question": "Le développement du nucléaire civil est indispensable pour l'avenir énergétique de la France.",
+      "scaleMin": "Pas d'accord",
+      "scaleMax": "Tout à fait d'accord"
+    },
+    "q11": {
+      "type": "scale",
+      "theme": "social",
+      "question": "Le SMIC devrait être porté à 1 600 € net immédiatement.",
+      "scaleMin": "Pas d'accord",
+      "scaleMax": "Tout à fait d'accord"
+    },
+    "q12": {
+      "type": "scale",
+      "theme": "europe",
+      "question": "L'Union Européenne protège bien les intérêts économiques et politiques de la France.",
+      "scaleMin": "Pas du tout",
+      "scaleMax": "Tout à fait"
+    },
+    "q16": {
+      "type": "scale",
+      "theme": "economie",
+      "question": "La France devrait mener une politique industrielle protectionniste pour relocaliser les emplois.",
+      "scaleMin": "Pas d'accord",
+      "scaleMax": "Tout à fait d'accord"
+    },
+    "q22": {
+      "type": "scale",
+      "theme": "economie",
+      "question": "La dette publique est un problème grave qui doit être réduit rapidement, quitte à couper des dépenses.",
+      "scaleMin": "Pas d'accord",
+      "scaleMax": "Tout à fait d'accord"
+    },
+    "q24": {
+      "type": "scale",
+      "theme": "institutions",
+      "question": "Les citoyens devraient pouvoir déclencher des référendums d'initiative populaire.",
+      "scaleMin": "Pas d'accord",
+      "scaleMax": "Tout à fait d'accord"
+    },
+    "q25": {
+      "type": "dilemma",
+      "theme": "environnement",
+      "question": "Si vous deviez choisir entre ces deux priorités...",
+      "optionA": {
+        "label": "Priorité à l'emploi industriel",
+        "description": "Soutenir la relance industrielle et réduire le chômage, même si cela ralentit la transition écologique."
+      },
+      "optionB": {
+        "label": "Priorité à la transition climatique",
+        "description": "Accélérer la décarbonation de l'économie, même si cela coûte des emplois industriels à court terme."
+      }
+    },
+    "q26": {
+      "type": "dilemma",
+      "theme": "economie",
+      "question": "Sur la politique fiscale, quelle approche vous correspond le mieux ?",
+      "optionA": {
+        "label": "Baisser les impôts",
+        "description": "Réduire la fiscalité pour libérer entreprises et ménages, et stimuler la croissance par l'initiative privée."
+      },
+      "optionB": {
+        "label": "Redistribuer la richesse",
+        "description": "Augmenter l'imposition des grandes fortunes pour financer les services publics et réduire les inégalités."
+      }
+    },
+    "q28": {
+      "type": "dilemma",
+      "theme": "europe",
+      "question": "Quelle vision de la place de la France en Europe vous correspond ?",
+      "optionA": {
+        "label": "Plus d'intégration européenne",
+        "description": "Transférer davantage de compétences à l'UE pour peser plus fort face aux grandes puissances mondiales."
+      },
+      "optionB": {
+        "label": "Plus de souveraineté nationale",
+        "description": "Récupérer des compétences de l'UE pour que la France décide seule de ses politiques économiques et sociales."
+      }
+    },
+    "q1": {
+      "type": "single",
+      "theme": "profil",
+      "question": "Quel est votre âge ?",
+      "options": [
+        "18-25 ans",
+        "26-40 ans",
+        "41-60 ans",
+        "60 ans et plus"
+      ],
+      "profileWeight": 0.5
+    },
+    "q3": {
+      "type": "single",
+      "theme": "profil",
+      "question": "Quel est votre revenu mensuel net ?",
+      "options": [
+        "Moins de 1 200 €",
+        "1 200 à 2 500 €",
+        "2 500 à 4 000 €",
+        "Plus de 4 000 €"
+      ],
+      "profileWeight": 0.5
+    },
+    "q4": {
+      "type": "single",
+      "theme": "profil",
+      "question": "Où habitez-vous ?",
+      "options": [
+        "Grande ville (100 000 hab. et +)",
+        "Ville moyenne",
+        "Zone rurale ou périurbaine",
+        "Outre-mer"
+      ],
+      "profileWeight": 0.5
+    },
+    "q13": {
+      "type": "scale",
+      "theme": "institutions",
+      "question": "Les législatives devraient utiliser un scrutin proportionnel pour mieux représenter les opinions.",
+      "scaleMin": "Pas du tout",
+      "scaleMax": "Tout à fait"
+    },
+    "q14": {
+      "type": "scale",
+      "theme": "social",
+      "question": "L'hôpital public est en crise et nécessite un investissement massif et urgent de l'État.",
+      "scaleMin": "Pas d'accord",
+      "scaleMax": "Tout à fait d'accord"
+    },
+    "q15": {
+      "type": "scale",
+      "theme": "social",
+      "question": "Les loyers dans les grandes villes devraient être encadrés et plafonnés par l'État.",
+      "scaleMin": "Pas d'accord",
+      "scaleMax": "Tout à fait d'accord"
+    },
+    "q17": {
+      "type": "scale",
+      "theme": "europe",
+      "question": "La France devrait s'engager davantage pour soutenir l'Ukraine face à la Russie.",
+      "scaleMin": "Pas d'accord",
+      "scaleMax": "Tout à fait d'accord"
+    },
+    "q18": {
+      "type": "scale",
+      "theme": "immigration",
+      "question": "La France devrait accueillir davantage de réfugiés et régulariser les travailleurs sans-papiers.",
+      "scaleMin": "Pas d'accord",
+      "scaleMax": "Tout à fait d'accord"
+    },
+    "q19": {
+      "type": "scale",
+      "theme": "environnement",
+      "question": "L'agriculture française doit évoluer vers le bio et l'agroécologie, même si les prix augmentent.",
+      "scaleMin": "Pas d'accord",
+      "scaleMax": "Tout à fait d'accord"
+    },
+    "q20": {
+      "type": "scale",
+      "theme": "economie",
+      "question": "Les services publics (éducation, énergie, transports) ne doivent pas être privatisés.",
+      "scaleMin": "Pas d'accord",
+      "scaleMax": "Tout à fait d'accord"
+    },
+    "q21": {
+      "type": "scale",
+      "theme": "social",
+      "question": "Des lois contraignantes avec sanctions sont nécessaires pour imposer l'égalité salariale femmes-hommes.",
+      "scaleMin": "Pas d'accord",
+      "scaleMax": "Tout à fait d'accord"
+    },
+    "q23": {
+      "type": "scale",
+      "theme": "institutions",
+      "question": "Je fais confiance aux grands médias pour m'informer de façon indépendante et objective.",
+      "scaleMin": "Pas du tout",
+      "scaleMax": "Tout à fait"
+    },
+    "q27": {
+      "type": "dilemma",
+      "theme": "securite",
+      "question": "Pour réduire la délinquance, quelle stratégie privilégiez-vous ?",
+      "optionA": {
+        "label": "Renforcer la surveillance et les peines",
+        "description": "Développer la vidéosurveillance, alourdir les sanctions et augmenter les effectifs de police."
+      },
+      "optionB": {
+        "label": "Investir dans la prévention sociale",
+        "description": "Financer l'éducation, les services sociaux et la médiation pour s'attaquer aux causes profondes."
+      }
+    },
+    "q29": {
+      "type": "dilemma",
+      "theme": "social",
+      "question": "Quelle vision du marché du travail vous correspond le mieux ?",
+      "optionA": {
+        "label": "Flexibiliser pour créer de l'emploi",
+        "description": "Faciliter embauches et licenciements pour stimuler l'emploi, quitte à accepter plus de précarité."
+      },
+      "optionB": {
+        "label": "Protéger les salariés",
+        "description": "Renforcer les droits des travailleurs et encadrer les licenciements, même si cela peut freiner les embauches."
+      }
+    },
+    "q30": {
+      "type": "dilemma",
+      "theme": "immigration",
+      "question": "Quelle politique migratoire vous semble la plus juste ?",
+      "optionA": {
+        "label": "Quotas et priorité nationale",
+        "description": "Fixer des quotas annuels d'immigration et donner la priorité aux Français dans l'accès aux droits sociaux."
+      },
+      "optionB": {
+        "label": "Intégration et régularisation",
+        "description": "Régulariser les sans-papiers qui travaillent et ouvrir des voies légales d'immigration et d'intégration."
+      }
+    },
+    "q31": {
+      "type": "dilemma",
+      "theme": "institutions",
+      "question": "Quel modèle institutionnel vous convient le mieux ?",
+      "optionA": {
+        "label": "Exécutif présidentiel fort",
+        "description": "Conserver un président avec des pouvoirs étendus, capable de décisions rapides sans blocage parlementaire."
+      },
+      "optionB": {
+        "label": "Démocratie délibérative",
+        "description": "Rééquilibrer les pouvoirs vers le Parlement et les citoyens, avec référendums et assemblées constituantes."
+      }
+    },
+    "q32": {
+      "type": "scale",
+      "theme": "economie",
+      "question": "L'impôt sur les sociétés en France est trop élevé et nuit à la compétitivité des entreprises.",
+      "scaleMin": "Pas d'accord",
+      "scaleMax": "Tout à fait d'accord"
+    },
+    "q33": {
+      "type": "scale",
+      "theme": "immigration",
+      "question": "La France devrait quitter l'espace Schengen pour contrôler ses propres frontières.",
+      "scaleMin": "Pas d'accord",
+      "scaleMax": "Tout à fait d'accord"
+    },
+    "q34": {
+      "type": "scale",
+      "theme": "environnement",
+      "question": "La France devrait viser 100% d'énergies renouvelables d'ici 2050, en sortant du nucléaire.",
+      "scaleMin": "Pas d'accord",
+      "scaleMax": "Tout à fait d'accord"
+    },
+    "q35": {
+      "type": "scale",
+      "theme": "social",
+      "question": "Les aides sociales (RSA, APL…) devraient être conditionnées à des démarches d'insertion ou de bénévolat.",
+      "scaleMin": "Pas d'accord",
+      "scaleMax": "Tout à fait d'accord"
+    },
+    "q36": {
+      "type": "scale",
+      "theme": "europe",
+      "question": "L'élargissement de l'UE aux pays des Balkans et à l'Ukraine est une bonne chose pour l'Europe.",
+      "scaleMin": "Pas d'accord",
+      "scaleMax": "Tout à fait d'accord"
+    },
+    "q37": {
+      "type": "scale",
+      "theme": "securite",
+      "question": "Les peines alternatives à la prison (travaux d'intérêt général, bracelets) sont aussi efficaces que l'emprisonnement.",
+      "scaleMin": "Pas d'accord",
+      "scaleMax": "Tout à fait d'accord"
+    },
+    "q38": {
+      "type": "dilemma",
+      "theme": "institutions",
+      "question": "Pour moderniser nos institutions politiques...",
+      "optionA": {
+        "label": "Réformer la Ve République",
+        "description": "Améliorer la constitution actuelle pour mieux équilibrer les pouvoirs sans tout refonder."
+      },
+      "optionB": {
+        "label": "Convoquer une VIe République",
+        "description": "Réunir une assemblée constituante pour rédiger une nouvelle constitution plus démocratique."
+      }
+    },
+    "q39": {
+      "type": "scale",
+      "theme": "economie",
+      "question": "La semaine de travail de 4 jours devrait être progressivement introduite en France.",
+      "scaleMin": "Pas d'accord",
+      "scaleMax": "Tout à fait d'accord"
+    },
+    "q40": {
+      "type": "scale",
+      "theme": "social",
+      "question": "L'État devrait augmenter significativement le budget de l'éducation publique, même si cela creuse le déficit.",
+      "scaleMin": "Pas d'accord",
+      "scaleMax": "Tout à fait d'accord"
+    }
+  }
+}

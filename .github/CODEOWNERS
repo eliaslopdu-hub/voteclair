@@ -1,0 +1,33 @@
+# Garde-fou de plateforme, complement de tools/garde_fou.py.
+#
+# garde_fou.py est du code : il peut etre mal ecrit, ou contourne par une
+# modification du code lui-meme. CODEOWNERS, lui, est applique par GitHub.
+# Les deux disent la meme chose ; c'est voulu.
+#
+# Pour que ce fichier ait un effet, il faut activer sur la branche main :
+#   Settings > Branches > Add rule > Require a pull request before merging
+#                                  > Require review from Code Owners
+# Sans cette regle, CODEOWNERS ne fait que suggerer des relecteurs.
+
+# Par defaut : tout le depot. Le noyau du site n'est jamais modifie sans vous.
+*                               @eliaslopdu-hub
+
+# Le calcul de correspondance et la methodologie : le coeur de credibilite
+# de l'outil. Une automatisation qui y touche change le resultat du quiz
+# pour des reponses deja donnees.
+/js/                            @eliaslopdu-hub
+/methodologie.html              @eliaslopdu-hub
+/quiz.html                      @eliaslopdu-hub
+
+# Jugements politiques — marques auto=false dans data/politique-veille.json.
+/data/poids/                    @eliaslopdu-hub
+/data/distances.json            @eliaslopdu-hub
+/data/questions.json            @eliaslopdu-hub
+/data/questions-ordre-v1.json   @eliaslopdu-hub
+/data/themes.json               @eliaslopdu-hub
+/data/positions/                @eliaslopdu-hub
+
+# La politique elle-meme : qui peut changer les regles du jeu.
+/data/politique-veille.json     @eliaslopdu-hub
+/.github/                       @eliaslopdu-hub
+/tools/garde_fou.py             @eliaslopdu-hub

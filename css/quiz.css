@@ -477,10 +477,402 @@
   text-align: center;
 }
 
+/* ── Analyse post-résultats ── */
+.quiz-analyse {
+  display: none;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 60px 24px 80px;
+  width: 100%;
+}
+
+.quiz-analyse.active { display: block; }
+
+.analyse-intro {
+  margin-bottom: 48px;
+}
+
+.analyse-intro h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.9rem;
+  margin-bottom: 14px;
+  color: var(--text);
+}
+
+.analyse-intro p {
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.analyse-section {
+  margin-bottom: 48px;
+}
+
+.analyse-section-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 24px;
+}
+
+.analyse-section-intro {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.analyse-theme-block {
+  border-left: 3px solid var(--accent-bar, var(--accent));
+  padding-left: 20px;
+  margin-bottom: 32px;
+}
+
+.analyse-theme-name {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent-bar, var(--accent));
+  margin-bottom: 16px;
+}
+
+.analyse-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  margin-bottom: 12px;
+}
+
+.analyse-question {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.analyse-reponse {
+  font-size: 0.85rem;
+  color: var(--accent);
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.analyse-explication {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+.engagement-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.engagement-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 18px;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+.engagement-num {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.72rem;
+  font-weight: 700;
+  margin-top: 1px;
+}
+
+.analyse-disclaimer {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 18px 22px;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+.analyse-disclaimer strong { color: var(--text); }
+
+.analyse-cta {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
 @media (max-width: 768px) {
   .question-card { padding: 24px 20px; }
   .quiz-nav { gap: 12px; }
   .dilemma-options { grid-template-columns: 1fr; }
   .theme-weight-btns { flex-direction: column; }
   .tw-btn { text-align: left; }
+  .analyse-cta { flex-direction: column; }
+}
+
+/* ════════════════════════════════════════════════════════════════
+   AJOUTS — validation du moteur, désaccords, périmètre, reprise
+   Thème clair : fonds sur --surface / --surface-2, jamais d'overlay blanc.
+   ════════════════════════════════════════════════════════════════ */
+
+/* ── État « question non répondue » (échelle) ──
+   Une question laissée intacte n'est pas comptée comme une réponse neutre :
+   on le signale au lieu de pré-remplir en silence. */
+.scale-desc--empty {
+  color: var(--text-muted);
+}
+
+.scale-desc--warn {
+  color: #B7791F;
+  font-weight: 600;
+  font-style: normal;
+  animation: scale-desc-pulse 0.4s ease 2;
+}
+
+@keyframes scale-desc-pulse {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.06); }
+}
+
+/* ── Résultat sans correspondance nette ── */
+.qr-top-parti--aucun {
+  border: 2px solid var(--border-hover);
+  border-left: 5px solid var(--text-muted);
+  background: var(--surface-2);
+}
+
+.qr-top-parti--aucun .qr-top-parti-name {
+  color: var(--text);
+  font-size: 1.15rem;
+  line-height: 1.35;
+}
+
+.qr-top-parti--aucun .qr-top-parti-note {
+  margin-top: 10px;
+}
+
+/* ── Désaccords avec le parti de tête ── */
+.desaccords-block {
+  margin: 32px 0;
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.desaccords-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.desaccords-intro {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin-bottom: 20px;
+}
+
+.desaccords-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 16px;
+}
+
+.desaccord-item {
+  padding: 16px;
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+}
+
+.desaccord-question {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.desaccord-compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.desaccord-vous,
+.desaccord-parti {
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--text-muted);
+  background: var(--surface);
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: var(--text);
+}
+
+.desaccord-tag {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+@media (max-width: 560px) {
+  .desaccord-compare { grid-template-columns: 1fr; }
+}
+
+/* ── Rappel du périmètre couvert ── */
+.qr-perimetre {
+  margin: 28px 0;
+  padding: 20px 24px;
+  border: 1px solid rgba(183, 121, 31, 0.28);
+  border-left: 4px solid #B7791F;
+  background: rgba(232, 197, 71, 0.10);
+  border-radius: var(--radius-sm);
+}
+
+.qr-perimetre-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+.qr-perimetre p {
+  font-size: 0.88rem;
+  line-height: 1.65;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.qr-perimetre-links {
+  margin-bottom: 0 !important;
+  font-size: 0.82rem !important;
+}
+
+.qr-perimetre-links a {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+/* ── Bannière de reprise d'un quiz interrompu ── */
+.quiz-reprise {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 28px;
+  padding: 18px 22px;
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  background: rgba(108, 99, 255, 0.07);
+}
+
+.quiz-reprise-texte {
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+.quiz-reprise-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.quiz-reprise-actions .btn {
+  font-size: 0.85rem;
+  padding: 9px 18px;
+}
+
+@media (max-width: 560px) {
+  .quiz-reprise { flex-direction: column; align-items: stretch; }
+  .quiz-reprise-actions .btn { flex: 1; text-align: center; }
+}
+
+/* ── Partage du résultat (lien auto-porteur, aucune donnée serveur) ── */
+.qr-partage {
+  margin: 28px 0;
+  padding: 22px 24px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.qr-partage-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.qr-partage-desc {
+  font-size: 0.86rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.qr-partage-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.qr-partage-input {
+  flex: 1 1 260px;
+  min-width: 0;
+  padding: 11px 14px;
+  font-size: 0.82rem;
+  font-family: inherit;
+  color: var(--text-muted);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+
+.qr-partage-input:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.qr-partage-row .btn {
+  flex: 0 0 auto;
+  font-size: 0.85rem;
+  padding: 11px 20px;
+}
+
+@media (max-width: 560px) {
+  .qr-partage-row .btn { flex: 1 1 100%; }
 }

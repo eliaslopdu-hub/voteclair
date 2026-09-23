@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#6C63FF" />
+  <title>Calendrier électoral 2025–2027 – VoteClair</title>
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.voteclair.fr/calendrier.html" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%236C63FF'/><path d='M8 13h16v11a2 2 0 01-2 2H10a2 2 0 01-2-2V13zm4-5h8v5H12V8zm3 8v5h2v-5h-2z' fill='white'/></svg>" />
+  <meta name="description" content="Les échéances électorales françaises dont la date est établie : sénatoriales 2026, présidentielle 2027. Compte à rebours et détail de chaque scrutin." />
+  <link rel="stylesheet" href="css/fonts.css" />
+  <link rel="stylesheet" href="css/main.css" />
+  <style>
+
+    /* ── PAGE HERO ── */
+    .cal-hero {
+      padding: calc(var(--nav-height) + 64px) 0 56px;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+    .cal-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 50% 60%, rgba(108,99,255,0.07) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .cal-hero-inner {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    .cal-hero h1 { font-size: clamp(2rem,5vw,3.2rem); margin-bottom: 16px; }
+    .cal-hero p  { font-size: 1.05rem; color: var(--text-muted); margin: 0 auto 32px; line-height: 1.75; }
+    .disclaimer-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(237,137,54,0.1); border: 1px solid rgba(237,137,54,0.3);
+      border-radius: 20px; padding: 6px 14px;
+      font-size: 0.78rem; font-weight: 600; color: #C05621;
+    }
+
+    /* ── COUNTDOWN ── */
+    .countdown-wrap {
+      background: #1A1A2E;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding: 48px 0;
+    }
+    .countdown-label {
+      text-align: center; font-size: 0.8rem; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 8px;
+    }
+    .countdown-title {
+      text-align: center; font-family: 'Playfair Display', serif;
+      font-size: clamp(1.3rem, 3vw, 2rem); color: #fff;
+      margin-bottom: 32px;
+    }
+    .countdown-title span { color: var(--accent); }
+    .countdown-grid {
+      display: flex; justify-content: center; gap: 24px; flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+    .cd-block {
+      text-align: center; min-width: 88px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius); padding: 20px 16px;
+    }
+    .cd-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem; font-weight: 900; color: #fff; line-height: 1;
+      margin-bottom: 6px; min-width: 2ch; display: inline-block;
+    }
+    .cd-unit { font-size: 0.75rem; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.08em; }
+    .countdown-cta { text-align: center; }
+    .countdown-cta a {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--accent); color: #fff;
+      padding: 10px 22px; border-radius: var(--radius-sm);
+      font-size: 0.88rem; font-weight: 600; transition: background 0.2s;
+    }
+    .countdown-cta a:hover { background: #5a52e0; }
+    .countdown-sub {
+      text-align: center; font-size: 0.8rem; color: rgba(255,255,255,0.35);
+      margin-top: 16px;
+    }
+
+    /* ── TOOLBAR ── */
+    .cal-toolbar {
+      position: sticky; top: var(--nav-height); z-index: 100;
+      background: rgba(247,246,242,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 12px 0;
+    }
+    .cal-toolbar-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 12px; flex-wrap: wrap;
+    }
+    .filter-group { display: flex; gap: 6px; flex-wrap: wrap; }
+    .filter-btn {
+      padding: 7px 16px; border-radius: 20px;
+      border: 1px solid var(--border); background: var(--surface);
+      font-family: 'DM Sans', sans-serif; font-size: 0.82rem; font-weight: 500;
+      color: var(--text-muted); cursor: pointer; transition: all 0.2s;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .filter-btn:hover { border-color: var(--border-hover); color: var(--text); }
+    .filter-btn.active {
+      background: var(--accent); border-color: var(--accent);
+      color: #fff; font-weight: 600;
+    }
+    .view-group { display: flex; gap: 4px; }
+    .view-btn {
+      width: 36px; height: 36px; border-radius: var(--radius-sm);
+      border: 1px solid var(--border); background: var(--surface);
+      cursor: pointer; transition: all 0.2s;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+    }
+    .view-btn:hover { border-color: var(--border-hover); }
+    .view-btn.active { background: var(--accent); border-color: var(--accent); }
+    .view-btn.active svg { color: #fff; }
+
+    /* ── WALL VIEW ── */
+    #wall-view {
+      padding: 48px 0 80px;
+      display: none;
+    }
+    #wall-view.show { display: block; }
+
+
+    .wall-scene {
+      perspective: 1400px;
+      user-select: none;
+    }
+    .wall-grid {
+      transform: rotateX(8deg);
+      transform-origin: center top;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 20px;
+      padding: 20px 0 60px;
+    }
+
+    /* ── WALL CARD ── */
+    .wall-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      cursor: pointer;
+      transition: box-shadow 0.2s, border-color 0.2s;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      position: relative;
+      overflow: hidden;
+    }
+    .wall-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--card-color, var(--accent));
+    }
+    .wall-card:hover {
+      border-color: var(--card-color, var(--accent));
+      box-shadow: 0 12px 36px rgba(0,0,0,0.14);
+    }
+    .wall-card.passe {
+      opacity: 0.55;
+    }
+    .wall-card-date {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--card-color, var(--accent));
+      margin-bottom: 10px;
+    }
+    .wall-card-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem; font-weight: 700; color: var(--text);
+      margin-bottom: 4px; line-height: 1.3;
+    }
+    .wall-card-sub {
+      font-size: 0.8rem; color: var(--text-muted); margin-bottom: 12px;
+    }
+    .wall-card-badges { display: flex; gap: 6px; flex-wrap: wrap; }
+    .badge-type {
+      display: inline-flex; align-items: center; gap: 4px;
+      padding: 3px 10px; border-radius: 20px;
+      font-size: 0.72rem; font-weight: 600;
+    }
+    .badge-estime {
+      background: rgba(237,137,54,0.1); color: #C05621;
+      border: 1px solid rgba(237,137,54,0.25);
+      font-size: 0.68rem; padding: 2px 8px; border-radius: 20px;
+    }
+    .badge-confirme {
+      background: rgba(56,161,105,0.1); color: #276749;
+      border: 1px solid rgba(56,161,105,0.25);
+      font-size: 0.68rem; padding: 2px 8px; border-radius: 20px;
+    }
+    .badge-passe {
+      background: rgba(0,0,0,0.06); color: var(--text-muted);
+      border: 1px solid var(--border);
+      font-size: 0.68rem; padding: 2px 8px; border-radius: 20px;
+    }
+    .wall-card-days {
+      margin-top: 14px;
+      font-size: 0.8rem; color: var(--text-muted);
+      font-weight: 500;
+    }
+    .wall-card-days strong { color: var(--card-color, var(--accent)); font-size: 1.1rem; }
+
+    /* ── LIST VIEW ── */
+    #list-view {
+      padding: 48px 0 80px;
+      display: none;
+    }
+    #list-view.show { display: block; }
+
+    .year-group { margin-bottom: 64px; }
+    .year-marker {
+      display: flex; align-items: center; gap: 16px;
+      margin-bottom: 32px;
+    }
+    .year-marker-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem; font-weight: 900;
+      color: var(--accent); opacity: 0.15; line-height: 1;
+    }
+    .year-marker-line { flex: 1; height: 1px; background: var(--border); }
+
+    .list-items { display: grid; gap: 14px; }
+
+    .list-card {
+      display: grid;
+      grid-template-columns: 80px 1fr auto;
+      gap: 20px;
+      align-items: center;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--card-color, var(--accent));
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      cursor: pointer;
+      transition: all 0.2s;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .list-card:hover {
+      border-color: var(--card-color, var(--accent));
+      box-shadow: 0 6px 24px rgba(0,0,0,0.1);
+      transform: translateX(4px);
+    }
+    .list-card.passe { opacity: 0.5; cursor: default; }
+    .list-card.passe:hover { transform: none; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+
+    .list-date-block { text-align: center; }
+    .list-date-day {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem; font-weight: 900;
+      color: var(--card-color, var(--accent)); line-height: 1;
+    }
+    .list-date-month {
+      font-size: 0.72rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.06em;
+      color: var(--text-muted);
+    }
+    .list-date-year {
+      font-size: 0.68rem; color: var(--text-muted);
+    }
+
+    .list-body {}
+    .list-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem; font-weight: 700; color: var(--text);
+      margin-bottom: 4px;
+    }
+    .list-sub { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 8px; }
+    .list-badges { display: flex; gap: 6px; flex-wrap: wrap; }
+
+    .list-arrow {
+      color: var(--text-muted); font-size: 1.2rem;
+      transition: transform 0.2s, color 0.2s;
+    }
+    .list-card:hover .list-arrow {
+      transform: translateX(4px);
+      color: var(--card-color, var(--accent));
+    }
+    .list-card.passe .list-arrow { display: none; }
+
+    /* ── DETAIL DRAWER ── */
+    .drawer-overlay {
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.4);
+      z-index: 1100;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    .drawer-overlay.open { opacity: 1; pointer-events: all; }
+
+    .drawer {
+      position: fixed; top: 0; right: 0; bottom: 0;
+      width: min(480px, 100vw);
+      background: var(--surface);
+      z-index: 1101;
+      transform: translateX(100%);
+      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow-y: auto;
+      display: flex; flex-direction: column;
+    }
+    .drawer.open { transform: translateX(0); }
+
+    .drawer-header {
+      position: sticky; top: 0;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 24px;
+      display: flex; align-items: center; justify-content: space-between;
+      z-index: 10;
+    }
+    .drawer-close {
+      width: 36px; height: 36px; border-radius: 50%;
+      border: 1px solid var(--border); background: none;
+      cursor: pointer; font-size: 1.2rem; color: var(--text-muted);
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.2s;
+    }
+    .drawer-close:hover { background: var(--surface-2); color: var(--text); }
+
+    .drawer-body { padding: 28px 24px; flex: 1; }
+
+    .drawer-color-bar {
+      height: 4px; border-radius: 2px;
+      margin-bottom: 20px;
+    }
+    .drawer-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem; font-weight: 700;
+      color: var(--text); margin-bottom: 4px;
+    }
+    .drawer-sub { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 16px; }
+    .drawer-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
+
+    .drawer-date-box {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 16px 20px;
+      margin-bottom: 24px;
+      display: flex; align-items: center; gap: 16px;
+    }
+    .drawer-date-big {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem; font-weight: 900;
+      line-height: 1;
+    }
+    .drawer-date-right {}
+    .drawer-date-monthyear {
+      font-size: 1rem; font-weight: 600; color: var(--text);
+    }
+    .drawer-date-countdown {
+      font-size: 0.82rem; color: var(--text-muted); margin-top: 2px;
+    }
+
+    .drawer-section { margin-bottom: 24px; }
+    .drawer-section-label {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+    .drawer-section p {
+      font-size: 0.92rem; color: var(--text); line-height: 1.65;
+    }
+
+    .drawer-info-row {
+      display: flex; gap: 12px; align-items: flex-start;
+      padding: 10px 0; border-bottom: 1px solid var(--border);
+    }
+    .drawer-info-row:last-child { border-bottom: none; }
+    .drawer-info-icon { font-size: 1rem; width: 20px; text-align: center; flex-shrink: 0; }
+    .drawer-info-text { font-size: 0.88rem; color: var(--text); }
+    .drawer-info-text strong { display: block; font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted);
+      margin-bottom: 2px; }
+
+    .drawer-inscription-alert {
+      background: rgba(252,129,129,0.08);
+      border: 1px solid rgba(252,129,129,0.3);
+      border-radius: var(--radius); padding: 14px 18px;
+      margin-bottom: 20px;
+      font-size: 0.88rem; color: #9B2C2C; line-height: 1.55;
+    }
+    .drawer-inscription-alert strong { display: block; margin-bottom: 4px; }
+
+    .drawer-footer {
+      padding: 20px 24px;
+      border-top: 1px solid var(--border);
+      display: flex; flex-direction: column; gap: 10px;
+    }
+    .drawer-footer a {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; border-radius: var(--radius-sm);
+      font-size: 0.88rem; font-weight: 600; transition: all 0.2s;
+      text-align: center;
+    }
+    .drawer-btn-primary {
+      background: var(--accent); color: #fff;
+    }
+    .drawer-btn-primary:hover { background: #5a52e0; }
+    .drawer-btn-outline {
+      border: 1px solid var(--border); color: var(--text-muted);
+    }
+    .drawer-btn-outline:hover { border-color: var(--border-hover); color: var(--text); }
+
+    /* ── EMPTY STATE ── */
+    .empty-state {
+      text-align: center; padding: 80px 24px;
+      color: var(--text-muted); display: none;
+    }
+    .empty-state.show { display: block; }
+    .empty-state p { font-size: 1rem; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .list-card {
+        grid-template-columns: 60px 1fr auto;
+        gap: 14px; padding: 16px;
+      }
+      .list-date-day { font-size: 1.5rem; }
+      .cal-toolbar-inner { flex-direction: column; align-items: flex-start; }
+      .wall-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; }
+    }
+    @media (max-width: 480px) {
+      .list-card { grid-template-columns: 50px 1fr; }
+      .list-arrow { display: none; }
+      .countdown-grid { gap: 12px; }
+      .cd-block { min-width: 70px; padding: 14px 10px; }
+      .cd-num { font-size: 2rem; }
+    }
+  </style>
+  <meta property="og:image" content="https://www.voteclair.fr/assets/og-default.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+</head>
+<body>
+<a class="skip-link" href="#main-content">Aller au contenu principal</a>
+
+<!-- ═══ NAVBAR ═══ -->
+<nav class="navbar" role="navigation" aria-label="Navigation principale">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Vote<span>Clair</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="quiz.html" class="nav-cta">Quiz</a></li>
+      <li><a href="partis.html">Partis</a></li>
+      <li><a href="face-a-face.html">Comparer</a></li>
+      <li class="nav-has-dropdown">
+        <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">En savoir plus <span class="nav-dropdown-arrow">▾</span></button>
+        <ul class="nav-dropdown-menu">
+          <li><a href="institutions.html">Institutions</a></li>
+          <li><a href="histoire.html">Histoire</a></li>
+          <li><a href="pourquoi-voter.html">Pourquoi voter ?</a></li>
+          <li><a href="calendrier.html">Calendrier</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="a-propos.html">À propos</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </li>
+    </ul>
+    <button class="nav-burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<nav class="nav-mobile" aria-label="Menu mobile">
+  <a href="index.html">Accueil</a>
+  <a href="quiz.html" class="nav-mobile-cta">Quiz</a>
+  <a href="partis.html">Partis</a>
+  <a href="face-a-face.html">Comparer</a>
+  <div class="nav-mobile-divider">En savoir plus</div>
+  <a href="institutions.html">Institutions</a>
+  <a href="histoire.html">Histoire</a>
+  <a href="pourquoi-voter.html">Pourquoi voter ?</a>
+  <a href="calendrier.html">Calendrier électoral</a>
+  <a href="blog.html">Blog</a>
+  <a href="a-propos.html">À propos</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="cal-hero" id="main-content">
+  <div class="container">
+    <div class="cal-hero-inner">
+      <span class="section-label">Agenda citoyen</span>
+      <h1>Calendrier électoral<br /><em style="font-style:normal;color:var(--accent)">2025 – 2027</em></h1>
+      <p>Les échéances électorales françaises dont la date est établie : sénatoriales, présidentielle, et les scrutins déjà tenus. Un scrutin dont la date n'est pas fixée n'est pas affiché plutôt qu'annoncé à une date approximative.</p>
+      <div class="disclaimer-badge">
+        Dates 2027 estimées — non encore officialisées par décret
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ COUNTDOWN ═══ -->
+<section class="countdown-wrap">
+  <div class="container">
+    <div class="countdown-label">Prochaine échéance</div>
+    <div class="countdown-title" id="cd-title">
+      Chargement…
+    </div>
+    <div class="countdown-grid">
+      <div class="cd-block"><div class="cd-num" id="cd-j">--</div><div class="cd-unit">Jours</div></div>
+      <div class="cd-block"><div class="cd-num" id="cd-h">--</div><div class="cd-unit">Heures</div></div>
+      <div class="cd-block"><div class="cd-num" id="cd-m">--</div><div class="cd-unit">Minutes</div></div>
+      <div class="cd-block"><div class="cd-num" id="cd-s">--</div><div class="cd-unit">Secondes</div></div>
+    </div>
+    <div class="countdown-cta">
+      <a href="https://www.service-public.fr/particuliers/vosdroits/R12675" target="_blank" rel="noopener">
+        S'inscrire sur les listes électorales →
+      </a>
+    </div>
+    <div class="countdown-sub" id="cd-sub">Dates indicatives — non encore fixées par décret</div>
+  </div>
+</section>
+
+<!-- ═══ TOOLBAR ═══ -->
+<div class="cal-toolbar">
+  <div class="container">
+    <div class="cal-toolbar-inner">
+      <div class="filter-group" id="filter-group">
+        <button class="filter-btn active" data-filter="toutes">Toutes</button>
+        <button class="filter-btn" data-filter="nationale">Nationales</button>
+        <button class="filter-btn" data-filter="locale">Locales</button>
+        <button class="filter-btn" data-filter="butoir">Dates butoirs</button>
+        <button class="filter-btn" data-filter="passe">Passées</button>
+      </div>
+      <div class="view-group">
+        <button class="view-btn" id="btn-list-view" title="Vue liste" onclick="setView('list')">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8">
+            <line x1="4" y1="4" x2="14" y2="4"/><line x1="4" y1="8" x2="14" y2="8"/><line x1="4" y1="12" x2="14" y2="12"/>
+            <circle cx="1.5" cy="4" r="1"/><circle cx="1.5" cy="8" r="1"/><circle cx="1.5" cy="12" r="1"/>
+          </svg>
+        </button>
+        <button class="view-btn active" id="btn-wall-view" title="Vue mur 3D" onclick="setView('wall')">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8">
+            <rect x="1" y="1" width="6" height="6" rx="1"/><rect x="9" y="1" width="6" height="6" rx="1"/>
+            <rect x="1" y="9" width="6" height="6" rx="1"/><rect x="9" y="9" width="6" height="6" rx="1"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ VUE MUR 3D ═══ -->
+<section id="wall-view" class="show">
+  <div class="container">
+    <div class="wall-scene" id="wall-scene">
+      <div class="wall-grid" id="wall-grid"></div>
+    </div>
+    <div class="empty-state" id="wall-empty">
+      <p>Aucune élection dans cette catégorie.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ VUE LISTE ═══ -->
+<section id="list-view">
+  <div class="container">
+    <div id="list-content"></div>
+    <div class="empty-state" id="list-empty">
+      <p>Aucune élection dans cette catégorie.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ DRAWER ═══ -->
+<div class="drawer-overlay" id="drawer-overlay" onclick="closeDrawer()"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Détail de l'élection">
+  <div class="drawer-header">
+    <div style="font-size:0.8rem;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em">Détail</div>
+    <button class="drawer-close" onclick="closeDrawer()" aria-label="Fermer">✕</button>
+  </div>
+  <div class="drawer-body" id="drawer-body"></div>
+  <div class="drawer-footer" id="drawer-footer"></div>
+</aside>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="nav-logo">Vote<span>Clair</span></div>
+        <p>VoteClair est indépendant et sans financement partisan. Outil civique gratuit pour voter en connaissance de cause.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <a href="index.html">Accueil</a>
+        <a href="quiz.html">Quiz d'orientation</a>
+        <a href="partis.html">Les partis</a>
+        <a href="institutions.html">Institutions</a>
+        <a href="histoire.html">Histoire</a>
+        <a href="pourquoi-voter.html">Pourquoi voter ?</a>
+        <a href="calendrier.html">Calendrier électoral</a>
+        <a href="blog.html">Blog</a>
+        <a href="a-propos.html">À propos</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Les partis</h4>
+        <a href="parti-rassemblement-national.html">Rassemblement National</a>
+        <a href="parti-les-republicains.html">Les Républicains</a>
+        <a href="parti-renaissance.html">Renaissance</a>
+        <a href="parti-modem.html">MoDem</a>
+        <a href="parti-parti-socialiste.html">Parti Socialiste</a>
+        <a href="parti-la-france-insoumise.html">La France Insoumise</a>
+        <a href="parti-europe-ecologie.html">Europe Écologie</a>
+      </div>
+      <div class="footer-col">
+        <h4>Légal & transparence</h4>
+        <a href="methodologie.html">Méthodologie du quiz</a>
+        <a href="mentions-legales.html">Mentions légales</a>
+        <a href="confidentialite.html">Politique de confidentialité</a>
+        <a href="politique-cookies.html">Politique de cookies</a>
+        <a href="conditions-utilisation.html">Conditions d'utilisation</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 VoteClair — Outil civique indépendant</span>
+      <span>RGPD conforme · <a href="politique-cookies.html" style="color:inherit;text-decoration:underline">Gérer mes cookies</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/nav.js"></script>
+<script>
+'use strict';
+
+/* ================================================================
+   DONNÉES ÉLECTORALES
+   ================================================================ */
+const ELECTIONS = [
+
+  /* ── PASSÉ 2024 ── */
+  {
+    id: 'euro-2024',
+    titre: 'Élections européennes',
+    sous_titre: 'Tour unique',
+    emoji: '',
+    date: '2024-06-09',
+    type: 'nationale',
+    statut: 'confirme',
+    couleur: '#718096',
+    description: 'Election des 81 représentants français au Parlement européen. Le RN est arrivé en tête avec 31,4 %, suivi de Renaissance (14,6 %) et du PS-Place Publique (13,8 %). Le scrutin a entraîné la dissolution de l\'Assemblée nationale par le Président Macron.',
+    qui_vote: 'Tous les citoyens français et européens résidant en France, inscrits sur les listes électorales',
+    ce_qui_est_elu: '81 eurodéputés français sur 720 au Parlement européen',
+    date_inscription: null,
+    lien: 'https://www.interieur.gouv.fr/Elections/Les-resultats/Europeennes',
+  },
+  {
+    id: 'legis-2024-1',
+    titre: 'Législatives anticipées',
+    sous_titre: '1er tour',
+    emoji: '',
+    date: '2024-06-30',
+    type: 'nationale',
+    statut: 'confirme',
+    couleur: '#718096',
+    description: 'Elections législatives anticipées convoquées après la dissolution de l\'Assemblée nationale le 9 juin 2024. Premier tour marqué par une forte participation (66,7 %). Le RN et ses alliés arrivent en tête.',
+    qui_vote: 'Tous les citoyens français inscrits sur les listes électorales',
+    ce_qui_est_elu: '577 députés à l\'Assemblée nationale',
+    date_inscription: null,
+    lien: 'https://www.interieur.gouv.fr/Elections/Les-resultats/Legislatives',
+  },
+  {
+    id: 'legis-2024-2',
+    titre: 'Législatives anticipées',
+    sous_titre: '2e tour',
+    emoji: '',
+    date: '2024-07-07',
+    type: 'nationale',
+    statut: 'confirme',
+    couleur: '#718096',
+    description: '2e tour des législatives 2024. Le Nouveau Front Populaire arrive en tête (193 sièges), devant la coalition présidentielle (166 sièges) et le RN (143 sièges). Aucune majorité absolue n\'est obtenue — Assemblée fragmentée en trois blocs.',
+    qui_vote: 'Tous les citoyens français inscrits sur les listes électorales',
+    ce_qui_est_elu: '577 députés à l\'Assemblée nationale',
+    date_inscription: null,
+    lien: 'https://www.interieur.gouv.fr/Elections/Les-resultats/Legislatives',
+  },
+
+  /* ── 2026 ── */
+  {
+    id: 'muni-2026-1',
+    titre: 'Élections municipales',
+    sous_titre: '1er tour',
+    emoji: '',
+    date: '2026-03-15',
+    type: 'locale',
+    statut: 'confirme',
+    couleur: '#48BB78',
+    description: 'Election des maires et conseillers municipaux dans les 35 000 communes de France. Dans les communes de plus de 1 000 habitants, le scrutin est de liste à deux tours avec prime majoritaire.',
+    qui_vote: 'Tous les citoyens français ET européens résidant en France inscrits sur les listes',
+    ce_qui_est_elu: 'Maires et conseillers municipaux',
+    date_inscription: null,
+    lien: 'https://www.vie-publique.fr/fiches/19440-quelles-sont-les-regles-du-scrutin-municipal',
+  },
+  {
+    id: 'muni-2026-2',
+    titre: 'Élections municipales',
+    sous_titre: '2e tour',
+    emoji: '',
+    date: '2026-03-22',
+    type: 'locale',
+    statut: 'confirme',
+    couleur: '#48BB78',
+    description: '2e tour des élections municipales si aucune liste n\'a obtenu la majorité absolue et 25 % des inscrits au 1er tour (communes de + 1 000 hab.). Dans les petites communes, l\'élection peut être acquise au 1er tour.',
+    qui_vote: 'Tous les citoyens français ET européens résidant en France inscrits sur les listes',
+    ce_qui_est_elu: 'Maires et conseillers municipaux',
+    date_inscription: null,
+    lien: 'https://www.vie-publique.fr/fiches/19440-quelles-sont-les-regles-du-scrutin-municipal',
+  },
+  {
+    id: 'sena-2026',
+    titre: 'Élections sénatoriales',
+    sous_titre: 'Renouvellement partiel',
+    emoji: '',
+    date: '2026-09-27',
+    type: 'nationale',
+    statut: 'confirme',
+    couleur: '#9F7AEA',
+    description: 'Renouvellement partiel du Sénat par les grands électeurs (maires, conseillers régionaux, départementaux et leurs délégués). Les citoyens ordinaires n\'élisent pas directement les sénateurs — c\'est une élection indirecte.',
+    qui_vote: 'Grands électeurs uniquement (~162 000 élus locaux). Les citoyens ordinaires ne votent pas directement.',
+    ce_qui_est_elu: 'Environ 170 sénateurs (sur 348 au total)',
+    date_inscription: null,
+    lien: 'https://www.senat.fr/role/senat/election_senateurs.html',
+  },
+
+  /* ── 2027 ── */
+  {
+    id: 'presidentielle-2027-1',
+    titre: 'Élection présidentielle',
+    sous_titre: '1er tour',
+    emoji: '',
+    date: '2027-04-18',
+    type: 'nationale',
+    statut: 'estime',
+    couleur: '#6C63FF',
+    description: 'Election du Président de la République française au suffrage universel direct à deux tours. Le mandat en cours d\'Emmanuel Macron expire en mai 2027. Chaque candidat doit réunir 500 parrainages d\'élus pour se présenter.',
+    qui_vote: 'Tous les citoyens français inscrits sur les listes électorales',
+    ce_qui_est_elu: 'Le Président de la République (mandat de 5 ans non renouvelable immédiatement)',
+    date_inscription: null,
+    lien: 'https://www.vie-publique.fr/fiches/19460-comment-se-deroule-l-election-presidentielle',
+  },
+  {
+    id: 'presidentielle-2027-2',
+    titre: 'Élection présidentielle',
+    sous_titre: '2e tour',
+    emoji: '',
+    date: '2027-05-02',
+    type: 'nationale',
+    statut: 'estime',
+    couleur: '#6C63FF',
+    description: '2e tour de l\'élection présidentielle entre les deux candidats arrivés en tête au premier tour. Le candidat le plus voté est élu Président de la République.',
+    qui_vote: 'Tous les citoyens français inscrits sur les listes électorales',
+    ce_qui_est_elu: 'Le Président de la République',
+    date_inscription: null,
+    lien: 'https://www.vie-publique.fr/fiches/19460-comment-se-deroule-l-election-presidentielle',
+  },
+];
+
+/* ================================================================
+   ÉTAT
+   ================================================================ */
+let currentFilter = 'toutes';
+let currentView   = 'wall';
+
+/* ================================================================
+   UTILITAIRES DATE
+   ================================================================ */
+const MOIS = ['Jan','Fév','Mar','Avr','Mai','Juin','Juil','Août','Sep','Oct','Nov','Déc'];
+const MOIS_LONG = ['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
+
+function parseDate(str) {
+  const [y, m, d] = str.split('-').map(Number);
+  return new Date(y, m - 1, d);
+}
+
+function isPast(dateStr) {
+  return parseDate(dateStr) < new Date();
+}
+
+/* Un scrutin est passé soit parce qu'il est marqué comme tel dans les
+   données, soit — et c'est le cas qui compte — parce que sa date est
+   derrière nous. Dériver l'état temporel de la date plutôt que de le
+   recopier dans `type` évite d'annoncer comme « à venir » un scrutin
+   déjà tenu, faute d'avoir pensé à mettre le champ à jour. */
+function estPassee(el) {
+  return el.type === 'passe' || isPast(el.date);
+}
+
+function daysUntil(dateStr) {
+  const diff = parseDate(dateStr) - new Date();
+  return Math.ceil(diff / 86400000);
+}
+
+function formatDateLong(dateStr) {
+  const d = parseDate(dateStr);
+  return `${d.getDate()} ${MOIS_LONG[d.getMonth()]} ${d.getFullYear()}`;
+}
+
+/* ================================================================
+   COUNTDOWN
+   ================================================================ */
+function initCountdown() {
+  const now = new Date();
+  const upcoming = ELECTIONS
+    .filter(e => !estPassee(e))
+    .sort((a, b) => parseDate(a.date) - parseDate(b.date));
+
+  if (!upcoming.length) return;
+  const next = upcoming[0];
+
+  document.getElementById('cd-title').innerHTML =
+    `<span>${next.titre}</span> — ${next.sous_titre}`;
+  document.getElementById('cd-sub').textContent =
+    next.statut === 'estime'
+      ? 'Date estimée — non encore fixée par décret officiel'
+      : 'Date officielle';
+
+  function tick() {
+    const diff = parseDate(next.date) - new Date();
+    if (diff <= 0) { document.getElementById('cd-j').textContent = '0'; return; }
+    const j = Math.floor(diff / 86400000);
+    const h = Math.floor((diff % 86400000) / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    const s = Math.floor((diff % 60000) / 1000);
+    document.getElementById('cd-j').textContent = String(j).padStart(2,'0');
+    document.getElementById('cd-h').textContent = String(h).padStart(2,'0');
+    document.getElementById('cd-m').textContent = String(m).padStart(2,'0');
+    document.getElementById('cd-s').textContent = String(s).padStart(2,'0');
+  }
+  tick();
+  setInterval(tick, 1000);
+}
+
+/* ================================================================
+   FILTRAGE
+   ================================================================ */
+function getFiltered() {
+  if (currentFilter === 'toutes') return ELECTIONS.filter(e => !estPassee(e));
+  if (currentFilter === 'passe')  return ELECTIONS.filter(e => estPassee(e));
+  return ELECTIONS.filter(e => e.type === currentFilter && !estPassee(e));
+}
+
+document.getElementById('filter-group').addEventListener('click', e => {
+  const btn = e.target.closest('.filter-btn');
+  if (!btn) return;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  currentFilter = btn.dataset.filter;
+  renderAll();
+});
+
+/* ================================================================
+   BADGE HTML
+   ================================================================ */
+const TYPE_LABELS = {
+  nationale: { label: 'Nationale', bg: 'rgba(108,99,255,0.1)', color: '#4C46B8' },
+  locale:    { label: 'Locale',    bg: 'rgba(72,187,120,0.1)', color: '#276749' },
+  butoir:    { label: 'Date butoir', bg: 'rgba(252,129,129,0.12)', color: '#9B2C2C' },
+  passe:     { label: 'Passée',    bg: 'rgba(0,0,0,0.06)',      color: '#5C5C78' },
+};
+
+function typeBadge(type) {
+  const t = TYPE_LABELS[type] || TYPE_LABELS.passe;
+  return `<span class="badge-type" style="background:${t.bg};color:${t.color}">${t.label}</span>`;
+}
+
+function statutBadge(el) {
+  if (estPassee(el)) return `<span class="badge-passe">Terminée</span>`;
+  if (el.statut === 'estime')  return `<span class="badge-estime">Estimée</span>`;
+  return `<span class="badge-confirme">Confirmée</span>`;
+}
+
+/* ================================================================
+   VUE MUR 3D
+   ================================================================ */
+function renderWall() {
+  const filtered = getFiltered();
+  const grid = document.getElementById('wall-grid');
+  const empty = document.getElementById('wall-empty');
+
+  if (!filtered.length) {
+    grid.innerHTML = '';
+    empty.classList.add('show');
+    return;
+  }
+  empty.classList.remove('show');
+
+  const rows = Math.ceil(filtered.length / Math.ceil(Math.sqrt(filtered.length)));
+
+  grid.innerHTML = filtered.map((el) => {
+    const d = parseDate(el.date);
+    const daysLeft = daysUntil(el.date);
+    let daysHtml = '';
+    if (!estPassee(el) && daysLeft > 0) {
+      daysHtml = `<div class="wall-card-days">dans <strong>${daysLeft}</strong> jours</div>`;
+    } else if (estPassee(el)) {
+      daysHtml = `<div class="wall-card-days" style="color:var(--text-muted)">Terminée</div>`;
+    }
+
+    return `
+      <div class="wall-card ${estPassee(el) ? 'passe' : ''}"
+           style="--card-color:${el.couleur}"
+           data-id="${el.id}"
+           onclick="${!estPassee(el) ? `openDrawer('${el.id}')` : ''}">
+        <div class="wall-card-date">${d.getDate()} ${MOIS[d.getMonth()]} ${d.getFullYear()}</div>
+        <div class="wall-card-title">${el.titre}</div>
+        <div class="wall-card-sub">${el.sous_titre}</div>
+        <div class="wall-card-badges">
+          ${typeBadge(el.type)}
+          ${statutBadge(el)}
+        </div>
+        ${daysHtml}
+      </div>`;
+  }).join('');
+}
+
+
+/* ================================================================
+   VUE LISTE
+   ================================================================ */
+function renderList() {
+  const filtered = getFiltered();
+  const container = document.getElementById('list-content');
+  const empty     = document.getElementById('list-empty');
+
+  if (!filtered.length) {
+    container.innerHTML = '';
+    empty.classList.add('show');
+    return;
+  }
+  empty.classList.remove('show');
+
+  // Group by year
+  const byYear = {};
+  filtered.forEach(el => {
+    const y = parseDate(el.date).getFullYear();
+    if (!byYear[y]) byYear[y] = [];
+    byYear[y].push(el);
+  });
+
+  container.innerHTML = Object.entries(byYear)
+    .sort(([a],[b]) => a - b)
+    .map(([year, items]) => `
+      <div class="year-group">
+        <div class="year-marker">
+          <div class="year-marker-num">${year}</div>
+          <div class="year-marker-line"></div>
+        </div>
+        <div class="list-items">
+          ${items.map(el => {
+            const d = parseDate(el.date);
+            const clickable = !estPassee(el);
+            return `
+              <div class="list-card ${estPassee(el) ? 'passe' : ''} fade-in"
+                   style="--card-color:${el.couleur}"
+                   ${clickable ? `onclick="openDrawer('${el.id}')"` : ''}>
+                <div class="list-date-block">
+                  <div class="list-date-day" style="color:${el.couleur}">${d.getDate()}</div>
+                  <div class="list-date-month">${MOIS[d.getMonth()]}</div>
+                  <div class="list-date-year">${d.getFullYear()}</div>
+                </div>
+                <div class="list-body">
+                  <div class="list-title">${el.titre}</div>
+                  <div class="list-sub">${el.sous_titre}</div>
+                  <div class="list-badges">
+                    ${typeBadge(el.type)}
+                    ${statutBadge(el)}
+                  </div>
+                </div>
+                ${clickable ? '<div class="list-arrow">→</div>' : ''}
+              </div>`;
+          }).join('')}
+        </div>
+      </div>`).join('');
+
+  // Fade-in
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.05 });
+  document.querySelectorAll('#list-content .fade-in').forEach(el => io.observe(el));
+}
+
+/* ================================================================
+   DRAWER DÉTAIL
+   ================================================================ */
+function openDrawer(id) {
+  const el = ELECTIONS.find(e => e.id === id);
+  if (!el) return;
+
+  const d = parseDate(el.date);
+  const daysLeft = daysUntil(el.date);
+  const pastEl = estPassee(el) || daysLeft <= 0;
+
+  let inscriptionAlert = '';
+  if (el.date_inscription && !pastEl) {
+    const daysInsc = daysUntil(el.date_inscription);
+    inscriptionAlert = `
+      <div class="drawer-inscription-alert">
+        <strong>Date limite d'inscription sur les listes</strong>
+        Avant le <strong>${formatDateLong(el.date_inscription)}</strong>
+        ${daysInsc > 0 ? `(dans ${daysInsc} jours)` : '<strong style="color:#9B2C2C"> — déjà passée</strong>'}.
+        <br />Ne manquez pas cette date pour pouvoir voter.
+      </div>`;
+  }
+
+  const iconVote = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><rect x="3" y="3" width="18" height="18" rx="2"/></svg>`;
+  const iconElu  = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a6 6 0 0 1 12 0v2"/></svg>`;
+  const iconWarn = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C05621" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>`;
+
+  document.getElementById('drawer-body').innerHTML = `
+    <div class="drawer-color-bar" style="background:${el.couleur}"></div>
+    <div class="drawer-title">${el.titre}</div>
+    <div class="drawer-sub">${el.sous_titre}</div>
+    <div class="drawer-badges">
+      ${typeBadge(el.type)}
+      ${statutBadge(el)}
+    </div>
+
+    <div class="drawer-date-box">
+      <div class="drawer-date-big" style="color:${el.couleur}">${d.getDate()}</div>
+      <div class="drawer-date-right">
+        <div class="drawer-date-monthyear">${MOIS_LONG[d.getMonth()]} ${d.getFullYear()}</div>
+        <div class="drawer-date-countdown">
+          ${pastEl
+            ? 'Élection terminée'
+            : `Dans <strong>${daysLeft}</strong> jour${daysLeft > 1 ? 's' : ''}`}
+        </div>
+      </div>
+    </div>
+
+    ${inscriptionAlert}
+
+    <div class="drawer-section">
+      <div class="drawer-section-label">Description</div>
+      <p>${el.description}</p>
+    </div>
+
+    ${el.qui_vote ? `
+    <div class="drawer-section">
+      <div class="drawer-section-label">Qui vote ?</div>
+      <div class="drawer-info-row">
+        <div class="drawer-info-icon">${iconVote}</div>
+        <div class="drawer-info-text">${el.qui_vote}</div>
+      </div>
+    </div>` : ''}
+
+    ${el.ce_qui_est_elu ? `
+    <div class="drawer-section">
+      <div class="drawer-section-label">Ce qui est élu</div>
+      <div class="drawer-info-row">
+        <div class="drawer-info-icon">${iconElu}</div>
+        <div class="drawer-info-text">${el.ce_qui_est_elu}</div>
+      </div>
+    </div>` : ''}
+
+    ${el.statut === 'estime' ? `
+    <div class="drawer-section">
+      <div class="drawer-info-row">
+        <div class="drawer-info-icon">${iconWarn}</div>
+        <div class="drawer-info-text" style="color:#C05621">
+          <strong>Date estimée</strong>
+          Cette date n'a pas encore été fixée par décret officiel. Elle peut être modifiée.
+        </div>
+      </div>
+    </div>` : ''}
+  `;
+
+  const footerLinks = [];
+  /* L'appel a s'inscrire ne depend plus d'une date butoir affichee : les
+     dates limites estimees ont ete retirees du calendrier faute de source,
+     mais la demarche, elle, reste ouverte pour tout scrutin a venir. */
+  if (!pastEl) {
+    footerLinks.push(`<a href="https://www.service-public.fr/particuliers/vosdroits/R12675" target="_blank" rel="noopener" class="drawer-btn-primary">S'inscrire sur les listes →</a>`);
+  }
+  if (el.lien) {
+    footerLinks.push(`<a href="${el.lien}" target="_blank" rel="noopener" class="drawer-btn-outline">En savoir plus sur vie-publique.fr →</a>`);
+  }
+  footerLinks.push(`<a href="pourquoi-voter.html" class="drawer-btn-outline">Pourquoi voter ? →</a>`);
+
+  document.getElementById('drawer-footer').innerHTML = footerLinks.join('');
+
+  document.getElementById('drawer-overlay').classList.add('open');
+  document.getElementById('drawer').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeDrawer() {
+  document.getElementById('drawer-overlay').classList.remove('open');
+  document.getElementById('drawer').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeDrawer();
+});
+
+/* ================================================================
+   TOGGLE VUE
+   ================================================================ */
+function setView(v) {
+  currentView = v;
+  document.getElementById('wall-view').classList.toggle('show', v === 'wall');
+  document.getElementById('list-view').classList.toggle('show', v === 'list');
+  document.getElementById('btn-wall-view').classList.toggle('active', v === 'wall');
+  document.getElementById('btn-list-view').classList.toggle('active', v === 'list');
+  renderAll();
+}
+
+/* ================================================================
+   RENDER ALL
+   ================================================================ */
+function renderAll() {
+  renderWall();
+  renderList();
+}
+
+/* ================================================================
+   INIT
+   ================================================================ */
+initCountdown();
+renderAll();
+</script>
+<script src="js/cookie-consent.js"></script>
+</body>
+</html>

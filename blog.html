@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#6C63FF" />
+  <title>Blog VoteClair – Politique française expliquée | Élection 2027</title>
+  <meta name="description" content="Comprendre la politique française : élection présidentielle, partis, institutions, histoire. Articles pédagogiques et neutres sur VoteClair." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.voteclair.fr/blog.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Blog VoteClair – Politique française expliquée | Élection 2027" />
+  <meta property="og:description" content="Comprendre la politique française : élection présidentielle, partis, institutions, histoire. Articles pédagogiques et neutres sur VoteClair." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.voteclair.fr/blog.html" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:site_name" content="VoteClair" />
+
+  <link rel="stylesheet" href="css/fonts.css" />
+  <link rel="stylesheet" href="css/main.css" />
+
+  <style>
+    .blog-hero {
+      padding: calc(var(--nav-height) + 60px) 0 48px;
+      text-align: center;
+    }
+    .blog-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+    .blog-hero p {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+    .blog-section {
+      padding: 0 0 80px;
+    }
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .blog-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .blog-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-3px);
+    }
+    .blog-cat {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 20px;
+    }
+    .blog-card h2 {
+      font-size: 1.2rem;
+      line-height: 1.35;
+      margin: 0;
+    }
+    .blog-card h2 a {
+      color: var(--text);
+      text-decoration: none;
+    }
+    .blog-card h2 a:hover {
+      color: var(--accent);
+    }
+    .blog-excerpt {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin: 0;
+    }
+    .blog-meta {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      margin-top: auto;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+    }
+    .btn-blog {
+      display: inline-block;
+      margin-top: 4px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--accent);
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .btn-blog:hover {
+      opacity: 0.75;
+    }
+  </style>
+  <meta property="og:image" content="https://www.voteclair.fr/assets/og-default.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Aller au contenu principal</a>
+
+  <nav class="navbar" role="navigation" aria-label="Navigation principale">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Vote<span>Clair</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="quiz.html" class="nav-cta">Quiz</a></li>
+        <li><a href="partis.html">Partis</a></li>
+        <li><a href="face-a-face.html">Comparer</a></li>
+        <li class="nav-has-dropdown">
+          <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">En savoir plus <span class="nav-dropdown-arrow">▾</span></button>
+          <ul class="nav-dropdown-menu">
+            <li><a href="institutions.html">Institutions</a></li>
+            <li><a href="histoire.html">Histoire</a></li>
+            <li><a href="pourquoi-voter.html">Pourquoi voter ?</a></li>
+            <li><a href="calendrier.html">Calendrier</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="a-propos.html">À propos</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </li>
+      </ul>
+      <button class="nav-burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <nav class="nav-mobile" aria-label="Menu mobile">
+    <a href="index.html">Accueil</a>
+    <a href="quiz.html" class="nav-mobile-cta">Quiz</a>
+    <a href="partis.html">Partis</a>
+    <a href="face-a-face.html">Comparer</a>
+    <div class="nav-mobile-divider">En savoir plus</div>
+    <a href="institutions.html">Institutions</a>
+    <a href="histoire.html">Histoire</a>
+    <a href="pourquoi-voter.html">Pourquoi voter ?</a>
+    <a href="calendrier.html">Calendrier électoral</a>
+    <a href="blog.html">Blog</a>
+    <a href="a-propos.html">À propos</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <main id="main-content">
+    <section class="blog-hero">
+      <div class="container">
+        <h1>Le Blog VoteClair</h1>
+        <p>Articles pédagogiques et neutres pour comprendre la politique française, les institutions, l'histoire et les enjeux de l'élection présidentielle 2027.</p>
+      </div>
+    </section>
+
+    <section class="blog-section">
+      <div class="container">
+        <div class="blog-grid">
+
+          <!-- Article 1 -->
+          <article class="blog-card">
+            <span class="blog-cat" style="background:rgba(108,99,255,0.1);color:#6C63FF;">Institutions</span>
+            <h2><a href="blog-election-presidentielle.html">Comment fonctionne l'élection présidentielle française ?</a></h2>
+            <p class="blog-excerpt">Le scrutin à deux tours, les conditions de candidature, le rôle du président et le calendrier de 2027 expliqués clairement.</p>
+            <div class="blog-meta">
+              <span>⏱️ 6 min</span>
+              <span>10 mai 2026</span>
+            </div>
+            <a href="blog-election-presidentielle.html" class="btn-blog">Lire l'article →</a>
+          </article>
+
+          <!-- Article 2 -->
+          <article class="blog-card">
+            <span class="blog-cat" style="background:rgba(76,175,80,0.1);color:#2E7D32;">Comprendre la politique</span>
+            <h2><a href="blog-courants-politiques.html">Les grands courants politiques en France expliqués</a></h2>
+            <p class="blog-excerpt">Gauche, droite, centre, extrêmes : comprendre les grandes familles politiques françaises, leurs valeurs et leurs différences.</p>
+            <div class="blog-meta">
+              <span>⏱️ 7 min</span>
+              <span>12 mai 2026</span>
+            </div>
+            <a href="blog-courants-politiques.html" class="btn-blog">Lire l'article →</a>
+          </article>
+
+          <!-- Article 3 -->
+          <article class="blog-card">
+            <span class="blog-cat" style="background:rgba(237,137,54,0.1);color:#C05621;">Civic Education</span>
+            <h2><a href="blog-former-opinion.html">Comment se former une opinion politique éclairée ?</a></h2>
+            <p class="blog-excerpt">Méthodes pratiques pour construire une opinion solide : distinguer faits et opinions, diversifier ses sources, éviter les biais.</p>
+            <div class="blog-meta">
+              <span>⏱️ 5 min</span>
+              <span>14 mai 2026</span>
+            </div>
+            <a href="blog-former-opinion.html" class="btn-blog">Lire l'article →</a>
+          </article>
+
+          <!-- Article 4 -->
+          <article class="blog-card">
+            <span class="blog-cat" style="background:rgba(0,49,137,0.1);color:#003189;">Histoire</span>
+            <h2><a href="blog-historique-elections.html">Historique des élections présidentielles depuis 1958</a></h2>
+            <p class="blog-excerpt">De de Gaulle à Macron : retour sur toutes les élections présidentielles depuis la Ve République, les grands tournants et les surprises.</p>
+            <div class="blog-meta">
+              <span>⏱️ 8 min</span>
+              <span>8 mai 2026</span>
+            </div>
+            <a href="blog-historique-elections.html" class="btn-blog">Lire l'article →</a>
+          </article>
+
+          <!-- Article 5 -->
+          <article class="blog-card">
+            <span class="blog-cat" style="background:rgba(231,84,128,0.1);color:#C2185B;">Élection 2027</span>
+            <h2><a href="blog-programmes-2027.html">Comment lire et comprendre un programme politique en 2027</a></h2>
+            <p class="blog-excerpt">Guide pratique pour décrypter les programmes des partis : identifier les propositions concrètes, évaluer leur faisabilité et comparer les visions.</p>
+            <div class="blog-meta">
+              <span>⏱️ 6 min</span>
+              <span>17 mai 2026</span>
+            </div>
+            <a href="blog-programmes-2027.html" class="btn-blog">Lire l'article →</a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="nav-logo">Vote<span>Clair</span></div>
+          <p>VoteClair est indépendant et sans financement partisan. Outil civique gratuit pour voter en connaissance de cause.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <a href="index.html">Accueil</a>
+          <a href="quiz.html">Quiz d'orientation</a>
+          <a href="partis.html">Les partis</a>
+          <a href="face-a-face.html">Comparer</a>
+          <a href="blog.html">Blog</a>
+          <a href="a-propos.html">À propos</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>En savoir plus</h4>
+          <a href="institutions.html">Institutions</a>
+          <a href="histoire.html">Histoire</a>
+          <a href="pourquoi-voter.html">Pourquoi voter ?</a>
+          <a href="calendrier.html">Calendrier électoral</a>
+        </div>
+        <div class="footer-col">
+          <h4>Légal & transparence</h4>
+          <a href="methodologie.html">Méthodologie du quiz</a>
+          <a href="mentions-legales.html">Mentions légales</a>
+          <a href="confidentialite.html">Politique de confidentialité</a>
+          <a href="politique-cookies.html">Politique de cookies</a>
+          <a href="conditions-utilisation.html">Conditions d'utilisation</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 VoteClair — Outil civique indépendant</span>
+        <span>RGPD conforme · <a href="politique-cookies.html" style="color:inherit;text-decoration:underline">Gérer mes cookies</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/nav.js"></script>
+  <script src="js/cookie-consent.js"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+name: Vérification des données
+
+# Tourne sur toute proposition de modification, humaine ou automatique.
+# C'est le filet qui rattrape une branche de veille mal formée.
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  verifier:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0          # garde_fou compare a la base
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '20'      # jsdata.py evalue les litteraux via node
+
+      - name: Invariants et dette de sourçage
+        run: python3 tools/verifier.py
+
+      - name: Aller-retour quiz — aucun poids perdu
+        run: python3 tools/verif_roundtrip_quiz.py
+
+      - name: Aller-retour comparateur — aucune position perdue
+        run: python3 tools/verif_roundtrip_comparateur.py
+
+      - name: Tout champ automatisable atteint bien le site
+        run: python3 tools/projeter.py --couverture
+
+      - name: Le site est conforme à data/
+        # Si ce contrôle échoue, HTML et données ont divergé : quelqu'un a
+        # modifié une page sans passer par data/, et la prochaine veille
+        # écraserait sa correction.
+        run: python3 tools/projeter.py --verifier
+
+      - name: Le garde-fou refuse bien ce qu'il doit refuser
+        run: python3 tools/tests_pipeline.py
+
+      # actions/checkout pose le commit de fusion de la PR en HEAD detachee
+      # et ne cree pas forcement refs/remotes/origin/<base>. Sans cette
+      # recuperation, le garde-fou n'a rien a quoi se comparer : il refuse,
+      # bruyamment, plutot que de laisser croire qu'il a verifie.
+      - name: Récupérer la branche de base
+        if: github.event_name == 'pull_request'
+        run: |
+          git fetch --no-tags origin \
+            "+refs/heads/${{ github.base_ref }}:refs/remotes/origin/${{ github.base_ref }}"
+
+      # Le garde-fou contraint l'automatisation, pas vous : une PR humaine
+      # a le droit de toucher au HTML, au JS ou aux poids du quiz, et c'est
+      # CODEOWNERS qui la garde. On ne l'applique donc qu'aux propositions
+      # de la veille. Le nom de branche ci-dessous doit rester identique a
+      # celui qu'ouvre .github/workflows/veille.yml : s'il change la, ce
+      # controle cesse silencieusement de s'appliquer.
+      #
+      # Ce n'est pas le seul passage : veille.yml lance deja garde_fou.py
+      # avant d'ouvrir sa PR. Celui-ci est le second controle, au moment de
+      # la fusion, quand la branche a pu etre modifiee entre-temps.
+      - name: Périmètre de la proposition automatique
+        if: github.event_name == 'pull_request' && github.head_ref == 'veille/proposition'
+        run: |
+          python3 tools/garde_fou.py "origin/${{ github.base_ref }}"

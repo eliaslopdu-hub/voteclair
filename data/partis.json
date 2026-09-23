@@ -1,0 +1,365 @@
+{
+  "lfi": {
+    "nom": "La France Insoumise",
+    "nom_quiz": "La France Insoumise",
+    "sigle": "LFI",
+    "slug": "la-france-insoumise",
+    "fichier": "parti-la-france-insoumise.html",
+    "couleur": "#CC0000",
+    "couleur_comparateur": "#CC0000",
+    "couleurBg": "#fff0f0",
+    "ordre": {
+      "quiz": 5,
+      "comparateur": 0
+    },
+    "axe": "Gauche radicale",
+    "ideologie": "Gauche radicale · Souverainisme populaire",
+    "dirigeant": {
+      "valeur": "Jean-Luc Mélenchon / Manuel Bompard",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain",
+      "variantes": {
+        "comparateur": "Jean-Luc Mélenchon / M. Bompard",
+        "fiche": "Jean-Luc Mélenchon / Manuel Bompard"
+      },
+      "note": "Les surfaces du site ne s'accordent pas sur ce nom."
+    },
+    "fonde_en": {
+      "valeur": "2016",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    "fonde_annee": 2016,
+    "site": {
+      "valeur": "https://lafranceinsoumise.fr",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    "perimetre": {
+      "quiz": true,
+      "comparateur": true,
+      "fiche": true,
+      "footer": true
+    }
+  },
+  "pcf": {
+    "nom": "Parti Communiste Français",
+    "nom_quiz": null,
+    "sigle": "PCF",
+    "slug": "pcf",
+    "fichier": null,
+    "couleur": "#B30000",
+    "couleur_comparateur": "#B30000",
+    "couleurBg": "#fff0f0",
+    "ordre": {
+      "quiz": null,
+      "comparateur": 1
+    },
+    "axe": "Extrême gauche",
+    "ideologie": null,
+    "dirigeant": {
+      "valeur": "Fabien Roussel",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    "fonde_en": null,
+    "fonde_annee": null,
+    "site": null,
+    "perimetre": {
+      "quiz": false,
+      "comparateur": true,
+      "fiche": false,
+      "footer": false
+    },
+    "raison_hors_quiz": "Poids non documentés au même niveau que les sept autres partis."
+  },
+  "ps": {
+    "nom": "Parti Socialiste",
+    "nom_quiz": "Parti Socialiste",
+    "sigle": "PS",
+    "slug": "parti-socialiste",
+    "fichier": "parti-parti-socialiste.html",
+    "couleur": "#E75480",
+    "couleur_comparateur": "#E75480",
+    "couleurBg": "#fff0f5",
+    "ordre": {
+      "quiz": 4,
+      "comparateur": 2
+    },
+    "axe": "Gauche",
+    "ideologie": "Gauche social-démocrate · Progressisme",
+    "dirigeant": {
+      "valeur": "Olivier Faure",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    "fonde_en": {
+      "valeur": "1969 (Congrès d'Épinay 1971)",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    "fonde_annee": 1969,
+    "site": {
+      "valeur": "https://www.parti-socialiste.fr",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    "perimetre": {
+      "quiz": true,
+      "comparateur": true,
+      "fiche": true,
+      "footer": true
+    }
+  },
+  "eelv": {
+    "nom": "Europe Écologie Les Verts",
+    "nom_quiz": "Europe Écologie",
+    "sigle": "EELV",
+    "slug": "europe-ecologie",
+    "fichier": "parti-europe-ecologie.html",
+    "couleur": "#4CAF50",
+    "couleur_comparateur": "#2E7D32",
+    "couleurBg": "#f0faf0",
+    "ordre": {
+      "quiz": 6,
+      "comparateur": 3
+    },
+    "axe": "Gauche écologiste",
+    "ideologie": "Écologie politique · Centre-gauche · Féminisme",
+    "dirigeant": {
+      "valeur": "Marine Tondelier",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    "fonde_en": {
+      "valeur": "2010 (fusion Les Verts + Europe Écologie)",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    "fonde_annee": 2010,
+    "site": {
+      "valeur": "https://www.lesecologistes.fr",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    "perimetre": {
+      "quiz": true,
+      "comparateur": true,
+      "fiche": true,
+      "footer": true
+    }
+  },
+  "renaissance": {
+    "nom": "Renaissance",
+    "nom_quiz": "Renaissance",
+    "sigle": "REN",
+    "slug": "renaissance",
+    "fichier": "parti-renaissance.html",
+    "couleur": "#FFBE00",
+    "couleur_comparateur": "#C8A200",
+    "couleurBg": "#fffef0",
+    "ordre": {
+      "quiz": 2,
+      "comparateur": 4
+    },
+    "axe": "Centre",
+    "ideologie": "Centre · Libéral-progressiste",
+    "dirigeant": {
+      "valeur": "Gabriel Attal",
+      "sources": [
+        "src:renaissance-site-officiel",
+        "src:franceinfo-attal-sg-renaissance"
+      ],
+      "verifie_le": "2026-09-22",
+      "confiance": "confirme",
+      "auteur": "humain",
+      "variantes": {
+        "comparateur": "Gabriel Attal",
+        "fiche": "Gabriel Attal"
+      },
+      "note": "Secrétaire général depuis décembre 2024. Emmanuel Macron est président d'honneur : le site le présentait en co-dirigeant, ce qui confondait fonction partisane et magistrature. Élu secrétaire général en décembre 2024."
+    },
+    "fonde_en": {
+      "valeur": "2016 (En Marche !) · Renommé Renaissance en 2022",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    "fonde_annee": 2016,
+    "site": {
+      "valeur": "https://parti-renaissance.fr",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    "perimetre": {
+      "quiz": true,
+      "comparateur": true,
+      "fiche": true,
+      "footer": true
+    }
+  },
+  "modem": {
+    "nom": "Mouvement Démocrate",
+    "nom_quiz": "MoDem",
+    "sigle": "MoDem",
+    "slug": "modem",
+    "fichier": "parti-modem.html",
+    "couleur": "#FF6600",
+    "couleur_comparateur": "#E05000",
+    "couleurBg": "#fff5f0",
+    "ordre": {
+      "quiz": 3,
+      "comparateur": 5
+    },
+    "axe": "Centre",
+    "ideologie": "Centre · Humanisme démocratique · Pro-européen",
+    "dirigeant": {
+      "valeur": "François Bayrou",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    "fonde_en": {
+      "valeur": "2007",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    "fonde_annee": 2007,
+    "site": {
+      "valeur": "https://www.mouvementdemocrate.fr",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    "perimetre": {
+      "quiz": true,
+      "comparateur": true,
+      "fiche": true,
+      "footer": true
+    }
+  },
+  "lr": {
+    "nom": "Les Républicains",
+    "nom_quiz": "Les Républicains",
+    "sigle": "LR",
+    "slug": "les-republicains",
+    "fichier": "parti-les-republicains.html",
+    "couleur": "#0066CC",
+    "couleur_comparateur": "#003F8F",
+    "couleurBg": "#f0f4ff",
+    "ordre": {
+      "quiz": 1,
+      "comparateur": 6
+    },
+    "axe": "Droite",
+    "ideologie": "Droite conservatrice · Gaullisme social",
+    "dirigeant": {
+      "valeur": "Bruno Retailleau",
+      "sources": [
+        "src:lr-site-officiel",
+        "src:lcp-congres-lr-2025"
+      ],
+      "verifie_le": "2026-09-22",
+      "confiance": "confirme",
+      "auteur": "humain",
+      "note": "Élu président des Républicains le 18 mai 2025 (74,3 % contre 25,7 % à Laurent Wauquiez). Le site affichait encore Laurent Wauquiez, qui préside désormais le groupe Droite républicaine à l'Assemblée."
+    },
+    "fonde_en": {
+      "valeur": "2015 (ex-UMP, ex-RPR)",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    "fonde_annee": 2015,
+    "site": {
+      "valeur": "https://www.republicains.fr",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    "perimetre": {
+      "quiz": true,
+      "comparateur": true,
+      "fiche": true,
+      "footer": true
+    }
+  },
+  "rn": {
+    "nom": "Rassemblement National",
+    "nom_quiz": "Rassemblement National",
+    "sigle": "RN",
+    "slug": "rassemblement-national",
+    "fichier": "parti-rassemblement-national.html",
+    "couleur": "#003189",
+    "couleur_comparateur": "#002395",
+    "couleurBg": "#f0f2ff",
+    "ordre": {
+      "quiz": 0,
+      "comparateur": 7
+    },
+    "axe": "Extrême droite",
+    "ideologie": "Droite nationaliste · Souverainisme",
+    "dirigeant": {
+      "valeur": "Marine Le Pen / Jordan Bardella",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain",
+      "variantes": {
+        "comparateur": "Jordan Bardella",
+        "fiche": "Marine Le Pen / Jordan Bardella"
+      },
+      "note": "Les surfaces du site ne s'accordent pas sur ce nom."
+    },
+    "fonde_en": {
+      "valeur": "1972 (Front National) · Renommé RN en 2018",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    "fonde_annee": 1972,
+    "site": {
+      "valeur": "https://www.rassemblementnational.fr",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    "perimetre": {
+      "quiz": true,
+      "comparateur": true,
+      "fiche": true,
+      "footer": true
+    }
+  }
+}

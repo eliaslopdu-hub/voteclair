@@ -3,38 +3,64 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#6C63FF" />
   <title>Les partis politiques français – VoteClair</title>
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.voteclair.fr/partis.html" />
   <meta name="description" content="Découvrez les 7 principaux partis politiques français : programme, idéologie, chef de file. Présentation neutre et sourcée." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/fonts.css" />
   <link rel="stylesheet" href="css/main.css" />
   <link rel="stylesheet" href="css/partis.css" />
+  <meta property="og:image" content="https://www.voteclair.fr/assets/og-default.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
 </head>
 <body>
+<a class="skip-link" href="#main-content">Aller au contenu principal</a>
 
-<nav class="navbar">
+<!-- ═══ NAVBAR ═══ -->
+<nav class="navbar" role="navigation" aria-label="Navigation principale">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">Vote<span>Clair</span></a>
     <ul class="nav-links">
       <li><a href="index.html">Accueil</a></li>
-      <li><a href="quiz.html" class="nav-cta">🗳️ Faire le quiz</a></li>
+      <li><a href="quiz.html" class="nav-cta">Quiz</a></li>
       <li><a href="partis.html">Partis</a></li>
-      <li><a href="institutions.html">Institutions</a></li>
-      <li><a href="histoire.html">Histoire</a></li>
+      <li><a href="face-a-face.html">Comparer</a></li>
+      <li class="nav-has-dropdown">
+        <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">En savoir plus <span class="nav-dropdown-arrow">▾</span></button>
+        <ul class="nav-dropdown-menu">
+          <li><a href="institutions.html">Institutions</a></li>
+          <li><a href="histoire.html">Histoire</a></li>
+          <li><a href="pourquoi-voter.html">Pourquoi voter ?</a></li>
+          <li><a href="calendrier.html">Calendrier</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="a-propos.html">À propos</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </li>
     </ul>
-    <button class="nav-burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    <button class="nav-burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </nav>
-<nav class="nav-mobile">
+<nav class="nav-mobile" aria-label="Menu mobile">
   <a href="index.html">Accueil</a>
-  <a href="quiz.html">🗳️ Quiz</a>
+  <a href="quiz.html" class="nav-mobile-cta">Quiz</a>
   <a href="partis.html">Partis</a>
+  <a href="face-a-face.html">Comparer</a>
+  <div class="nav-mobile-divider">En savoir plus</div>
   <a href="institutions.html">Institutions</a>
   <a href="histoire.html">Histoire</a>
+  <a href="pourquoi-voter.html">Pourquoi voter ?</a>
+  <a href="calendrier.html">Calendrier électoral</a>
+  <a href="blog.html">Blog</a>
+  <a href="a-propos.html">À propos</a>
+  <a href="contact.html">Contact</a>
 </nav>
 
 <!-- ═══ PAGE HERO ═══ -->
-<div class="page-hero">
+<div class="page-hero page-hero--image" id="main-content" style="--hero-img: url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=1920&q=80')">
   <div class="container">
     <div class="breadcrumb">
       <a href="index.html">Accueil</a> <span>›</span> <span>Les partis</span>
@@ -43,6 +69,96 @@
     <p class="section-subtitle fade-in">7 partis présentés de façon identique, dans l'ordre alphabétique. Chaque information est sourcée vers le programme officiel du parti.</p>
   </div>
 </div>
+
+<!-- ═══ TABLEAU COMPARATIF ═══ -->
+<section class="section" style="padding-bottom:0">
+  <div class="container">
+    <div class="comparatif-section">
+      <h2 class="comparatif-title fade-in">Vue d'ensemble en 10 secondes</h2>
+      <p class="comparatif-subtitle fade-in">
+        <span class="comp-legend"><span class="comp-dot comp-dot--fav"></span>Favorable</span>
+        <span class="comp-legend"><span class="comp-dot comp-dot--nua"></span>Nuancé</span>
+        <span class="comp-legend"><span class="comp-dot comp-dot--opp"></span>Opposé</span>
+        <span class="comp-legend-note">— survolez les points pour les détails</span>
+      </p>
+      <div class="comparatif-table-wrap fade-in">
+        <table class="comparatif-table" aria-label="Tableau comparatif des partis">
+          <thead>
+            <tr>
+              <th>Parti</th>
+              <th>Impôts</th>
+              <th>Immigration</th>
+              <th>Environnement</th>
+              <th>Social</th>
+              <th>Europe</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="comparatif-party-badge"><span class="comparatif-party-dot" style="background:#4CAF50"></span>EELV</span></td>
+              <td><span class="comp-dot comp-dot--opp" data-tip="Taxe carbone, ISF progressif — fiscalité plus lourde sur le capital"></span></td>
+              <td><span class="comp-dot comp-dot--fav" data-tip="Accueil digne des réfugiés, régularisation des travailleurs sans-papiers"></span></td>
+              <td><span class="comp-dot comp-dot--fav" data-tip="Transition urgente, 100% renouvelables, sortie du nucléaire d'ici 2050"></span></td>
+              <td><span class="comp-dot comp-dot--fav" data-tip="SMIC 1 600 €, semaine de 4 jours, logement opposable renforcé"></span></td>
+              <td><span class="comp-dot comp-dot--fav" data-tip="Fédéralisme européen renforcé, solidarité européenne"></span></td>
+            </tr>
+            <tr>
+              <td><span class="comparatif-party-badge"><span class="comparatif-party-dot" style="background:#CC0000"></span>LFI</span></td>
+              <td><span class="comp-dot comp-dot--opp" data-tip="IS en hausse pour les grandes entreprises, ISF renforcé, 14 tranches d'IR"></span></td>
+              <td><span class="comp-dot comp-dot--fav" data-tip="Régularisation des sans-papiers qui travaillent, voies légales d'intégration"></span></td>
+              <td><span class="comp-dot comp-dot--fav" data-tip="Sortie du nucléaire, règle verte, 100% renouvelables d'ici 2050"></span></td>
+              <td><span class="comp-dot comp-dot--fav" data-tip="SMIC 1 600 € immédiat, retraite à 60 ans, blocage des prix essentiels"></span></td>
+              <td><span class="comp-dot comp-dot--opp" data-tip="Contre le libre-échange, dissolution de l'OTAN, souveraineté nationale"></span></td>
+            </tr>
+            <tr>
+              <td><span class="comparatif-party-badge"><span class="comparatif-party-dot" style="background:#0066CC"></span>LR</span></td>
+              <td><span class="comp-dot comp-dot--fav" data-tip="Baisse de l'IS, réduction des charges patronales, simplification fiscale"></span></td>
+              <td><span class="comp-dot comp-dot--opp" data-tip="Contrôle strict, renforcement des expulsions, quotas d'immigration"></span></td>
+              <td><span class="comp-dot comp-dot--nua" data-tip="Pro-nucléaire (14 réacteurs), faibles engagements renouvelables"></span></td>
+              <td><span class="comp-dot comp-dot--opp" data-tip="Maintien retraite 64 ans, flexibilité du marché du travail"></span></td>
+              <td><span class="comp-dot comp-dot--nua" data-tip="Europe des nations souveraines, contre le fédéralisme"></span></td>
+            </tr>
+            <tr>
+              <td><span class="comparatif-party-badge"><span class="comparatif-party-dot" style="background:#FF6600"></span>MoDem</span></td>
+              <td><span class="comp-dot comp-dot--nua" data-tip="Économie mixte pragmatique, ni ultralibéralisme ni étatisme"></span></td>
+              <td><span class="comp-dot comp-dot--nua" data-tip="Intégration par le travail, voies légales d'immigration"></span></td>
+              <td><span class="comp-dot comp-dot--fav" data-tip="Transition énergétique pragmatique, soutien aux renouvelables et au nucléaire"></span></td>
+              <td><span class="comp-dot comp-dot--nua" data-tip="Dialogue social renforcé, lutte contre la pauvreté par l'insertion"></span></td>
+              <td><span class="comp-dot comp-dot--fav" data-tip="Fédéralisme européen, démocratie européenne renforcée"></span></td>
+            </tr>
+            <tr>
+              <td><span class="comparatif-party-badge"><span class="comparatif-party-dot" style="background:#E75480"></span>PS</span></td>
+              <td><span class="comp-dot comp-dot--opp" data-tip="Rétablissement de l'ISF vert, fiscalité progressive, taxation des grandes fortunes"></span></td>
+              <td><span class="comp-dot comp-dot--nua" data-tip="Intégration républicaine, voies légales d'accueil et de régularisation"></span></td>
+              <td><span class="comp-dot comp-dot--fav" data-tip="Planification écologique avec investissement public massif"></span></td>
+              <td><span class="comp-dot comp-dot--fav" data-tip="Abrogation retraite 64 ans, hausse SMIC, déserts médicaux"></span></td>
+              <td><span class="comp-dot comp-dot--fav" data-tip="Europe sociale, harmonisation des droits des travailleurs"></span></td>
+            </tr>
+            <tr>
+              <td><span class="comparatif-party-badge"><span class="comparatif-party-dot" style="background:#003189"></span>RN</span></td>
+              <td><span class="comp-dot comp-dot--nua" data-tip="Baisse TVA sur l'énergie et les produits essentiels, maintien IS actuel"></span></td>
+              <td><span class="comp-dot comp-dot--opp" data-tip="Quotas annuels votés au Parlement, priorité nationale dans les aides"></span></td>
+              <td><span class="comp-dot comp-dot--nua" data-tip="Pro-nucléaire, peu d'engagements sur les renouvelables"></span></td>
+              <td><span class="comp-dot comp-dot--fav" data-tip="Retraite à 60 ans pour les carrières longues, baisse des prix essentiels"></span></td>
+              <td><span class="comp-dot comp-dot--opp" data-tip="Sortie du commandement OTAN, révision des traités européens"></span></td>
+            </tr>
+            <tr>
+              <td><span class="comparatif-party-badge"><span class="comparatif-party-dot" style="background:#FFBE00"></span>Renaissance</span></td>
+              <td><span class="comp-dot comp-dot--fav" data-tip="Suppression CVAE, baisse des impôts de production pour les entreprises"></span></td>
+              <td><span class="comp-dot comp-dot--nua" data-tip="Lutte contre l'immigration illégale, intégration par le travail"></span></td>
+              <td><span class="comp-dot comp-dot--nua" data-tip="Mix nucléaire + renouvelables (6 EPR), investissement dans les industries vertes"></span></td>
+              <td><span class="comp-dot comp-dot--nua" data-tip="Réforme retraites pour l'équilibre financier, plein emploi visé à 5%"></span></td>
+              <td><span class="comp-dot comp-dot--fav" data-tip="Construction européenne renforcée : défense, économie, numérique"></span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:0.75rem;color:var(--text-muted);margin-top:12px;text-align:center">
+        Synthèse indicative basée sur les programmes officiels. Détails dans les cartes ci-dessous.
+      </p>
+    </div>
+  </div>
+</section>
 
 <!-- ═══ GRILLE ═══ -->
 <section class="section" style="padding-top:0">
@@ -59,8 +175,8 @@
           </div>
           <p class="parti-card-ideologie">Écologie politique · Centre-gauche</p>
           <p class="parti-card-chef">Chef de file : <strong>Marine Tondelier</strong></p>
-          <div class="parti-programme">
-            <p class="parti-programme-title">10 points du programme</p>
+          <details class="parti-programme">
+            <summary class="parti-programme-title">10 points du programme</summary>
             <ul>
               <li>Planification écologique d'urgence : neutralité carbone avant 2050</li>
               <li>Sortie du nucléaire progressif en faveur des renouvelables</li>
@@ -73,7 +189,7 @@
               <li>Fédéralisme européen renforcé</li>
               <li>Gratuité des transports en commun dans les grandes villes</li>
             </ul>
-          </div>
+          </details>
           <p class="parti-card-source">Source : Programme EELV 2022 – lesecologistes.fr</p>
           <div class="parti-card-actions">
             <a href="parti-europe-ecologie.html" class="btn-parti-primary">Page dédiée →</a>
@@ -92,8 +208,8 @@
           </div>
           <p class="parti-card-ideologie">Gauche radicale · Souverainisme de gauche</p>
           <p class="parti-card-chef">Chef de file : <strong>Jean-Luc Mélenchon / Manuel Bompard</strong></p>
-          <div class="parti-programme">
-            <p class="parti-programme-title">10 points du programme</p>
+          <details class="parti-programme">
+            <summary class="parti-programme-title">10 points du programme</summary>
             <ul>
               <li>SMIC à 1 600 € net immédiat</li>
               <li>Retraite à 60 ans pour tous</li>
@@ -106,7 +222,7 @@
               <li>100% renouvelables d'ici 2050, sortie du nucléaire</li>
               <li>Gratuité de l'éducation de la crèche à l'université</li>
             </ul>
-          </div>
+          </details>
           <p class="parti-card-source">Source : Programme "L'Avenir en commun" – lafranceinsoumise.fr</p>
           <div class="parti-card-actions">
             <a href="parti-la-france-insoumise.html" class="btn-parti-primary">Page dédiée →</a>
@@ -124,9 +240,9 @@
             <span class="parti-card-badge" style="background:#0066CC">LR</span>
           </div>
           <p class="parti-card-ideologie">Droite conservatrice · Gaullisme</p>
-          <p class="parti-card-chef">Chef de file : <strong>Laurent Wauquiez</strong></p>
-          <div class="parti-programme">
-            <p class="parti-programme-title">10 points du programme</p>
+          <p class="parti-card-chef">Chef de file : <strong>Bruno Retailleau</strong></p>
+          <details class="parti-programme">
+            <summary class="parti-programme-title">10 points du programme</summary>
             <ul>
               <li>Contrôle strict de l'immigration et renforcement des expulsions</li>
               <li>Baisse des charges pour les entreprises et simplification fiscale</li>
@@ -139,7 +255,7 @@
               <li>Lutte contre la délinquance : 10 000 policiers supplémentaires</li>
               <li>Soutien à l'agriculture et aux territoires ruraux</li>
             </ul>
-          </div>
+          </details>
           <p class="parti-card-source">Source : Programme LR 2022 – republicains.fr</p>
           <div class="parti-card-actions">
             <a href="parti-les-republicains.html" class="btn-parti-primary">Page dédiée →</a>
@@ -158,8 +274,8 @@
           </div>
           <p class="parti-card-ideologie">Centre · Humanisme démocratique</p>
           <p class="parti-card-chef">Chef de file : <strong>François Bayrou</strong></p>
-          <div class="parti-programme">
-            <p class="parti-programme-title">10 points du programme</p>
+          <details class="parti-programme">
+            <summary class="parti-programme-title">10 points du programme</summary>
             <ul>
               <li>Réforme des institutions pour plus de proportionnelle</li>
               <li>Europe fédérale, renforcement de la démocratie européenne</li>
@@ -172,7 +288,7 @@
               <li>Lutte contre la pauvreté par l'insertion professionnelle</li>
               <li>Politique étrangère multilatérale et diplomatique</li>
             </ul>
-          </div>
+          </details>
           <p class="parti-card-source">Source : Programme MoDem – mouvementdemocrate.fr</p>
           <div class="parti-card-actions">
             <a href="parti-modem.html" class="btn-parti-primary">Page dédiée →</a>
@@ -191,8 +307,8 @@
           </div>
           <p class="parti-card-ideologie">Gauche social-démocrate · Progressisme</p>
           <p class="parti-card-chef">Chef de file : <strong>Olivier Faure</strong></p>
-          <div class="parti-programme">
-            <p class="parti-programme-title">10 points du programme</p>
+          <details class="parti-programme">
+            <summary class="parti-programme-title">10 points du programme</summary>
             <ul>
               <li>Abrogation de la réforme des retraites à 64 ans</li>
               <li>Hausse du SMIC et indexation sur l'inflation</li>
@@ -205,7 +321,7 @@
               <li>Sécurité publique avec justice sociale</li>
               <li>Laïcité comme rempart républicain</li>
             </ul>
-          </div>
+          </details>
           <p class="parti-card-source">Source : Programme PS 2022 – parti-socialiste.fr</p>
           <div class="parti-card-actions">
             <a href="parti-parti-socialiste.html" class="btn-parti-primary">Page dédiée →</a>
@@ -224,8 +340,8 @@
           </div>
           <p class="parti-card-ideologie">Droite nationaliste · Souverainisme</p>
           <p class="parti-card-chef">Chef de file : <strong>Marine Le Pen / Jordan Bardella</strong></p>
-          <div class="parti-programme">
-            <p class="parti-programme-title">10 points du programme</p>
+          <details class="parti-programme">
+            <summary class="parti-programme-title">10 points du programme</summary>
             <ul>
               <li>Priorité nationale dans l'accès aux aides sociales et au logement</li>
               <li>Contrôle strict de l'immigration (quotas annuels votés au Parlement)</li>
@@ -238,7 +354,7 @@
               <li>Refus des politiques identitaires dans les institutions publiques</li>
               <li>Sortie progressive des traités européens jugés contraires aux intérêts français</li>
             </ul>
-          </div>
+          </details>
           <p class="parti-card-source">Source : Programme législatif 2024 – rassemblementnational.fr</p>
           <div class="parti-card-actions">
             <a href="parti-rassemblement-national.html" class="btn-parti-primary">Page dédiée →</a>
@@ -256,9 +372,9 @@
             <span class="parti-card-badge" style="background:#FFBE00;color:#1a1a1a">REN</span>
           </div>
           <p class="parti-card-ideologie">Centre · Libéral-progressiste</p>
-          <p class="parti-card-chef">Chef de file : <strong>Emmanuel Macron / Gabriel Attal</strong></p>
-          <div class="parti-programme">
-            <p class="parti-programme-title">10 points du programme</p>
+          <p class="parti-card-chef">Chef de file : <strong>Gabriel Attal</strong></p>
+          <details class="parti-programme">
+            <summary class="parti-programme-title">10 points du programme</summary>
             <ul>
               <li>Réforme des retraites pour assurer l'équilibre financier du système</li>
               <li>Plein emploi : 5% de chômage d'ici 2027</li>
@@ -271,7 +387,7 @@
               <li>Investissement massif en santé et déserts médicaux</li>
               <li>Réforme de l'État : simplification et décentralisation</li>
             </ul>
-          </div>
+          </details>
           <p class="parti-card-source">Source : Programme Renaissance 2022 – parti-renaissance.fr</p>
           <div class="parti-card-actions">
             <a href="parti-renaissance.html" class="btn-parti-primary">Page dédiée →</a>
@@ -285,7 +401,7 @@
     <!-- Note de neutralité -->
     <div class="card" style="margin-top:48px;padding:24px;text-align:center;border-left:4px solid var(--accent)">
       <p style="color:var(--text);font-size:0.9rem">
-        ⚖️ <strong>Engagement de neutralité</strong> — Les partis sont présentés dans l'ordre alphabétique.
+        <strong>Engagement de neutralité</strong> — Les partis sont présentés dans l'ordre alphabétique.
         Chaque programme est résumé à partir des documents officiels de chaque formation.
         VoteClair ne soutient, ne recommande et ne finance aucun parti politique.
       </p>
@@ -308,6 +424,11 @@
         <a href="quiz.html">Quiz</a>
         <a href="institutions.html">Institutions</a>
         <a href="histoire.html">Histoire</a>
+        <a href="pourquoi-voter.html">Pourquoi voter ?</a>
+        <a href="calendrier.html">Calendrier électoral</a>
+        <a href="blog.html">Blog</a>
+        <a href="a-propos.html">À propos</a>
+        <a href="contact.html">Contact</a>
       </div>
       <div class="footer-col">
         <h4>Les partis</h4>
@@ -320,18 +441,23 @@
         <a href="parti-renaissance.html">Renaissance</a>
       </div>
       <div class="footer-col">
-        <h4>Légal</h4>
-        <a href="#">Mentions légales</a>
-        <a href="#">Confidentialité</a>
+        <h4>Légal & transparence</h4>
+        <a href="methodologie.html">Méthodologie du quiz</a>
+        <a href="mentions-legales.html">Mentions légales</a>
+        <a href="confidentialite.html">Politique de confidentialité</a>
+        <a href="politique-cookies.html">Politique de cookies</a>
+        <a href="conditions-utilisation.html">Conditions d'utilisation</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2024 VoteClair — Indépendant · Sans publicité · Sans tracking</span>
+      <span>© 2026 VoteClair — Outil civique indépendant</span>
+      <span>RGPD conforme · <a href="politique-cookies.html" style="color:inherit;text-decoration:underline">Gérer mes cookies</a></span>
     </div>
   </div>
 </footer>
 
 <script src="js/nav.js"></script>
 <script src="js/partis.js"></script>
+<script src="js/cookie-consent.js"></script>
 </body>
 </html>

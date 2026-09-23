@@ -1,0 +1,296 @@
+{
+  "parti": "modem",
+  "comparateur": {
+    "logement": {
+      "valeur": "Régulation équilibrée du marché locatif avec plafonnement des loyers dans les zones les plus tendues. Soutien à la construction mixte public-privé. Aides ciblées pour les ménages aux revenus modestes. Partenariats avec les collectivités pour les logements intermédiaires.",
+      "sources": [
+        "src:modem-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "fiscalite": {
+      "valeur": "Compétitivité fiscale maintenue pour attirer les investissements. Conservation des dispositifs favorables à l'épargne productive. Lutte résolue contre la fraude et l'évasion fiscale. Équilibre budgétaire à moyen terme par maîtrise des dépenses plutôt que hausses d'impôts.",
+      "sources": [
+        "src:modem-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "education": {
+      "valeur": "Liberté de l'enseignement affirmée, soutien aux écoles privées sous contrat. Autonomie pédagogique des établissements. Partenariats public-privé pour la formation professionnelle et l'apprentissage. Investissement dans le numérique et les compétences de demain.",
+      "sources": [
+        "src:modem-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "environnement": {
+      "valeur": "Pragmatisme énergétique : maintien du nucléaire associé au développement des renouvelables. Fiscalité environnementale modérée et socialement acceptable. Rénovation thermique incitative. Approche technologique et économique de la transition plutôt que contraignante.",
+      "sources": [
+        "src:modem-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "securite": {
+      "valeur": "Immigration régulée par les besoins économiques et les capacités d'intégration. Coopération européenne renforcée sur le contrôle des frontières. Humanisme modéré : respect de la dignité des personnes tout en maintenant une politique ferme sur les reconduites.",
+      "sources": [
+        "src:modem-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "sante": {
+      "valeur": "Liberté du patient et du médecin libéral préservée. Soutien aux complémentaires santé responsables. Télémédecine et numérique en santé pour lutter contre les déserts. Prévention renforcée. Financement équilibré entre secteur public et libéral.",
+      "sources": [
+        "src:modem-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "emploi": {
+      "valeur": "Dialogue social constant. Formation tout au long de la vie et reconversion professionnelle soutenues. Flexisécurité à la nordique. Soutien fort aux PME et TPE. Participation des salariés aux décisions et aux résultats. Apprentissage valorisé dès le collège.",
+      "sources": [
+        "src:modem-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "europe": {
+      "valeur": "Fédéralisme européen modéré et progressif. Défenseur historique de l'intégration européenne. Subsidiarité bien comprise entre niveaux européen, national et local. Europe de la défense et des valeurs communes. Souveraineté partagée sur les grandes décisions mondiales.",
+      "sources": [
+        "src:modem-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    }
+  },
+  "points_programme": [
+    {
+      "valeur": "Réforme des institutions : introduction d'une dose de proportionnelle aux législatives",
+      "source_citee": "Programme MoDem – mouvementdemocrate.fr",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    {
+      "valeur": "Europe fédérale : renforcement de la démocratie et des institutions européennes",
+      "source_citee": "Programme européen MoDem 2024",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    {
+      "valeur": "Transition énergétique pragmatique : nucléaire et renouvelables complémentaires",
+      "source_citee": "Programme énergie MoDem",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    {
+      "valeur": "Éducation priorité nationale : revalorisation des enseignants et autonomie des établissements",
+      "source_citee": "Programme MoDem",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    {
+      "valeur": "Dialogue social renforcé entre partenaires sociaux, co-construction des réformes",
+      "source_citee": "Programme social MoDem",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    {
+      "valeur": "Économie mixte équilibrée : ni ultralibéralisme, ni dirigisme étatique",
+      "source_citee": "Programme économique MoDem",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    {
+      "valeur": "Laïcité ouverte : respect des croyances dans l'espace public encadré par la loi",
+      "source_citee": "Programme MoDem",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    {
+      "valeur": "Décentralisation et démocratie locale renforcées",
+      "source_citee": "Programme MoDem",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    {
+      "valeur": "Lutte contre la pauvreté par l'insertion professionnelle et la formation",
+      "source_citee": "Programme social MoDem",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    {
+      "valeur": "Politique étrangère multilatérale, diplomatie et désarmement nucléaire mondial",
+      "source_citee": "Programme MoDem",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    }
+  ],
+  "profondeur": [
+    "Le Mouvement Démocrate naît en 2007 de la volonté de François Bayrou de construire un centre indépendant des blocs de gauche et de droite. Ancien candidat à trois présidentielles (2002, 2007, 2012), Bayrou incarne une troisième voie centriste ancrée dans la tradition démocrate-chrétienne héritée du MRP d'après-guerre et de l'UDF fondée par Giscard d'Estaing.",
+    "En 2017, Bayrou soutient Macron et devient ministre de la Justice avant de démissionner après quelques semaines suite à des accusations d'emplois fictifs (dont il sera blanchi). Le MoDem reste toutefois allié de Renaissance dans la majorité présidentielle. Cette alliance est à la fois une force (représentation parlementaire) et une source de tension (le MoDem veut conserver son identité propre).",
+    "Nommé Premier ministre en décembre 2024, François Bayrou incarne après sept ans dans l'ombre de Macron une vision plus sociale et moins libérale du centrisme. Il prône l'équilibre budgétaire, le dialogue et la réconciliation nationale dans un contexte de fragmentation politique inédite."
+  ],
+  "figures": [
+    {
+      "nom": "François Bayrou",
+      "role": "Premier ministre, fondateur du MoDem",
+      "initiales": null,
+      "bio": "Agrégé de lettres, ancien ministre de l'Éducation (1993-1997). Candidat à trois présidentielles. Figure emblématique du centrisme français depuis 30 ans.",
+      "photo": "assets/figures/bayrou-matignon-cropped.jpg",
+      "alt": "François Bayrou",
+      "credit_auteur": "Service photographique de Matignon",
+      "licence_label": "Licence Ouverte",
+      "licence_url": "https://www.etalab.gouv.fr/licence-ouverte-open-licence",
+      "commons_url": "https://commons.wikimedia.org/wiki/File:Bayrou_Matignon_(cropped).jpg"
+    },
+    {
+      "nom": "Marc Fesneau",
+      "role": "Ministre de l'Agriculture",
+      "initiales": null,
+      "bio": "Ancien secrétaire général du MoDem, ministre de l'Agriculture depuis 2022. Défenseur du monde agricole et de la souveraineté alimentaire.",
+      "photo": "assets/figures/marc-fesneau-2024-cropped.jpg",
+      "alt": "Marc Fesneau",
+      "credit_auteur": "European Commission Audiovisual Center",
+      "licence_label": "CC BY 4.0",
+      "licence_url": "https://creativecommons.org/licenses/by/4.0",
+      "commons_url": "https://commons.wikimedia.org/wiki/File:Marc_Fesneau_2024_(cropped).jpg"
+    },
+    {
+      "nom": "Isabelle Florennes",
+      "role": "Secrétaire générale du MoDem",
+      "initiales": null,
+      "bio": "Avocate, députée des Hauts-de-Seine. Joue un rôle central dans l'organisation interne du parti.",
+      "photo": "assets/figures/isabelle-florennes-senatrice-des-hauts-de-seine.jpg",
+      "alt": "Isabelle Florennes",
+      "credit_auteur": "Medjai92",
+      "licence_label": "CC0",
+      "licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "commons_url": "https://commons.wikimedia.org/wiki/File:Isabelle_Florennes,_s%C3%A9natrice_des_Hauts-de-Seine.jpg"
+    },
+    {
+      "nom": "Patrick Mignola",
+      "role": "Président du groupe MoDem à l'AN",
+      "initiales": null,
+      "bio": "Député de Savoie, président du groupe parlementaire MoDem. Artisan de l'alliance avec Renaissance tout en préservant l'autonomie du parti.",
+      "photo": "assets/figures/patrick-mignola-en-2022.jpg",
+      "alt": "Patrick Mignola",
+      "credit_auteur": "JohnWhite73",
+      "licence_label": "CC0",
+      "licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "commons_url": "https://commons.wikimedia.org/wiki/File:Patrick_Mignola,_en_2022.jpg"
+    }
+  ],
+  "positions_fiche": {
+    "entete": [
+      "Thème",
+      "Position du MoDem"
+    ],
+    "lignes": [
+      {
+        "theme": "Immigration",
+        "valeur": "Régulation ordonnée de l'immigration, intégration prioritaire, politique européenne commune",
+        "sources": [],
+        "verifie_le": null,
+        "confiance": "a_verifier",
+        "auteur": "humain"
+      },
+      {
+        "theme": "Économie",
+        "valeur": "Économie sociale de marché, équilibre budgétaire, soutien aux PME et à l'innovation",
+        "sources": [],
+        "verifie_le": null,
+        "confiance": "a_verifier",
+        "auteur": "humain"
+      },
+      {
+        "theme": "Environnement",
+        "valeur": "Transition pragmatique nucléaire + renouvelables, agriculture raisonnée, biodiversité",
+        "sources": [],
+        "verifie_le": null,
+        "confiance": "a_verifier",
+        "auteur": "humain"
+      },
+      {
+        "theme": "Europe",
+        "valeur": "Fédéralisme européen affirmé, élection du Parlement européen renforcée, défense commune",
+        "sources": [],
+        "verifie_le": null,
+        "confiance": "a_verifier",
+        "auteur": "humain"
+      },
+      {
+        "theme": "Social",
+        "valeur": "Dialogue social, insertion par le travail, revenu universel d'activité étudié",
+        "sources": [],
+        "verifie_le": null,
+        "confiance": "a_verifier",
+        "auteur": "humain"
+      },
+      {
+        "theme": "Sécurité",
+        "valeur": "État de droit, réforme de la justice, police républicaine et formation renforcée",
+        "sources": [],
+        "verifie_le": null,
+        "confiance": "a_verifier",
+        "auteur": "humain"
+      },
+      {
+        "theme": "Institutions",
+        "valeur": "Proportionnelle aux législatives, référendum consultatif, renforcement du Parlement",
+        "sources": [],
+        "verifie_le": null,
+        "confiance": "a_verifier",
+        "auteur": "humain"
+      }
+    ]
+  },
+  "programme_officiel": {
+    "label": "mouvementdemocrate.fr",
+    "url": "https://www.mouvementdemocrate.fr"
+  },
+  "engagements": [
+    "Réformer les institutions pour introduire plus de proportionnelle",
+    "Renforcer la démocratie européenne fédérale",
+    "Assurer la transition énergétique de façon pragmatique",
+    "Faire de l'éducation une priorité nationale — revaloriser les enseignants",
+    "Renforcer le dialogue social entre partenaires sociaux",
+    "Lutter contre la pauvreté par l'insertion professionnelle"
+  ],
+  "engagements_gerant": [
+    "Simplification administrative pour les TPE/PME",
+    "Dialogue social renforcé : co-gestion à l'allemande",
+    "Renforcement du statut de l'entrepreneur individuel"
+  ],
+  "note_resultat": "Votre positionnement centriste et pro-européen correspond à la ligne du MoDem."
+}

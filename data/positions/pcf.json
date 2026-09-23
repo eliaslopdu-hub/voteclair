@@ -1,0 +1,77 @@
+{
+  "parti": "pcf",
+  "comparateur": {
+    "logement": {
+      "valeur": "Socialisation du foncier et du logement : constitution d'un pôle public de l'habitat. Encadrement strict des loyers. Développement massif du parc social public. Réquisition des logements vides appartenant aux investisseurs institutionnels.",
+      "sources": [
+        "src:pcf-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "fiscalite": {
+      "valeur": "Nationalisation des grandes entreprises et des banques. ISF fortement renforcé incluant le capital productif. Impôt sur les sociétés progressif. Taxation des profits financiers et des héritages importants. Fin des niches fiscales pour les grandes fortunes.",
+      "sources": [
+        "src:pcf-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "education": {
+      "valeur": "École publique unique, laïque et gratuite de la maternelle à l'université et à la formation continue. Recrutement de 300 000 enseignants. Suppression de tout financement public à l'enseignement privé. Égalité absolue entre établissements.",
+      "sources": [
+        "src:pcf-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "environnement": {
+      "valeur": "Planification écologique publique avec nationalisation du secteur énergétique. Maintien du nucléaire public comme outil de transition vers 100 % renouvelables. Interdiction des pesticides de synthèse. Agriculture paysanne et biologique soutenue.",
+      "sources": [
+        "src:pcf-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "securite": {
+      "valeur": "Régularisation des travailleurs étrangers en situation irrégulière. Droits civiques complets pour les résidents étrangers. Police républicaine au service des citoyens, sous contrôle démocratique. Lutte contre les discriminations systémiques.",
+      "sources": [
+        "src:pcf-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "sante": {
+      "valeur": "Extension de la Sécurité sociale à 100 % de remboursement sur tous les soins. Fin définitive des dépassements d'honoraires. Fin du numerus clausus. Recrutement massif de soignants dans le secteur public. Médecine du travail renforcée.",
+      "sources": [
+        "src:pcf-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "emploi": {
+      "valeur": "SMIC à 1 600 € net immédiat. Retraite à 60 ans avec 37,5 annuités. Semaine de 32 heures. Droits syndicaux renforcés et cogestion dans les entreprises. Suppression des contrats précaires et de l'intérim structurel.",
+      "sources": [
+        "src:pcf-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "europe": {
+      "valeur": "Sortie du commandement intégré de l'OTAN. Renégociation des traités européens pour permettre une Europe sociale et écologique. Fin des traités de libre-échange. Europe des peuples non du capital. Veto sur les directives libérales.",
+      "sources": [
+        "src:pcf-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    }
+  }
+}

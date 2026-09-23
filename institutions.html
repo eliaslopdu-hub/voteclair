@@ -3,38 +3,64 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#6C63FF" />
   <title>Comment fonctionne la démocratie française – VoteClair</title>
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.voteclair.fr/institutions.html" />
   <meta name="description" content="Comprendre les institutions françaises : le scrutin à deux tours, le Parlement, le Président, comment voter et s'inscrire sur les listes électorales." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/fonts.css" />
   <link rel="stylesheet" href="css/main.css" />
   <link rel="stylesheet" href="css/institutions.css" />
+  <meta property="og:image" content="https://www.voteclair.fr/assets/og-default.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
 </head>
 <body>
+<a class="skip-link" href="#main-content">Aller au contenu principal</a>
 
-<nav class="navbar">
+<!-- ═══ NAVBAR ═══ -->
+<nav class="navbar" role="navigation" aria-label="Navigation principale">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">Vote<span>Clair</span></a>
     <ul class="nav-links">
       <li><a href="index.html">Accueil</a></li>
-      <li><a href="quiz.html" class="nav-cta">🗳️ Faire le quiz</a></li>
+      <li><a href="quiz.html" class="nav-cta">Quiz</a></li>
       <li><a href="partis.html">Partis</a></li>
-      <li><a href="institutions.html">Institutions</a></li>
-      <li><a href="histoire.html">Histoire</a></li>
+      <li><a href="face-a-face.html">Comparer</a></li>
+      <li class="nav-has-dropdown">
+        <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">En savoir plus <span class="nav-dropdown-arrow">▾</span></button>
+        <ul class="nav-dropdown-menu">
+          <li><a href="institutions.html">Institutions</a></li>
+          <li><a href="histoire.html">Histoire</a></li>
+          <li><a href="pourquoi-voter.html">Pourquoi voter ?</a></li>
+          <li><a href="calendrier.html">Calendrier</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="a-propos.html">À propos</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </li>
     </ul>
-    <button class="nav-burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    <button class="nav-burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </nav>
-<nav class="nav-mobile">
+<nav class="nav-mobile" aria-label="Menu mobile">
   <a href="index.html">Accueil</a>
-  <a href="quiz.html">🗳️ Quiz</a>
+  <a href="quiz.html" class="nav-mobile-cta">Quiz</a>
   <a href="partis.html">Partis</a>
+  <a href="face-a-face.html">Comparer</a>
+  <div class="nav-mobile-divider">En savoir plus</div>
   <a href="institutions.html">Institutions</a>
   <a href="histoire.html">Histoire</a>
+  <a href="pourquoi-voter.html">Pourquoi voter ?</a>
+  <a href="calendrier.html">Calendrier électoral</a>
+  <a href="blog.html">Blog</a>
+  <a href="a-propos.html">À propos</a>
+  <a href="contact.html">Contact</a>
 </nav>
 
 <!-- ═══ PAGE HERO ═══ -->
-<div class="page-hero">
+<div class="page-hero page-hero--image" id="main-content" style="background: linear-gradient(105deg, rgba(10,10,28,0.88) 0%, rgba(10,10,28,0.65) 55%, rgba(10,10,28,0.25) 100%), url('https://images.unsplash.com/photo-1548661710-7f540f8fd9be?w=1920&q=80') center/cover no-repeat;">
   <div class="container">
     <div class="breadcrumb">
       <a href="index.html">Accueil</a> <span>›</span> <span>Institutions</span>
@@ -55,23 +81,19 @@
     </p>
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-top:32px">
       <div class="card" style="padding:20px;border-left:4px solid var(--accent)">
-        <div style="font-size:1.5rem;margin-bottom:8px">📜</div>
-        <h4 style="font-family:'DM Sans',sans-serif;font-size:0.9rem;margin-bottom:6px">1848</h4>
+        <h4 style="font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--accent);margin-bottom:6px">1848</h4>
         <p style="font-size:0.82rem">Instauration du suffrage universel masculin en France</p>
       </div>
       <div class="card" style="padding:20px;border-left:4px solid var(--accent)">
-        <div style="font-size:1.5rem;margin-bottom:8px">⚧️</div>
-        <h4 style="font-family:'DM Sans',sans-serif;font-size:0.9rem;margin-bottom:6px">1944</h4>
+        <h4 style="font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--accent);margin-bottom:6px">1944</h4>
         <p style="font-size:0.82rem">Les femmes obtiennent le droit de vote</p>
       </div>
       <div class="card" style="padding:20px;border-left:4px solid var(--accent)">
-        <div style="font-size:1.5rem;margin-bottom:8px">🗳️</div>
-        <h4 style="font-family:'DM Sans',sans-serif;font-size:0.9rem;margin-bottom:6px">1974</h4>
+        <h4 style="font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--accent);margin-bottom:6px">1974</h4>
         <p style="font-size:0.82rem">Abaissement de la majorité électorale de 21 à 18 ans</p>
       </div>
       <div class="card" style="padding:20px;border-left:4px solid #CC0000">
-        <div style="font-size:1.5rem;margin-bottom:8px">📉</div>
-        <h4 style="font-family:'DM Sans',sans-serif;font-size:0.9rem;margin-bottom:6px">53,7%</h4>
+        <h4 style="font-family:'Playfair Display',serif;font-size:1.4rem;color:#CC0000;margin-bottom:6px">53,7%</h4>
         <p style="font-size:0.82rem">Taux d'abstention au 1er tour des législatives 2022 (source : Ministère de l'Intérieur)</p>
       </div>
     </div>
@@ -98,7 +120,7 @@
     </div>
 
     <div class="scrutin-alert">
-      <p>⚠️ <strong style="color:var(--text)">Pourquoi le 1er tour est crucial</strong></p>
+      <p><strong style="color:var(--text)">Pourquoi le 1er tour est crucial</strong></p>
       <p style="margin-top:8px;font-size:0.9rem">Le 1er tour dessine le paysage politique et détermine qui peut se maintenir. Voter au 1er tour pour le parti de son choix envoie un signal sur les forces en présence, même si ce parti n'accède pas au second tour. Ne pas voter au 1er tour, c'est laisser les autres décider de l'offre au 2nd tour.</p>
     </div>
   </div>
@@ -110,7 +132,7 @@
 
     <div class="institutions-grid">
       <div class="institution-card">
-        <div class="institution-icon">🏛️</div>
+        <div class="institution-icon">PR</div>
         <h3>Le Président de la République</h3>
         <p style="font-size:0.875rem;margin-bottom:8px">Élu au suffrage universel direct pour 5 ans (depuis 2002). Chef de l'État, garant des institutions.</p>
         <ul>
@@ -122,7 +144,7 @@
         </ul>
       </div>
       <div class="institution-card">
-        <div class="institution-icon">📜</div>
+        <div class="institution-icon">AN</div>
         <h3>L'Assemblée nationale</h3>
         <p style="font-size:0.875rem;margin-bottom:8px">577 députés élus pour 5 ans au scrutin uninominal à deux tours. Vote les lois et le budget.</p>
         <ul>
@@ -134,7 +156,7 @@
         </ul>
       </div>
       <div class="institution-card">
-        <div class="institution-icon">🏛️</div>
+        <div class="institution-icon">SE</div>
         <h3>Le Sénat</h3>
         <p style="font-size:0.875rem;margin-bottom:8px">348 sénateurs élus pour 6 ans au suffrage indirect par les élus locaux. Chambre haute du Parlement.</p>
         <ul>
@@ -146,7 +168,7 @@
         </ul>
       </div>
       <div class="institution-card">
-        <div class="institution-icon">👤</div>
+        <div class="institution-icon">PM</div>
         <h3>Le Premier ministre</h3>
         <p style="font-size:0.875rem;margin-bottom:8px">Nommé par le Président, il dirige le gouvernement et coordonne l'action des ministres.</p>
         <ul>
@@ -158,7 +180,7 @@
         </ul>
       </div>
       <div class="institution-card">
-        <div class="institution-icon">⚖️</div>
+        <div class="institution-icon">CC</div>
         <h3>Le Conseil constitutionnel</h3>
         <p style="font-size:0.875rem;margin-bottom:8px">9 membres nommés pour 9 ans. Gardien de la Constitution, il vérifie la conformité des lois.</p>
         <ul>
@@ -170,7 +192,7 @@
         </ul>
       </div>
       <div class="institution-card">
-        <div class="institution-icon">🌍</div>
+        <div class="institution-icon">CE</div>
         <h3>Le Conseil d'État</h3>
         <p style="font-size:0.875rem;margin-bottom:8px">Plus haute juridiction administrative. Conseille le gouvernement sur les projets de loi.</p>
         <ul>
@@ -249,7 +271,6 @@
     <p class="inst-section-label">Section 5</p>
     <h2>Comment s'inscrire sur les listes électorales</h2>
     <div class="inscription-box">
-      <div style="font-size:2rem;margin-bottom:12px">📋</div>
       <h3>Inscrivez-vous avant le 31 décembre</h3>
       <p>Pour voter à une élection, vous devez être inscrit sur les listes électorales de votre commune. La démarche est gratuite et s'effectue en ligne.</p>
       <a href="https://www.service-public.fr/particuliers/vosdroits/R12675" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:8px">S'inscrire sur service-public.fr →</a>
@@ -265,32 +286,32 @@
 
     <div class="media-tips">
       <div class="media-tip">
-        <div class="media-tip-icon">🔍</div>
+        <div class="media-tip-icon">SRC</div>
         <h4>Cherchez la source primaire</h4>
         <p>Avant de partager une information, vérifiez qu'elle provient d'une source officielle, d'un article de presse signé ou d'un document original.</p>
       </div>
       <div class="media-tip">
-        <div class="media-tip-icon">⚖️</div>
+        <div class="media-tip-icon">F/O</div>
         <h4>Distinguez fait et opinion</h4>
         <p>Un fait est vérifiable. Une opinion est un jugement. Les deux ont leur place dans le débat, mais ils ne se valent pas comme arguments.</p>
       </div>
       <div class="media-tip">
-        <div class="media-tip-icon">🔄</div>
+        <div class="media-tip-icon">CRX</div>
         <h4>Croisez les médias</h4>
         <p>Lisez plusieurs sources avec des lignes éditoriales différentes. L'accord entre elles est un signal de fiabilité ; les divergences méritent investigation.</p>
       </div>
       <div class="media-tip">
-        <div class="media-tip-icon">🧠</div>
+        <div class="media-tip-icon">BC</div>
         <h4>Méfiez-vous du biais de confirmation</h4>
         <p>Nous avons tendance à lire ce qui confirme nos croyances. Exposez-vous volontairement à des points de vue différents du vôtre.</p>
       </div>
       <div class="media-tip">
-        <div class="media-tip-icon">📅</div>
+        <div class="media-tip-icon">DATE</div>
         <h4>Vérifiez la date</h4>
         <p>Une vieille information peut re-circuler hors contexte. Vérifiez toujours la date de publication avant de partager.</p>
       </div>
       <div class="media-tip">
-        <div class="media-tip-icon">🕵️</div>
+        <div class="media-tip-icon">FC</div>
         <h4>Utilisez les outils de fact-checking</h4>
         <p>Des sites comme Les Décodeurs (Le Monde), Libé Désintox ou CheckNews (Libération) vérifient les déclarations politiques en temps réel.</p>
       </div>
@@ -313,6 +334,8 @@
         <a href="quiz.html">Quiz</a>
         <a href="partis.html">Les partis</a>
         <a href="histoire.html">Histoire</a>
+        <a href="pourquoi-voter.html">Pourquoi voter ?</a>
+        <a href="calendrier.html">Calendrier électoral</a>
       </div>
       <div class="footer-col">
         <h4>Ressources</h4>
@@ -321,17 +344,22 @@
         <a href="https://www.assemblee-nationale.fr" target="_blank" rel="noopener">Assemblée nationale</a>
       </div>
       <div class="footer-col">
-        <h4>Légal</h4>
-        <a href="#">Mentions légales</a>
-        <a href="#">Confidentialité</a>
+        <h4>Légal & transparence</h4>
+        <a href="methodologie.html">Méthodologie du quiz</a>
+        <a href="mentions-legales.html">Mentions légales</a>
+        <a href="confidentialite.html">Politique de confidentialité</a>
+        <a href="politique-cookies.html">Politique de cookies</a>
+        <a href="conditions-utilisation.html">Conditions d'utilisation</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2024 VoteClair — Indépendant · Sans publicité · Sans tracking</span>
+      <span>© 2026 VoteClair — Outil civique indépendant</span>
+      <span>RGPD conforme · <a href="politique-cookies.html" style="color:inherit;text-decoration:underline">Gérer mes cookies</a></span>
     </div>
   </div>
 </footer>
 
 <script src="js/nav.js"></script>
+<script src="js/cookie-consent.js"></script>
 </body>
 </html>

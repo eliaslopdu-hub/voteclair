@@ -1,0 +1,296 @@
+{
+  "parti": "lfi",
+  "comparateur": {
+    "logement": {
+      "valeur": "Encadrement strict des loyers dans toutes les agglomérations. Réquisition des logements vacants appartenant aux grands propriétaires. Gel des expulsions locatives. Construction de 200 000 logements sociaux par an financée par l'État.",
+      "sources": [
+        "src:lfi-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "fiscalite": {
+      "valeur": "Rétablissement de l'ISF renforcé sur le capital financier et immobilier. Suppression de la flat tax sur les dividendes. Hausse des tranches supérieures de l'impôt sur le revenu. Taxation des superprofits et des héritages importants.",
+      "sources": [
+        "src:lfi-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "education": {
+      "valeur": "Service public unifié de l'éducation nationale, laïc et gratuit de la maternelle à l'université. Suppression du financement public des écoles privées. Recrutement massif d'enseignants titulaires. Réforme des programmes vers l'esprit critique.",
+      "sources": [
+        "src:lfi-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "environnement": {
+      "valeur": "Planification écologique sous contrôle public avec un pôle public de l'énergie. Sortie progressive du nucléaire à horizon 2045. Développement massif des énergies renouvelables. Interdiction des pesticides les plus dangereux. Réforme de la PAC.",
+      "sources": [
+        "src:lfi-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "securite": {
+      "valeur": "Réforme en profondeur des forces de l'ordre et interdiction légale des violences policières. Régularisation des travailleurs sans-papiers. Accueil digne des demandeurs d'asile conforme au droit international. Droit de vote aux étrangers résidant en France.",
+      "sources": [
+        "src:lfi-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "sante": {
+      "valeur": "Hôpital public renforcé : fin des suppressions de lits et de postes, revalorisation massive des soignants. Remboursement à 100 % des soins de base par la Sécurité sociale. Fin des dépassements d'honoraires. Médecine préventive prioritaire.",
+      "sources": [
+        "src:lfi-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "emploi": {
+      "valeur": "SMIC à 1 600 € net immédiat. Semaine de 32 heures sans perte de salaire. Retraite à 60 ans. Abrogation de la réforme des retraites à 64 ans. CDI comme norme par défaut. Encadrement strict de l'intérim et des contrats précaires.",
+      "sources": [
+        "src:lfi-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "europe": {
+      "valeur": "Désobéissance aux traités européens si contraires à l'intérêt général. Renégociation du Traité de stabilité budgétaire (TSCG). Sortie du commandement intégré de l'OTAN. Opposition aux traités de libre-échange (CETA, Mercosur). Multilatéralisme.",
+      "sources": [
+        "src:lfi-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    }
+  },
+  "points_programme": [
+    {
+      "valeur": "SMIC à 1 600 € net immédiat, indexé sur l'inflation",
+      "source_citee": "Programme \"L'Avenir en commun\" – lafranceinsoumise.fr",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    {
+      "valeur": "Retraite à 60 ans pour tous, 55 ans pour les métiers pénibles",
+      "source_citee": "Programme présidentiel LFI 2022",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    {
+      "valeur": "VIe République : Assemblée constituante citoyenne, fin du présidentialisme",
+      "source_citee": "Programme \"L'Avenir en commun\"",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    {
+      "valeur": "Règle verte : ne pas prélever plus que ce que la nature peut régénérer",
+      "source_citee": "Programme écologique LFI",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    {
+      "valeur": "Sortie des traités de libre-échange, relocalisation industrielle en France",
+      "source_citee": "Programme \"L'Avenir en commun\"",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    {
+      "valeur": "Blocage des prix sur les produits de première nécessité (alimentation, énergie)",
+      "source_citee": "Programme économique LFI",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    {
+      "valeur": "Dissolution du commandement intégré de l'OTAN, défense européenne autonome",
+      "source_citee": "Programme international LFI",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    {
+      "valeur": "Impôt sur le revenu à 14 tranches, rétablissement et hausse de l'ISF",
+      "source_citee": "Programme fiscal LFI 2022",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    {
+      "valeur": "100% énergies renouvelables d'ici 2050, sortie du nucléaire planifiée",
+      "source_citee": "Programme énergie LFI",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    {
+      "valeur": "Gratuité de l'éducation de la crèche à l'université, recrutement massif d'enseignants",
+      "source_citee": "Programme éducation LFI",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    }
+  ],
+  "profondeur": [
+    "La France Insoumise naît en 2016 de la volonté de Jean-Luc Mélenchon, ancien sénateur PS, de créer un mouvement politique de rupture avec la social-démocratie. S'inspirant du \"populisme de gauche\" théorisé par Chantal Mouffe et Ernesto Laclau, LFI construit une identité fondée sur l'opposition entre \"le peuple\" et \"les élites\", transcendant le clivage gauche-droite traditionnel.",
+    "Aux présidentielles 2017, Mélenchon obtient 19,6% et frôle le second tour. En 2022, avec 21,9%, il réalise le meilleur score de la gauche radicale sous la Ve République. LFI fonde la NUPES (Nouvelle Union Populaire Écologique et Sociale) qui obtient 151 sièges aux législatives, devenant la première force d'opposition. Le parti est cependant critiqué pour sa gouvernance interne très centralisée.",
+    "En 2024, au sein du Nouveau Front Populaire, LFI arrive en tête avec 72 sièges mais se voit contester la direction du gouvernement par ses alliés PS et EELV, qui refusent de soutenir un Premier ministre LFI. Ces tensions internes à la gauche révèlent la difficulté de gouverner ensemble des partis aux cultures politiques différentes."
+  ],
+  "figures": [
+    {
+      "nom": "Jean-Luc Mélenchon",
+      "role": "Fondateur et figure tutélaire de LFI",
+      "initiales": null,
+      "bio": "Ancien professeur, sénateur PS, cofondateur du Parti de Gauche en 2008. Candidat à trois présidentielles. Tribune populaire, orateur exceptionnel, figure clivante.",
+      "photo": "assets/figures/jlm-ep-2016-cropped-2.jpg",
+      "alt": "Jean-Luc Mélenchon",
+      "credit_auteur": "Fred Marvaux - European Parliament",
+      "licence_label": "European Parliament",
+      "licence_url": "https://www.europarl.europa.eu/legal-notice/",
+      "commons_url": "https://commons.wikimedia.org/wiki/File:JLM_EP_2016_cropped-2.jpg"
+    },
+    {
+      "nom": "Manuel Bompard",
+      "role": "Coordinateur national de LFI",
+      "initiales": null,
+      "bio": "Polytechnicien, eurodéputé. Dirige LFI depuis 2023. Représente l'aile gestionnaire et organisationnelle du mouvement, en contrepoint médiatique de Mélenchon.",
+      "photo": "assets/figures/bompard-mep-2019.jpg",
+      "alt": "Manuel Bompard",
+      "credit_auteur": "European Parliament",
+      "licence_label": "European Parliament",
+      "licence_url": "https://www.europarl.europa.eu/legal-notice/",
+      "commons_url": "https://commons.wikimedia.org/wiki/File:Bompard_MEP_2019.jpg"
+    },
+    {
+      "nom": "Mathilde Panot",
+      "role": "Présidente du groupe LFI à l'AN",
+      "initiales": null,
+      "bio": "Députée du Val-de-Marne depuis 2017. Présidente du groupe depuis 2021, elle incarne une ligne féministe et radicale, très présente dans les médias.",
+      "photo": "assets/figures/mathilde-panot-2021-3.jpg",
+      "alt": "Mathilde Panot",
+      "credit_auteur": "original : Antoine Stouls modification : O.Taris",
+      "licence_label": "CC BY 4.0",
+      "licence_url": "https://creativecommons.org/licenses/by/4.0",
+      "commons_url": "https://commons.wikimedia.org/wiki/File:Mathilde_Panot_2021-3.jpg"
+    },
+    {
+      "nom": "Clémence Guetté",
+      "role": "Vice-présidente de l'Assemblée nationale",
+      "initiales": null,
+      "bio": "Ancienne chercheuse en sciences politiques, élue en 2022. Incarne la nouvelle génération de cadres LFI, formés dans les mouvements sociaux et universitaires.",
+      "photo": "assets/figures/clemence-guette-vice-presidente-de-l-assemblee-nationale-cropped.jpg",
+      "alt": "Clémence Guetté",
+      "credit_auteur": "Claire Jacquin",
+      "licence_label": "CC BY 4.0",
+      "licence_url": "https://creativecommons.org/licenses/by/4.0",
+      "commons_url": "https://commons.wikimedia.org/wiki/File:Cl%C3%A9mence_Guett%C3%A9,_vice_pr%C3%A9sidente_de_l%27Assembl%C3%A9e_nationale_(cropped).jpg"
+    }
+  ],
+  "positions_fiche": {
+    "entete": [
+      "Thème",
+      "Position de La France Insoumise"
+    ],
+    "lignes": [
+      {
+        "theme": "Immigration",
+        "valeur": "Régularisation des sans-papiers, accueil des réfugiés, abrogation des lois restrictives, droit d'asile renforcé",
+        "sources": [],
+        "verifie_le": null,
+        "confiance": "a_verifier",
+        "auteur": "humain"
+      },
+      {
+        "theme": "Économie",
+        "valeur": "Planification démocratique, blocage des prix, nationalisations stratégiques, partage de la valeur ajoutée",
+        "sources": [],
+        "verifie_le": null,
+        "confiance": "a_verifier",
+        "auteur": "humain"
+      },
+      {
+        "theme": "Environnement",
+        "valeur": "Règle verte constitutionnalisée, 100% renouvelables, sortie du nucléaire, bifurcation écologique",
+        "sources": [],
+        "verifie_le": null,
+        "confiance": "a_verifier",
+        "auteur": "humain"
+      },
+      {
+        "theme": "Europe",
+        "valeur": "Renégociation des traités européens, désobéissance aux règles jugées antisociales, Europe des peuples",
+        "sources": [],
+        "verifie_le": null,
+        "confiance": "a_verifier",
+        "auteur": "humain"
+      },
+      {
+        "theme": "Social",
+        "valeur": "SMIC à 1 600 €, retraite à 60 ans, gratuité des biens essentiels (eau, énergie, transports)",
+        "sources": [],
+        "verifie_le": null,
+        "confiance": "a_verifier",
+        "auteur": "humain"
+      },
+      {
+        "theme": "Sécurité",
+        "valeur": "Dissolution des unités violentes, contrôle démocratique de la police, justice restaurative",
+        "sources": [],
+        "verifie_le": null,
+        "confiance": "a_verifier",
+        "auteur": "humain"
+      },
+      {
+        "theme": "Institutions",
+        "valeur": "VIe République, constituante citoyenne, RIC, abolition du Sénat dans sa forme actuelle",
+        "sources": [],
+        "verifie_le": null,
+        "confiance": "a_verifier",
+        "auteur": "humain"
+      }
+    ]
+  },
+  "programme_officiel": {
+    "label": "\"L'Avenir en commun\" – lafranceinsoumise.fr",
+    "url": "https://lafranceinsoumise.fr"
+  },
+  "engagements": [
+    "Porter le SMIC à 1 600 € net immédiatement",
+    "Instaurer la retraite à 60 ans pour tous",
+    "Convoquer une Assemblée constituante pour la VIe République",
+    "Bloquer les prix sur les produits de première nécessité",
+    "Garantir la gratuité de l'éducation de la crèche à l'université",
+    "Sortir du libre-échange et relocaliser l'industrie française"
+  ],
+  "engagements_gerant": [
+    "Partage obligatoire de la valeur entre actionnaires et salariés",
+    "Hausse de l'IS pour les grandes entreprises (allègements maintenus pour PME)",
+    "Encadrement strict des licenciements économiques"
+  ],
+  "note_resultat": "Vos positions sur la justice sociale, les salaires et la souveraineté populaire correspondent à La France Insoumise."
+}

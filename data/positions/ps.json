@@ -1,0 +1,296 @@
+{
+  "parti": "ps",
+  "comparateur": {
+    "logement": {
+      "valeur": "Encadrement des loyers dans les zones tendues élargi à toutes les grandes villes. Développement du logement social et intermédiaire. Aide à l'accession pour les primo-accédants modestes. Lutte contre la vacance des logements par la taxation.",
+      "sources": [
+        "src:ps-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "fiscalite": {
+      "valeur": "Rétablissement d'un ISF recentré sur le capital financier et les grandes fortunes. Maintien de la progressivité de l'impôt sur le revenu avec renforcement des tranches supérieures. Lutte résolue contre l'évasion fiscale via la coopération internationale.",
+      "sources": [
+        "src:ps-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "education": {
+      "valeur": "Investissement massif dans l'école publique : revalorisation de 20 % des enseignants, mixité scolaire renforcée. Réforme du lycée professionnel avec cofinancement État/régions. Gratuité effective de la restauration scolaire pour les foyers modestes.",
+      "sources": [
+        "src:ps-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "environnement": {
+      "valeur": "Planification climatique ambitieuse avec loi de programmation énergie-climat. Compatibilité maintenue entre nucléaire et renouvelables dans la transition. Développement fort des énergies vertes. Taxe carbone aux frontières de l'UE. Rénovation thermique massive.",
+      "sources": [
+        "src:ps-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "securite": {
+      "valeur": "Politique migratoire humaniste : régularisation au cas par cas des personnes intégrées, droit d'asile garanti. Maintien de l'État de droit et des libertés publiques. Police républicaine, lutte contre les violences policières par des mécanismes de contrôle renforcés.",
+      "sources": [
+        "src:ps-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "sante": {
+      "valeur": "Service public hospitalier fort avec arrêt des suppressions de lits et recrutements massifs. Remboursement intégral des soins essentiels. Lutte contre les déserts médicaux par conventionnement sélectif. Prévention renforcée, notamment en santé mentale et pédiatrie.",
+      "sources": [
+        "src:ps-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "emploi": {
+      "valeur": "SMIC à 1 500 € net revalorisé. Semaine de 35 heures maintenue et défendue. Abrogation de la réforme des retraites portant l'âge légal à 64 ans. Droits syndicaux renforcés. Contrat de travail stable comme norme, lutte contre les abus de l'intérim.",
+      "sources": [
+        "src:ps-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    },
+    "europe": {
+      "valeur": "Europe sociale et environnementale ambitieuse. Pro-intégration européenne et approfondissement de l'UE. Réforme du Pacte de stabilité pour permettre l'investissement public. Budget européen renforcé. Harmonisation sociale et fiscale par le haut.",
+      "sources": [
+        "src:ps-programme-2022"
+      ],
+      "verifie_le": null,
+      "confiance": "perime",
+      "auteur": "humain"
+    }
+  },
+  "points_programme": [
+    {
+      "valeur": "Abrogation de la réforme des retraites à 64 ans, retour à 62 ans",
+      "source_citee": "Programme PS 2022 – parti-socialiste.fr",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    {
+      "valeur": "Hausse du SMIC et indexation automatique sur l'inflation",
+      "source_citee": "Programme PS 2022",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    {
+      "valeur": "Service public de santé renforcé : fin des déserts médicaux, hôpital public prioritaire",
+      "source_citee": "Programme PS 2022",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    {
+      "valeur": "Planification écologique avec investissement public massif dans les renouvelables",
+      "source_citee": "Programme PS 2022",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    {
+      "valeur": "Logement : encadrement strict des loyers, construction de logements sociaux",
+      "source_citee": "Programme logement PS",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    {
+      "valeur": "Fiscalité progressive renforcée, rétablissement de l'ISF vert",
+      "source_citee": "Programme fiscal PS",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    {
+      "valeur": "Europe sociale : harmonisation des droits des travailleurs dans l'UE",
+      "source_citee": "Programme européen PS 2024",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    {
+      "valeur": "Égalité femmes-hommes : loi-cadre, sanctions effectives sur les inégalités salariales",
+      "source_citee": "Programme PS 2022",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    {
+      "valeur": "Sécurité publique associée à la justice sociale et aux politiques préventives",
+      "source_citee": "Programme PS 2022",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    },
+    {
+      "valeur": "Laïcité comme fondement républicain, séparation stricte Église-État",
+      "source_citee": "Programme PS 2022",
+      "sources": [],
+      "verifie_le": null,
+      "confiance": "a_verifier",
+      "auteur": "humain"
+    }
+  ],
+  "profondeur": [
+    "Le Parti Socialiste plonge ses racines dans la Section Française de l'Internationale Ouvrière (SFIO), fondée en 1905. Reconstruit au Congrès d'Épinay en 1971 sous la direction de François Mitterrand, le PS devient la première force de gauche française, supplantant le Parti Communiste. Mitterrand remporte la présidentielle en 1981 : c'est la première alternance de la Ve République, avec les nationalisations, la semaine de 35h et l'abolition de la peine de mort.",
+    "Le PS gouverne de nouveau avec Lionel Jospin (1997-2002) puis François Hollande (2012-2017). La présidence Hollande est marquée par le mariage pour tous, la loi Macron et la loi El Khomri, cette dernière divisant profondément la gauche. La débâcle de la présidentielle 2017 (Hamon, candidat PS, obtient 6,4%) marque l'effondrement du parti.",
+    "Depuis, le PS cherche à se reconstruire. Sous Olivier Faure, il participe à la NUPES en 2022 puis au Nouveau Front Populaire en 2024, dans une alliance tendue avec LFI. Le PS revendique une ligne social-démocrate, attachée aux services publics et à l'Europe sociale, distincte du radicalisme de LFI et du libéralisme de Renaissance."
+  ],
+  "figures": [
+    {
+      "nom": "Olivier Faure",
+      "role": "Premier secrétaire du PS",
+      "initiales": null,
+      "bio": "Député de Seine-et-Marne depuis 2012. Dirige le PS depuis 2018. Artisan de l'union de la gauche, il navigue entre l'alliance avec LFI et l'autonomie du PS.",
+      "photo": "assets/figures/of-matignon-maxime-clam-cropped.jpg",
+      "alt": "Olivier Faure",
+      "credit_auteur": "KimiRaikkonen3",
+      "licence_label": "Public domain",
+      "licence_url": null,
+      "commons_url": "https://commons.wikimedia.org/wiki/File:OF_MATIGNON_-_MAXIME_CLAM_(cropped).png"
+    },
+    {
+      "nom": "François Mitterrand",
+      "role": "Président de la République (1981-1995)",
+      "initiales": null,
+      "bio": "Fondateur du PS d'Épinay. Deux fois président, il incarne l'apogée de la social-démocratie française. Abolition de la peine de mort, 5e semaine de congés.",
+      "photo": "assets/figures/president-mitterand-bij-slotzitting-europa-congres-mitterand-kop.jpg",
+      "alt": "François Mitterrand",
+      "credit_auteur": "Rob Croes for Anefo",
+      "licence_label": "CC0",
+      "licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "commons_url": "https://commons.wikimedia.org/wiki/File:President_Mitterand_bij_slotzitting_Europa_Congres_Mitterand,_kop,_Bestanddeelnr_934-2444_(portrait_crop).jpg"
+    },
+    {
+      "nom": "Carole Delga",
+      "role": "Présidente de la région Occitanie",
+      "initiales": null,
+      "bio": "Ancienne secrétaire d'État sous Hollande. Présidente d'Occitanie depuis 2015, reine des scrutins régionaux. Représente l'aile sociale-démocrate réformiste.",
+      "photo": "assets/figures/delga-toulouse-occitanie-cropped.jpg",
+      "alt": "Carole Delga",
+      "credit_auteur": "Francois Carbonnel",
+      "licence_label": "CC BY-SA 4.0",
+      "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "commons_url": "https://commons.wikimedia.org/wiki/File:Delga-Toulouse-Occitanie_(cropped).jpg"
+    },
+    {
+      "nom": "Lionel Jospin",
+      "role": "Premier ministre (1997-2002)",
+      "initiales": null,
+      "bio": "Candidat à trois présidentielles. Premier ministre de la \"gauche plurielle\" : 35h, PACS, privatisations controversées. Figure de la social-démocratie française.",
+      "photo": "assets/figures/lionel-jospin-klaus-hansch-1996-cropped.jpg",
+      "alt": "Lionel Jospin",
+      "credit_auteur": "European Parliament",
+      "licence_label": "European Parliament",
+      "licence_url": "https://www.europarl.europa.eu/legal-notice/",
+      "commons_url": "https://commons.wikimedia.org/wiki/File:Lionel_Jospin,_Klaus_H%C3%A4nsch_1996_(cropped).jpg"
+    }
+  ],
+  "positions_fiche": {
+    "entete": [
+      "Thème",
+      "Position du Parti Socialiste"
+    ],
+    "lignes": [
+      {
+        "theme": "Immigration",
+        "valeur": "Accueil humaniste, intégration républicaine, lutte contre les discriminations, régularisation au cas par cas",
+        "sources": [],
+        "verifie_le": null,
+        "confiance": "a_verifier",
+        "auteur": "humain"
+      },
+      {
+        "theme": "Économie",
+        "valeur": "Économie mixte, fiscalité redistributive, soutien au pouvoir d'achat, ISF vert",
+        "sources": [],
+        "verifie_le": null,
+        "confiance": "a_verifier",
+        "auteur": "humain"
+      },
+      {
+        "theme": "Environnement",
+        "valeur": "Planification écologique, sortie progressive du nucléaire à long terme, renouvelables prioritaires",
+        "sources": [],
+        "verifie_le": null,
+        "confiance": "a_verifier",
+        "auteur": "humain"
+      },
+      {
+        "theme": "Europe",
+        "valeur": "Europe sociale renforcée, harmonisation fiscale et sociale, défense des services publics européens",
+        "sources": [],
+        "verifie_le": null,
+        "confiance": "a_verifier",
+        "auteur": "humain"
+      },
+      {
+        "theme": "Social",
+        "valeur": "Retraite à 62 ans, SMIC revalorisé, investissement massif dans l'hôpital public et l'éducation",
+        "sources": [],
+        "verifie_le": null,
+        "confiance": "a_verifier",
+        "auteur": "humain"
+      },
+      {
+        "theme": "Sécurité",
+        "valeur": "Police républicaine de proximité, justice sociale préventive, lutte contre les violences policières",
+        "sources": [],
+        "verifie_le": null,
+        "confiance": "a_verifier",
+        "auteur": "humain"
+      },
+      {
+        "theme": "Institutions",
+        "valeur": "VIe République débattue, proportionnelle aux législatives, renforcement des droits citoyens",
+        "sources": [],
+        "verifie_le": null,
+        "confiance": "a_verifier",
+        "auteur": "humain"
+      }
+    ]
+  },
+  "programme_officiel": {
+    "label": "parti-socialiste.fr",
+    "url": "https://www.parti-socialiste.fr"
+  },
+  "engagements": [
+    "Abroger la réforme des retraites à 64 ans",
+    "Augmenter le SMIC et l'indexer sur l'inflation",
+    "Renforcer le service public de santé et réduire les déserts médicaux",
+    "Planifier la transition écologique avec investissement public massif",
+    "Rétablir l'ISF vert pour une fiscalité plus progressive",
+    "Défendre l'égalité femmes-hommes avec une loi-cadre et des sanctions"
+  ],
+  "engagements_gerant": [
+    "Maintien des aides à l'investissement productif",
+    "Hausse du SMIC partiellement compensée par des allègements de charges",
+    "Fiscalité progressive, mais préservation des PME et entreprises non cotées"
+  ],
+  "note_resultat": "Vos convictions sociales et votre attachement aux services publics s'alignent avec le Parti Socialiste."
+}

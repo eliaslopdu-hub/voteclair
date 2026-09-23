@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<!-- workflow test 2026-05-17 -->
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#6C63FF" />
   <title>VoteClair – Voter en connaissance de cause</title>
-  <meta name="description" content="VoteClair est un outil civique gratuit, neutre et sans publicité pour comprendre les partis politiques français et voter en connaissance de cause." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.voteclair.fr/" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗳️</text></svg>" />
+  <meta name="description" content="VoteClair est un outil civique gratuit et neutre pour comprendre les partis politiques français et voter en connaissance de cause pour 2027." />
   <meta name="keywords" content="partis politiques france, quiz politique, orientation politique, voter, démocratie française" />
   <meta property="og:title" content="VoteClair – Voter en connaissance de cause" />
   <meta property="og:description" content="Découvrez les partis qui défendent vos valeurs. Outil civique gratuit et neutre." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/fonts.css" />
   <link rel="stylesheet" href="css/main.css" />
   <style>
     /* ── Hero ── */
@@ -56,7 +58,8 @@
       font-size: clamp(2.4rem, 6vw, 4rem);
       line-height: 1.15;
       margin-bottom: 24px;
-      color: var(--text);
+      color: #fff;
+      text-shadow: 0 2px 16px rgba(0,0,0,0.55);
     }
 
     .hero h1 em {
@@ -221,64 +224,147 @@
       .stats-inner { gap: 40px; }
     }
 
+    .btn-hero {
+      font-size: 1rem;
+      padding: 14px 28px;
+      box-shadow: 0 4px 28px rgba(108,99,255,0.45);
+    }
+    .btn-hero:hover {
+      box-shadow: 0 6px 36px rgba(108,99,255,0.60);
+    }
+
     @media (max-width: 480px) {
       .hero h1 { font-size: 2rem; }
     }
+
+    /* ── Text Reveal ── */
+    .text-reveal-section {
+      background:
+        radial-gradient(ellipse 70% 90% at 50% 50%, rgba(108,99,255,0.06) 0%, transparent 70%),
+        var(--bg);
+      padding: 72px 24px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .text-reveal-p {
+      max-width: 820px;
+      margin: 0 auto;
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.35rem, 2.8vw, 2.2rem);
+      font-weight: 700;
+      line-height: 1.6;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: baseline;
+      gap: 0 0.3em;
+      text-align: center;
+    }
+
+    .tr-word {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.45s ease, transform 0.45s ease;
+      color: var(--text);
+    }
+
+    .tr-word[data-accent] { color: #6c63ff; }
+
+    .tr-word.tr-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .tr-word { opacity: 1; transform: none; transition: none; }
+    }
   </style>
+  <meta property="og:image" content="https://www.voteclair.fr/assets/og-default.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
 </head>
 <body>
+<a class="skip-link" href="#main-content">Aller au contenu principal</a>
 
 <!-- ═══ NAVBAR ═══ -->
 <nav class="navbar" role="navigation" aria-label="Navigation principale">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">Vote<span>Clair</span></a>
-    <ul class="nav-links" role="list">
+    <ul class="nav-links">
       <li><a href="index.html">Accueil</a></li>
-      <li><a href="quiz.html" class="nav-cta">🗳️ Faire le quiz</a></li>
+      <li><a href="quiz.html" class="nav-cta">Quiz</a></li>
       <li><a href="partis.html">Partis</a></li>
-      <li><a href="institutions.html">Institutions</a></li>
-      <li><a href="histoire.html">Histoire</a></li>
+      <li><a href="face-a-face.html">Comparer</a></li>
+      <li class="nav-has-dropdown">
+        <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">En savoir plus <span class="nav-dropdown-arrow">▾</span></button>
+        <ul class="nav-dropdown-menu">
+          <li><a href="institutions.html">Institutions</a></li>
+          <li><a href="histoire.html">Histoire</a></li>
+          <li><a href="pourquoi-voter.html">Pourquoi voter ?</a></li>
+          <li><a href="calendrier.html">Calendrier</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="a-propos.html">À propos</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </li>
     </ul>
-    <button class="nav-burger" aria-label="Menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+    <button class="nav-burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </nav>
 <nav class="nav-mobile" aria-label="Menu mobile">
   <a href="index.html">Accueil</a>
-  <a href="quiz.html">🗳️ Faire le quiz</a>
-  <a href="partis.html">Partis politiques</a>
+  <a href="quiz.html" class="nav-mobile-cta">Quiz</a>
+  <a href="partis.html">Partis</a>
+  <a href="face-a-face.html">Comparer</a>
+  <div class="nav-mobile-divider">En savoir plus</div>
   <a href="institutions.html">Institutions</a>
-  <a href="histoire.html">Histoire politique</a>
+  <a href="histoire.html">Histoire</a>
+  <a href="pourquoi-voter.html">Pourquoi voter ?</a>
+  <a href="calendrier.html">Calendrier électoral</a>
+  <a href="blog.html">Blog</a>
+  <a href="a-propos.html">À propos</a>
+  <a href="contact.html">Contact</a>
 </nav>
 
 <!-- ═══ HERO ═══ -->
-<section class="hero">
+<section class="hero" id="main-content">
+  <img
+    class="hero-bg-image"
+    src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=1920&q=80"
+    alt="Paris, République française"
+    loading="lazy"
+    decoding="async"
+  />
+  <div class="hero-overlay" aria-hidden="true"></div>
   <div class="container">
     <div class="hero-content">
-      <div class="hero-eyebrow">⚖️ Outil civique · Neutre · Gratuit</div>
-      <h1>Voter, c'est choisir.<br /><em>Encore faut-il comprendre.</em></h1>
+<h1>Voter, c'est choisir.<br /><span class="hero-accent">Encore faut-il comprendre.</span></h1>
       <p class="hero-desc">
-        VoteClair est un outil civique gratuit, sans publicité et politiquement neutre.
+        VoteClair est un outil civique gratuit, neutre et conforme au RGPD.
         Trouvez les partis qui défendent vos intérêts, comprenez les institutions,
         et votez en connaissance de cause.
       </p>
-      <div class="cta-cards">
-        <a href="quiz.html" class="cta-card cta-card-primary">
-          <span class="cta-card-icon">🗳️</span>
-          <span class="cta-card-label">Faire le quiz d'orientation</span>
+      <div class="hero-cta">
+        <a href="quiz.html" class="btn btn-primary btn-hero" style="font-size:1.15rem;padding:18px 44px;box-shadow:0 4px 32px rgba(108,99,255,0.5)">
+          Faire le quiz — 3 min · gratuit · confidentiel →
         </a>
-        <a href="partis.html" class="cta-card">
-          <span class="cta-card-icon">🏛️</span>
-          <span class="cta-card-label">Explorer les partis</span>
-        </a>
-        <a href="institutions.html" class="cta-card">
-          <span class="cta-card-icon">📚</span>
-          <span class="cta-card-label">Comprendre les institutions</span>
-        </a>
+        <div class="hero-secondary-links" style="gap:16px;margin-top:4px">
+          <a href="partis.html" style="color:rgba(255,255,255,0.6);font-size:0.85rem;text-decoration:underline;text-underline-offset:3px">Explorer les partis</a>
+          <span style="color:rgba(255,255,255,0.3);font-size:0.85rem">·</span>
+          <a href="face-a-face.html" style="color:rgba(255,255,255,0.6);font-size:0.85rem;text-decoration:underline;text-underline-offset:3px">Comparer les partis</a>
+        </div>
       </div>
     </div>
   </div>
+</section>
+
+<!-- ═══ TEXT REVEAL ═══ -->
+<section class="text-reveal-section" id="text-reveal-section">
+  <p class="text-reveal-p" id="text-reveal-p"
+     aria-label="22 millions de Français n'ont pas voté aux dernières élections. Non par indifférence. Mais par manque d'information. VoteClair change ça.">
+  </p>
 </section>
 
 <!-- Bande couleurs partis -->
@@ -292,67 +378,61 @@
   <span style="background:#4CAF50"></span>
 </div>
 
-<!-- ═══ STATS ═══ -->
-<section class="stats-band" aria-label="Chiffres sur l'abstention">
-  <div class="stats-inner">
-    <div class="stat-item fade-in">
-      <div class="stat-number" id="stat1">0</div>
-      <p class="stat-label">millions de Français n'ont pas voté aux dernières législatives</p>
-    </div>
-    <div class="stat-item fade-in">
-      <div class="stat-number" id="stat2">0<span style="font-size:1.5rem">%</span></div>
-      <p class="stat-label">des jeunes de 18–25 ans se disent mal informés avant de voter</p>
-    </div>
-    <div class="stat-item fade-in">
-      <div class="stat-number" id="stat3">7</div>
-      <p class="stat-label">grands partis décryptés et présentés de façon identique</p>
+<!-- ═══ STATS CLÉS ═══ -->
+<section class="key-stats-section" aria-label="Chiffres clés">
+  <div class="container">
+    <div class="key-stats-grid">
+
+      <div class="key-stat fade-in">
+        <div class="key-stat-number" id="ks1">0<span class="key-stat-suffix">M</span></div>
+        <div class="key-stat-label">de Français n'ont pas voté aux dernières législatives</div>
+      </div>
+
+      <div class="key-stat fade-in">
+        <div class="key-stat-number" id="ks2">0<span class="key-stat-pct">%</span></div>
+        <div class="key-stat-label">des 18–25 ans se disent mal informés avant de voter</div>
+      </div>
+
+      <div class="key-stat fade-in">
+        <div class="key-stat-number">7 <span class="key-stat-suffix">partis</span></div>
+        <div class="key-stat-label">couverts de façon neutre, sourcés sur les programmes officiels</div>
+      </div>
+
+      <div class="key-stat fade-in">
+        <div class="key-stat-number">~3 <span class="key-stat-suffix">min</span></div>
+        <div class="key-stat-label">pour le quiz rapide — résultat immédiat, confidentiel, gratuit</div>
+      </div>
+
     </div>
   </div>
 </section>
 
-<!-- ═══ POURQUOI VOTECLAIR ═══ -->
-<section class="section">
-  <div class="container">
-    <p class="section-subtitle" style="font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:8px">Notre approche</p>
-    <h2 class="section-title fade-in">Pourquoi VoteClair ?</h2>
-    <p class="section-subtitle fade-in">Un outil conçu pour tous les citoyens, quelles que soient leurs convictions.</p>
 
-    <div class="why-grid">
-      <div class="card why-card fade-in">
-        <div class="why-icon">⚖️</div>
-        <h3>Neutre par design</h3>
-        <p>Aucun parti n'est mis en avant. Chaque programme est présenté de façon identique, dans l'ordre alphabétique.</p>
+<!-- ═══ COMMENT ÇA MARCHE ═══ -->
+<section class="section section--alt">
+  <div class="container">
+    <span class="section-label">Simple & rapide</span>
+    <h2 class="section-title fade-in">Comment ça marche ?</h2>
+    <p class="section-subtitle fade-in">En 3 étapes, trouvez les partis qui défendent vos valeurs.</p>
+    <div class="steps-grid">
+      <div class="card step-card fade-in">
+        <div class="step-num">1</div>
+        <h3>Le quiz</h3>
+        <p>Répondez à 15 questions sur vos positions politiques. ~3 minutes, 100% anonyme.</p>
       </div>
-      <div class="card why-card fade-in">
-        <div class="why-icon">📋</div>
-        <h3>Basé sur les faits</h3>
-        <p>Chaque information est sourcée avec lien vers les programmes officiels. Nous ne reformulons pas, nous citons.</p>
+      <div class="card step-card fade-in">
+        <div class="step-num">2</div>
+        <h3>Votre résultat</h3>
+        <p>Découvrez les partis les plus proches de vos convictions, avec une analyse détaillée.</p>
       </div>
-      <div class="card why-card fade-in">
-        <div class="why-icon">🌍</div>
-        <h3>Accessible à tous</h3>
-        <p>Pas de jargon politique. Des résumés clairs pour les primo-votants, les abstentionnistes et les citoyens pressés.</p>
+      <div class="card step-card fade-in">
+        <div class="step-num">3</div>
+        <h3>Votre décision</h3>
+        <p>Approfondissez votre lecture, comparez les programmes, et votez en connaissance de cause.</p>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- ═══ APERÇU DES PARTIS ═══ -->
-<section class="section" style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
-  <div class="container">
-    <h2 class="section-title fade-in">Les 7 partis décryptés</h2>
-    <p class="section-subtitle fade-in">De la gauche radicale à la droite nationaliste, chaque formation politique présentée équitablement.</p>
-    <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:32px">
-      <a href="parti-rassemblement-national.html" class="badge fade-in" style="background:#003189;color:#fff;padding:8px 16px;border-radius:6px;font-size:0.85rem">Rassemblement National</a>
-      <a href="parti-les-republicains.html" class="badge fade-in" style="background:#0066CC;color:#fff;padding:8px 16px;border-radius:6px;font-size:0.85rem">Les Républicains</a>
-      <a href="parti-renaissance.html" class="badge fade-in" style="background:#FFBE00;color:#1a1a1a;padding:8px 16px;border-radius:6px;font-size:0.85rem">Renaissance</a>
-      <a href="parti-modem.html" class="badge fade-in" style="background:#FF6600;color:#fff;padding:8px 16px;border-radius:6px;font-size:0.85rem">MoDem</a>
-      <a href="parti-parti-socialiste.html" class="badge fade-in" style="background:#E75480;color:#fff;padding:8px 16px;border-radius:6px;font-size:0.85rem">Parti Socialiste</a>
-      <a href="parti-la-france-insoumise.html" class="badge fade-in" style="background:#CC0000;color:#fff;padding:8px 16px;border-radius:6px;font-size:0.85rem">La France Insoumise</a>
-      <a href="parti-europe-ecologie.html" class="badge fade-in" style="background:#4CAF50;color:#fff;padding:8px 16px;border-radius:6px;font-size:0.85rem">Europe Écologie</a>
-    </div>
-    <div style="text-align:center;margin-top:32px">
-      <a href="partis.html" class="btn btn-outline">Voir tous les partis en détail →</a>
+    <div style="text-align:center;margin-top:40px">
+      <a href="quiz.html" class="btn btn-primary" style="font-size:1rem;padding:14px 32px">Commencer le quiz →</a>
     </div>
   </div>
 </section>
@@ -361,19 +441,17 @@
 <section class="section">
   <div class="container">
     <h2 class="section-title fade-in">Ce que disent nos utilisateurs</h2>
+    <p class="section-subtitle fade-in" style="font-size:0.8rem;opacity:0.7">Témoignages représentatifs — non contractuels</p>
     <div class="avis-grid">
       <div class="card avis-card fade-in">
-        <div class="avis-stars">★★★★★</div>
         <p class="avis-text">"Enfin un outil qui présente les partis sans me dire pour qui voter. J'ai enfin pu faire mon choix sereinement."</p>
         <p class="avis-author">— Camille, 22 ans, étudiante à Paris</p>
       </div>
       <div class="card avis-card fade-in">
-        <div class="avis-stars">★★★★★</div>
         <p class="avis-text">"Le quiz est bien conçu, les questions sont pertinentes. J'ai découvert des positions que je ne connaissais pas."</p>
         <p class="avis-author">— Marc, 45 ans, enseignant</p>
       </div>
       <div class="card avis-card fade-in">
-        <div class="avis-stars">★★★★☆</div>
         <p class="avis-text">"VoteClair m'a aidé à mieux comprendre les institutions françaises. La section sur le scrutin à deux tours est très claire."</p>
         <p class="avis-author">— Fatima, 31 ans, entrepreneuse</p>
       </div>
@@ -381,12 +459,79 @@
   </div>
 </section>
 
+<!-- ═══ APERÇU DES PARTIS ═══ -->
+<section class="section section--alt">
+  <div class="container">
+    <h2 class="section-title fade-in">Les 7 partis décryptés</h2>
+    <p class="section-subtitle fade-in">De la gauche radicale à la droite nationaliste, chaque formation politique présentée équitablement.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:32px">
+      <a href="parti-rassemblement-national.html" class="badge--party fade-in" style="background:#003189;color:#fff">Rassemblement National</a>
+      <a href="parti-les-republicains.html" class="badge--party fade-in" style="background:#0066CC;color:#fff">Les Républicains</a>
+      <a href="parti-renaissance.html" class="badge--party fade-in" style="background:#FFBE00;color:#1a1a1a">Renaissance</a>
+      <a href="parti-modem.html" class="badge--party fade-in" style="background:#FF6600;color:#fff">MoDem</a>
+      <a href="parti-parti-socialiste.html" class="badge--party fade-in" style="background:#E75480;color:#fff">Parti Socialiste</a>
+      <a href="parti-la-france-insoumise.html" class="badge--party fade-in" style="background:#CC0000;color:#fff">La France Insoumise</a>
+      <a href="parti-europe-ecologie.html" class="badge--party fade-in" style="background:#4CAF50;color:#fff">Europe Écologie</a>
+    </div>
+    <div style="text-align:center;margin-top:32px">
+      <a href="partis.html" class="btn btn-outline">Voir tous les partis en détail →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ POURQUOI VOTECLAIR ═══ -->
+<section class="section">
+  <div class="container">
+    <div class="split-section">
+
+      <div class="split-text">
+        <span class="section-label">Notre approche</span>
+        <h2 class="fade-in" style="margin-bottom:32px">Pourquoi VoteClair ?</h2>
+
+        <div class="why-item fade-in">
+          <span class="why-num">01</span>
+          <div class="why-item-body">
+            <h3>Neutre par design</h3>
+            <p>Aucun parti n'est mis en avant. Chaque programme est présenté de façon identique, dans l'ordre alphabétique.</p>
+          </div>
+        </div>
+
+        <div class="why-item fade-in">
+          <span class="why-num">02</span>
+          <div class="why-item-body">
+            <h3>Basé sur les faits</h3>
+            <p>Chaque information est sourcée avec lien vers les programmes officiels. Nous ne reformulons pas, nous citons.</p>
+          </div>
+        </div>
+
+        <div class="why-item fade-in">
+          <span class="why-num">03</span>
+          <div class="why-item-body">
+            <h3>Accessible à tous</h3>
+            <p>Pas de jargon politique. Des résumés clairs pour les primo-votants, les abstentionnistes et les citoyens pressés.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="split-image fade-in">
+        <img
+          src="https://images.unsplash.com/photo-1548661710-7f540f8fd9be?w=800&q=80"
+          onerror="this.onerror=null;this.src='assets/assemblee-nationale.jpg'"
+          alt="Drapeau français – République"
+          loading="lazy"
+        />
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- ═══ CTA FINAL ═══ -->
-<section class="section" style="text-align:center;background:var(--surface);border-top:1px solid var(--border)">
+<section class="section section--alt" style="text-align:center;border-bottom:none">
   <div class="container">
     <h2 class="fade-in" style="margin-bottom:16px">Prêt à mieux voter ?</h2>
-    <p style="color:var(--text-muted);margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto">Le quiz prend environ 5 minutes. Vos réponses ne sont jamais enregistrées.</p>
-    <a href="quiz.html" class="btn btn-primary" style="font-size:1rem;padding:14px 32px">🗳️ Commencer le quiz →</a>
+    <p style="color:var(--text-muted);margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto">15 questions · 3 minutes · Résultats immédiats. Vos réponses ne sont jamais enregistrées.</p>
+    <a href="quiz.html" class="btn btn-primary" style="font-size:1rem;padding:14px 32px">Faire le quiz maintenant →</a>
   </div>
 </section>
 
@@ -396,7 +541,7 @@
     <div class="footer-inner">
       <div class="footer-brand">
         <div class="nav-logo">Vote<span>Clair</span></div>
-        <p>VoteClair est indépendant, sans financement partisan, sans publicité. Aucune donnée personnelle n'est collectée.</p>
+        <p>VoteClair est indépendant et sans financement partisan. Outil civique gratuit pour voter en connaissance de cause.</p>
       </div>
       <div class="footer-col">
         <h4>Navigation</h4>
@@ -405,6 +550,11 @@
         <a href="partis.html">Les partis</a>
         <a href="institutions.html">Institutions</a>
         <a href="histoire.html">Histoire</a>
+        <a href="pourquoi-voter.html">Pourquoi voter ?</a>
+        <a href="calendrier.html">Calendrier électoral</a>
+        <a href="blog.html">Blog</a>
+        <a href="a-propos.html">À propos</a>
+        <a href="contact.html">Contact</a>
       </div>
       <div class="footer-col">
         <h4>Les partis</h4>
@@ -417,15 +567,17 @@
         <a href="parti-europe-ecologie.html">Europe Écologie</a>
       </div>
       <div class="footer-col">
-        <h4>Légal</h4>
-        <a href="#">Mentions légales</a>
-        <a href="#">Politique de confidentialité</a>
-        <a href="https://www.service-public.fr/particuliers/vosdroits/R12675" target="_blank" rel="noopener">S'inscrire sur les listes</a>
+        <h4>Légal & transparence</h4>
+        <a href="methodologie.html">Méthodologie du quiz</a>
+        <a href="mentions-legales.html">Mentions légales</a>
+        <a href="confidentialite.html">Politique de confidentialité</a>
+        <a href="politique-cookies.html">Politique de cookies</a>
+        <a href="conditions-utilisation.html">Conditions d'utilisation</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2024 VoteClair — Outil civique indépendant</span>
-      <span>Aucun cookie · Aucun tracking · RGPD conforme</span>
+      <span>© 2026 VoteClair — Outil civique indépendant</span>
+      <span>RGPD conforme · <a href="politique-cookies.html" style="color:inherit;text-decoration:underline">Gérer mes cookies</a></span>
     </div>
   </div>
 </footer>
@@ -448,8 +600,17 @@
       if (e.isIntersecting) {
         const el1 = document.getElementById('stat1');
         const el2 = document.getElementById('stat2');
+        const el3 = document.getElementById('stat3');
         if (el1) animateCounter(el1, 22);
-        if (el2) el2.innerHTML = '60<span style="font-size:1.5rem">%</span>';
+        if (el2) {
+          let val = 0;
+          const timer = setInterval(() => {
+            val = Math.min(val + 2, 60);
+            el2.innerHTML = val + '<span style="font-size:1.5rem">%</span>';
+            if (val >= 60) clearInterval(timer);
+          }, 24);
+        }
+        if (el3) el3.textContent = '7';
         io.disconnect();
       }
     });
@@ -457,6 +618,87 @@
 
   const statsEl = document.querySelector('.stats-band');
   if (statsEl) io.observe(statsEl);
+
+  /* Compteurs section stats clés */
+  const ioKey = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const ks1 = document.getElementById('ks1');
+        const ks2 = document.getElementById('ks2');
+        if (ks1) {
+          let val = 0;
+          const t1 = setInterval(() => {
+            val = Math.min(val + 1, 22);
+            ks1.innerHTML = val + '<span class="key-stat-suffix">M</span>';
+            if (val >= 22) clearInterval(t1);
+          }, 40);
+        }
+        if (ks2) {
+          let val = 0;
+          const t2 = setInterval(() => {
+            val = Math.min(val + 2, 60);
+            ks2.innerHTML = val + '<span class="key-stat-pct">%</span>';
+            if (val >= 60) clearInterval(t2);
+          }, 24);
+        }
+        ioKey.disconnect();
+      }
+    });
+  }, { threshold: 0.3 });
+
+  const keyStatsEl = document.querySelector('.key-stats-section');
+  if (keyStatsEl) ioKey.observe(keyStatsEl);
+
+  /* ── Text Reveal ── */
+  (function () {
+    const PHRASE = [
+      { w: "22",           accent: true },
+      { w: "millions",     accent: true },
+      { w: "de" },
+      { w: "Français" },
+      { w: "n'ont" },
+      { w: "pas" },
+      { w: "voté" },
+      { w: "aux" },
+      { w: "dernières" },
+      { w: "élections." },
+      { w: "Non" },
+      { w: "par" },
+      { w: "indifférence." },
+      { w: "Mais" },
+      { w: "par" },
+      { w: "manque" },
+      { w: "d'information." },
+      { w: "VoteClair",    accent: true },
+      { w: "change",       accent: true },
+      { w: "ça.",          accent: true },
+    ];
+
+    const p = document.getElementById('text-reveal-p');
+    if (!p) return;
+
+    const words = PHRASE.map(function ({ w, accent }) {
+      const span = document.createElement('span');
+      span.className = 'tr-word';
+      if (accent) span.dataset.accent = '';
+      span.textContent = w;
+      p.appendChild(span);
+      return span;
+    });
+
+    const observer = new IntersectionObserver(function (entries) {
+      if (!entries[0].isIntersecting) return;
+      words.forEach(function (span, i) {
+        setTimeout(function () {
+          span.classList.add('tr-visible');
+        }, i * 55);
+      });
+      observer.disconnect();
+    }, { threshold: 0.3 });
+
+    observer.observe(document.getElementById('text-reveal-section'));
+  })();
 </script>
+<script src="js/cookie-consent.js"></script>
 </body>
 </html>

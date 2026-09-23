@@ -1,0 +1,81 @@
+{
+  "note": "Un jeu de themes canoniques fin, et des vues qui s'y rattachent. Les trois nomenclatures du site (quiz, comparateur, fiche parti) et le tableau comparatif de partis.html ne sont pas fusionnes : ils sont declares en termes de canoniques, ce qui rend leurs differences mesurables au lieu de silencieuses. Une vue 'complet: true' doit couvrir tous les canoniques exactement une fois ; une vue 'complet: false' declare ce qu'elle omet, et le verificateur controle que la liste est exacte.",
+  "canoniques": {
+    "fiscalite":     { "label": "Fiscalite & impots" },
+    "economie_prod": { "label": "Production, industrie, echanges" },
+    "emploi":        { "label": "Emploi & salaires" },
+    "retraites":     { "label": "Retraites" },
+    "sante":         { "label": "Sante" },
+    "education":     { "label": "Education & jeunesse" },
+    "logement":      { "label": "Logement" },
+    "environnement": { "label": "Environnement & biodiversite" },
+    "energie":       { "label": "Energie & nucleaire" },
+    "securite":      { "label": "Securite & ordre public" },
+    "justice":       { "label": "Justice" },
+    "immigration":   { "label": "Immigration" },
+    "europe":        { "label": "Europe" },
+    "international": { "label": "Politique etrangere & defense" },
+    "institutions":  { "label": "Institutions & democratie" }
+  },
+  "vues": {
+    "quiz": {
+      "source": "js/quiz.js — const THEMES",
+      "complet": true,
+      "omissions": [],
+      "hors_themes": ["profil"],
+      "note": "Les identifiants sont ceux deja utilises par le quiz : themeWeights et les questions de profil ne bougent pas, donc aucun lien de partage ni aucune reprise en localStorage n'est affecte.",
+      "themes": [
+        { "id": "economie",      "label": "Economie & fiscalite",      "canoniques": ["fiscalite", "economie_prod"] },
+        { "id": "social",        "label": "Social & travail",          "canoniques": ["emploi", "retraites", "sante", "education", "logement"] },
+        { "id": "environnement", "label": "Environnement & energie",   "canoniques": ["environnement", "energie"] },
+        { "id": "securite",      "label": "Securite & justice",        "canoniques": ["securite", "justice"] },
+        { "id": "immigration",   "label": "Immigration",               "canoniques": ["immigration"] },
+        { "id": "europe",        "label": "Europe & geopolitique",     "canoniques": ["europe", "international"] },
+        { "id": "institutions",  "label": "Institutions & democratie", "canoniques": ["institutions"] }
+      ]
+    },
+    "comparateur": {
+      "source": "face-a-face.html — const THEMES",
+      "complet": false,
+      "omissions": ["institutions"],
+      "note": "Le comparateur ne traite aucune position institutionnelle, alors que le quiz y consacre cinq questions et que chaque fiche parti lui reserve une ligne. Comparer deux partis sur la VIe Republique ou la proportionnelle est aujourd'hui impossible.",
+      "themes": [
+        { "id": "logement",      "label": "Logement",              "canoniques": ["logement"] },
+        { "id": "fiscalite",     "label": "Fiscalite & impots",    "canoniques": ["fiscalite", "economie_prod"] },
+        { "id": "education",     "label": "Education & jeunesse",  "canoniques": ["education"] },
+        { "id": "environnement", "label": "Environnement",         "canoniques": ["environnement", "energie"] },
+        { "id": "securite",      "label": "Securite & immigration","canoniques": ["securite", "justice", "immigration"] },
+        { "id": "sante",         "label": "Sante",                 "canoniques": ["sante"] },
+        { "id": "emploi",        "label": "Emploi & salaires",     "canoniques": ["emploi", "retraites"] },
+        { "id": "europe",        "label": "Europe & international","canoniques": ["europe", "international"] }
+      ]
+    },
+    "fiche_parti": {
+      "source": "parti-*.html — table.positions-table",
+      "complet": true,
+      "omissions": [],
+      "themes": [
+        { "id": "Immigration",   "label": "Immigration",   "canoniques": ["immigration"] },
+        { "id": "Economie",      "label": "Economie",      "canoniques": ["fiscalite", "economie_prod"] },
+        { "id": "Environnement", "label": "Environnement", "canoniques": ["environnement", "energie"] },
+        { "id": "Europe",        "label": "Europe",        "canoniques": ["europe", "international"] },
+        { "id": "Social",        "label": "Social",        "canoniques": ["emploi", "retraites", "sante", "education", "logement"] },
+        { "id": "Securite",      "label": "Securite",      "canoniques": ["securite", "justice"] },
+        { "id": "Institutions",  "label": "Institutions",  "canoniques": ["institutions"] }
+      ]
+    },
+    "comparatif": {
+      "source": "partis.html — table.comparatif-table",
+      "complet": false,
+      "omissions": ["retraites", "sante", "education", "logement", "securite", "justice", "institutions"],
+      "note": "Tableau volontairement resserre a cinq colonnes pour rester lisible d'un coup d'oeil. L'omission est un choix editorial, pas un oubli — mais elle est declaree ici pour qu'on sache ce qu'il ne dit pas.",
+      "themes": [
+        { "id": "Impots",        "label": "Impots",        "canoniques": ["fiscalite"] },
+        { "id": "Immigration",   "label": "Immigration",   "canoniques": ["immigration"] },
+        { "id": "Environnement", "label": "Environnement", "canoniques": ["environnement", "energie"] },
+        { "id": "Social",        "label": "Social",        "canoniques": ["emploi", "economie_prod"] },
+        { "id": "Europe",        "label": "Europe",        "canoniques": ["europe", "international"] }
+      ]
+    }
+  }
+}
