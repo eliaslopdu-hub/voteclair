@@ -29,6 +29,14 @@ jobs:
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v5
+        with:
+          # Historique complet, pour trois raisons qui tiennent toutes au
+          # meme fil : le garde-fou se compare a origin/main, l'etape du
+          # perimetre defait son commit d'essai avec HEAD~1, et l'action
+          # qui ouvre la PR a besoin de l'historique de la base. Un clone
+          # superficiel les fait echouer chacun a sa facon, et seulement
+          # en production.
+          fetch-depth: 0
       - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
@@ -179,7 +187,7 @@ jobs:
       # ─── 5. Proposition, jamais publication ──────────────────────────
       - name: Ouvrir la Pull Request
         if: steps.perimes.outputs.total != '0'
-        uses: peter-evans/create-pull-request@v6
+        uses: peter-evans/create-pull-request@v8
         with:
           # Nom lu par .github/workflows/verification.yml, qui n'applique le
           # garde-fou qu'aux PR venant de cette branche. Changer l'un sans
