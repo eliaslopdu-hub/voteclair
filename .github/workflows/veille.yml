@@ -37,9 +37,10 @@ jobs:
       - name: Faits à revérifier
         id: perimes
         run: |
-          python3 tools/perimes.py | tee rapport.txt
-          python3 tools/perimes.py --json > perimes.json
-          n=$(python3 -c "import json;print(json.load(open('perimes.json'))['total_a_traiter'])")
+          mkdir -p .veille
+          python3 tools/perimes.py | tee .veille/rapport.txt
+          python3 tools/perimes.py --json > .veille/perimes.json
+          n=$(python3 -c "import json;print(json.load(open('.veille/perimes.json'))['total_a_traiter'])")
           echo "total=$n" >> "$GITHUB_OUTPUT"
           echo "$n fait(s) à traiter."
 
@@ -62,7 +63,7 @@ jobs:
             information inventée est plus nuisible qu'une information absente.
 
             PÉRIMÈTRE STRICT — ne traite QUE les chemins listés dans
-            perimes.json. Tout le reste est hors sujet, y compris si tu
+            .veille/perimes.json. Tout le reste est hors sujet, y compris si tu
             remarques autre chose d'inexact : signale-le dans ton résumé,
             ne le modifie pas.
 
@@ -77,7 +78,7 @@ jobs:
             - N'invente jamais une valeur. Si tu ne trouves pas de source
               suffisante, laisse le fait tel quel et explique pourquoi.
 
-            MÉTHODE, pour chaque chemin de perimes.json
+            MÉTHODE, pour chaque chemin de .veille/perimes.json
             1. Cherche la valeur actuelle sur une source du rang exigé
                (rang_min). Rang 1 = Légifrance/JO, 2 = site officiel du
                parti, 3 = Assemblée/Sénat/Intérieur. La presse est rang 4 :
