@@ -8,6 +8,8 @@
   <meta name="description" content="Comprendre la politique française : élection présidentielle, partis, institutions, histoire. Articles pédagogiques et neutres sur VoteClair." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://www.voteclair.fr/blog.html" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗳️</text></svg>" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Blog VoteClair – Politique française expliquée | Élection 2027" />
@@ -43,7 +45,7 @@
     }
     .blog-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr));
       gap: 24px;
       margin-top: 40px;
     }
@@ -80,7 +82,7 @@
       text-decoration: none;
     }
     .blog-card h2 a:hover {
-      color: var(--accent);
+      color: var(--accent-text);
     }
     .blog-excerpt {
       font-size: 0.9rem;
@@ -103,7 +105,7 @@
       margin-top: 4px;
       font-size: 0.875rem;
       font-weight: 600;
-      color: var(--accent);
+      color: var(--accent-text);
       text-decoration: none;
       transition: opacity 0.2s;
     }
@@ -172,7 +174,7 @@
 
           <!-- Article 1 -->
           <article class="blog-card">
-            <span class="blog-cat" style="background:rgba(108,99,255,0.1);color:#6C63FF;">Institutions</span>
+            <span class="blog-cat" style="background:rgba(108,99,255,0.1);color:#5B52E8;">Institutions</span>
             <h2><a href="blog-election-presidentielle.html">Comment fonctionne l'élection présidentielle française ?</a></h2>
             <p class="blog-excerpt">Le scrutin à deux tours, les conditions de candidature, le rôle du président et le calendrier de 2027 expliqués clairement.</p>
             <div class="blog-meta">

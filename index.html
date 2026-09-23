@@ -8,6 +8,7 @@
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://www.voteclair.fr/" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗳️</text></svg>" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
   <meta name="description" content="VoteClair est un outil civique gratuit et neutre pour comprendre les partis politiques français et voter en connaissance de cause pour 2027." />
   <meta name="keywords" content="partis politiques france, quiz politique, orientation politique, voter, démocratie française" />
   <meta property="og:title" content="VoteClair – Voter en connaissance de cause" />
@@ -47,7 +48,7 @@
       font-weight: 600;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--accent);
+      color: var(--accent-text);
       background: rgba(108,99,255,0.12);
       padding: 6px 14px;
       border-radius: 20px;
@@ -64,7 +65,7 @@
 
     .hero h1 em {
       font-style: normal;
-      color: var(--accent);
+      color: var(--accent-text);
     }
 
     .hero-desc {
@@ -138,7 +139,7 @@
       font-family: 'Playfair Display', serif;
       font-size: 2.8rem;
       font-weight: 900;
-      color: var(--accent);
+      color: var(--accent-text);
       line-height: 1;
       margin-bottom: 6px;
     }
@@ -178,7 +179,7 @@
     /* Avis fictifs  */
     .avis-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
       gap: var(--gap);
       margin-top: 48px;
     }
@@ -269,7 +270,7 @@
       color: var(--text);
     }
 
-    .tr-word[data-accent] { color: #6c63ff; }
+    .tr-word[data-accent] { color: var(--accent-text); }
 
     .tr-word.tr-visible {
       opacity: 1;
@@ -332,9 +333,11 @@
 <section class="hero" id="main-content">
   <img
     class="hero-bg-image"
-    src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=1920&q=80"
+    src="assets/paris-republique.webp"
     alt="Paris, République française"
-    loading="lazy"
+    width="1920"
+    height="1277"
+    fetchpriority="high"
     decoding="async"
   />
   <div class="hero-overlay" aria-hidden="true"></div>
@@ -515,10 +518,12 @@
 
       <div class="split-image fade-in">
         <img
-          src="https://images.unsplash.com/photo-1548661710-7f540f8fd9be?w=800&q=80"
-          onerror="this.onerror=null;this.src='assets/assemblee-nationale.jpg'"
-          alt="Drapeau français – République"
+          src="assets/assemblee-nationale.webp"
+          alt="Hémicycle de l'Assemblée nationale"
+          width="1920"
+          height="1280"
           loading="lazy"
+          decoding="async"
         />
       </div>
 
