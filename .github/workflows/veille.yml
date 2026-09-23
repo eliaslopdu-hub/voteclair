@@ -136,6 +136,9 @@ jobs:
         if: steps.perimes.outputs.total != '0'
         uses: peter-evans/create-pull-request@v6
         with:
+          # Nom lu par .github/workflows/verification.yml, qui n'applique le
+          # garde-fou qu'aux PR venant de cette branche. Changer l'un sans
+          # l'autre desarme le controle sans rien afficher.
           branch: veille/proposition
           delete-branch: true
           title: "Veille du ${{ github.run_id }} — proposition de mise à jour"

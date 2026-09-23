@@ -46,7 +46,17 @@ jobs:
       - name: Le garde-fou refuse bien ce qu'il doit refuser
         run: python3 tools/tests_pipeline.py
 
-      - name: Périmètre de la modification
-        if: github.event_name == 'pull_request'
+      # Le garde-fou contraint l'automatisation, pas vous : une PR humaine
+      # a le droit de toucher au HTML, au JS ou aux poids du quiz, et c'est
+      # CODEOWNERS qui la garde. On ne l'applique donc qu'aux propositions
+      # de la veille. Le nom de branche ci-dessous doit rester identique a
+      # celui qu'ouvre .github/workflows/veille.yml : s'il change la, ce
+      # controle cesse silencieusement de s'appliquer.
+      #
+      # Ce n'est pas le seul passage : veille.yml lance deja garde_fou.py
+      # avant d'ouvrir sa PR. Celui-ci est le second controle, au moment de
+      # la fusion, quand la branche a pu etre modifiee entre-temps.
+      - name: Périmètre de la proposition automatique
+        if: github.event_name == 'pull_request' && github.head_ref == 'veille/proposition'
         run: |
           python3 tools/garde_fou.py "origin/${{ github.base_ref }}"
