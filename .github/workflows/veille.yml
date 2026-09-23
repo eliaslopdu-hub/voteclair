@@ -18,16 +18,21 @@ on:
 permissions:
   contents: write
   pull-requests: write
+  id-token: write        # exige par claude-code-action pour s'authentifier
 
 jobs:
   veille:
     runs-on: ubuntu-latest
+    # Un agent sans surveillance doit avoir une fin. Sans plafond, une
+    # recherche qui tourne en rond consomme des jetons jusqu'a la limite
+    # de GitHub, six heures plus tard.
+    timeout-minutes: 30
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: '20'
 
@@ -56,7 +61,18 @@ jobs:
         uses: anthropics/claude-code-action@v1
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
-          claude_args: '{"model":"claude-opus-5","allowedTools":["WebSearch","WebFetch","Read","Edit","Bash(python3 tools/*)"]}'
+          # L'action s'authentifie sinon comme l'appli GitHub « Claude »,
+          # qu'il faudrait installer sur le depot. Lui donner le jeton de
+          # l'execution evite cette dependance : elle n'a de toute facon
+          # rien a ecrire sur GitHub, c'est l'etape 5 qui ouvre la PR.
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          # Des drapeaux de ligne de commande, pas un objet JSON : l'action
+          # les passe tels quels a la CLI. Ecrit en JSON, ni le modele ni la
+          # liste d'outils n'etaient pris en compte.
+          claude_args: |
+            --model claude-opus-5
+            --max-turns 120
+            --allowedTools "WebSearch,WebFetch,Read,Edit,Bash(python3 tools/*)"
           prompt: |
             Tu mets à jour les données d'un site d'information politique
             française. Un lecteur s'en sert pour décider de son vote : une
