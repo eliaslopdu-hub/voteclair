@@ -15,10 +15,14 @@ import os, sys, json, shutil, tempfile, subprocess
 
 RACINE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-# On se compare a la branche courante du depot, pas a `main` : les outils
-# testes peuvent n'exister que sur la branche de travail.
-BASE = subprocess.run(["git", "branch", "--show-current"], cwd=RACINE,
-                      capture_output=True, text=True).stdout.strip() or "main"
+# La base de comparaison est le commit courant, designe par son empreinte
+# et non par un nom de branche. En integration continue, actions/checkout
+# pose le commit de fusion de la PR en HEAD detachee : il n'y a alors ni
+# branche courante ni `origin/main`, et un nom de branche ne designe plus
+# rien. Une empreinte, elle, existe partout — dans le depot comme dans le
+# clone jetable, qui en recoit tous les objets.
+BASE = subprocess.run(["git", "rev-parse", "HEAD"], cwd=RACINE,
+                      capture_output=True, text=True).stdout.strip()
 
 
 def sh(cwd, *a, **kw):
@@ -47,12 +51,12 @@ def scenario(nom, attendu, motif, preparer):
     clone = tempfile.mkdtemp(prefix="voteclair-test-")
     try:
         sh(None, "git", "clone", "-q", "--no-hardlinks", RACINE, clone)
-        git(clone, "checkout", "-q", "-B", "essai", "origin/%s" % BASE)
+        git(clone, "checkout", "-q", "-B", "essai", BASE)
         preparer(clone)
         git(clone, "add", "-A")
         git(clone, "-c", "user.email=t@t", "-c", "user.name=t",
             "commit", "-q", "--allow-empty", "-m", "essai")
-        r = sh(clone, sys.executable, "tools/garde_fou.py", "origin/%s" % BASE)
+        r = sh(clone, sys.executable, "tools/garde_fou.py", BASE)
         refuse = r.returncode != 0
         ok = (refuse and attendu == "refuse") or (not refuse and attendu == "accepte")
         if ok and motif:

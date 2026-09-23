@@ -46,6 +46,16 @@ jobs:
       - name: Le garde-fou refuse bien ce qu'il doit refuser
         run: python3 tools/tests_pipeline.py
 
+      # actions/checkout pose le commit de fusion de la PR en HEAD detachee
+      # et ne cree pas forcement refs/remotes/origin/<base>. Sans cette
+      # recuperation, le garde-fou n'a rien a quoi se comparer : il refuse,
+      # bruyamment, plutot que de laisser croire qu'il a verifie.
+      - name: Récupérer la branche de base
+        if: github.event_name == 'pull_request'
+        run: |
+          git fetch --no-tags origin \
+            "+refs/heads/${{ github.base_ref }}:refs/remotes/origin/${{ github.base_ref }}"
+
       # Le garde-fou contraint l'automatisation, pas vous : une PR humaine
       # a le droit de toucher au HTML, au JS ou aux poids du quiz, et c'est
       # CODEOWNERS qui la garde. On ne l'applique donc qu'aux propositions

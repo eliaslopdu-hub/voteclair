@@ -162,6 +162,21 @@ def controle_projection(base, modifies):
 
 
 def main(base):
+    # Sans base, il n'y a pas de comparaison possible, donc pas de garde-fou.
+    # Le cas arrive pour de vrai : en integration continue, le depot est en
+    # HEAD detachee et `origin/main` n'existe que si on l'a explicitement
+    # demande a la recuperation. Mieux vaut un refus lisible qu'une trace
+    # d'exception — et surtout jamais un silence, qui laisserait croire que
+    # le perimetre a ete verifie.
+    if subprocess.run(["git", "rev-parse", "--verify", "--quiet", base + "^{commit}"],
+                      cwd=P.RACINE, capture_output=True).returncode:
+        print("BASE INTROUVABLE : « %s » ne designe aucun commit ici.\n" % base)
+        print("Le perimetre n'a donc PAS ete verifie. Rien ne doit etre fusionne\n"
+              "sur la foi de ce resultat. En integration continue, recuperez la\n"
+              "branche de base avant cette etape :\n\n"
+              "    git fetch --no-tags origin +refs/heads/<base>:refs/remotes/origin/<base>")
+        return 2
+
     pol = P.charger()
     modifies = [l for l in git("diff", "--name-only", "%s...HEAD" % base).split("\n") if l]
     if not modifies:
