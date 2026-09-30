@@ -8,6 +8,7 @@
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://www.voteclair.fr/calendrier.html" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%236C63FF'/><path d='M8 13h16v11a2 2 0 01-2 2H10a2 2 0 01-2-2V13zm4-5h8v5H12V8zm3 8v5h2v-5h-2z' fill='white'/></svg>" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
   <meta name="description" content="Les échéances électorales françaises dont la date est établie : sénatoriales 2026, présidentielle 2027. Compte à rebours et détail de chaque scrutin." />
   <link rel="stylesheet" href="css/fonts.css" />
   <link rel="stylesheet" href="css/main.css" />
@@ -51,14 +52,14 @@
     .countdown-label {
       text-align: center; font-size: 0.8rem; font-weight: 600;
       letter-spacing: 0.12em; text-transform: uppercase;
-      color: var(--accent); margin-bottom: 8px;
+      color: var(--accent-text); margin-bottom: 8px;
     }
     .countdown-title {
       text-align: center; font-family: 'Playfair Display', serif;
       font-size: clamp(1.3rem, 3vw, 2rem); color: #fff;
       margin-bottom: 32px;
     }
-    .countdown-title span { color: var(--accent); }
+    .countdown-title span { color: var(--accent-text); }
     .countdown-grid {
       display: flex; justify-content: center; gap: 24px; flex-wrap: wrap;
       margin-bottom: 28px;
@@ -141,7 +142,7 @@
       transform: rotateX(8deg);
       transform-origin: center top;
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(min(220px, 100%), 1fr));
       gap: 20px;
       padding: 20px 0 60px;
     }
@@ -228,7 +229,7 @@
     .year-marker-num {
       font-family: 'Playfair Display', serif;
       font-size: 3.5rem; font-weight: 900;
-      color: var(--accent); opacity: 0.15; line-height: 1;
+      color: var(--accent-text); opacity: 0.15; line-height: 1;
     }
     .year-marker-line { flex: 1; height: 1px; background: var(--border); }
 
@@ -429,7 +430,7 @@
       }
       .list-date-day { font-size: 1.5rem; }
       .cal-toolbar-inner { flex-direction: column; align-items: flex-start; }
-      .wall-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; }
+      .wall-grid { grid-template-columns: repeat(auto-fill, minmax(min(160px, 100%), 1fr)); gap: 12px; }
     }
     @media (max-width: 480px) {
       .list-card { grid-template-columns: 50px 1fr; }
@@ -492,7 +493,7 @@
   <div class="container">
     <div class="cal-hero-inner">
       <span class="section-label">Agenda citoyen</span>
-      <h1>Calendrier électoral<br /><em style="font-style:normal;color:var(--accent)">2025 – 2027</em></h1>
+      <h1>Calendrier électoral<br /><em style="font-style:normal;color:var(--accent-text)">2025 – 2027</em></h1>
       <p>Les échéances électorales françaises dont la date est établie : sénatoriales, présidentielle, et les scrutins déjà tenus. Un scrutin dont la date n'est pas fixée n'est pas affiché plutôt qu'annoncé à une date approximative.</p>
       <div class="disclaimer-badge">
         Dates 2027 estimées — non encore officialisées par décret

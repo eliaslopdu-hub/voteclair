@@ -6,10 +6,14 @@
       "nature": "nationale",
       "date": {
         "valeur": "2024-06-09",
-        "sources": [],
-        "verifie_le": null,
-        "confiance": "a_verifier",
-        "auteur": "humain"
+        "sources": [
+          "src:decret-2024-226-europeennes",
+          "src:arrete-2024-05-17-listes-europeennes"
+        ],
+        "verifie_le": "2026-09-23",
+        "confiance": "confirme",
+        "auteur": "humain",
+        "note": "Décret de convocation, article 1 : « Les électeurs sont convoqués le dimanche 9 juin 2024. » Scrutin tenu ; cette date ne changera plus."
       },
       "statut": "confirme",
       "titre": "Élections européennes",
@@ -27,10 +31,14 @@
       "nature": "nationale",
       "date": {
         "valeur": "2024-06-30",
-        "sources": [],
-        "verifie_le": null,
-        "confiance": "a_verifier",
-        "auteur": "humain"
+        "sources": [
+          "src:decret-2024-527-legislatives",
+          "src:decret-2024-540-legislatives-modif"
+        ],
+        "verifie_le": "2026-09-23",
+        "confiance": "confirme",
+        "auteur": "humain",
+        "note": "Décret n° 2024-527, article 1 : convocation le dimanche 30 juin 2024. Le décret modificatif n° 2024-540 ne touche qu'au vote des Français de l'étranger, pas aux dates. Scrutin tenu ; cette date ne changera plus."
       },
       "statut": "confirme",
       "titre": "Législatives anticipées",
@@ -48,10 +56,14 @@
       "nature": "nationale",
       "date": {
         "valeur": "2024-07-07",
-        "sources": [],
-        "verifie_le": null,
-        "confiance": "a_verifier",
-        "auteur": "humain"
+        "sources": [
+          "src:decret-2024-527-legislatives",
+          "src:decret-2024-540-legislatives-modif"
+        ],
+        "verifie_le": "2026-09-23",
+        "confiance": "confirme",
+        "auteur": "humain",
+        "note": "Décret n° 2024-527, article 1 : second tour le dimanche 7 juillet 2024. Le décret modificatif n° 2024-540 ne touche qu'au vote des Français de l'étranger, pas aux dates. Scrutin tenu ; cette date ne changera plus."
       },
       "statut": "confirme",
       "titre": "Législatives anticipées",

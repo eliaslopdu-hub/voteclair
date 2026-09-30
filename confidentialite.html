@@ -12,6 +12,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.voteclair.fr/confidentialite.html" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗳️</text></svg>" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
   <meta name="description" content="Politique de confidentialité de VoteClair : données collectées, cookies, droits RGPD (accès, rectification, suppression). Aucune publicité à ce jour." />
   <link rel="stylesheet" href="css/fonts.css" />
   <link rel="stylesheet" href="css/main.css" />
@@ -143,60 +144,62 @@
     <!-- 2. Données collectées -->
     <div class="legal-section">
       <h2>2. Données collectées — tableau récapitulatif</h2>
-      <table class="data-table">
-        <thead>
-          <tr>
-            <th>Type de données</th>
-            <th>Collectée ?</th>
-            <th>Stockée ?</th>
-            <th>Transmise à des tiers ?</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Identité (nom, prénom, email)</td>
-            <td><span class="badge-non">Non</span></td>
-            <td><span class="badge-non">Non</span></td>
-            <td><span class="badge-non">Non</span></td>
-          </tr>
-          <tr>
-            <td>Réponses au quiz politique</td>
-            <td><span class="badge-non">Non</span></td>
-            <td><span class="badge-non">Non</span></td>
-            <td><span class="badge-non">Non</span></td>
-          </tr>
-          <tr>
-            <td>Résultats du quiz</td>
-            <td><span class="badge-non">Non</span></td>
-            <td><span class="badge-non">Non</span></td>
-            <td><span class="badge-non">Non</span></td>
-          </tr>
-          <tr>
-            <td>Adresse IP</td>
-            <td><span class="badge-non">Non</span></td>
-            <td><span class="badge-non">Non</span></td>
-            <td><span class="badge-non">Non</span></td>
-          </tr>
-          <tr>
-            <td>Cookies de navigation</td>
-            <td><span class="badge-non">Non</span></td>
-            <td><span class="badge-non">Non</span></td>
-            <td><span class="badge-non">Non</span></td>
-          </tr>
-          <tr>
-            <td>Données de géolocalisation</td>
-            <td><span class="badge-non">Non</span></td>
-            <td><span class="badge-non">Non</span></td>
-            <td><span class="badge-non">Non</span></td>
-          </tr>
-          <tr>
-            <td>Données de navigation (pages vues, clics)</td>
-            <td><span class="badge-non">Non</span></td>
-            <td><span class="badge-non">Non</span></td>
-            <td><span class="badge-non">Non</span></td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="table-scroll" role="region" tabindex="0" aria-label="2. Données collectées — tableau récapitulatif (tableau, défilable horizontalement)">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Type de données</th>
+              <th>Collectée ?</th>
+              <th>Stockée ?</th>
+              <th>Transmise à des tiers ?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Identité (nom, prénom, email)</td>
+              <td><span class="badge-non">Non</span></td>
+              <td><span class="badge-non">Non</span></td>
+              <td><span class="badge-non">Non</span></td>
+            </tr>
+            <tr>
+              <td>Réponses au quiz politique</td>
+              <td><span class="badge-non">Non</span></td>
+              <td><span class="badge-non">Non</span></td>
+              <td><span class="badge-non">Non</span></td>
+            </tr>
+            <tr>
+              <td>Résultats du quiz</td>
+              <td><span class="badge-non">Non</span></td>
+              <td><span class="badge-non">Non</span></td>
+              <td><span class="badge-non">Non</span></td>
+            </tr>
+            <tr>
+              <td>Adresse IP</td>
+              <td><span class="badge-non">Non</span></td>
+              <td><span class="badge-non">Non</span></td>
+              <td><span class="badge-non">Non</span></td>
+            </tr>
+            <tr>
+              <td>Cookies de navigation</td>
+              <td><span class="badge-non">Non</span></td>
+              <td><span class="badge-non">Non</span></td>
+              <td><span class="badge-non">Non</span></td>
+            </tr>
+            <tr>
+              <td>Données de géolocalisation</td>
+              <td><span class="badge-non">Non</span></td>
+              <td><span class="badge-non">Non</span></td>
+              <td><span class="badge-non">Non</span></td>
+            </tr>
+            <tr>
+              <td>Données de navigation (pages vues, clics)</td>
+              <td><span class="badge-non">Non</span></td>
+              <td><span class="badge-non">Non</span></td>
+              <td><span class="badge-non">Non</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
 
     <!-- 3. Fonctionnement du quiz -->
@@ -225,18 +228,15 @@
       </ul>
       <p>Ces cookies pourraient collecter votre adresse IP, les pages visitées, la durée de navigation, votre système d'exploitation et d'autres données techniques. Ces données peuvent être transférées vers les États-Unis dans le cadre du <strong>Data Privacy Framework EU-US</strong>.</p>
       <p>Google AdSense ne serait chargé <strong>qu'après votre consentement explicite</strong> via le bandeau de gestion des cookies. En cas de refus, aucun cookie publicitaire ne serait déposé et aucune publicité personnalisée ne serait affichée.</p>
-      <p>Pour gérer vos préférences publicitaires Google : <a href="https://adssettings.google.com" target="_blank" rel="noopener" style="color:var(--accent)">adssettings.google.com</a>. Pour en savoir plus : <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color:var(--accent)">Politique de confidentialité de Google</a>.</p>
+      <p>Pour gérer vos préférences publicitaires Google : <a href="https://adssettings.google.com" target="_blank" rel="noopener" style="color:var(--accent-text)">adssettings.google.com</a>. Pour en savoir plus : <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color:var(--accent-text)">Politique de confidentialité de Google</a>.</p>
     </div>
 
     <!-- 5. Ressources tierces -->
     <div class="legal-section">
       <h2>5. Autres ressources tierces chargées par le site</h2>
-      <p>Le site charge certaines ressources depuis des serveurs tiers. Ces chargements peuvent impliquer la transmission de votre adresse IP à ces services :</p>
-      <ul>
-        <li><strong>Google Fonts</strong> — polices de caractères (Playfair Display, DM Sans). Chargement depuis <code>fonts.googleapis.com</code>. Politique de confidentialité Google applicable.</li>
-        <li><strong>Unsplash</strong> — images illustratives. Chargement depuis <code>images.unsplash.com</code>. Politique de confidentialité Unsplash applicable.</li>
-      </ul>
-      <p>Ces services tiers sont soumis à leurs propres politiques de confidentialité. VoteClair ne reçoit ni ne stocke aucune information issue de ces chargements.</p>
+      <p><strong>Aucune.</strong> Toutes les ressources nécessaires à l'affichage du site — polices de caractères (Playfair Display, DM Sans), images, feuilles de style et scripts — sont hébergées sur le domaine de VoteClair et servies depuis celui-ci.</p>
+      <p>Concrètement, consulter une page de VoteClair ne transmet votre adresse IP à aucun service tiers : ni Google Fonts, ni banque d'images, ni réseau de diffusion externe. Les liens sortants présents dans les contenus (sources officielles, Wikimedia Commons, sites des partis) ne déclenchent aucun chargement tant que vous ne cliquez pas dessus.</p>
+      <p>La seule exception possible à l'avenir serait Google AdSense, décrit à la section 4, qui ne serait chargé qu'après votre consentement explicite.</p>
     </div>
 
     <!-- 6. Droits RGPD -->
@@ -252,8 +252,8 @@
         <li><strong>Droit à la limitation</strong> (art. 18) : demander la restriction temporaire du traitement</li>
         <li><strong>Droit de retrait du consentement</strong> : retirer à tout moment un consentement préalablement donné</li>
       </ul>
-      <p>Pour exercer ces droits, contactez-nous à : <strong>contact@voteclair.fr</strong> ou via notre <a href="contact.html" style="color:var(--accent)">page Contact</a>. Nous traiterons votre demande dans un délai d'un mois (délai légal).</p>
-      <p>Vous disposez également du droit de déposer une réclamation auprès de la <strong>CNIL</strong> (Commission Nationale de l'Informatique et des Libertés) : <a href="https://www.cnil.fr" target="_blank" rel="noopener" style="color:var(--accent)">www.cnil.fr</a>.</p>
+      <p>Pour exercer ces droits, contactez-nous à : <strong>contact@voteclair.fr</strong> ou via notre <a href="contact.html" style="color:var(--accent-text)">page Contact</a>. Nous traiterons votre demande dans un délai d'un mois (délai légal).</p>
+      <p>Vous disposez également du droit de déposer une réclamation auprès de la <strong>CNIL</strong> (Commission Nationale de l'Informatique et des Libertés) : <a href="https://www.cnil.fr" target="_blank" rel="noopener" style="color:var(--accent-text)">www.cnil.fr</a>.</p>
     </div>
 
     <!-- 7. Données politiques - catégorie spéciale -->

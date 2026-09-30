@@ -15,16 +15,15 @@
     "axe": "Gauche radicale",
     "ideologie": "Gauche radicale · Souverainisme populaire",
     "dirigeant": {
-      "valeur": "Jean-Luc Mélenchon / Manuel Bompard",
-      "sources": [],
-      "verifie_le": null,
-      "confiance": "a_verifier",
+      "valeur": "Manuel Bompard",
+      "sources": [
+        "src:lfi-comment-ca-marche",
+        "src:lfi-communique-coordinateur-2023"
+      ],
+      "verifie_le": "2026-09-23",
+      "confiance": "confirme",
       "auteur": "humain",
-      "variantes": {
-        "comparateur": "Jean-Luc Mélenchon / M. Bompard",
-        "fiche": "Jean-Luc Mélenchon / Manuel Bompard"
-      },
-      "note": "Les surfaces du site ne s'accordent pas sur ce nom."
+      "note": "Coordinateur du mouvement depuis décembre 2022. La valeur portait aussi Jean-Luc Mélenchon, qui est le candidat déclaré pour 2027 et non le dirigeant de LFI : les deux fonctions sont distinctes. Les deux sources émanent du mouvement lui-même — corroboration, pas indépendance."
     },
     "fonde_en": {
       "valeur": "2016",
@@ -36,10 +35,13 @@
     "fonde_annee": 2016,
     "site": {
       "valeur": "https://lafranceinsoumise.fr",
-      "sources": [],
-      "verifie_le": null,
-      "confiance": "a_verifier",
-      "auteur": "humain"
+      "sources": [
+        "src:lfi-site-officiel"
+      ],
+      "verifie_le": "2026-09-23",
+      "confiance": "confirme",
+      "auteur": "humain",
+      "note": "Page d'accueil consultée le 23 septembre 2026 : site officiel du parti, URL inchangée."
     },
     "perimetre": {
       "quiz": true,
@@ -65,10 +67,14 @@
     "ideologie": null,
     "dirigeant": {
       "valeur": "Fabien Roussel",
-      "sources": [],
-      "verifie_le": null,
-      "confiance": "a_verifier",
-      "auteur": "humain"
+      "sources": [
+        "src:pcf-40e-congres-cloture",
+        "src:pcf-executif-national-2026"
+      ],
+      "verifie_le": "2026-09-23",
+      "confiance": "confirme",
+      "auteur": "humain",
+      "note": "Réélu secrétaire national au 40e congrès du PCF, Lille, 3 au 5 juillet 2026, avec 70,1 % des voix. Valeur inchangée. Les deux sources émanent du parti lui-même."
     },
     "fonde_en": null,
     "fonde_annee": null,
@@ -98,10 +104,14 @@
     "ideologie": "Gauche social-démocrate · Progressisme",
     "dirigeant": {
       "valeur": "Olivier Faure",
-      "sources": [],
-      "verifie_le": null,
-      "confiance": "a_verifier",
-      "auteur": "humain"
+      "sources": [
+        "src:ps-page-premier-secretaire",
+        "src:publicsenat-faure-premier-secretaire"
+      ],
+      "verifie_le": "2026-09-23",
+      "confiance": "confirme",
+      "auteur": "humain",
+      "note": "Premier secrétaire depuis le congrès d'Aubervilliers du 15 mars 2018, reconduit à Villeurbanne (2021), Marseille (2023) et Nancy (2025). Valeur inchangée. Seconde source indépendante du parti mais de rang 4."
     },
     "fonde_en": {
       "valeur": "1969 (Congrès d'Épinay 1971)",
@@ -113,10 +123,13 @@
     "fonde_annee": 1969,
     "site": {
       "valeur": "https://www.parti-socialiste.fr",
-      "sources": [],
-      "verifie_le": null,
-      "confiance": "a_verifier",
-      "auteur": "humain"
+      "sources": [
+        "src:ps-site-officiel"
+      ],
+      "verifie_le": "2026-09-23",
+      "confiance": "confirme",
+      "auteur": "humain",
+      "note": "Page d'accueil consultée le 23 septembre 2026 : site officiel du parti, URL inchangée."
     },
     "perimetre": {
       "quiz": true,
@@ -142,10 +155,14 @@
     "ideologie": "Écologie politique · Centre-gauche · Féminisme",
     "dirigeant": {
       "valeur": "Marine Tondelier",
-      "sources": [],
-      "verifie_le": null,
+      "sources": [
+        "src:publicsenat-tondelier-reelection-2026",
+        "src:reporterre-congres-ecologistes-2026"
+      ],
+      "verifie_le": "2026-09-23",
       "confiance": "a_verifier",
-      "auteur": "humain"
+      "auteur": "humain",
+      "note": "Réélue secrétaire nationale le 18 avril 2026 au premier tour, avec 73 % des voix des militants. Valeur inchangée. Reste en « à vérifier » : les deux sources sont de rang 4 et le site officiel du parti n'a pas pu être consulté. La politique exige le rang 2 pour publier ce champ."
     },
     "fonde_en": {
       "valeur": "2010 (fusion Les Verts + Europe Écologie)",
@@ -157,10 +174,13 @@
     "fonde_annee": 2010,
     "site": {
       "valeur": "https://www.lesecologistes.fr",
-      "sources": [],
-      "verifie_le": null,
+      "sources": [
+        "src:eelv-site-officiel"
+      ],
+      "verifie_le": "2026-09-23",
       "confiance": "a_verifier",
-      "auteur": "humain"
+      "auteur": "humain",
+      "note": "Le serveur renvoie 403 aux outils automatisés : l'URL n'a pas pu être consultée directement le 23 septembre 2026. Des pages de ce domaine restent actives et indexées. À confirmer par une consultation humaine."
     },
     "perimetre": {
       "quiz": true,
@@ -209,10 +229,13 @@
     "fonde_annee": 2016,
     "site": {
       "valeur": "https://parti-renaissance.fr",
-      "sources": [],
-      "verifie_le": null,
-      "confiance": "a_verifier",
-      "auteur": "humain"
+      "sources": [
+        "src:renaissance-site-officiel"
+      ],
+      "verifie_le": "2026-09-23",
+      "confiance": "confirme",
+      "auteur": "humain",
+      "note": "Page d'accueil consultée le 23 septembre 2026 : site officiel du parti, URL inchangée."
     },
     "perimetre": {
       "quiz": true,
@@ -238,10 +261,14 @@
     "ideologie": "Centre · Humanisme démocratique · Pro-européen",
     "dirigeant": {
       "valeur": "François Bayrou",
-      "sources": [],
-      "verifie_le": null,
-      "confiance": "a_verifier",
-      "auteur": "humain"
+      "sources": [
+        "src:modem-notre-equipe",
+        "src:modem-fiche-bayrou"
+      ],
+      "verifie_le": "2026-09-23",
+      "confiance": "confirme",
+      "auteur": "humain",
+      "note": "Président du Mouvement démocrate depuis la fondation du parti en 2007. Valeur inchangée. Les deux sources émanent du parti lui-même."
     },
     "fonde_en": {
       "valeur": "2007",
@@ -253,10 +280,13 @@
     "fonde_annee": 2007,
     "site": {
       "valeur": "https://www.mouvementdemocrate.fr",
-      "sources": [],
-      "verifie_le": null,
-      "confiance": "a_verifier",
-      "auteur": "humain"
+      "sources": [
+        "src:modem-site-officiel"
+      ],
+      "verifie_le": "2026-09-23",
+      "confiance": "confirme",
+      "auteur": "humain",
+      "note": "Page d'accueil consultée le 23 septembre 2026 : site officiel du parti, URL inchangée."
     },
     "perimetre": {
       "quiz": true,
@@ -301,10 +331,13 @@
     "fonde_annee": 2015,
     "site": {
       "valeur": "https://www.republicains.fr",
-      "sources": [],
-      "verifie_le": null,
-      "confiance": "a_verifier",
-      "auteur": "humain"
+      "sources": [
+        "src:lr-site-officiel"
+      ],
+      "verifie_le": "2026-09-23",
+      "confiance": "confirme",
+      "auteur": "humain",
+      "note": "Page d'accueil consultée le 23 septembre 2026 : site officiel du parti, URL inchangée."
     },
     "perimetre": {
       "quiz": true,
@@ -329,16 +362,15 @@
     "axe": "Extrême droite",
     "ideologie": "Droite nationaliste · Souverainisme",
     "dirigeant": {
-      "valeur": "Marine Le Pen / Jordan Bardella",
-      "sources": [],
-      "verifie_le": null,
-      "confiance": "a_verifier",
+      "valeur": "Jordan Bardella",
+      "sources": [
+        "src:rn-bureau-national",
+        "src:rn-communique-bardella-president"
+      ],
+      "verifie_le": "2026-09-23",
+      "confiance": "confirme",
       "auteur": "humain",
-      "variantes": {
-        "comparateur": "Jordan Bardella",
-        "fiche": "Marine Le Pen / Jordan Bardella"
-      },
-      "note": "Les surfaces du site ne s'accordent pas sur ce nom."
+      "note": "Président du Rassemblement national depuis novembre 2022 ; un communiqué officiel porte ce titre dans son intitulé même. La valeur portait aussi Marine Le Pen, qui préside le groupe à l'Assemblée nationale et est candidate en 2027 : autres fonctions. Les deux sources émanent du parti lui-même."
     },
     "fonde_en": {
       "valeur": "1972 (Front National) · Renommé RN en 2018",
@@ -350,10 +382,13 @@
     "fonde_annee": 1972,
     "site": {
       "valeur": "https://www.rassemblementnational.fr",
-      "sources": [],
-      "verifie_le": null,
-      "confiance": "a_verifier",
-      "auteur": "humain"
+      "sources": [
+        "src:rn-site-officiel"
+      ],
+      "verifie_le": "2026-09-23",
+      "confiance": "confirme",
+      "auteur": "humain",
+      "note": "Page d'accueil consultée le 23 septembre 2026 : site officiel du parti, URL inchangée."
     },
     "perimetre": {
       "quiz": true,

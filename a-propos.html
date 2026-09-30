@@ -13,6 +13,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.voteclair.fr/a-propos.html" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗳️</text></svg>" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
   <link rel="stylesheet" href="css/fonts.css" />
   <link rel="stylesheet" href="css/main.css" />
   <style>
@@ -26,7 +27,7 @@
 
     .about-values {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(min(220px, 100%), 1fr));
       gap: 20px;
       margin-top: 24px;
     }
@@ -55,7 +56,7 @@
       color: var(--text-muted);
       margin-bottom: 32px;
     }
-    .breadcrumb a { color: var(--accent); }
+    .breadcrumb a { color: var(--accent-text); }
     .breadcrumb span { margin: 0 6px; }
   </style>
   <meta property="og:image" content="https://www.voteclair.fr/assets/og-default.jpg" />
@@ -187,7 +188,7 @@
       <p>Le quiz d'orientation politique de VoteClair repose sur une méthodologie rigoureuse et transparente. Il comporte <strong>15 questions</strong> couvrant les grands thèmes de la vie politique française : économie, immigration, transition écologique, institutions, éducation, sécurité et politique étrangère.</p>
       <p>Pour chaque question, l'utilisateur choisit sa position sur une échelle de 1 à 5 (de "Tout à fait d'accord" à "Tout à fait contre"). Un algorithme de correspondance compare ensuite ses réponses avec les positions officielles de 7 partis politiques majeurs, pour calculer un score de compatibilité.</p>
       <p>Les positions des partis sont extraites de leurs programmes officiels publiés pour les élections législatives 2022 et présidentielles 2022, puis actualisées au fil des déclarations publiques. Chaque source est citée et vérifiable.</p>
-      <p>Pour une description technique complète, consultez notre <a href="methodologie.html" style="color:var(--accent)">page Méthodologie</a>.</p>
+      <p>Pour une description technique complète, consultez notre <a href="methodologie.html" style="color:var(--accent-text)">page Méthodologie</a>.</p>
     </div>
 
     <!-- Qui écrit VoteClair -->
@@ -195,10 +196,10 @@
       <h2>Qui écrit VoteClair</h2>
       <div class="team-note">
         <p>VoteClair est écrit et maintenu par <strong>une seule personne</strong> : Elias Lopez, développeur web. Je ne suis ni politologue, ni journaliste, et je n'appartiens à aucun parti, syndicat ou groupe d'intérêt.</p>
-        <p style="margin-top:12px">C'est précisément pour cette raison que la <a href="methodologie.html" style="color:var(--accent)">méthodologie est publiée</a> et que le code du quiz est lisible par tous dans le navigateur : pour que vous puissiez vérifier mes choix et me contredire. Si vous repérez une erreur, <a href="contact.html" style="color:var(--accent)">signalez-la-moi</a> — je corrige publiquement.</p>
+        <p style="margin-top:12px">C'est précisément pour cette raison que la <a href="methodologie.html" style="color:var(--accent-text)">méthodologie est publiée</a> et que le code du quiz est lisible par tous dans le navigateur : pour que vous puissiez vérifier mes choix et me contredire. Si vous repérez une erreur, <a href="contact.html" style="color:var(--accent-text)">signalez-la-moi</a> — je corrige publiquement.</p>
       </div>
       <p>Je crois que chaque citoyen a le droit d'accéder à une information politique de qualité, sans être manipulé ni influencé. C'est pourquoi VoteClair restera gratuit, transparent et indépendant.</p>
-      <p>Pour me contacter, poser une question ou signaler une erreur : <a href="contact.html" style="color:var(--accent)">page Contact</a> ou à l'adresse <strong>contact@voteclair.fr</strong>.</p>
+      <p>Pour me contacter, poser une question ou signaler une erreur : <a href="contact.html" style="color:var(--accent-text)">page Contact</a> ou à l'adresse <strong><span class="vc-mail" data-u="contact" data-d="voteclair.fr">contact [arobase] voteclair.fr</span></strong>.</p>
     </div>
 
     <!-- Ce que nous ne faisons pas -->
@@ -263,5 +264,22 @@
 
 <script src="js/nav.js"></script>
 <script src="js/cookie-consent.js"></script>
+
+<script>
+  /* Adresse de contact assemblée côté client : les moissonneurs de spam lisent
+     le HTML brut, pas le DOM. Sans JavaScript, la mention « contact [arobase]
+     voteclair.fr » reste lisible, et les pages légales portent l'adresse en
+     clair comme la LCEN l'exige. */
+  (function () {
+    document.querySelectorAll('.vc-mail').forEach(function (el) {
+      var adresse = el.dataset.u + String.fromCharCode(64) + el.dataset.d;
+      var a = document.createElement('a');
+      a.href = 'mailto:' + adresse;
+      a.textContent = adresse;
+      a.style.color = 'inherit';
+      el.replaceChildren(a);
+    });
+  })();
+</script>
 </body>
 </html>

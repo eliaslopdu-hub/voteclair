@@ -92,7 +92,7 @@
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--accent-text);
   margin-bottom: 12px;
 }
 
@@ -367,7 +367,7 @@
   display: inline-block;
   margin-top: 8px;
   font-size: 0.82rem;
-  color: var(--accent);
+  color: var(--accent-text);
   text-decoration: underline;
 }
 
@@ -442,7 +442,7 @@
 
 .theme-weight-label {
   font-size: 0.78rem;
-  color: var(--accent);
+  color: var(--accent-text);
   font-weight: 600;
 }
 
@@ -514,7 +514,7 @@
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--accent-text);
   margin-bottom: 24px;
 }
 
@@ -558,7 +558,7 @@
 
 .analyse-reponse {
   font-size: 0.85rem;
-  color: var(--accent);
+  color: var(--accent-text);
   font-weight: 500;
   margin-bottom: 4px;
 }
@@ -781,7 +781,7 @@
 }
 
 .qr-perimetre-links a {
-  color: var(--accent);
+  color: var(--accent-text);
   text-decoration: underline;
 }
 
